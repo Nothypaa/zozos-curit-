@@ -22,7 +22,7 @@
     });
 
 
-    // Previous cursor code remains...
+
 
     // Add smooth section transitions
     const observerOptions = {
@@ -182,3 +182,47 @@
             document.body.style.overflow = '';
         }
     });
+
+
+
+
+    const animateCounter = (element) => {
+        const target = parseInt(element.getAttribute('data-target'));
+        const suffix = element.getAttribute('data-target').includes('+') ? '+' : '';
+        let current = 0;
+        const increment = target / 50; // Adjust for animation speed
+        const duration = 2000; // 2 seconds
+        const stepTime = duration / (target / increment);
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                element.textContent = Math.floor(current) + suffix;
+                setTimeout(updateCounter, stepTime);
+            } else {
+                element.textContent = target + suffix;
+            }
+        };
+
+        updateCounter();
+    };
+
+    // Intersection Observer for counters
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                animateCounter(entry.target);
+                entry.target.classList.add('animated');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe all counter elements
+    document.querySelectorAll('.exp-number').forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+
+    
+
+    
