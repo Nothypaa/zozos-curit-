@@ -6,55 +6,64 @@
     const cursor = document.querySelector('.cursor');
     const cursorDot = document.querySelector('.cursor-dot');
 
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
-        cursorDot.style.transform = `translate(${e.clientX - 2}px, ${e.clientY - 2}px)`;
-    });
+    if (cursor && cursorDot) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+            cursorDot.style.transform = `translate(${e.clientX - 2}px, ${e.clientY - 2}px)`;
+        });
 
-    document.addEventListener('mousedown', () => {
-        cursor.style.transform += ' scale(0.8)';
-        cursorDot.style.transform += ' scale(0.8)';
-    });
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform += ' scale(0.8)';
+            cursorDot.style.transform += ' scale(0.8)';
+        });
 
-    document.addEventListener('mouseup', () => {
-        cursor.style.transform = cursor.style.transform.replace(' scale(0.8)', '');
-        cursorDot.style.transform = cursorDot.style.transform.replace(' scale(0.8)', '');
-    });
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = cursor.style.transform.replace(' scale(0.8)', '');
+            cursorDot.style.transform = cursorDot.style.transform.replace(' scale(0.8)', '');
+        });
+    }
+
 
 
 
 
     // Add smooth section transitions
-    const observerOptions = {
-        threshold: 0.1
-    };
+    const sections = document.querySelectorAll('section');
+    if (sections.length > 0) {
+        const observerOptions = {
+            threshold: 0.1
+        };
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.classList.add('section-transition');
+            sectionObserver.observe(section);
         });
-    }, observerOptions);
-
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('section-transition');
-        sectionObserver.observe(section);
-    });
+    }
 
     // Smooth scroll handling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    if (anchors.length > 0) {
+        anchors.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
+    }
 
     // Slider functionality
     const slider = document.querySelector('.slider');
@@ -160,8 +169,9 @@
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav-link');
 
+    if (mobileMenuBtn && mobileNav) {
     // Toggle mobile menu
-    mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });
@@ -182,7 +192,7 @@
             document.body.style.overflow = '';
         }
     });
-
+}
 
 
 
@@ -223,6 +233,131 @@
     });
 
 
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const messageInput = document.getElementById('message');
+    
+        // Validation patterns
+        const patterns = {
+            name: /^[a-zA-ZÀ-ÿ\s]{2,50}$/,
+            email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+            phone: /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/,
+            message: /^[\s\S]{10,1000}$/
+        };
+    
+        // Error messages
+        const errorMessages = {
+            name: 'Veuillez entrer un nom valide (2-50 caractères)',
+            email: 'Veuillez entrer une adresse email valide',
+            phone: 'Veuillez entrer un numéro de téléphone valide (format français)',
+            message: 'Votre message doit contenir entre 10 et 1000 caractères',
+            recaptcha: 'Veuillez cocher la case reCAPTCHA'
+        };
+    
+        // Validate single field
+        function validateField(field, pattern) {
+            const parent = field.parentElement;
+            const errorElement = document.getElementById(`${field.id}Error`);
+            
+            if (field.value === '' && field.required) {
+                parent.classList.add('error');
+                errorElement.textContent = 'Ce champ est requis';
+                return false;
+            }
+            
+            if (field.value !== '' && !pattern.test(field.value)) {
+                parent.classList.add('error');
+                errorElement.textContent = errorMessages[field.id];
+                return false;
+            }
+            
+            parent.classList.remove('error');
+            errorElement.textContent = '';
+            return true;
+        }
+    
+        // Real-time validation
+        const inputs = [nameInput, emailInput, phoneInput, messageInput];
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.value !== '' || input.required) {
+                    validateField(input, patterns[input.id]);
+                }
+            });
+    
+            input.addEventListener('input', () => {
+                if (input.parentElement.classList.contains('error')) {
+                    validateField(input, patterns[input.id]);
+                }
+            });
+        });
+    
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            let isValid = true;
+            inputs.forEach(input => {
+                if (input.value !== '' || input.required) {
+                    if (!validateField(input, patterns[input.id])) {
+                        isValid = false;
+                    }
+                }
+            });
+    
+            // Validate reCAPTCHA
+            const recaptchaResponse = grecaptcha.getResponse();
+            const recaptchaError = document.getElementById('recaptchaError');
+            
+            if (!recaptchaResponse) {
+                recaptchaError.style.display = 'block';
+                recaptchaError.textContent = errorMessages.recaptcha;
+                isValid = false;
+            } else {
+                recaptchaError.style.display = 'none';
+            }
+    
+            // If all valid, submit form
+            if (isValid) {
+                // Show loading state
+                const submitButton = form.querySelector('.submit-button');
+                const originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<span class="loading"></span> Envoi...';
+                submitButton.disabled = true;
+    
+                // Submit form
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Show success message
+                        form.reset();
+                        grecaptcha.reset();
+                        alert('Message envoyé avec succès!');
+                    } else {
+                        throw new Error('Erreur lors de l\'envoi');
+                    }
+                })
+                .catch(error => {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                })
+                .finally(() => {
+                    // Restore button state
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                });
+            }
+        });
+    });
     
 
     
