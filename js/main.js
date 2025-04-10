@@ -233,6 +233,39 @@
     });
 
 
-    
+    // Desktop navigation scroll effect
+const desktopNav = document.querySelector('.desktop-nav');
 
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        desktopNav.classList.add('scrolled');
+    } else {
+        desktopNav.classList.remove('scrolled');
+    }
+});
+
+
+// Preloader animation
+document.addEventListener('DOMContentLoaded', () => {
+  // Make sure body overflow is hidden immediately
+  document.body.style.overflow = 'hidden';
+  
+  const preloader = document.querySelector('.preloader');
+  
+  if (!preloader) {
+    console.error('Preloader element not found');
+    document.body.style.overflow = 'visible';
+    return;
+  }
+
+  // Give animation more time (3 seconds total)
+  setTimeout(() => {
+    preloader.classList.add('fade-out');
     
+    // Wait for fade-out transition to finish
+    setTimeout(() => {
+      document.body.style.overflow = 'visible';
+      preloader.style.display = 'none'; // Ensure it's completely gone
+    }, 500);
+  }, 2500);
+});
