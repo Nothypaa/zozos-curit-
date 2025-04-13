@@ -269,3 +269,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   }, 2500);
 });
+
+
+// Prevent logo movement on click
+document.querySelector('.site-logo').addEventListener('click', function(e) {
+    // Only prevent default if it's an internal anchor
+    if (this.getAttribute('href').startsWith('#')) {
+      e.preventDefault();
+      
+      // Smooth scroll to the section instead
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
