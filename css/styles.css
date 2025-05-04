@@ -21,6 +21,7 @@ body {
     align-items: center;
     padding: 0 10%;
     background: linear-gradient(45deg, #000000, #1a1a1a);
+    padding-bottom: 0; /* Remove extra padding that was for the indicator */
 }
 
 .hero::before {
@@ -46,9 +47,8 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-    background: linear-gradient(to right, #fff, #ccc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
@@ -60,6 +60,58 @@ body {
     animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards 0.2s;
 }       
 
+/* Remove all Scroll Down Indicator styles */
+.scroll-down-indicator,
+.scroll-down-indicator a,
+.scroll-down-indicator a:hover,
+.scroll-down-indicator svg {
+    display: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+.highlight-word {
+    color: #FF3333;
+    font-weight: 800;
+    position: relative;
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+    transition: all 0.3s ease;
+}
+
+.highlight-word::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FF3333, #FF3333, transparent);
+    opacity: 0.7;
+}
+
+/* Animation for the highlighted words */
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 51, 51, 0.7);
+    }
+}
+
+.hero:hover .highlight-word {
+    animation: pulse 2s infinite;
+}
 
 .preloader {
     position: fixed;
@@ -280,7 +332,8 @@ body {
     outline: none;
   }
 
-  .site-logo:active {
+  .site-logo:active,
+  .site-logo:focus {
     transform: translateZ(0); /* Prevent movement on click */
     outline: none;
     transform: none !important;
@@ -297,7 +350,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
     pointer-events: none;
+    user-select: none;
 }
+
+/* Additional fix for iOS Safari */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
 
 .logo-zozo {
     color: #FF3333;
@@ -541,14 +600,14 @@ body {
     margin-bottom: 4rem;
     background: linear-gradient(to right, #fff, #ccc);
     -webkit-background-clip: text;
+    background-clip: text; /* Added standard property */
     -webkit-text-fill-color: transparent;
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: grid; /* Restore grid display for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Restore grid columns */
     gap: 2rem;
-    padding: 0 1rem;
 }
 
 .service-card {
@@ -635,6 +694,7 @@ body {
     font-size: 3.5rem;
     background: linear-gradient(to right, #fff, #ccc);
     -webkit-background-clip: text;
+    background-clip: text; /* Added standard property */
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
@@ -648,8 +708,8 @@ body {
 
 /* Features Grid */
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid; /* Restore grid display for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Restore grid columns */
     gap: 2rem;
     margin-bottom: 6rem;
 }
@@ -981,7 +1041,7 @@ body {
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    display: none;
+    display: none; /* Keep hidden by default on larger screens */
     align-items: center;
     justify-content: center;
     color: white;
@@ -1007,13 +1067,15 @@ body {
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* This will push social links to bottom */
+    justify-content: flex-start;
+    padding-bottom: 8rem;
 }
 
 .mobile-nav-links {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: auto;
 }
 
 .mobile-nav.active {
@@ -1047,13 +1109,16 @@ body {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: auto;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem; 
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
+    position: relative; 
+    bottom: auto; 
+    z-index: 1002;
 }
 
 .mobile-nav.active .mobile-social-links {
@@ -1317,7 +1382,7 @@ body {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
-    display: flex;
+    display: none; /* Hide by default */
     align-items: center;
     flex-direction: row-reverse; /* Reverse the order of elements */
     text-decoration: none;
@@ -1433,6 +1498,73 @@ body {
     box-shadow: 0 6px 20px -5px rgba(255, 51, 51, 0.3);
 }
 
+/* Footer Styles */
+.site-footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem; /* Add some space above the footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+    background: rgba(10, 10, 10, 0.5); /* Slightly different background */
+}
+
+.site-footer p {
+    color: rgba(255, 255, 255, 0.6); /* Lighter text color */
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Simple Scroll Arrow */
+.scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 51, 51, 0.2);
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    transition: all 0.3s ease;
+}
+
+.scroll-arrow a:hover {
+    background: rgba(255, 51, 51, 0.4);
+    transform: translateY(3px);
+}
+
+.scroll-arrow svg {
+    stroke: #fff;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Media query for the arrow on mobile */
+@media (max-width: 768px) {
+    .scroll-arrow {
+        display: none; /* Hide the arrow on mobile */
+    }
+}
+
 /* RESPONSIVE STYLES */
 @media (max-width: 480px) {
     .contact-display {
@@ -1513,34 +1645,6 @@ body {
     
     /* Site logo on small screens */
     .site-logo {
-        padding: 0.5rem 0.8rem;
-        position: absolute;
-        top: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .logo-text {
-        align-items: center;
-    }
-    
-    .logo-zozo {
-        font-size: 1.1rem;
-    }
-    
-    .logo-securite {
-        font-size: 0.8rem;
-    }
-    
-    .hero-title {
-        font-size: 2.6rem;
-        margin-top: 5rem; /* Add space at the top to avoid overlap with logo */
-    }
-}
-
-/* Ensure logo doesn't conflict with mobile menu on very small screens */
-@media (max-width: 360px) {
-    .site-logo {
         padding: 0.4rem 0.7rem;
     }
     
@@ -1569,55 +1673,102 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    /* Mobile Menu */
-    .mobile-menu-btn {
-        display: flex;
-    }
-    
-    .social-container {
-        display: none;
-    }
-
-    /* Animation delays */
-    .mobile-nav .nav-link:nth-child(1) { transition-delay: 0.1s; }
-    .mobile-nav .nav-link:nth-child(2) { transition-delay: 0.2s; }
-    .mobile-nav .nav-link:nth-child(3) { transition-delay: 0.3s; }
-
+@media (max-width: 767px) { /* Adjusted from 768px if needed, check original query */
     /* Hero Section */
     .hero {
         padding: 0 5%;
         min-height: 50vh;
-        padding-top: 6rem; /* Add padding to the top to make room for the logo */
+        padding-top: 2.5rem; /* Reduced padding-top to move content up further */
     }
     
     .hero-title {
-        font-size: 3rem;
-        margin-top: 3rem; /* Add margin to ensure no overlap with logo */
+        font-size: 2.5rem; /* Reduced font size */
+        margin-top: 3rem;
+        letter-spacing: -0.3px;
+        color: #ffffff;
     }
-    
+
     .hero-subtitle {
-        font-size: 1.2rem;
+        margin-bottom: 1rem; /* Reduced space below subtitle */
     }
 
     /* Services & Content */
     .services-grid {
-        grid-template-columns: 1fr;
+        display: flex; /* Use flexbox for horizontal layout on mobile */
+        overflow-x: auto; /* Enable horizontal scrolling on mobile */
+        flex-wrap: nowrap; /* Prevent items from wrapping on mobile */
         gap: 1.5rem;
+        padding: 0 1rem 1rem 1rem; /* Add padding for scrollbar on mobile */
+        scrollbar-width: thin; /* Firefox */
+        scrollbar-color: #FF3333 rgba(255, 255, 255, 0.1); /* Firefox */
+    }
+
+    /* Style Webkit scrollbars for services on mobile */
+    .services-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+    .services-grid::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    .services-grid::-webkit-scrollbar-thumb {
+        background-color: #FF3333;
+        border-radius: 4px;
+    }
+    .services-grid::-webkit-scrollbar-thumb:hover {
+        background-color: #cc0000;
+    }
+
+    .service-card {
+        flex-shrink: 0; /* Prevent cards from shrinking on mobile */
+        width: 280px; /* Set a fixed width for each card on mobile */
     }
 
     .desktop-nav {
         display: none;
     }
     
+    .mobile-menu-btn {
+        display: flex; /* Add this line to show the button on smaller screens */
+        align-items: center;
+        justify-content: center;
+    }
+
     .section-title {
         font-size: 2.5rem;
     }
     
-    .feature-card {
-        padding: 1.5rem;
+    .features-grid {
+        display: flex; /* Use flexbox for horizontal layout on mobile */
+        overflow-x: auto; /* Enable horizontal scrolling on mobile */
+        flex-wrap: nowrap; /* Prevent items from wrapping on mobile */
+        gap: 1.5rem;
+        padding-bottom: 1rem; /* Add padding for scrollbar on mobile */
+        scrollbar-width: thin; /* Firefox */
+        scrollbar-color: #FF3333 rgba(255, 255, 255, 0.1); /* Firefox */
     }
-    
+
+    /* Style Webkit scrollbars for features on mobile */
+    .features-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+    .features-grid::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    .features-grid::-webkit-scrollbar-thumb {
+        background-color: #FF3333;
+        border-radius: 4px;
+    }
+    .features-grid::-webkit-scrollbar-thumb:hover {
+        background-color: #cc0000;
+    }
+
+    .feature-card {
+        flex-shrink: 0; /* Prevent cards from shrinking on mobile */
+        width: 250px; /* Set a fixed width for each card on mobile */
+    }
+
     .service-cta {
         padding: 2rem 1rem;
     }
@@ -1647,16 +1798,6 @@ body {
     .cursor, 
     .cursor-dot {
         display: none;
-    }
-    
-    .slide img {
-        height: 400px;
-    }
-    
-    .slider-button {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
     }
 
     /* Stats & Section Titles */
@@ -1692,29 +1833,254 @@ body {
     .logo-securite {
         font-size: 0.9rem;
     }
+
+    .hero-content {
+        padding-bottom: 0; /* Remove extra padding that was for the indicator */
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column; /* Ensure vertical stacking */
+        align-items: flex-start; /* Align buttons to the start (left) */
+        gap: 0.8rem; /* Slightly reduced gap */
+        margin-top: 0.5rem; /* Move buttons closer to subtitle */
+    }
+
+    .main-cta,
+    .schedule-button {
+        width: auto; /* Ensure buttons are not full width */
+        text-align: center;
+        padding: 0.6rem 1rem; /* Further reduced padding */
+        font-size: 0.8rem; /* Further reduced font size */
+    }
+
+    .schedule-button {
+        margin-top: -0.5rem; /* Pull the second button up */
+    }
+}
+
+.nav-social-links a {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 375px) {
+    .hero-content {
+      padding-bottom: 0; /* Remove extra padding */
+    }
+}
+  
+
+@supports (-webkit-touch-callout: none) {
+    .mobile-social-links {
+        margin-bottom: 6rem; /* Even more margin for Safari */
+    }
+    
+    .mobile-nav {
+        padding-bottom: 12rem; /* More padding at the bottom for Safari */
+    }
 }
 
 
-@media (max-width: 1024px) and (min-width: 769px) {
-    .nav-container {
-        gap: 1.5rem;
+
+ /* Style for the new contact link in the mobile menu */
+ .mobile-contact-link {
+    display: flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center; /* Center content */
+    color: #FFDDDD; /* Slightly different color */
+    margin-top: 1rem; /* Space above */
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 51, 51, 0.2);
+    border-radius: 25px;
+    background: rgba(255, 51, 51, 0.05);
+    /* Inherits font-size, margin-bottom etc. from .nav-link */
+    /* Ensure opacity/transform match other .nav-link for animation */
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-contact-link:hover {
+    background: rgba(255, 51, 51, 0.15);
+    color: white;
+}
+
+/* Animation for when the mobile menu becomes active */
+.mobile-nav.active .mobile-contact-link {
+   opacity: 1;
+   transform: translateX(0);
+   /* Adjust delay based on other nav-link delays */
+   /* If other links have 0.1s, 0.15s, 0.2s, this could be 0.25s */
+   transition-delay: 0.25s; 
+}
+
+
+/* Footer Styles (Ensure visibility and basic styling) */
+.site-footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #050505; /* Or your desired footer background */
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    margin-top: auto; /* Helps push footer down if content is short */
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%); 
+    text-align: center;
+}
+
+.contact-form-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3.5rem; 
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.contact-form {
+    max-width: 800px; 
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02); 
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    border-radius: 20px; 
+    padding: 3rem; 
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem; 
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%; 
+}
+
+.form-group.half-width {
+    width: 50%; 
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem; 
+    color: rgba(255, 255, 255, 0.85); 
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem; 
+    background: rgba(0, 0, 0, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 10px; 
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4); 
+    opacity: 1; 
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF3333; 
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.2); 
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px; 
+}
+
+.form-group.submit-group {
+    text-align: center; 
+    margin-top: 2rem; 
+}
+
+.form-submit-button { 
+    width: auto; 
+    min-width: 200px; 
+    padding: 1.1rem 2.5rem; 
+    font-size: 1.05rem; 
+    cursor: pointer;
+}
+
+.form-status { 
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem; 
+    min-height: 1.3em; 
+    font-weight: 500;
+}
+
+/* Responsive adjustments for form */
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 4rem 1rem; 
     }
-    
-    .nav-links {
-        gap: 1.5rem;
+    .contact-form {
+        padding: 2rem; 
     }
-    
-    .nav-contact {
-        padding: 0.6rem 1rem;
+    .form-row {
+        flex-direction: column; 
+        gap: 0; 
+        margin-bottom: 0; 
+    }
+    .form-group.half-width {
+        width: 100%; 
+        margin-bottom: 1.5rem; 
+    }
+    .form-group.submit-group {
+        margin-top: 1.5rem; 
+    }
+    .form-submit-button {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-section .section-title {
+        font-size: 2.2rem; 
+    }
+    .contact-form-section .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+    .contact-form {
+        padding: 1.5rem; 
+    }
+    .form-group label {
         font-size: 0.85rem;
     }
-    
-    .nav-social-links {
-        gap: 0.7rem;
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
     }
-    
-    .nav-social-links a {
-        width: 32px;
-        height: 32px;
+    .form-submit-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 }

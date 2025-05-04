@@ -1,4 +1,4 @@
-    // i want every js code to be stored here
+// i want every js code to be stored here
 
 
 
@@ -55,9 +55,18 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
+                // Ensure targetId starts with # and has more characters
+                if (targetId && targetId.length > 1) {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                } else if (targetId === '#') {
+                    // Handle case where href is just "#" (scroll to top)
+                    window.scrollTo({
+                        top: 0,
                         behavior: 'smooth'
                     });
                 }
@@ -288,3 +297,128 @@ document.querySelector('.site-logo').addEventListener('click', function(e) {
       }
     }
   });
+
+  // Fix for logo movement on mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.site-logo');
+    
+    if (logo) {
+      // Add styles to prevent tap highlight
+      logo.style.webkitTapHighlightColor = 'transparent';
+      logo.style.outline = 'none';
+      logo.style.userSelect = 'none';
+      logo.style.webkitTouchCallout = 'none';
+      logo.style.touchAction = 'manipulation';
+      
+      // Prevent default action on touchstart (for mobile)
+      logo.addEventListener('touchstart', function(e) {
+        // Prevent any transform from happening
+        this.style.transform = 'none';
+      }, { passive: true });
+      
+      // Handle touch end event
+      logo.addEventListener('touchend', function(e) {
+        // Prevent the default behavior which can cause movement
+        e.preventDefault();
+        
+        // Get the href attribute
+        const href = this.getAttribute('href');
+        
+        // If it's an anchor link, handle smooth scrolling
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    }
+  });
+
+
+// Add simple scroll behavior for the arrow
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollArrow = document.querySelector('.scroll-arrow a');
+    
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.getElementById(targetId.substring(1));
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+
+
+// --- Handle Formspree Contact Form Submission ---
+const contactForm = document.getElementById('secure-contact-form');
+const formStatus = document.getElementById('form-status');
+
+async function handleFormSubmit(event) {
+  event.preventDefault(); // Prevent default form submission
+  const form = event.target;
+  const data = new FormData(form);
+  
+  if (formStatus) {
+      formStatus.textContent = 'Envoi en cours...';
+      formStatus.style.color = 'orange';
+  }
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json' // Request JSON response from Formspree
+      }
+    });
+
+    if (response.ok) {
+      if (formStatus) {
+          formStatus.textContent = "Merci ! Votre message a été envoyé.";
+          formStatus.style.color = 'lightgreen';
+      }
+      form.reset(); // Clear the form fields
+    } else {
+      // Try to parse error response from Formspree
+      response.json().then(data => {
+        if (formStatus) {
+            if (Object.hasOwn(data, 'errors')) {
+              formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              formStatus.textContent = "Oops! Une erreur s'est produite lors de l'envoi.";
+            }
+            formStatus.style.color = 'red';
+        }
+      }).catch(error => {
+          // Fallback error message if JSON parsing fails
+          if (formStatus) {
+              formStatus.textContent = "Oops! Une erreur s'est produite lors de l'envoi.";
+              formStatus.style.color = 'red';
+          }
+      });
+    }
+  } catch (error) {
+    // Network or other fetch errors
+    if (formStatus) {
+        formStatus.textContent = "Oops! Erreur de connexion.";
+        formStatus.style.color = 'red';
+    }
+    console.error("Form submission error:", error);
+  }
+}
+
+// Add event listener only if the form exists
+if (contactForm) {
+    contactForm.addEventListener("submit", handleFormSubmit);
+}
