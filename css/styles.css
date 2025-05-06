@@ -1513,6 +1513,21 @@ body {
     letter-spacing: 0.5px;
 }
 
+.footer-links {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: underline;
+    margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
 /* Simple Scroll Arrow */
 .scroll-arrow {
     position: absolute;
@@ -2082,5 +2097,82 @@ body {
     .form-submit-button {
         padding: 1rem 2rem;
         font-size: 1rem;
+    }
+}
+
+/* Cookie Consent Banner Styles */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95); /* Dark background */
+    backdrop-filter: blur(5px);
+    color: #eee;
+    padding: 1rem 1.5rem;
+    display: none; /* Hidden by default, shown by JS */
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 1rem; /* Space between text and buttons */
+}
+
+.cookie-consent-banner p {
+    margin: 0;
+    flex-grow: 1; /* Allow text to take available space */
+    line-height: 1.4;
+}
+
+.cookie-consent-banner a {
+    color: #FF5555;
+    text-decoration: underline;
+}
+.cookie-consent-banner a:hover {
+    color: #FF8888;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 0.8rem; /* Space between buttons */
+    flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+
+.cookie-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-button.accept {
+    background-color: #FF3333;
+    color: white;
+}
+.cookie-button.accept:hover {
+    background-color: #cc0000;
+}
+
+.cookie-button.reject {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #eee;
+}
+.cookie-button.reject:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments for banner if needed */
+@media (max-width: 767px) {
+    .cookie-consent-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center; /* Center buttons on mobile */
     }
 }
