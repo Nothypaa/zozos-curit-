@@ -206,6 +206,10 @@
 
 
     const animateCounter = (element) => {
+        if (!element || !element.getAttribute('data-target')) {
+            console.warn('animateCounter called with invalid element or missing data-target', element);
+            return;
+        }
         const target = parseInt(element.getAttribute('data-target'));
         const suffix = element.getAttribute('data-target').includes('+') ? '+' : '';
         let current = 0;
@@ -245,38 +249,39 @@
     // Desktop navigation scroll effect
 const desktopNav = document.querySelector('.desktop-nav');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        desktopNav.classList.add('scrolled');
-    } else {
-        desktopNav.classList.remove('scrolled');
-    }
-});
-
+if (desktopNav) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            desktopNav.classList.add('scrolled');
+        } else {
+            desktopNav.classList.remove('scrolled');
+        }
+    });
+}
 
 // Preloader animation
 document.addEventListener('DOMContentLoaded', () => {
   // Make sure body overflow is hidden immediately
   document.body.style.overflow = 'hidden';
-  
+
   const preloader = document.querySelector('.preloader');
-  
+
   if (!preloader) {
     console.error('Preloader element not found');
     document.body.style.overflow = 'visible';
     return;
   }
 
-  // Give animation more time (3 seconds total)
+  // Give animation more time (default was 1s for fade, 1.5s total, now 2.5s + 0.5s)
   setTimeout(() => {
     preloader.classList.add('fade-out');
-    
-    // Wait for fade-out transition to finish
+
+    // Wait for fade-out transition to finish (should match CSS: 0.5s)
     setTimeout(() => {
       document.body.style.overflow = 'visible';
       preloader.style.display = 'none'; // Ensure it's completely gone
     }, 500);
-  }, 2500);
+  }, 2500); // Total time before preloader starts fading out
 });
 
 
