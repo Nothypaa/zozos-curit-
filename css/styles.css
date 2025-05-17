@@ -1896,10 +1896,8 @@ body {
     }
 }
 
-
-
- /* Style for the new contact link in the mobile menu */
- .mobile-contact-link {
+/* Style for the new contact link in the mobile menu */
+.mobile-contact-link {
     display: flex; /* Align icon and text */
     align-items: center;
     justify-content: center; /* Center content */
@@ -2174,5 +2172,224 @@ body {
     .cookie-buttons {
         width: 100%;
         justify-content: center; /* Center buttons on mobile */
+    }
+}
+
+#castelnau-location {
+  color: red; /* Or any other red effect you prefer */
+  font-weight: bold; /* Example: make it bold */
+  /* Add other styles for the "red effect" like border, text-shadow, etc. */
+  /* For example, a subtle red glow: */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* If you want a red border or background instead, you can use: */
+/*
+#castelnau-location {
+  border: 2px solid red;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#castelnau-location {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 5px;
+  color: #333; // Adjust text color for contrast if needed
+}
+*/
+
+/* FAQ Accordion Styles */
+.faq-container {
+    max-width: 900px; /* Or your preferred max-width */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Softer edges */
+    margin-bottom: 1rem;
+    overflow: hidden; /* Important for the slide effect */
+}
+
+.faq-item .question {
+    padding: 1.5rem; /* More padding */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem; /* Slightly larger question font */
+    color: white;
+    margin: 0; /* Remove default h2 margin */
+    transition: background-color 0.3s ease;
+}
+
+.faq-item .question:hover {
+    background-color: rgba(255, 51, 51, 0.1); /* Highlight on hover */
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: #FF3333;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 1rem;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Rotates '+' to 'x' */
+}
+
+.answer-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth slide */
+}
+
+.faq-item.active .answer-container {
+    max-height: 2000px; /* Increased max-height to accommodate larger content */
+}
+
+.faq-item .answer {
+    padding: 0 1.5rem 1.5rem 1.5rem; /* Padding inside the answer */
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0; /* Remove default p margin */
+}
+
+/* Ensure section-transition is applied correctly if not already */
+.faq-container.section-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.faq-container.section-transition.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FAQ Page Specific Styles */
+.hero-small {
+    min-height: 30vh; /* Reduced height for non-homepage hero sections */
+    padding-top: 8rem; /* Adjust as needed */
+    padding-bottom: 4rem; /* Adjust as needed */
+}
+
+.hero-small .hero-title {
+    font-size: 3rem; /* Smaller title for internal pages */
+}
+
+.faq-page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem 1rem; /* Add padding around the FAQ content */
+}
+
+.faq-accordion-section {
+    margin-bottom: 3rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.3s ease;
+    outline: none; /* Remove default focus outline */
+}
+
+.faq-item summary:hover,
+.faq-item[open] summary {
+    background-color: rgba(255, 51, 51, 0.1);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Hide default marker in Chrome/Safari */
+}
+
+.faq-item summary::after { /* Custom marker */
+    content: '+';
+    font-size: 1.8rem;
+    color: #FF3333;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 1rem;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item div.faq-content { /* Wrapper for the paragraph for smoother animation */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth slide */
+}
+
+.faq-item[open] div.faq-content {
+    max-height: 1000px; /* Adjust if answers are very long */
+}
+
+.faq-item p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+    .hero-small .hero-title {
+        font-size: 2.5rem;
+    }
+    .faq-page-container {
+        padding: 1rem 0.5rem 3rem 0.5rem;
+    }
+    .faq-item summary {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+    }
+    .faq-item summary::after {
+        font-size: 1.5rem;
+    }
+    .faq-item p {
+        padding: 0 1.2rem 1.2rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-small .hero-title {
+        font-size: 2rem;
+    }
+    .faq-item summary {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+     .faq-item summary::after {
+        font-size: 1.3rem;
+    }
+    .faq-item p {
+        padding: 0 1rem 1rem 1rem;
+        font-size: 0.9rem;
     }
 }
