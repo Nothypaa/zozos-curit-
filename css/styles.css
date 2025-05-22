@@ -776,6 +776,22 @@ body {
     box-shadow: 0 4px 10px rgba(255, 51, 51, 0.3);
 }
 
+/* Add flashing animation for the nav-contact button */
+@keyframes flashNavContact {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(255, 51, 51, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(255, 51, 51, 0.5); /* Brighter shadow */
+        transform: scale(1.03); /* Slightly larger */
+    }
+}
+
+.nav-contact {
+    animation: flashNavContact 8s infinite ease-in-out;
+}
+
 .nav-social-links {
     display: flex;
     gap: 1rem;
@@ -2295,46 +2311,68 @@ body {
     margin: 0;
 }
 
-.cta-section {
+/* Thank You Page Specific Styles */
+.thank-you-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    min-height: calc(100vh - 100px); /* Adjust 100px if footer height changes */
 }
 
-/* Responsive adjustments for FAQ */
+.thank-you-content {
+    max-width: 700px;
+    animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+    align-items: center; /* Add this */
+}
+
+.thank-you-title {
+    font-family: 'Georgia', serif; /* Example of a more elegant font */
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #FF3333; /* Main brand color */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+}
+
+.thank-you-subtitle {
+    font-family: 'Helvetica Neue', sans-serif; /* Clean, modern font */
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.thank-you-section .cta-buttons {
+    /* opacity: 1; Ensure button is visible immediately */
+    /* transform: translateY(0); */
+    /* animation: none; Remove initial animation if not needed here */
+    /* font-size: 1.1rem; */
+    display: flex; /* Added to allow centering */
+    justify-content: center; /* Added to center the button */
+}
+
+/* Responsive adjustments for Thank You Page */
 @media (max-width: 768px) {
-    .hero-small .hero-title {
-        font-size: 2.5rem;
+    .thank-you-title {
+        font-size: 3.5rem;
     }
-    .faq-page_container {
-        padding: 1rem 0.5rem 3rem 0.5rem;
-    }
-    .faq-item summary {
-        font-size: 1.1rem;
-        padding: 1.2rem;
-    }
-    .faq-item summary::after {
-        font-size: 1.5rem;
-    }
-    .faq-item p {
-        padding: 0 1.2rem 1.2rem 1.2rem;
-        font-size: 0.95rem;
+    .thank-you-subtitle {
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-small .hero-title {
-        font-size: 2rem;
+    .thank-you-title {
+        font-size: 2.8rem;
     }
-    .faq-item summary {
+    .thank-you-subtitle {
+        font-size: 1.1rem;
+    }
+    .thank-you-section .cta-buttons .main-cta {
         font-size: 1rem;
-        padding: 1rem;
-    }
-     .faq-item summary::after {
-        font-size: 1.3rem;
-    }
-    .faq-item p {
-        padding: 0 1rem 1rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.8rem 1.8rem;
     }
 }

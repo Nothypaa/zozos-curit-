@@ -363,11 +363,8 @@ async function handleFormSubmit(event) {
     });
 
     if (response.ok) {
-      if (formStatus) {
-          formStatus.textContent = "Merci ! Votre message a été envoyé.";
-          formStatus.style.color = 'lightgreen';
-      }
-      form.reset(); // Clear the form fields
+      // Redirect to thank-you.html on successful submission
+      window.location.href = '/thank-you.html';
     } else {
       // Try to parse error response from Formspree
       response.json().then(data => {
