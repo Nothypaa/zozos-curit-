@@ -259,32 +259,6 @@ if (desktopNav) {
     });
 }
 
-// Preloader animation
-document.addEventListener('DOMContentLoaded', () => {
-  // Make sure body overflow is hidden immediately
-  document.body.style.overflow = 'hidden';
-
-  const preloader = document.querySelector('.preloader');
-
-  if (!preloader) {
-    console.error('Preloader element not found');
-    document.body.style.overflow = 'visible';
-    return;
-  }
-
-  // Give animation more time (default was 1s for fade, 1.5s total, now 2.5s + 0.5s)
-  setTimeout(() => {
-    preloader.classList.add('fade-out');
-
-    // Wait for fade-out transition to finish (should match CSS: 0.5s)
-    setTimeout(() => {
-      document.body.style.overflow = 'visible';
-      preloader.style.display = 'none'; // Ensure it's completely gone
-    }, 500);
-  }, 2500); // Total time before preloader starts fading out
-});
-
-
 // Prevent logo movement on click
 document.querySelector('.site-logo').addEventListener('click', function(e) {
     // Only prevent default if it's an internal anchor

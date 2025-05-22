@@ -20,8 +20,28 @@ body {
     display: flex;
     align-items: center;
     padding: 0 10%;
-    background: linear-gradient(45deg, #000000, #1a1a1a);
+    /* background: linear-gradient(45deg, #000000, #1a1a1a); */ /* Removed gradient */
     padding-bottom: 0; /* Remove extra padding that was for the indicator */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Adjust opacity as needed */
+    z-index: 0; /* Ensure it's above the video but below the content */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the area, cropping if necessary */
+    z-index: -1; /* Places the video behind the content */
 }
 
 .hero::before {
@@ -112,82 +132,6 @@ body {
 .hero:hover .highlight-word {
     animation: pulse 2s infinite;
 }
-
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
-  
-  .preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .preloader-content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo-animation {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .logo-part {
-    display: block;
-    font-weight: 600;
-    letter-spacing: 2px;
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  
-  .zozo {
-    color: white;
-    font-size: 2.5rem;
-    animation: slideInZozo 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    margin-right: 0.5rem;
-  }
-  
-  .securite {
-    color: #FF3333;
-    font-size: 2.5rem;
-    animation: slideInSecurite 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-  }
-  
-  @keyframes slideInZozo {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInSecurite {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
 
 .security-animation {
     position: absolute;
@@ -1318,13 +1262,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: grayscale(100%) brightness(200%);
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
 }
 
 .partner-logo:hover {
-    filter: grayscale(0%) brightness(100%);
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.05); /* ADD upward movement */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ADD a subtle shadow */
 }
 
 .partner-logo img {
@@ -1459,18 +1402,20 @@ body {
     text-align: center;
     justify-content: center;
     width: fit-content;
-    background: rgba(255, 51, 51, 0.1);
-    border: 1px solid rgba(255, 51, 51, 0.3);
+    background: rgba(255, 51, 51, 0.15); /* Slightly more opaque background */
+    border: 1px solid rgba(255, 51, 51, 0.6); /* Brighter border */
     color: white;
     text-decoration: none;
     border-radius: 50px;
     transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    text-shadow: 0 0 8px rgba(255, 51, 51, 0.5); /* Add a subtle glow */
 }
 
 .main-cta:hover {
     background: #FF3333;
     transform: translateY(-2px);
     border-color: #FF3333;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.7); /* Enhance glow on hover */
 }
 
 /* Schedule button (Réserver un rendez-vous) */
@@ -2281,7 +2226,7 @@ body {
     font-size: 3rem; /* Smaller title for internal pages */
 }
 
-.faq-page-container {
+.faq-page_container {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem 1rem 4rem 1rem; /* Add padding around the FAQ content */
@@ -2361,7 +2306,7 @@ body {
     .hero-small .hero-title {
         font-size: 2.5rem;
     }
-    .faq-page-container {
+    .faq-page_container {
         padding: 1rem 0.5rem 3rem 0.5rem;
     }
     .faq-item summary {

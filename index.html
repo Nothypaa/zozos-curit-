@@ -104,24 +104,6 @@
 </head>
 <body>
 
-    <div class="preloader">
-        <div class="preloader-content">
-          <div class="logo-animation">
-            <span class="logo-part zozo">ZOZO</span>
-            <span class="logo-part securite">SÉCURITÉ</span>
-          </div>
-          <div class="security-animation">
-            <!-- Camera lens elements -->
-            <div class="lens-outer"></div>
-            <div class="lens-middle"></div>
-            <div class="lens-inner"></div>
-            <!-- Security scan lines -->
-            <div class="scan-line"></div>
-            <div class="scan-line delayed"></div>
-          </div>
-        </div>
-    </div>
-
     <!-- Cursor elements -->
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
@@ -176,6 +158,11 @@
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="images/videoheader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div> <!-- Add this line for the overlay -->
         <div class="hero-content">
             <h1 class="hero-title"><span class="highlight-word">Protégeons</span> ce qui compte vraiment pour <span class="highlight-word">vous</span></h1>
             <p class="hero-subtitle">Installation &amp; Expert en Réparation de Systèmes de Sécurité</p>
