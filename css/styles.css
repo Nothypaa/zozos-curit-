@@ -565,6 +565,27 @@ body {
     background-clip: text; /* Added standard property */
     -webkit-text-fill-color: transparent;
 }
+    
+/* Style for the "CONTACTEZ" part of the section title */
+.section-title .highlight-contactez {
+    color: #FF3333; /* Set color to red */
+    -webkit-text-fill-color: #FF3333; /* Ensure red fill for WebKit */
+    background: transparent;          /* Remove any background from parent */
+    background-clip: initial;         /* Reset background-clip */
+    -webkit-background-clip: initial; /* Reset background-clip for WebKit */
+    animation: none; /* Remove RGB animation */
+}
+
+/* Keyframes for RGB text animation - can be removed if not used elsewhere, but left for now */
+@keyframes rgbText {
+    0% { color: #FF3333; } /* Red */
+    17% { color: #FFFF33; } /* Yellow */
+    33% { color: #33FF33; } /* Green */
+    50% { color: #33FFFF; } /* Cyan */
+    67% { color: #3333FF; } /* Blue */
+    83% { color: #FF33FF; } /* Magenta */
+    100% { color: #FF3333; } /* Back to Red */
+}
 
 .services-grid {
     display: grid; /* Restore grid display for desktop */
@@ -785,11 +806,16 @@ body {
     background: rgba(255, 51, 51, 0.1);
     border: 1px solid rgba(255, 51, 51, 0.3);
     border-radius: 50px;
-    color: white;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
     transition: all 0.3s ease;
+    animation: flashNavContact 8s infinite ease-in-out; /* Merged animation */
+
+    /* --- Enhanced Visibility --- */
+    color: #FFFF00;       /* Bright Yellow for high visibility */
+    font-size: 1.05rem;   /* Slightly increased font size */
+    font-weight: 700;     /* Bolder text */
+    letter-spacing: 0.2px;/* Add subtle letter spacing for clarity */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); /* Subtle dark shadow for definition */
 }
 
 .nav-contact:hover {
@@ -808,10 +834,6 @@ body {
         box-shadow: 0 6px 20px rgba(255, 51, 51, 0.5); /* Brighter shadow */
         transform: scale(1.03); /* Slightly larger */
     }
-}
-
-.nav-contact {
-    animation: flashNavContact 8s infinite ease-in-out;
 }
 
 .nav-social-links {
@@ -2367,10 +2389,10 @@ body {
 }
 
 .faq-item p {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding: 0 1.5rem 1.5rem  1.5rem;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
-    margin: 0;
+       margin: 0;
 }
 
 /* Thank You Page Specific Styles */
