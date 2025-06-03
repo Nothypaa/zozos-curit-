@@ -489,3 +489,137 @@ if (cookieConsentBanner && acceptCookiesBtn && rejectCookiesBtn) {
     // Decide based on compliance needs. Safest is to NOT load GA if banner fails.
 } // <-- Added missing closing brace
 // --- End Cookie Consent Banner Logic ---
+
+// --- FAQ Page Enhanced Interactions ---
+document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced FAQ functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqItems.length > 0) {
+        // Add enhanced interactions for FAQ items
+        faqItems.forEach((item, index) => {
+            const summary = item.querySelector('summary');
+            const content = item.querySelector('.faq-content');
+            
+            if (summary && content) {
+                // Add smooth toggle with enhanced animation
+                summary.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close other open items for accordion behavior
+                    faqItems.forEach((otherItem, otherIndex) => {
+                        if (otherIndex !== index && otherItem.hasAttribute('open')) {
+                            otherItem.removeAttribute('open');
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (item.hasAttribute('open')) {
+                        item.removeAttribute('open');
+                        item.classList.remove('active');
+                    } else {
+                        item.setAttribute('open', '');
+                        item.classList.add('active');
+                        
+                        // Scroll to item if it's not fully visible
+                        setTimeout(() => {
+                            const rect = item.getBoundingClientRect();
+                            if (rect.top < 100) {
+                                item.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }, 300);
+                    }
+                });
+                
+                // Add hover sound effect (visual feedback)
+                summary.addEventListener('mouseenter', function() {
+                    if (!item.hasAttribute('open')) {
+                        item.style.transform = 'translateY(-2px) scale(1.002)';
+                    }
+                });
+                
+                summary.addEventListener('mouseleave', function() {
+                    if (!item.hasAttribute('open')) {
+                        item.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            }
+        });
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'SUMMARY') {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.target.click();
+                }
+            }
+        });
+        
+        // Add search functionality (if needed in future)
+        const searchInput = document.querySelector('.faq-search');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                faqItems.forEach(item => {
+                    const summary = item.querySelector('summary');
+                    const content = item.querySelector('.faq-content p');
+                    
+                    if (summary && content) {
+                        const summaryText = summary.textContent.toLowerCase();
+                        const contentText = content.textContent.toLowerCase();
+                        
+                        if (summaryText.includes(searchTerm) || contentText.includes(searchTerm)) {
+                            item.style.display = 'block';
+                            item.style.opacity = '1';
+                        } else {
+                            item.style.display = 'none';
+                            item.style.opacity = '0';
+                        }
+                    }
+                });
+            });
+        }
+    }
+    
+    // Add intersection observer for FAQ items animation
+    const faqSection = document.querySelector('.faq-accordion-section');
+    if (faqSection) {
+        const faqObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll('.faq-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0) scale(1)';
+                        }, index * 100);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+        
+        faqObserver.observe(faqSection);
+    }
+    
+    // Add parallax effect to hero section (if on FAQ page)
+    const heroSmall = document.querySelector('.hero-small');
+    if (heroSmall) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            if (heroSmall.querySelector('.hero-title')) {
+                heroSmall.querySelector('.hero-title').style.transform = `translateY(${rate}px)`;
+            }
+        });
+    }
+});
+// --- End FAQ Page Enhanced Interactions ---
