@@ -8,14 +8,14 @@
     <link rel="canonical" href="https://www.zozosecurite.fr/index.html">
     <link rel="stylesheet" href="css/styles.css?v=2.1">
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/zozosécuritélogo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/zozosécuritélogo.ico" type="image/x-icon">
     <!-- SEO Meta Tags -->
     <meta name="description" content="Technicien indépendant spécialisé en installation de caméras IP, DVR/NVR et câblage structuré. Plus de 500 installations en Occitanie. Devis rapide : 07 69 61 56 21.">
     <meta name="keywords" content="sécurité, vidéosurveillance, installation caméras, DVR, NVR, câblage réseau, baie de brassage, Montpellier">
     <meta property="og:title" content="ZOZO Sécurité">
     <meta property="og:description" content="Solutions de sécurité professionnelles">
-    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:image" content="images/zozosécuritélogo.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -122,6 +122,7 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#video-surveillance" class="nav-link">Expertise</a>
                 <a href="#realisations" class="nav-link">Réalisations</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <div class="nav-contact-social">
                 <a href="tel:+33767563926" class="nav-contact" aria-label="Appeler au 07 67 56 39 26">
@@ -164,9 +165,9 @@
         <div class="hero-overlay"></div> <!-- Add this line for the overlay -->
         <div class="hero-content">
             <h1 class="hero-title"><span class="highlight-word">Protégeons</span> ce qui compte vraiment pour <span class="highlight-word">vous</span></h1>
-            <p class="hero-subtitle">Installation &amp; Expert en Réparation de Systèmes de Sécurité</p>
+            <p class="hero-subtitle">Installation &amp; Expert en Réparation de Systèmes de Sécurité à <span class="highlight-montpellier">Montpellier</span></p>
             <div class="cta-buttons">
-                <a href="#contact-form-section" class="main-cta">Discutons de votre projet →</a>
+                <a href="contact.html" class="main-cta">Discutons de votre projet →</a>
                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1uq3XNldlVkIyqdP6nE6Mrkbk6dAyTAFl6qYp4KJct5G0GeK5HQbD-UEY5NrWTdkZgklL-wR0W?gv=true" 
                    target="_blank" 
                    rel="noopener" 
@@ -216,7 +217,7 @@
                     </div>
                     <h3>Câblage & Baies réseau</h3>
                     <p>Conception et montage de baies, switchs et câblage Cat.6 pour systèmes de sécurité.</p>
-                    <a href="#contact-form-section" class="card-button">En savoir plus</a>
+                    <a href="contact.html" class="card-button">En savoir plus</a>
                 </div>
             </div>
         </div>
@@ -395,70 +396,466 @@
 
     <!-- Gallery Section -->
     <section id="realisations" class="gallery-section section-transition">
-        <h2 class="section-title">Nos Réalisations</h2>
-        <div class="slider-container">
-            <div class="slider">
-                <!-- Slides -->
-                <div class="slide">
-                    <img src="images/image1.jpg" alt="Installation vidéosurveillance commerce Montpellier">
-                    <div class="slide-content">
-                        <h3>Installation Vidéosurveillance</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
+        <div class="gallery-header">
+            <h2 class="section-title">Nos <span class="highlight-text">Réalisations</span></h2>
+            <p class="gallery-subtitle">Découvrez nos installations de sécurité et infrastructures réseau</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-category="all">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <path d="M9 9h6v6H9z"/>
+                </svg>
+                Tout afficher
+            </button>
+            <button class="filter-btn" data-category="videosurveillance">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z"/>
+                </svg>
+                Vidéosurveillance
+            </button>
+            <button class="filter-btn" data-category="network">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                </svg>
+                Réseau & Câblage
+            </button>
+        </div>
+
+        <!-- Enhanced Gallery Slider -->
+        <div class="enhanced-gallery-container">
+            <!-- Progress Bar -->
+            <div class="gallery-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="slide-counter">
+                    <span class="current-slide">1</span> / <span class="total-slides">10</span>
+                </div>
+            </div>
+
+            <!-- Main Slider -->
+            <div class="modern-slider-container">
+                <div class="modern-slider">
+                    <!-- Slides with enhanced content -->
+                    <div class="enhanced-slide" data-category="videosurveillance">
+                        <div class="slide-image-container">
+                            <img src="images/image1.jpg" alt="Installation vidéosurveillance commerce Montpellier" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z"/>
+                                </svg>
+                                VIDÉOSURVEILLANCE COMMERCIALE
+                            </div>
+                            <h3>Sécurisation Franchise | Le Kiosque à Pizza</h3>
+                            <p>Déploiement d'un système de surveillance 4K pour protéger le point de vente, sécuriser les transactions et garantir la sécurité des clients et du personnel, conformément à l'image de marque.</p>
+                            <div class="slide-tags">
+                                <span class="tag">Protection Franchise</span>
+                                <span class="tag">4K Ultra HD</span>
+                                <span class="tag">Sécurité 24/7</span>
+                                <span class="tag">Dissuasion</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="network">
+                        <div class="slide-image-container">
+                            <img src="images/image2.jpg" alt="Configuration réseau baie de brassage entreprise" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="3" x2="9" y2="21"/>
+                                </svg>
+                                Réseau & Câblage
+                            </div>
+                            <h3>Baie de Brassage Entreprise</h3>
+                            <p>Configuration réseau professionnelle avec 48 ports Cat.6 et redondance complète</p>
+                            <div class="slide-tags">
+                                <span class="tag">Cat.6</span>
+                                <span class="tag">48 ports</span>
+                                <span class="tag">Redondance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="videosurveillance">
+                        <div class="slide-image-container">
+                            <img src="images/image3.jpg" alt="Caméra dôme surveillance extérieure résidence sécurisée" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z"/>
+                                </svg>
+                                Vidéosurveillance
+                            </div>
+                            <h3>Caméra Dôme Extérieure</h3>
+                            <p>Installation discrète avec rotation 360° et zoom optique 20x pour périmètre sécurisé</p>
+                            <div class="slide-tags">
+                                <span class="tag">360° PTZ</span>
+                                <span class="tag">Zoom 20x</span>
+                                <span class="tag">Étanche IP67</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="network">
+                        <div class="slide-image-container">
+                            <img src="images/image4.jpg" alt="Distribution de câbles réseau Cat.6 pour bureaux" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="3" x2="9" y2="21"/>
+                                </svg>
+                                Réseau & Câblage
+                            </div>
+                            <h3>Câblage Structuré Bureaux</h3>
+                            <p>Distribution complète Cat.6 pour 50 postes de travail avec certification de performance</p>
+                            <div class="slide-tags">
+                                <span class="tag">50 postes</span>
+                                <span class="tag">Certifié</span>
+                                <span class="tag">Gigabit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="network">
+                        <div class="slide-image-container">
+                            <img src="images/image5.jpg" alt="Rack de brassage 48 ports et test câblage" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="3" x2="9" y2="21"/>
+                                </svg>
+                                Réseau & Câblage
+                            </div>
+                            <h3>Test de Performance Réseau</h3>
+                            <p>Validation complète avec testeur de câblage professionnel et rapport de certification</p>
+                            <div class="slide-tags">
+                                <span class="tag">Test certifié</span>
+                                <span class="tag">Rapport détaillé</span>
+                                <span class="tag">Garantie 25 ans</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="network">
+                        <div class="slide-image-container">
+                            <img src="images/image6.jpg" alt="Installation caméra surveillance discrète magasin" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="3" x2="9" y2="21"/>
+                                </svg>
+                                RÉSEAU & INFRASTRUCTURE
+                            </div>
+                            <h3>Déploiement Retail | Hypermarché Lidl</h3>
+                            <p>Installation et câblage d'une baie réseau haute-fiabilité pour supporter les systèmes critiques : caisses, gestion des stocks, téléphonie et réseau interne.</p>
+                            <div class="slide-tags">
+                                <span class="tag">Retail</span>
+                                <span class="tag">Haute Disponibilité</span>
+                                <span class="tag">Infrastructure</span>
+                                <span class="tag">TPE</span>
+                                <span class="tag">Déploiement Rapide</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="videosurveillance">
+                        <div class="slide-image-container">
+                            <img src="images/image7.jpg" alt="Vidéosurveillance NVR accès distant smartphone" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z"/>
+                                </svg>
+                                Vidéosurveillance
+                            </div>
+                            <h3>NVR avec Accès Mobile</h3>
+                            <p>Enregistreur réseau 32 canaux avec application mobile pour surveillance à distance</p>
+                            <div class="slide-tags">
+                                <span class="tag">32 canaux</span>
+                                <span class="tag">App mobile</span>
+                                <span class="tag">Cloud sécurisé</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="videosurveillance">
+                        <div class="slide-image-container">
+                            <img src="images/image8.jpeg" alt="Système Speed Dome Dahua - Commerce Aldi" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z"/>
+                                </svg>
+                                Vidéosurveillance
+                            </div>
+                            <h3>Speed Dome Dahua - Aldi</h3>
+                            <p>Caméra haute vitesse avec suivi automatique et reconnaissance de plaques d'immatriculation</p>
+                            <div class="slide-tags">
+                                <span class="tag">Speed Dome</span>
+                                <span class="tag">Auto-tracking</span>
+                                <span class="tag">LPR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="network">
+                        <div class="slide-image-container">
+                            <img src="images/image9.jpeg" alt="Caméra PTZ Haute Sécurité" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="3" x2="9" y2="21"/>
+                                </svg>
+                                PROTECTION & CONTRÔLE
+                            </div>
+                            <h3>Caméra PTZ Haute Sécurité</h3>
+                            <p>Surveillance intelligente avec suivi automatique des cibles et vision nocturne couleur pour les sites critiques. Multi-Objectif Vision Nocturne IA Extérieur.</p>
+                            <div class="slide-tags">
+                                <span class="tag">PTZ</span>
+                                <span class="tag">Haute Sécurité</span>
+                                <span class="tag">Vision Nocturne Couleur</span>
+                                <span class="tag">IA</span>
+                                <span class="tag">Suivi Automatique</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="enhanced-slide" data-category="videosurveillance">
+                        <div class="slide-image-container">
+                            <img src="images/image10.jpeg" alt="Installation complète vidéosurveillance magasin retail" loading="lazy">
+                            <div class="image-overlay"></div>
+                            <button class="zoom-btn" aria-label="Agrandir l'image">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="enhanced-slide-content">
+                            <div class="slide-category">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z"/>
+                                </svg>
+                                SURVEILLANCE RÉSIDENTIELLE
+                            </div>
+                            <h3>Contrôle Piscine & Accès</h3>
+                            <p>Gardez un œil sur votre porte et les abords de la piscine avec une clarté HD, de jour comme de nuit, directement depuis votre smartphone.</p>
+                            <div class="slide-tags">
+                                <span class="tag">Piscine</span>
+                                <span class="tag">Haute Définition</span>
+                                <span class="tag">Accès à distance</span>
+                                <span class="tag">Sécurité Familiale</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="slide">
-                    <img src="images/image2.jpg" alt="Configuration réseau baie de brassage entreprise">
-                    <div class="slide-content">
-                        <h3>Configuration Réseau</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
-                    </div>
-                </div>
+                <!-- Enhanced Navigation Buttons -->
+                <button class="enhanced-nav-btn prev-btn" aria-label="Slide précédente">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="enhanced-nav-btn next-btn" aria-label="Slide suivante">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
 
-                <div class="slide">
-                    <img src="images/image3.jpg" alt="Caméra dôme surveillance extérieure résidence sécurisée">
-                    <div class="slide-content">
-                        <h3>Installation Vidéosurveillance</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
+            <!-- Thumbnail Navigation -->
+            <div class="thumbnail-navigation">
+                <div class="thumbnail-track">
+                    <div class="thumbnail-item active" data-slide="0">
+                        <img src="images/image1.jpg" alt="Thumbnail 1" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
                     </div>
-                </div>
-
-                <div class="slide">
-                    <img src="images/image4.jpg" alt="Distribution de câbles réseau Cat.6 pour bureaux">
-                    <div class="slide-content">
-                        <h3>Distribution de Câbles</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
+                    <div class="thumbnail-item" data-slide="1">
+                        <img src="images/image2.jpg" alt="Thumbnail 2" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
                     </div>
-                </div>
-
-                <div class="slide">
-                    <img src="images/image5.jpg" alt="Rack de brassage 48 ports et test câblage">
-                    <div class="slide-content">
-                        <h3>Rack de Brassage & Test de Câblage</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
+                    <div class="thumbnail-item" data-slide="2">
+                        <img src="images/image3.jpg" alt="Thumbnail 3" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
                     </div>
-                </div>
-
-                <div class="slide">
-                    <img src="images/image6.jpg" alt="Installation caméra surveillance discrète magasin">
-                    <div class="slide-content">
-                        <h3>Installation Vidéosurveillance</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
+                    <div class="thumbnail-item" data-slide="3">
+                        <img src="images/image4.jpg" alt="Thumbnail 4" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
                     </div>
-                </div>
-
-                <div class="slide">
-                    <img src="images/image7.jpg" alt="Vidéosurveillance NVR accès distant smartphone">
-                    <div class="slide-content">
-                        <h3>Installation Vidéosurveillance</h3>
-                        <p>Sécurité optimale, pour commerces et particuliers</p>
+                    <div class="thumbnail-item" data-slide="4">
+                        <img src="images/image5.jpg" alt="Thumbnail 5" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
+                    </div>
+                    <div class="thumbnail-item" data-slide="5">
+                        <img src="images/image6.jpg" alt="Thumbnail 6" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
+                    </div>
+                    <div class="thumbnail-item" data-slide="6">
+                        <img src="images/image7.jpg" alt="Thumbnail 7" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
+                    </div>
+                    <div class="thumbnail-item" data-slide="7">
+                        <img src="images/image8.jpeg" alt="Thumbnail 8" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
+                    </div>
+                    <div class="thumbnail-item" data-slide="8">
+                        <img src="images/image9.jpeg" alt="Thumbnail 9" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
+                    </div>
+                    <div class="thumbnail-item" data-slide="9">
+                        <img src="images/image10.jpeg" alt="Thumbnail 10" loading="lazy">
+                        <div class="thumbnail-overlay"></div>
                     </div>
                 </div>
             </div>
-            <button class="slider-button prev" aria-label="Image précédente">❮</button>
-            <button class="slider-button next" aria-label="Image suivante">❯</button>
         </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Fermer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="lightbox-image-container">
+                <img class="lightbox-image" src="" alt="">
+                <div class="lightbox-controls">
+                    <button class="lightbox-prev" aria-label="Image précédente">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="lightbox-next" aria-label="Image suivante">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="lightbox-info">
+                <h3 class="lightbox-title"></h3>
+                <p class="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- Locations and Contact Section -->
     <section id="contact" class="locations-section">
@@ -501,6 +898,7 @@
         <a href="#services" class="nav-link">Services</a>
         <a href="#video-surveillance" class="nav-link">Expertise</a>
         <a href="#realisations" class="nav-link">Réalisations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
 
         <a href="tel:+33767563926" class="mobile-contact-link nav-link" aria-label="Appeler au 07 67 56 39 26">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
@@ -532,46 +930,6 @@
         </div>
     </nav>
     
-    <!-- Contact Form Section -->
-
-    <section id="contact-form-section" class="contact-form-section section-transition">
-        <h2 class="section-title"><span class="highlight-contactez">CONTACTEZ</span>-NOUS</h2>
-        <p class="section-subtitle">Envoyez-nous un message directement via le formulaire ci-dessous.</p>
-        
-        <!-- Formspree Endpoint -->
-         
-        <form id="secure-contact-form" action="https://formspree.io/f/mblojdjg" method="POST" class="contact-form">
-            
-            <div class="form-row">
-                <div class="form-group half-width">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" required placeholder="Votre nom complet">
-                </div>
-                <div class="form-group half-width">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required placeholder="Votre adresse email"> 
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="subject">Sujet :</label>
-                <input type="text" id="subject" name="subject" placeholder="Objet de votre message (optionnel)">
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="6" required placeholder="Écrivez votre message ici..."></textarea>
-            </div>
-
-            <div class="form-group submit-group">
-                <button type="submit" class="cta-button form-submit-button">Envoyer le message →</button> 
-            </div>
-            
-            <!-- Status message area -->
-            <p id="form-status" class="form-status"></p> 
-        </form>
-    </section>
-
     <!-- Cookie Consent Banner -->
     <div id="cookie-consent-banner" class="cookie-consent-banner">
         <p>Ce site utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic. Acceptez-vous l'utilisation de cookies d'analyse ? <a href="politique-confidentialite.html#cookies" target="_blank">En savoir plus</a></p>
