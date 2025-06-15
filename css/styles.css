@@ -1355,10 +1355,22 @@ body {
     border-radius: 20px;
     padding: 2rem 3rem;
     transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    min-height: 120px; /* Ensure consistent height for both cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
 }
 
 /* Special red glow effect for Castelnau location */
 #castelnau-location {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.8);
+}
+
+/* Same styling for Montpellier location to match size */
+#montpellier-location {
     color: white;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
@@ -1589,7 +1601,7 @@ body {
 /* Slide Image Container */
 .slide-image-container {
     width: 100%; /* Full width for better image display */
-    height: 600px; /* Increased height to make image frames even bigger */
+    height: 700px; /* Increased height to make image frames bigger */
     position: relative;
     overflow: hidden;
 }
@@ -1602,7 +1614,7 @@ body {
 }
 
 .enhanced-slide.active .slide-image-container img {
-    transform: scale(1.05);
+    transform: scale(1.02); /* Reduced zoom effect from 1.05 to 1.02 for less zoom */
 }
 
 .image-overlay {
@@ -2002,7 +2014,7 @@ body {
     }
     
     .slide-image-container {
-        height: 450px; /* Increased height for tablets */
+        height: 550px; /* Increased height for tablets - was 450px */
     }
     
     .enhanced-slide-content {
@@ -2030,7 +2042,7 @@ body {
     }
     
     .slide-image-container {
-        height: 350px; /* Increased height for mobile */
+        height: 450px; /* Increased height for mobile - was 350px */
     }
     
     .enhanced-slide-content {
@@ -2087,7 +2099,7 @@ body {
     }
     
     .slide-image-container {
-        height: 280px; /* Increased height for small screens */
+        height: 380px; /* Increased height for small screens - was 280px */
     }
     
     .enhanced-slide-content {
@@ -3128,6 +3140,18 @@ body {
     object-position: center 60%; /* Ajuste ce pourcentage pour déplacer l'image vers le haut ou le bas */
 }
 
+/* Custom CSS for image2.jpg - Network Rack Cabling */
+.enhanced-slide[data-category="network"] .slide-image-container img[src="images/image2.jpg"] {
+    object-fit: cover !important; /* Use cover to allow cropping */
+    object-position: center top; /* Position to show top/middle part, cutting bottom */
+    background: rgba(0, 0, 0, 0.1); /* Optional: subtle background for letterboxing */
+}
+
+/* Prevent additional scaling on active slide for image2.jpg */
+.enhanced-slide.active .slide-image-container img[src="images/image2.jpg"] {
+    transform: scale(0.95) !important; /* Less zoom to show more cable details */
+}
+
 /* Custom CSS for image9.jpeg - PTZ Camera positioning */
 .enhanced-slide[data-category="videosurveillance"] .slide-image-container img[src="images/image9.jpeg"] {
     object-fit: contain !important; /* Show the full image without cropping */
@@ -3137,7 +3161,19 @@ body {
 
 /* Prevent additional scaling on active slide for image9.jpeg */
 .enhanced-slide.active .slide-image-container img[src="images/image9.jpeg"] {
-    transform: scale(1) !important; /* No additional scaling */
+    transform: scale(0.95) !important; /* Even less zoom - shows more of the image */
+}
+
+/* Custom CSS for image11.jpeg - Double Camera on Pole positioning */
+.enhanced-slide[data-category="videosurveillance"] .slide-image-container img[src="images/image11.jpeg"] {
+    object-fit: contain !important; /* Show the full image without cropping */
+    object-position: center center; /* Center the image */
+    background: rgba(0, 0, 0, 0.1); /* Optional: subtle background for letterboxing */
+}
+
+/* Prevent additional scaling on active slide for image11.jpeg */
+.enhanced-slide.active .slide-image-container img[src="images/image11.jpeg"] {
+    transform: scale(0.95) !important; /* Less zoom to show more of the pole installation */
 }
 
 
