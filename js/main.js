@@ -837,3 +837,123 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 // --- End FAQ Page Enhanced Interactions ---
+
+// Enhanced image interaction effects
+document.addEventListener('DOMContentLoaded', function() {
+    const imageContainer = document.querySelector('.image-container');
+    const aboutImage = document.querySelector('.about-image');
+    const floatingBadge = document.querySelector('.floating-badge');
+    
+    if (imageContainer && aboutImage) {
+        // Add 3D tilt effect on mouse move
+        imageContainer.addEventListener('mousemove', function(e) {
+            const rect = imageContainer.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const deltaX = (e.clientX - centerX) / (rect.width / 2);
+            const deltaY = (e.clientY - centerY) / (rect.height / 2);
+            
+            const rotateX = deltaY * -10; // Tilt up/down
+            const rotateY = deltaX * 10;  // Tilt left/right
+            
+            imageContainer.style.transform = `
+                translateY(-5px) 
+                scale(1.02) 
+                perspective(1000px) 
+                rotateX(${rotateX}deg) 
+                rotateY(${rotateY}deg)
+            `;
+        });
+        
+        // Reset transform on mouse leave
+        imageContainer.addEventListener('mouseleave', function() {
+            imageContainer.style.transform = 'translateY(0) scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+        
+        // Add click ripple effect
+        imageContainer.addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            const rect = imageContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+                transform: translate(-50%, -50%) scale(0);
+                left: ${x}px;
+                top: ${y}px;
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                z-index: 10;
+            `;
+            
+            imageContainer.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+        
+        // Add parallax effect to floating badge
+        if (floatingBadge) {
+            imageContainer.addEventListener('mousemove', function(e) {
+                const rect = imageContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const deltaX = (e.clientX - centerX) / (rect.width / 2);
+                const deltaY = (e.clientY - centerY) / (rect.height / 2);
+                
+                floatingBadge.style.transform = `translate(${deltaX * 5}px, ${deltaY * 5}px)`;
+            });
+            
+            imageContainer.addEventListener('mouseleave', function() {
+                floatingBadge.style.transform = 'translate(0px, 0px)';
+            });
+        }
+        
+        // Add scroll-based animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    imageContainer.style.animation = 'slideInScale 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards';
+                }
+            });
+        }, observerOptions);
+        
+        imageObserver.observe(imageContainer);
+    }
+});
+
+// Add CSS keyframes for ripple and slide animations via JavaScript
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes ripple {
+        to {
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInScale {
+        0% {
+            opacity: 0;
+            transform: translateY(50px) scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+`;
+document.head.appendChild(style);
