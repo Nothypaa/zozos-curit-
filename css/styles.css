@@ -1,5 +1,8 @@
 /*styles.css, i want every css code to be stored here and not in the html or js*/
 
+/* Font Import Fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -1941,8 +1944,9 @@ body {
 
 .logo-track {
     display: flex;
-    animation: scroll 30s linear infinite;
     gap: 4rem;
+    will-change: transform;
+    /* Remove CSS animation - will be controlled by JavaScript */
 }
 
 .partners-section .partner-logo {
@@ -1973,11 +1977,6 @@ body {
     100% {
         transform: translateX(calc(-225px * 7 - 4rem * 7));
     }
-}
-
-/* Add hover pause */
-.logo-carousel:hover .logo-track {
-    animation-play-state: paused;
 }
 
 .scroll-top {
@@ -2518,9 +2517,10 @@ body {
 }
 
 /* About Section Styles */
-.about-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+.about-section,
+#qui-sommes-nous.about-section {
+    padding: 100px 0 !important;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
     position: relative;
 }
 
@@ -2541,8 +2541,9 @@ body {
     padding: 0 20px;
 }
 
-.about-content {
-    display: grid;
+.about-content,
+.about-section .about-content {
+    display: grid !important;
     grid-template-columns: 2fr 1fr;
     gap: 80px;
     align-items: start;
@@ -2573,8 +2574,9 @@ body {
     margin-bottom: 3rem;
 }
 
-.about-item {
-    display: flex;
+.about-item,
+.about-section .about-item {
+    display: flex !important;
     gap: 20px;
     margin-bottom: 2.5rem;
     padding: 25px;
@@ -2591,12 +2593,13 @@ body {
 }
 
 /* Enhanced About Section Icons - Red and Yellow Glow Theme */
-.about-icon {
+.about-icon,
+.about-section .about-icon {
     flex-shrink: 0;
     width: 80px;
     height: 80px;
     border-radius: 20px;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -3279,5 +3282,7 @@ body {
         gap: 6px;
     }
 }
+
+
 
 

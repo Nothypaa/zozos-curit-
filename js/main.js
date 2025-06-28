@@ -957,3 +957,207 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Smooth logo carousel animation control with manual transform
+const logoCarousel = document.querySelector('.logo-carousel');
+const logoTrack = document.querySelector('.logo-track');
+
+if (logoCarousel && logoTrack) {
+    let currentPosition = 0;
+    let targetSpeed = 1; // Normal speed multiplier
+    let currentSpeed = 1;
+    let isRunning = true;
+    
+    // Calculate the total width to scroll (7 logos + gaps)
+    const logoWidth = 225; // Width of each logo
+    const gap = 64; // 4rem = 64px
+    const totalWidth = (logoWidth + gap) * 7; // 7 logos (first set)
+    
+    function animate() {
+        if (!isRunning) return;
+        
+        // Smooth speed interpolation
+        const speedDiff = targetSpeed - currentSpeed;
+        currentSpeed += speedDiff * 0.08; // Smooth transition
+        
+        // Move the carousel
+        currentPosition -= 0.5 * currentSpeed; // Base speed
+        
+        // Reset position when we've scrolled through the first set
+        if (Math.abs(currentPosition) >= totalWidth) {
+            currentPosition = 0;
+        }
+        
+        // Apply transform
+        logoTrack.style.transform = `translateX(${currentPosition}px)`;
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Start the animation
+    animate();
+    
+    // Hover controls
+    logoCarousel.addEventListener('mouseenter', () => {
+        targetSpeed = 0.25; // Slow down to 25% speed
+    });
+    
+    logoCarousel.addEventListener('mouseleave', () => {
+        targetSpeed = 1; // Return to normal speed
+    });
+}
+
+// Before/After Image Comparison Slider
+function initBeforeAfterSlider() {
+    const comparisonSlider = document.getElementById('comparisonSlider');
+    const sliderHandle = document.getElementById('sliderHandle');
+    const afterImage = comparisonSlider?.querySelector('.after-image');
+    
+    if (!comparisonSlider || !sliderHandle || !afterImage) return;
+    
+    let isDragging = false;
+    let sliderRect = comparisonSlider.getBoundingClientRect();
+    let animationId = null;
+    let currentPercentage = 50;
+    
+    // Update slider position with optimized rendering
+    function updateSlider(percentage) {
+        // Clamp percentage between 0 and 100
+        percentage = Math.max(0, Math.min(100, percentage));
+        currentPercentage = percentage;
+        
+        // Cancel any pending animation frame
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        
+        // Use requestAnimationFrame for smooth updates
+        animationId = requestAnimationFrame(() => {
+            // Update handle position
+            sliderHandle.style.left = percentage + '%';
+            
+            // Update clip-path for after image (reveals from left to right)
+            afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+            
+            // Update aria value for accessibility
+            comparisonSlider.setAttribute('aria-valuenow', Math.round(percentage));
+        });
+    }
+    
+    // Get position percentage from mouse/touch event
+    function getPercentageFromEvent(clientX) {
+        const rect = comparisonSlider.getBoundingClientRect();
+        const x = clientX - rect.left;
+        return (x / rect.width) * 100;
+    }
+    
+    // Mouse events
+    function handleMouseDown(e) {
+        e.preventDefault();
+        isDragging = true;
+        sliderRect = comparisonSlider.getBoundingClientRect();
+        comparisonSlider.classList.add('dragging');
+        document.body.style.cursor = 'ew-resize';
+        
+        // Update position immediately
+        const percentage = getPercentageFromEvent(e.clientX);
+        updateSlider(percentage);
+    }
+    
+    function handleMouseMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        // Get percentage and update immediately for real-time response
+        const percentage = getPercentageFromEvent(e.clientX);
+        updateSlider(percentage);
+    }
+    
+    function handleMouseUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        comparisonSlider.classList.remove('dragging');
+        document.body.style.cursor = '';
+    }
+    
+    // Touch events for mobile
+    function handleTouchStart(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        handleMouseDown(touch);
+    }
+    
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        
+        // Get percentage and update immediately for real-time response
+        const percentage = getPercentageFromEvent(touch.clientX);
+        updateSlider(percentage);
+    }
+    
+    function handleTouchEnd(e) {
+        e.preventDefault();
+        handleMouseUp();
+    }
+    
+    // Click to position
+    function handleClick(e) {
+        if (e.target === sliderHandle || sliderHandle.contains(e.target)) return;
+        
+        const percentage = getPercentageFromEvent(e.clientX);
+        updateSlider(percentage);
+    }
+    
+    // Update slider rect on window resize
+    function handleResize() {
+        sliderRect = comparisonSlider.getBoundingClientRect();
+    }
+    
+    // Event listeners for handle
+    sliderHandle.addEventListener('mousedown', handleMouseDown);
+    sliderHandle.addEventListener('touchstart', handleTouchStart, { passive: false });
+    
+    // Event listeners for slider area
+    comparisonSlider.addEventListener('click', handleClick);
+    comparisonSlider.addEventListener('touchstart', handleTouchStart, { passive: false });
+    
+    // Global event listeners
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: false });
+    
+    // Window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Initialize at 50% position
+    updateSlider(50);
+    
+    // Add keyboard support
+    comparisonSlider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            const currentPos = parseFloat(sliderHandle.style.left) || 50;
+            updateSlider(Math.max(0, currentPos - 5));
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            const currentPos = parseFloat(sliderHandle.style.left) || 50;
+            updateSlider(Math.min(100, currentPos + 5));
+        }
+    });
+    
+    // Make slider focusable for keyboard navigation
+    comparisonSlider.setAttribute('tabindex', '0');
+    comparisonSlider.setAttribute('role', 'slider');
+    comparisonSlider.setAttribute('aria-label', 'Faire glisser pour comparer les images avant et après');
+    comparisonSlider.setAttribute('aria-valuemin', '0');
+    comparisonSlider.setAttribute('aria-valuemax', '100');
+    comparisonSlider.setAttribute('aria-valuenow', '50');
+    
+    // Aria-valuenow is now handled within the updateSlider function
+}
+
+// Initialize the before/after slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', initBeforeAfterSlider);
