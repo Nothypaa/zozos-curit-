@@ -367,6 +367,23 @@
     // Initialize the gallery
     initGallery();
 
+    // Google Reviews - Toggle Read More/Less functionality
+    window.toggleReviewText = function(button) {
+        const reviewText = button.parentElement;
+        const fullText = reviewText.getAttribute('data-full-text');
+        const isExpanded = reviewText.classList.contains('expanded');
+        
+        if (isExpanded) {
+            // Collapse the text
+            reviewText.innerHTML = fullText.substring(0, 100) + '...<button class="read-more-btn" onclick="toggleReviewText(this)">Lire plus</button>';
+            reviewText.classList.remove('expanded');
+        } else {
+            // Expand the text
+            reviewText.innerHTML = fullText + '<button class="read-more-btn" onclick="toggleReviewText(this)">Lire moins</button>';
+            reviewText.classList.add('expanded');
+        }
+    };
+
 
 
     // Scroll to top functionality
