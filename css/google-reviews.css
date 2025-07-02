@@ -1,7 +1,10 @@
-/* Google Reviews Section Styles */
+/* Apple-Inspired Liquid Glass Google Reviews Section */
 .google-reviews-section {
-    padding: 100px 0;
-    background: #000;
+    padding: 120px 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 51, 51, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 51, 51, 0.02) 0%, transparent 50%),
+        linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
     position: relative;
     overflow: hidden;
 }
@@ -13,9 +16,16 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.1;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(255, 51, 51, 0.04) 0%, transparent 70%),
+        radial-gradient(circle at 70% 60%, rgba(255, 51, 51, 0.03) 0%, transparent 70%);
     pointer-events: none;
+    animation: glassShimmer 8s ease-in-out infinite;
+}
+
+@keyframes glassShimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
 }
 
 .reviews-container {
@@ -26,201 +36,257 @@
     z-index: 1;
 }
 
+/* Premium Glass Header */
 .reviews-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .reviews-title {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 600;
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     position: relative;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .reviews-title .highlight-text {
     color: #ff3333;
     position: relative;
+    background: linear-gradient(135deg, #ff3333, #ff5555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.3);
 }
 
 .reviews-subtitle {
-    font-size: 1.2rem;
-    color: #cccccc;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 650px;
+    margin: 0 auto 50px;
     line-height: 1.6;
+    letter-spacing: 0.01em;
 }
 
+/* Premium Google Rating Summary Glass Container */
 .google-rating-summary {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 24px 40px;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 550px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: fadeInScale 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s backwards;
+}
+
+.google-rating-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.05) 0%, transparent 50%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.google-rating-summary:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 51, 51, 0.1);
+}
+
+.google-rating-summary:hover::before {
+    opacity: 1;
 }
 
 .google-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 600;
+    gap: 10px;
+    font-weight: 500;
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
 }
 
 .google-logo svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .rating-display {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .rating-stars {
     display: flex;
-    gap: 2px;
+    gap: 4px;
 }
 
 .star {
-    width: 20px;
-    height: 20px;
-    fill: #FBBC04;
+    width: 26px;
+    height: 26px;
+    fill: #FFD700;
+    filter: 
+        drop-shadow(0 0 12px rgba(255, 215, 0, 0.6))
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: starGlow 3s ease-in-out infinite;
 }
 
-.star.empty {
-    fill: rgba(255, 255, 255, 0.2);
+@keyframes starGlow {
+    0%, 100% {
+        filter: 
+            drop-shadow(0 0 12px rgba(255, 215, 0, 0.6))
+            drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    50% {
+        filter: 
+            drop-shadow(0 0 18px rgba(255, 215, 0, 0.8))
+            drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+    }
+}
+
+.google-rating-summary:hover .star {
+    filter: 
+        drop-shadow(0 0 20px rgba(255, 215, 0, 0.9))
+        drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    transform: scale(1.1);
 }
 
 .rating-text {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 600;
     color: #ffffff;
+    letter-spacing: -0.01em;
 }
 
 .review-count {
-    font-size: 0.95rem;
-    color: #cccccc;
-}
-
-/* Loading State */
-.reviews-loading {
-    display: none;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(255, 51, 51, 0.2);
-    border-top: 3px solid #ff3333;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.loading-text {
-    color: #cccccc;
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-/* Error State */
-.reviews-error {
-    display: none;
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(255, 51, 51, 0.1);
-    border: 1px solid rgba(255, 51, 51, 0.2);
-    border-radius: 15px;
-    margin: 20px 0;
-}
-
-.error-icon {
-    width: 48px;
-    height: 48px;
-    fill: #ff3333;
-    margin: 0 auto 20px;
-    display: block;
-}
-
-.error-text {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin: 0 0 20px;
-}
-
-.retry-btn {
-    background: linear-gradient(45deg, #ff3333, #ff5555);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.retry-btn:hover {
-    background: linear-gradient(45deg, #ff5555, #ff7777);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 51, 51, 0.3);
-}
-
-/* Reviews Grid */
+/* Premium Glass Cards Grid */
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
 }
 
+/* Liquid Glass Review Cards */
 .review-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 25px;
-    transition: all 0.3s ease;
+    border-radius: 24px;
+    padding: 32px;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Glass Depth Layers */
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.review-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.03) 0%, transparent 50%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .review-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 51, 51, 0.3);
+    transform: translateY(-12px) scale(1.01) rotate(0.5deg);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 32px 64px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 51, 51, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+.review-card:hover::before {
+    opacity: 1;
+}
+
+.review-card:hover::after {
+    opacity: 1;
+}
+
+/* Premium Review Header */
 .review-header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .reviewer-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
     object-fit: cover;
-    border: 2px solid rgba(255, 51, 51, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.review-card:hover .reviewer-avatar {
+    border-color: rgba(255, 51, 51, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .reviewer-info {
@@ -230,30 +296,98 @@
 .reviewer-name {
     font-weight: 600;
     color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 4px;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+    transition: color 0.3s ease;
+}
+
+.review-card:hover .reviewer-name {
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .review-date {
-    color: #cccccc;
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 400;
 }
 
+.new-badge {
+    background: linear-gradient(135deg, #ff3333, #ff5555);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 8px rgba(255, 51, 51, 0.3);
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 4px 8px rgba(255, 51, 51, 0.3); }
+    50% { box-shadow: 0 4px 16px rgba(255, 51, 51, 0.5); }
+}
+
+/* Premium Star Rating */
 .review-rating {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.review-rating .rating-stars {
+    display: flex;
+    gap: 2px;
 }
 
 .review-rating .star {
-    width: 16px;
-    height: 16px;
-    fill: #FBBC04;
+    width: 22px;
+    height: 22px;
+    fill: #FFD700;
+    filter: 
+        drop-shadow(0 0 8px rgba(255, 215, 0, 0.5))
+        drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: starGlowSubtle 4s ease-in-out infinite;
 }
 
+@keyframes starGlowSubtle {
+    0%, 100% {
+        filter: 
+            drop-shadow(0 0 8px rgba(255, 215, 0, 0.5))
+            drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+    }
+    50% {
+        filter: 
+            drop-shadow(0 0 12px rgba(255, 215, 0, 0.7))
+            drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
+    }
+}
+
+.review-card:hover .review-rating .star {
+    filter: 
+        drop-shadow(0 0 16px rgba(255, 215, 0, 0.8))
+        drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+    transform: scale(1.15) rotate(5deg);
+    animation: none;
+}
+
+/* Enhanced Review Text */
 .review-text {
-    color: #e0e0e0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.65;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.01em;
+    transition: color 0.3s ease;
+}
+
+.review-card:hover .review-text {
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .review-text.expanded {
@@ -268,86 +402,453 @@
     font-weight: 600;
     font-size: 0.9rem;
     padding: 0;
-    margin-left: 5px;
-    transition: color 0.3s ease;
+    margin-left: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.read-more-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ff3333;
+    transition: width 0.3s ease;
 }
 
 .read-more-btn:hover {
     color: #ff5555;
+    transform: translateX(2px);
 }
 
+.read-more-btn:hover::after {
+    width: 100%;
+}
+
+/* Premium Google Badge */
 .google-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: #cccccc;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.review-card:hover .google-badge {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .google-icon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
-.fallback-note {
-    display: none;
+/* Premium CTA Section */
+.reviews-cta {
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: #cccccc;
-    font-size: 0.9rem;
-    font-style: italic;
+    margin-top: 80px;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s backwards;
 }
 
-/* Responsive Design */
+.google-reviews-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.01em;
+}
+
+.google-reviews-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: -1;
+}
+
+.google-reviews-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.google-reviews-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.google-reviews-btn:hover::before {
+    width: 100%;
+}
+
+.google-reviews-btn:hover::after {
+    opacity: 1;
+}
+
+.google-icon-btn {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.arrow-icon {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex-shrink: 0;
+}
+
+.google-reviews-btn:hover .arrow-icon {
+    transform: translate(3px, -3px) rotate(5deg);
+}
+
+.reviews-disclaimer {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Premium Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive Glass Design */
 @media (max-width: 768px) {
     .google-reviews-section {
-        padding: 60px 0;
+        padding: 80px 0;
     }
     
     .reviews-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
     .reviews-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .google-rating-summary {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        padding: 20px 24px;
     }
     
+    .star {
+        width: 24px;
+        height: 24px;
+        filter: 
+            drop-shadow(0 0 10px rgba(255, 215, 0, 0.6))
+            drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    
+    .review-rating .star {
+        width: 22px;
+        height: 22px;
+        filter: 
+            drop-shadow(0 0 8px rgba(255, 215, 0, 0.5))
+            drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+    }
+    
+    /* Keep grid for tablet */
     .reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 40px;
     }
     
     .review-card {
-        padding: 20px;
+        padding: 24px;
+        border-radius: 20px;
+    }
+    
+    .review-card:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+    
+    .reviews-cta {
+        margin-top: 50px;
+    }
+    
+    .google-reviews-btn {
+        padding: 16px 28px;
+        font-size: 1rem;
+        gap: 14px;
     }
 }
 
+/* Apple-Style Horizontal Scroll for Mobile */
 @media (max-width: 480px) {
     .reviews-container {
-        padding: 0 15px;
+        padding: 0 0;
+    }
+    
+    .reviews-header {
+        padding: 0 20px;
+        margin-bottom: 60px;
     }
     
     .reviews-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .google-rating-summary {
-        padding: 15px 20px;
+        padding: 18px 20px;
     }
     
+    .star {
+        width: 22px;
+        height: 22px;
+        filter: 
+            drop-shadow(0 0 8px rgba(255, 215, 0, 0.5))
+            drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+    }
+    
+    .review-rating .star {
+        width: 20px;
+        height: 20px;
+        filter: 
+            drop-shadow(0 0 7px rgba(255, 215, 0, 0.5))
+            drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+    }
+    
+    /* Horizontal Scroll Container */
+    .reviews-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+        margin-top: 40px;
+        position: relative;
+        /* Ensure transparent background for glass effects */
+        background: transparent;
+    }
+    
+    /* Hide scrollbar completely */
+    .reviews-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .reviews-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    /* Fixed width cards for horizontal scroll */
     .review-card {
-        padding: 15px;
+        min-width: 290px;
+        max-width: 290px;
+        flex-shrink: 0;
+        padding: 24px;
+        border-radius: 20px;
+        scroll-snap-align: start;
+        position: relative;
+        z-index: 2;
+        /* Ensure glass effect is maintained on mobile */
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Disable hover effects on mobile for better touch */
+    .review-card:hover {
+        transform: none;
+    }
+    
+    /* Apple-style fade edges - positioned to not interfere with cards */
+    .reviews-grid::before,
+    .reviews-grid::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 20px;
+        width: 20px;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    /* Left fade edge - subtle and behind cards */
+    .reviews-grid::before {
+        left: 0;
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            transparent 100%
+        );
+    }
+    
+    /* Right fade edge - subtle and behind cards */
+    .reviews-grid::after {
+        right: 0;
+        background: linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            transparent 100%
+        );
+    }
+    
+    /* Swipe hint indicator using container pseudo-element */
+    .reviews-container::after {
+        content: '';
+        position: absolute;
+        top: calc(50% + 40px);
+        right: 30px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        animation: swipeHint 2s ease-in-out infinite;
+        z-index: 11;
+        pointer-events: none;
+    }
+    
+    @keyframes swipeHint {
+        0%, 100% {
+            opacity: 0.4;
+            transform: translateY(-50%) scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: translateY(-50%) scale(1.2);
+        }
+    }
+    
+    /* Enhanced scroll momentum */
+    .reviews-grid {
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
+    }
+    
+    /* Subtle scroll shadow for depth */
+    .review-card {
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Active scroll state - enhance first and last visible cards */
+    .review-card:first-child {
+        margin-left: 0;
+    }
+    
+    .review-card:last-child {
+        margin-right: 0;
+    }
+    
+    /* Smooth entrance animations adjusted for horizontal scroll */
+    .review-card:nth-child(1) { animation-delay: 0.1s; }
+    .review-card:nth-child(2) { animation-delay: 0.15s; }
+    .review-card:nth-child(3) { animation-delay: 0.2s; }
+    .review-card:nth-child(4) { animation-delay: 0.25s; }
+    
+    /* CTA section adjustments */
+    .reviews-cta {
+        margin-top: 60px;
+        padding: 0 20px;
+    }
+    
+    .google-reviews-btn {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        gap: 12px;
+    }
+    
+    .google-icon-btn {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .arrow-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Optional scroll indicator dots */
+    .reviews-grid-wrapper {
+        position: relative;
+    }
+    
+    .scroll-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+        opacity: 0.6;
+    }
+    
+    .scroll-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .scroll-dot.active {
+        background: rgba(255, 51, 51, 0.8);
+        transform: scale(1.2);
     }
 } 
