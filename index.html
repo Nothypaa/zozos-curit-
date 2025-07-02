@@ -1256,6 +1256,7 @@
     <!-- Locations and Contact Section -->
     <section id="contact" class="locations-section">
         <h3>Nos Emplacements</h3>
+        <p class="locations-subtitle">Trouvez-nous facilement</p>
         <div class="locations-container">
             <div class="location-card">
                 <div class="location-icon">
@@ -1276,6 +1277,26 @@
                 </div>
                 <h4 id="montpellier-location">Montpellier</h4>
                 <p>Hérault</p>
+            </div>
+        </div>
+        
+        <!-- Google Maps Integration with Liquid Glass Styling -->
+        <div class="map-container-wrapper">
+            <div class="map-glass-container">
+                <div class="map-loading-state" id="mapLoadingState">
+                    <div class="loading-spinner"></div>
+                    <p>Chargement de la carte...</p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.949094106259!2d3.8946610762981178!3d43.6284184540332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x49ed7653702ef0fb%3A0xbca1b54e04fc474a!2zWk9aTyBTw6ljdXJpdMOp!5e0!3m2!1sfr!2sfr!4v1751457570179!5m2!1sfr!2sfr" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        onload="hideMapLoading()"
+                        title="Localisation ZOZO Sécurité - Castelnau-le-Lez">
+                </iframe>
             </div>
         </div>
     </section>

@@ -1178,3 +1178,17 @@ function initBeforeAfterSlider() {
 
 // Initialize the before/after slider when DOM is loaded
 document.addEventListener('DOMContentLoaded', initBeforeAfterSlider);
+
+// Google Maps loading functionality
+function hideMapLoading() {
+    const loadingState = document.getElementById('mapLoadingState');
+    if (loadingState) {
+        loadingState.classList.add('hidden');
+        setTimeout(() => {
+            loadingState.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Make function globally available for iframe onload
+window.hideMapLoading = hideMapLoading;
