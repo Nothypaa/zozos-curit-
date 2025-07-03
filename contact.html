@@ -199,88 +199,144 @@
         </div>
     </nav>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="contact-hero-content">
-            <h1 class="contact-hero-title">
-                <span class="highlight-text">Contactez</span> Notre Équipe
-            </h1>
-            <p class="contact-hero-subtitle">
-                Votre projet de sécurité à Montpellier mérite une attention particulière. 
-                Discutons ensemble de vos besoins pour vous proposer la solution parfaite.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="contact-form-section">
-        <div class="contact-form-container">
-            <div class="contact-form-wrapper">
-                <form id="secure-contact-form" action="https://formspree.io/f/mblojdjg" method="POST" class="contact-form">
-                    <!-- Redirect to thank-you page after form submission -->
-                    <input type="hidden" name="_next" value="https://www.zozosecurite.fr/thank-you.html">
-                        <div class="form-row">
-                            <div class="form-group half-width">
-                                <label for="name">Nom complet *</label>
-                                <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
-                            </div>
-                            <div class="form-group half-width">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
-                            </div>
+    <!-- UserGems-Inspired Split Layout Contact Section -->
+    <section class="contact-split-layout">
+        <div class="split-container">
+            <!-- Left Column - Value Proposition -->
+            <div class="split-left">
+                <div class="split-left-content">
+                    <h1 class="split-headline">
+                        Prêt à <span class="gradient-text">Sécuriser</span> Votre Entreprise?
+                    </h1>
+                    <p class="split-subtitle">
+                        Votre sécurité mérite une attention professionnelle. Découvrons ensemble vos besoins pour vous proposer la solution parfaite.
+                    </p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Protection 24/7 de vos biens et locaux
+                        </li>
+                        <li>
+                            <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Installation professionnelle certifiée
+                        </li>
+                        <li>
+                            <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Accès distant depuis votre smartphone
+                        </li>
+                        <li>
+                            <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Intervention rapide dans l'Hérault
+                        </li>
+                        <li>
+                            <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Maintenance et support inclus
+                        </li>
+                    </ul>
+                    
+                    <div class="social-proof desktop-social-proof">
+                        <h3>PARTENAIRES DE CONFIANCE</h3>
+                        <div class="partner-logos">
+                            <img src="images/Lidl.png" alt="Lidl" class="partner-logo">
+                            <img src="images/aldi.png" alt="Aldi" class="partner-logo">
+                            <img src="images/BUT.png" alt="BUT" class="partner-logo">
+                            <img src="images/sephora.png" alt="Sephora" class="partner-logo">
+                            <img src="images/bvlgari.png" alt="Bvlgari" class="partner-logo">
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group half-width">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
-                            </div>
-                            <div class="form-group half-width">
-                                <label for="subject">Type de projet</label>
-                                <select id="subject" name="subject">
-                                    <option value="">Sélectionnez un type de projet</option>
-                                    <option value="Vidéosurveillance">Installation vidéosurveillance</option>
-                                    <option value="Câblage réseau">Câblage réseau</option>
-                                    <option value="Baie de brassage">Installation baie de brassage</option>
-                                    <option value="Réparation">Réparation / Maintenance</option>
-                                    <option value="Conseil">Conseil et étude</option>
-                                    <option value="Autre">Autre projet</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Décrivez votre projet *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet : type de local, surface, besoins spécifiques, contraintes, budget approximatif..."></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="budget">Budget approximatif</label>
-                            <select id="budget" name="budget">
-                                <option value="">Sélectionnez une fourchette</option>
-                                <option value="Moins de 1000€">Moins de 1 000€</option>
-                                <option value="1000€ - 3000€">1 000€ - 3 000€</option>
-                                <option value="3000€ - 5000€">3 000€ - 5 000€</option>
-                                <option value="5000€ - 10000€">5 000€ - 10 000€</option>
-                                <option value="Plus de 10000€">Plus de 10 000€</option>
-                                <option value="À définir">À définir ensemble</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group submit-group">
-                            <button type="submit" class="contact-form-submit-btn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="22" y1="2" x2="11" y2="13"/>
-                                    <polygon points="22,2 15,22 11,13 2,9 22,2"/>
-                                </svg>
-                                Envoyer le message
-                            </button>
-                        </div>
-                        
-                        <p id="form-status" class="form-status"></p>
-                    </form>
+                    </div>
                 </div>
             </div>
+            
+                         <!-- Right Column - Contact Form (Original Styling) -->
+             <div class="split-right">
+                 <div class="original-form-container">
+                     <form id="secure-contact-form" action="https://formspree.io/f/mblojdjg" method="POST" class="original-contact-form">
+                         <input type="hidden" name="_next" value="https://www.zozosecurite.fr/thank-you.html">
+                         
+                         <div class="form-row">
+                             <div class="form-group half-width">
+                                 <label for="name">Nom complet *</label>
+                                 <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
+                             </div>
+                             <div class="form-group half-width">
+                                 <label for="email">Email *</label>
+                                 <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                             </div>
+                         </div>
+
+                         <div class="form-row">
+                             <div class="form-group half-width">
+                                 <label for="phone">Téléphone</label>
+                                 <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+                             </div>
+                             <div class="form-group half-width">
+                                 <label for="subject">Type de projet</label>
+                                 <select id="subject" name="subject">
+                                     <option value="">Sélectionnez un type de projet</option>
+                                     <option value="Vidéosurveillance">Installation vidéosurveillance</option>
+                                     <option value="Câblage réseau">Câblage réseau</option>
+                                     <option value="Baie de brassage">Installation baie de brassage</option>
+                                     <option value="Réparation">Réparation / Maintenance</option>
+                                     <option value="Conseil">Conseil et étude</option>
+                                     <option value="Autre">Autre projet</option>
+                                 </select>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label for="message">Décrivez votre projet *</label>
+                             <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet : type de local, surface, besoins spécifiques, contraintes, budget approximatif..."></textarea>
+                         </div>
+
+                         <div class="form-group budget-field">
+                             <label for="budget">Budget approximatif</label>
+                             <select id="budget" name="budget">
+                                 <option value="">Sélectionnez une fourchette</option>
+                                 <option value="Moins de 1000€">Moins de 1 000€</option>
+                                 <option value="1000€ - 3000€">1 000€ - 3 000€</option>
+                                 <option value="3000€ - 5000€">3 000€ - 5 000€</option>
+                                 <option value="5000€ - 10000€">5 000€ - 10 000€</option>
+                                 <option value="Plus de 10000€">Plus de 10 000€</option>
+                                 <option value="À définir">À définir ensemble</option>
+                             </select>
+                         </div>
+
+                         <div class="form-group submit-group">
+                             <button type="submit" class="original-contact-form-submit-btn">
+                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                     <line x1="22" y1="2" x2="11" y2="13"/>
+                                     <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                                 </svg>
+                                 Envoyer le message
+                             </button>
+                         </div>
+                         
+                         <p id="form-status" class="form-status"></p>
+                     </form>
+                     
+                     <div class="social-proof mobile-social-proof">
+                         <h3>PARTENAIRES DE CONFIANCE</h3>
+                         <div class="partner-logos">
+                             <img src="images/Lidl.png" alt="Lidl" class="partner-logo">
+                             <img src="images/aldi.png" alt="Aldi" class="partner-logo">
+                             <img src="images/BUT.png" alt="BUT" class="partner-logo">
+                             <img src="images/sephora.png" alt="Sephora" class="partner-logo">
+                             <img src="images/bvlgari.png" alt="Bvlgari" class="partner-logo">
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </div>
     </section>
 
