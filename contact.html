@@ -275,12 +275,17 @@
                              </div>
                          </div>
 
-                         <div class="form-row">
-                             <div class="form-group half-width">
+                         <div class="form-group">
+                             <label for="message">Décrivez votre projet *</label>
+                             <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet : type de local, surface, besoins spécifiques, contraintes, budget approximatif..."></textarea>
+                         </div>
+
+                         <div class="form-row conditional-fields">
+                             <div class="form-group half-width conditional-field phone-field">
                                  <label for="phone">Téléphone</label>
                                  <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
                              </div>
-                             <div class="form-group half-width">
+                             <div class="form-group half-width conditional-field project-type-field">
                                  <label for="subject">Type de projet</label>
                                  <select id="subject" name="subject">
                                      <option value="">Sélectionnez un type de projet</option>
@@ -294,12 +299,7 @@
                              </div>
                          </div>
 
-                         <div class="form-group">
-                             <label for="message">Décrivez votre projet *</label>
-                             <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet : type de local, surface, besoins spécifiques, contraintes, budget approximatif..."></textarea>
-                         </div>
-
-                         <div class="form-group budget-field">
+                         <div class="form-group conditional-field budget-field">
                              <label for="budget">Budget approximatif</label>
                              <select id="budget" name="budget">
                                  <option value="">Sélectionnez une fourchette</option>

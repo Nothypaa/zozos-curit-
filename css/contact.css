@@ -1072,17 +1072,60 @@
     }
 }
 
-/* Hide budget field initially */
-.original-contact-form .form-group.budget-field {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    margin-bottom: 0;
+/* Hide conditional fields initially with smooth animation */
+.original-contact-form .conditional-field {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    margin-bottom: 0 !important;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    visibility: hidden !important;
+}
+
+.original-contact-form .conditional-field.show {
+    max-height: 200px !important;
+    opacity: 1 !important;
+    margin-bottom: 1.2rem !important;
+    visibility: visible !important;
+}
+
+/* Special handling for the conditional form row */
+.original-contact-form .form-row.conditional-fields {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    margin-bottom: 0 !important;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    visibility: hidden !important;
+}
+
+.original-contact-form .form-row.conditional-fields.show {
+    max-height: 200px !important;
+    opacity: 1 !important;
+    margin-bottom: 1.2rem !important;
+    visibility: visible !important;
+}
+
+.original-contact-form .form-row.conditional-fields.show .conditional-field {
+    max-height: none !important;
+    opacity: 1 !important;
+    margin-bottom: 0 !important;
+    visibility: visible !important;
+}
+
+/* Hide budget field initially - legacy support */
+.original-contact-form .form-group.budget-field {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    margin-bottom: 0 !important;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    visibility: hidden !important;
 }
 
 .original-contact-form .form-group.budget-field.show {
-    max-height: 200px;
-    opacity: 1;
-    margin-bottom: 1.5rem;
+    max-height: 200px !important;
+    opacity: 1 !important;
+    margin-bottom: 1.2rem !important;
+    visibility: visible !important;
 }

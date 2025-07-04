@@ -1024,285 +1024,9 @@ if (logoCarousel && logoTrack) {
     });
 }
 
-// Before/After Image Comparison Slider - Performance Optimized
-function initBeforeAfterSlider() {
-    const comparisonSlider = document.getElementById('comparisonSlider');
-    const sliderHandle = document.getElementById('sliderHandle');
-    const afterImage = comparisonSlider?.querySelector('.after-image');
-    const beforeAfterSection = document.querySelector('.before-after-section');
-    
-    if (!comparisonSlider || !sliderHandle || !afterImage || !beforeAfterSection) return;
-    
-    // Performance optimization variables
-    let isDragging = false;
-    let sliderRect = comparisonSlider.getBoundingClientRect();
-    let animationId = null;
-    let currentPercentage = 50;
-    let isInViewport = false;
-    let eventListenersActive = false;
-    
-    // Throttling for 60fps performance
-    let lastEventTime = 0;
-    const eventThrottle = 16; // 16ms = 60fps
-    
-    // Micro-debouncing
-    let debounceTimer = null;
-    const microDebounce = 2; // 2ms micro-debounce
-    
-    // Intersection Observer for viewport detection and performance optimization
-    const sliderObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Section is visible - activate slider
-                isInViewport = true;
-                activateSlider();
-                // Enable will-change for performance during interaction
-                comparisonSlider.style.willChange = 'transform';
-                afterImage.style.willChange = 'clip-path';
-                sliderHandle.style.willChange = 'transform';
-            } else {
-                // Section is not visible - deactivate slider
-                isInViewport = false;
-                deactivateSlider();
-                // Remove will-change to save resources
-                comparisonSlider.style.willChange = 'auto';
-                afterImage.style.willChange = 'auto';
-                sliderHandle.style.willChange = 'auto';
-            }
-        });
-    }, { 
-        threshold: 0.1, // Activate when 10% visible
-        rootMargin: '50px' // Preload 50px before entering viewport
-    });
 
-    // Update slider position with optimized rendering and micro-debouncing
-    function updateSlider(percentage) {
-        // Only update if slider is in viewport for performance
-        if (!isInViewport) return;
-        
-        // Clamp percentage between 0 and 100
-        percentage = Math.max(0, Math.min(100, percentage));
-        currentPercentage = percentage;
-        
-        // Cancel any pending animation frame
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-        }
-        
-        // Clear any pending debounce
-        if (debounceTimer) {
-            clearTimeout(debounceTimer);
-        }
-        
-        // Micro-debounce for rapid updates
-        debounceTimer = setTimeout(() => {
-            // Use requestAnimationFrame for smooth updates
-            animationId = requestAnimationFrame(() => {
-                // Update handle position
-                sliderHandle.style.left = percentage + '%';
-                
-                // Update clip-path for after image (reveals from left to right)
-                afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-                
-                // Update aria value for accessibility
-                comparisonSlider.setAttribute('aria-valuenow', Math.round(percentage));
-            });
-        }, microDebounce);
-    }
-    
-    // Get position percentage from mouse/touch event
-    function getPercentageFromEvent(clientX) {
-        const rect = comparisonSlider.getBoundingClientRect();
-        const x = clientX - rect.left;
-        return (x / rect.width) * 100;
-    }
-    
-    // Throttled event handling for 60fps performance
-    function throttledEventHandler(callback) {
-        return function(e) {
-            const now = performance.now();
-            if (now - lastEventTime >= eventThrottle) {
-                lastEventTime = now;
-                callback(e);
-            }
-        };
-    }
-    
-    // Mouse events with performance optimizations
-    function handleMouseDown(e) {
-        if (!isInViewport) return; // Only handle when visible
-        e.preventDefault();
-        isDragging = true;
-        sliderRect = comparisonSlider.getBoundingClientRect();
-        comparisonSlider.classList.add('dragging');
-        document.body.style.cursor = 'ew-resize';
-        
-        // Update position immediately
-        const percentage = getPercentageFromEvent(e.clientX);
-        updateSlider(percentage);
-    }
-    
-    // Throttled mouse move for 60fps
-    const handleMouseMove = throttledEventHandler((e) => {
-        if (!isDragging || !isInViewport) return;
-        e.preventDefault();
-        
-        // Get percentage and update with throttling
-        const percentage = getPercentageFromEvent(e.clientX);
-        updateSlider(percentage);
-    });
-    
-    function handleMouseUp() {
-        if (!isDragging) return;
-        isDragging = false;
-        comparisonSlider.classList.remove('dragging');
-        document.body.style.cursor = '';
-    }
-    
-    // Touch events for mobile with throttling
-    function handleTouchStart(e) {
-        if (!isInViewport) return; // Only handle when visible
-        e.preventDefault();
-        const touch = e.touches[0];
-        handleMouseDown(touch);
-    }
-    
-    // Throttled touch move for 60fps
-    const handleTouchMove = throttledEventHandler((e) => {
-        if (!isDragging || !isInViewport) return;
-        e.preventDefault();
-        const touch = e.touches[0];
-        
-        // Get percentage and update with throttling
-        const percentage = getPercentageFromEvent(touch.clientX);
-        updateSlider(percentage);
-    });
-    
-    function handleTouchEnd(e) {
-        e.preventDefault();
-        handleMouseUp();
-    }
-    
-    // Click to position
-    function handleClick(e) {
-        if (!isInViewport) return; // Only handle when visible
-        if (e.target === sliderHandle || sliderHandle.contains(e.target)) return;
-        
-        const percentage = getPercentageFromEvent(e.clientX);
-        updateSlider(percentage);
-    }
-    
-    // Update slider rect on window resize - throttled
-    const handleResize = throttledEventHandler(() => {
-        if (isInViewport) {
-            sliderRect = comparisonSlider.getBoundingClientRect();
-        }
-    });
-    
-    // Activate slider when in viewport
-    function activateSlider() {
-        if (eventListenersActive) return;
-        eventListenersActive = true;
-        
-        // Event listeners for handle
-        sliderHandle.addEventListener('mousedown', handleMouseDown);
-        sliderHandle.addEventListener('touchstart', handleTouchStart, { passive: false });
-        
-        // Event listeners for slider area
-        comparisonSlider.addEventListener('click', handleClick);
-        comparisonSlider.addEventListener('touchstart', handleTouchStart, { passive: false });
-        
-        // Global event listeners with passive optimization where possible
-        document.addEventListener('mousemove', handleMouseMove, { passive: false });
-        document.addEventListener('mouseup', handleMouseUp, { passive: true });
-        document.addEventListener('touchmove', handleTouchMove, { passive: false });
-        document.addEventListener('touchend', handleTouchEnd, { passive: false });
-        
-        // Window resize with passive listener
-        window.addEventListener('resize', handleResize, { passive: true });
-        
-        // Update slider rect
-        sliderRect = comparisonSlider.getBoundingClientRect();
-    }
-    
-    // Deactivate slider when out of viewport
-    function deactivateSlider() {
-        if (!eventListenersActive) return;
-        eventListenersActive = false;
-        
-        // Remove all event listeners to save resources
-        sliderHandle.removeEventListener('mousedown', handleMouseDown);
-        sliderHandle.removeEventListener('touchstart', handleTouchStart);
-        comparisonSlider.removeEventListener('click', handleClick);
-        comparisonSlider.removeEventListener('touchstart', handleTouchStart);
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('mouseup', handleMouseUp);
-        document.removeEventListener('touchmove', handleTouchMove);
-        document.removeEventListener('touchend', handleTouchEnd);
-        window.removeEventListener('resize', handleResize);
-        
-        // Cancel any pending animations
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
-        }
-        
-        // Clear any pending debounce
-        if (debounceTimer) {
-            clearTimeout(debounceTimer);
-            debounceTimer = null;
-        }
-        
-        // Stop any dragging
-        if (isDragging) {
-            isDragging = false;
-            comparisonSlider.classList.remove('dragging');
-            document.body.style.cursor = '';
-        }
-    }
-    
-    // Optimized keyboard support with throttling
-    const handleKeydown = throttledEventHandler((e) => {
-        if (!isInViewport) return; // Only handle when visible
-        
-        if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            const currentPos = parseFloat(sliderHandle.style.left) || 50;
-            updateSlider(Math.max(0, currentPos - 5));
-        } else if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            const currentPos = parseFloat(sliderHandle.style.left) || 50;
-            updateSlider(Math.min(100, currentPos + 5));
-        }
-    });
-    
-    // Add keyboard support with passive listener
-    comparisonSlider.addEventListener('keydown', handleKeydown, { passive: false });
-    
-    // Make slider focusable for keyboard navigation
-    comparisonSlider.setAttribute('tabindex', '0');
-    comparisonSlider.setAttribute('role', 'slider');
-    comparisonSlider.setAttribute('aria-label', 'Faire glisser pour comparer les images avant et après');
-    comparisonSlider.setAttribute('aria-valuemin', '0');
-    comparisonSlider.setAttribute('aria-valuemax', '100');
-    comparisonSlider.setAttribute('aria-valuenow', '50');
-    
-    // Start observing the section for viewport visibility
-    sliderObserver.observe(beforeAfterSection);
-    
-    // Initialize at 50% position
-    updateSlider(50);
-    
-    // Cleanup function for when slider is destroyed
-    return function cleanup() {
-        sliderObserver.disconnect();
-        deactivateSlider();
-        comparisonSlider.removeEventListener('keydown', handleKeydown);
-    };
-}
 
-// Initialize the before/after slider when DOM is loaded
-document.addEventListener('DOMContentLoaded', initBeforeAfterSlider);
+
 
 // Google Maps loading functionality
 function hideMapLoading() {
@@ -1318,18 +1042,35 @@ function hideMapLoading() {
 // Make function globally available for iframe onload
 window.hideMapLoading = hideMapLoading;
 
-// Budget field show/hide functionality for contact form
+// Progressive disclosure functionality for contact form - show multiple fields after email
 document.addEventListener('DOMContentLoaded', function() {
     const emailField = document.getElementById('email');
-    const budgetField = document.querySelector('.budget-field');
+    const conditionalFields = document.querySelectorAll('.conditional-field');
+    const conditionalRow = document.querySelector('.form-row.conditional-fields');
     
-    if (emailField && budgetField) {
+    if (emailField && conditionalFields.length > 0) {
         emailField.addEventListener('input', function() {
-            if (this.value.trim().length > 0) {
-                budgetField.classList.add('show');
-            } else {
-                budgetField.classList.remove('show');
+            const hasEmailContent = this.value.trim().length > 5;
+            
+            // Show/hide all conditional fields together
+            conditionalFields.forEach(field => {
+                if (hasEmailContent) {
+                    field.classList.add('show');
+                } else {
+                    field.classList.remove('show');
+                }
+            });
+            
+            // Also handle the conditional form row
+            if (conditionalRow) {
+                if (hasEmailContent) {
+                    conditionalRow.classList.add('show');
+                } else {
+                    conditionalRow.classList.remove('show');
+                }
             }
         });
     }
 });
+
+// Legacy budget field functionality removed - now handled by progressive disclosure above

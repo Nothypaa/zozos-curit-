@@ -1,0 +1,78 @@
+{
+  "task": "Remove the entire Avant/Après section completely",
+  "reason": "Section is causing scroll lag/performance issues",
+  "what_to_remove": {
+    "html_section": "Remove complete before/after comparison slider section from index.html",
+    "css_file": "Remove slider-comparison.css file completely",
+    "javascript": "Remove any JavaScript related to the comparison slider",
+    "images": "Keep images (image15.jpg, image16.jpg) but remove their usage in slider",
+    "html_links": "Remove CSS link to slider-comparison.css from head section"
+  },
+  "specific_elements": {
+    "section_class": "Remove section with class 'before-after-section'",
+    "slider_container": "Remove entire comparison slider container",
+    "seo_text": "Remove the small SEO text below slider",
+    "navigation_buttons": "Remove slider handle and controls"
+  },
+  "result": "Page should function normally without any before/after slider",
+  "next_step": "We will recreate this section later with better performance approach"
+ }{
+  "task": "Recreate Avant/Après section with optimized performance and separate files",
+  "performance_requirements": {
+    "no_scroll_lag": "Absolutely no lag or stuttering when scrolling past the section",
+    "smooth_interaction": "Butter-smooth slider handle movement",
+    "gpu_acceleration": "Use hardware acceleration for all animations",
+    "minimal_repaints": "Avoid causing browser repaints during scroll"
+  },
+  "file_structure": {
+    "css_file": "Create new avant-apres.css file (separate from main CSS)",
+    "javascript_file": "Create new avant-apres.js file (separate from main JS)",
+    "html_integration": "Add section to index.html using new CSS classes",
+    "link_files": "Link both new files in HTML head section"
+  },
+  "optimization_techniques": {
+    "hardware_acceleration": {
+      "use_transform3d": "Use transform3d instead of regular transforms",
+      "will_change_property": "Add will-change: transform to moving elements",
+      "backface_visibility": "Add backface-visibility: hidden to prevent flicker"
+    },
+    "event_optimization": {
+      "passive_listeners": "Use passive event listeners for touch/scroll",
+      "requestAnimationFrame": "Use requestAnimationFrame for smooth animations",
+      "throttle_events": "Throttle mouse/touch events to 60fps max",
+      "remove_listeners": "Clean up event listeners when not needed"
+    },
+    "css_optimization": {
+      "contain_property": "Use CSS contain property to isolate rendering",
+      "transform_only": "Only use transform properties, never change layout",
+      "avoid_reflow": "Never change width/height/position during interaction",
+      "use_opacity": "Use opacity instead of visibility changes"
+    }
+  },
+  "slider_implementation": {
+    "handle_movement": "Smooth dragging with transform: translateX()",
+    "image_reveal": "Use clip-path or mask for image reveal effect",
+    "touch_support": "Full touch support for mobile devices",
+    "boundary_limits": "Proper min/max boundaries for slider handle"
+  },
+  "images_to_use": {
+    "before_image": "image15.jpg",
+    "after_image": "image16.jpg",
+    "alt_text": "Proper accessibility alt text for both images"
+  },
+  "section_content": {
+    "title": "Avant / Après",
+    "subtitle": "Découvrez la transformation de nos installations", 
+    "seo_text": "Installation de caméra de sécurité pour un client à Montpellier - Découvrez la différence avant/après"
+  },
+  "mobile_optimization": {
+    "touch_friendly": "Large touch area for mobile slider handle",
+    "smooth_touch": "Proper touch event handling without lag",
+    "responsive_images": "Optimized image loading for mobile"
+  },
+  "debugging_prevention": {
+    "no_console_logs": "Remove any debugging console.log statements",
+    "error_handling": "Proper error handling to prevent crashes",
+    "fallback_states": "Graceful fallbacks if slider fails to load"
+  }
+ }
