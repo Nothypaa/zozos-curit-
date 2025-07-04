@@ -281,6 +281,29 @@
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Reviewer avatar color variants */
+.reviewer-avatar-red {
+    background: linear-gradient(45deg, #ff3333, #ff5555);
+}
+
+.reviewer-avatar-blue {
+    background: linear-gradient(45deg, #4285F4, #5396F5);
+}
+
+.reviewer-avatar-green {
+    background: linear-gradient(45deg, #34A853, #5CBF2A);
+}
+
+.reviewer-avatar-yellow {
+    background: linear-gradient(45deg, #FBBC05, #F9CB9C);
 }
 
 .review-card:hover .reviewer-avatar {
@@ -425,6 +448,14 @@
 
 .read-more-btn:hover::after {
     width: 100%;
+}
+
+/* Review metadata styles */
+.review-metadata {
+    margin-top: 10px;
+    color: #cccccc;
+    font-size: 0.85rem;
+    font-style: italic;
 }
 
 /* Premium Google Badge */
