@@ -2086,8 +2086,8 @@
     .main-cta {
         display: inline-flex;
         align-items: center;
-        padding: 0.9rem 2rem;
-        font-size: 1rem;
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
         text-align: center;
         justify-content: center;
         width: fit-content;
@@ -2111,8 +2111,8 @@
     .schedule-button {
         display: inline-flex;
         align-items: center;
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
         text-align: center;
         justify-content: center;
         width: fit-content;
