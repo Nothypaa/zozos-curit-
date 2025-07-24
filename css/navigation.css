@@ -315,3 +315,66 @@
         justify-content: center;
     }
 }
+
+/* Floating CTA Button - Visible on Mobile and Laptop */
+.floating-cta-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: #FF3333;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    display: none; /* Hidden by default */
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1005;
+    transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    box-shadow: 0 4px 20px rgba(255, 51, 51, 0.4);
+    animation: floatingPulse 3s ease-in-out infinite;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.floating-cta-btn:hover {
+    background: #E02D2D;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 51, 51, 0.6);
+}
+
+.floating-cta-btn:active {
+    transform: translateY(-1px);
+}
+
+@keyframes floatingPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(255, 51, 51, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 51, 51, 0.7);
+        transform: scale(1.05);
+    }
+}
+
+/* Show floating CTA on mobile and laptop screens */
+@media (max-width: 1024px) {
+    .floating-cta-btn {
+        display: flex;
+    }
+}
+
+/* Adjust positioning for very small screens */
+@media (max-width: 480px) {
+    .floating-cta-btn {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
