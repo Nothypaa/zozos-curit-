@@ -1,3 +1,34 @@
+# Robots.txt pour ZOZO Sécurité - Optimisé SEO
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /instruction.json
+Disallow: /js/
+Disallow: /css/
+
+# Optimisations spécifiques moteurs de recherche
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Bloquage bots indésirables
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
 Sitemap: https://www.zozosecurite.fr/sitemap.xml

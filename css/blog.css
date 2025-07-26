@@ -1,5 +1,16 @@
 /* Blog Page Styles */
 
+/* Active Navigation Link */
+.nav-link.active {
+    color: #FF3333 !important;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    background-color: #FF3333;
+}
+
 /* Breadcrumb Navigation */
 .breadcrumb {
     background: #000;
@@ -61,19 +72,6 @@
     padding: 0 2rem;
     position: relative;
 }
-
-/* Removed banner/overlay behind hero section */
-/*
-.blog-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 51, 51, 0.1) 0%, transparent 50%);
-}
-*/
 
 .blog-header-content {
     max-width: 800px;
@@ -178,10 +176,12 @@
 
 .blog-meta {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6);
+    align-items: center;
 }
 
 .blog-date, .blog-read-time, .blog-author {
@@ -481,6 +481,12 @@
         padding: 1.5rem;
     }
     
+    .blog-meta {
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+    }
+    
     .blog-post-title {
         font-size: 1.2rem;
     }
@@ -584,11 +590,6 @@
 
 .blog-card:hover::before {
     opacity: 1;
-}
-
-.blog-content {
-    position: relative;
-    z-index: 2;
 }
 
 /* Loading animation for images */

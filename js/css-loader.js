@@ -28,8 +28,6 @@
         if (!hasBackground || !hasPadding) {
             console.warn('CSS Loader: CSS not loaded properly, attempting to fix...');
             forceReloadCSS();
-        } else {
-            console.log('CSS Loader: CSS loaded successfully');
         }
     }
 
@@ -53,7 +51,6 @@
             // Add load event listener
             newLink.onload = function() {
                 reloadCount++;
-                console.log('CSS Loader: Reloaded', originalHref);
                 
                 // Remove old link after new one loads
                 if (link.parentNode) {
@@ -85,7 +82,7 @@
             const background = styles.getPropertyValue('background');
             
             if (background && background.includes('gradient')) {
-                console.log('CSS Loader: CSS verification successful');
+                // CSS verification successful
             } else {
                 console.error('CSS Loader: CSS verification failed');
                 // Try one more time with a different approach
