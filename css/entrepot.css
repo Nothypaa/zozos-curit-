@@ -1,0 +1,155 @@
+/* Entrepot-specific styles */
+
+/* Desktop-only hero height adjustment */
+@media (min-width: 769px) {
+    .hero {
+        min-height: 70vh !important;
+    }
+}
+
+/* Entrepot Features Section */
+.entrepot-features {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+}
+
+.entrepot-features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+.entrepot-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.entrepot-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.entrepot-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.entrepot-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.entrepot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.entrepot-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.entrepot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.entrepot-card:hover::before {
+    transform: scaleX(1);
+}
+
+.entrepot-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.entrepot-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.entrepot-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.entrepot-card p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.highlight-text {
+    color: #ff6b35;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .entrepot-features {
+        padding: 60px 5%;
+    }
+    
+    .entrepot-title {
+        font-size: 2rem;
+    }
+    
+    .entrepot-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .entrepot-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .entrepot-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .entrepot-title {
+        font-size: 1.8rem;
+    }
+    
+    .entrepot-card {
+        padding: 20px;
+    }
+}

@@ -690,7 +690,7 @@ function checkCookieConsent() {
         if (cookieConsentBanner) cookieConsentBanner.style.display = 'none';
         // Ensure GA is not loaded
         removeGoogleAnalytics(); 
-    } else {
+        } else {
         // No consent decision recorded, show the banner
         console.log('No previous consent found. Displaying banner.');
         if (cookieConsentBanner) cookieConsentBanner.style.display = 'flex'; // Use flex or block based on your CSS
@@ -714,7 +714,7 @@ if (cookieConsentBanner && acceptCookiesBtn && rejectCookiesBtn) {
 
     // Check consent status once the DOM is fully loaded
     checkCookieConsent();
-} else {
+            } else {
     console.warn('Cookie consent banner elements not found. Consent check skipped.');
     // If banner elements aren't found, maybe load GA by default? Or do nothing.
     // Decide based on compliance needs. Safest is to NOT load GA if banner fails.

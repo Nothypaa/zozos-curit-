@@ -320,7 +320,7 @@
 .floating-cta-btn {
     position: fixed;
     bottom: 2rem;
-    left: 2rem;
+    right: 2rem;
     background: #FF3333;
     border: none;
     border-radius: 50px;
@@ -373,7 +373,7 @@
 @media (max-width: 480px) {
     .floating-cta-btn {
         bottom: 1.5rem;
-        left: 1.5rem;
+        right: 1.5rem;
         padding: 0.8rem 1.2rem;
         font-size: 0.9rem;
     }
