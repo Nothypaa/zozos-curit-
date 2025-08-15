@@ -1,5 +1,55 @@
 /* FAQ Page Specific CSS */
 
+/* Breadcrumb Navigation */
+.breadcrumb {
+    background: #000;
+    padding: 1rem 0;
+    margin-top: 80px;
+    border-bottom: 1px solid #222;
+}
+
+.breadcrumb-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '>';
+    margin: 0 0.8rem;
+    color: #666;
+    font-weight: bold;
+}
+
+.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #FF3333;
+}
+
+.breadcrumb-item.active {
+    color: #fff;
+    font-weight: 500;
+}
+
 /* Hero Small Section for FAQ Page */
 .hero-small {
     min-height: 30vh;
@@ -420,6 +470,19 @@
 
 /* Responsive styles for FAQ intro */
 @media (max-width: 768px) {
+    .breadcrumb {
+        margin-top: 60px;
+        padding: 0.8rem 0;
+    }
+    
+    .breadcrumb-container {
+        padding: 0 1rem;
+    }
+    
+    .breadcrumb-list {
+        font-size: 0.8rem;
+    }
+    
     .hero-small .hero-title {
         font-size: 2.5rem;
     }

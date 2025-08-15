@@ -61,6 +61,27 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.zozosecurite.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://www.zozosecurite.fr/contact.html"
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "ContactPage",
       "mainEntity": {
         "@type": "LocalBusiness",
@@ -187,6 +208,20 @@
                     <path d="M17 12H7"/>
                 </svg>
             </a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Contact
+                </li>
+            </ol>
         </div>
     </nav>
 
