@@ -2,26 +2,7 @@
 
 
 
-    // Custom cursor effect
-    const cursor = document.querySelector('.cursor');
-    const cursorDot = document.querySelector('.cursor-dot');
 
-    if (cursor && cursorDot) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
-            cursorDot.style.transform = `translate(${e.clientX - 2}px, ${e.clientY - 2}px)`;
-        });
-
-        document.addEventListener('mousedown', () => {
-            cursor.style.transform += ' scale(0.8)';
-            cursorDot.style.transform += ' scale(0.8)';
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.style.transform = cursor.style.transform.replace(' scale(0.8)', '');
-            cursorDot.style.transform = cursorDot.style.transform.replace(' scale(0.8)', '');
-        });
-    }
 
 
 

@@ -489,27 +489,7 @@
             }
         }
 
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #FF3333;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transition: transform 0.2s ease;
-            z-index: 9999;
-        }
 
-        .cursor-dot {
-            width: 4px;
-            height: 4px;
-            background: #FF3333;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transition: transform 0.1s ease;
-            z-index: 9999;
-        }
 
         .select-wrapper {
             position: relative;
@@ -1621,10 +1601,6 @@
             }
 
             /* Components */
-            .cursor, 
-            .cursor-dot {
-                display: none;
-            }
 
             /* Stats & Section Titles */
             .stats-container {
