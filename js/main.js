@@ -935,6 +935,147 @@ function hideMapLoading() {
 // Make function globally available for iframe onload
 window.hideMapLoading = hideMapLoading;
 
+// ===============================
+// DISCOUNT POP-UP FUNCTIONALITY
+// ===============================
+
+function initDiscountPopup() {
+    const popup = document.getElementById('discountPopup');
+    const closeBtn = popup.querySelector('.popup-close');
+    const offerImage = popup.querySelector('.offer-image');
+    const ctaBtn = popup.querySelector('.popup-cta-btn');
+    
+    // Check if popup has been shown this session
+    const popupShown = sessionStorage.getItem('discountPopupShown');
+    
+    if (!popupShown) {
+        // Show popup after 2 seconds
+        setTimeout(() => {
+            showPopup();
+        }, 2000);
+    }
+    
+    function showPopup() {
+        popup.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        sessionStorage.setItem('discountPopupShown', 'true');
+        startCountdown();
+    }
+    
+    function hidePopup() {
+        popup.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    
+    function navigateToContact() {
+        hidePopup();
+        
+        // Check if we're on contact page or need to navigate
+        if (window.location.pathname.includes('contact.html')) {
+            // Already on contact page, scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // Navigate to contact page
+            if (window.location.pathname.includes('/services/')) {
+                window.location.href = '../contact.html#contact';
+            } else {
+                window.location.href = 'contact.html#contact';
+            }
+        }
+    }
+    
+    // Event listeners
+    closeBtn.addEventListener('click', hidePopup);
+    
+    // Close on overlay click
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            hidePopup();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('show')) {
+            hidePopup();
+        }
+    });
+    
+    // CTA Button - main action
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateToContact();
+        });
+    }
+    
+    // Make offer image clickable as secondary action
+    if (offerImage) {
+        offerImage.style.cursor = 'pointer';
+        offerImage.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateToContact();
+        });
+    }
+}
+
+function startCountdown() {
+    // Set end date to August 25th, 2025 at 23:59:59
+    const endDate = new Date('2025-08-25T23:59:59').getTime();
+    
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+        
+        if (distance < 0) {
+            // Timer expired - hide popup
+            const popup = document.getElementById('discountPopup');
+            popup.classList.remove('show');
+            document.body.style.overflow = '';
+            return;
+        }
+        
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Update display with leading zeros
+        if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
+        if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
+        if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
+        if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    // Update immediately and then every second
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    
+    // Store interval reference to clear it if needed
+    window.countdownInterval = countdownInterval;
+}
+
+// Initialize popup when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Only initialize if popup exists on the page
+    const popup = document.getElementById('discountPopup');
+    if (popup) {
+        initDiscountPopup();
+    }
+});
+
 // Progressive disclosure functionality for contact form - show multiple fields after email
 document.addEventListener('DOMContentLoaded', function() {
     const emailField = document.getElementById('email');
