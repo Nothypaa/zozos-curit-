@@ -74,7 +74,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    background: linear-gradient(90deg, #FF3333, #ff5555);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -92,7 +92,7 @@
 .entrepot-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    background: linear-gradient(135deg, #FF3333, #ff5555);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -116,7 +116,7 @@
 }
 
 .highlight-text {
-    color: #ff6b35;
+    color: #FF3333;
     font-weight: 600;
 }
 
@@ -151,5 +151,192 @@
     
     .entrepot-card {
         padding: 20px;
+    }
+}
+
+/* Camera Showcase Section */
+.camera-showcase {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    position: relative;
+}
+
+.camera-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #444, transparent);
+}
+
+.camera-showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.camera-showcase-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.camera-showcase-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.camera-showcase-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.cameras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+}
+
+.camera-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.camera-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.camera-image {
+    position: relative;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+}
+
+.camera-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.dahua-camera {
+    transform: scale(1.55);
+    object-fit: contain;
+}
+
+.camera-brand {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.brand-logo {
+    height: 35px;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.camera-card:hover .brand-logo {
+    filter: brightness(1);
+}
+
+.camera-info {
+    padding: 30px;
+}
+
+.camera-model {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.camera-series {
+    font-size: 0.9rem;
+    color: #FF3333;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.camera-description {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.camera-description strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.camera-highlight {
+    margin-top: 20px;
+}
+
+.highlight-feature {
+    background: linear-gradient(135deg, #FF3333, #ff5555);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design for Camera Showcase */
+@media (max-width: 768px) {
+    .camera-showcase {
+        padding: 60px 5%;
+    }
+    
+    .camera-showcase-title {
+        font-size: 2rem;
+    }
+    
+    .camera-showcase-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .cameras-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .camera-info {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .camera-showcase-title {
+        font-size: 1.8rem;
+    }
+    
+    .camera-image {
+        padding: 20px;
+    }
+    
+    .camera-info {
+        padding: 20px;
+    }
+    
+    .camera-model {
+        font-size: 1.3rem;
     }
 }
