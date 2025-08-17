@@ -1015,14 +1015,7 @@ function initDiscountPopup() {
         });
     }
     
-    // Make offer image clickable as secondary action
-    if (offerImage) {
-        offerImage.style.cursor = 'pointer';
-        offerImage.addEventListener('click', (e) => {
-            e.preventDefault();
-            navigateToContact();
-        });
-    }
+
 }
 
 function startCountdown() {

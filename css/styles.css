@@ -2740,6 +2740,11 @@
         margin: 10px;
     }
     
+    .popup-close {
+        left: 20px;
+        right: auto;
+    }
+    
     .popup-content {
         padding: 15px;
     }
