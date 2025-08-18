@@ -354,13 +354,30 @@
         const fullText = reviewText.getAttribute('data-full-text');
         const isExpanded = reviewText.classList.contains('expanded');
         
+        // Clear the content safely
+        reviewText.textContent = '';
+        
         if (isExpanded) {
             // Collapse the text
-            reviewText.innerHTML = fullText.substring(0, 100) + '...<button class="read-more-btn" onclick="toggleReviewText(this)">Lire plus</button>';
+            const truncatedText = document.createTextNode(fullText.substring(0, 100) + '...');
+            const readMoreBtn = document.createElement('button');
+            readMoreBtn.className = 'read-more-btn';
+            readMoreBtn.textContent = 'Lire plus';
+            readMoreBtn.onclick = () => toggleReviewText(readMoreBtn);
+            
+            reviewText.appendChild(truncatedText);
+            reviewText.appendChild(readMoreBtn);
             reviewText.classList.remove('expanded');
         } else {
             // Expand the text
-            reviewText.innerHTML = fullText + '<button class="read-more-btn" onclick="toggleReviewText(this)">Lire moins</button>';
+            const fullTextNode = document.createTextNode(fullText);
+            const readLessBtn = document.createElement('button');
+            readLessBtn.className = 'read-more-btn';
+            readLessBtn.textContent = 'Lire moins';
+            readLessBtn.onclick = () => toggleReviewText(readLessBtn);
+            
+            reviewText.appendChild(fullTextNode);
+            reviewText.appendChild(readLessBtn);
             reviewText.classList.add('expanded');
         }
     };
@@ -419,7 +436,6 @@
 
     const animateCounter = (element) => {
         if (!element || !element.getAttribute('data-target')) {
-            console.warn('animateCounter called with invalid element or missing data-target', element);
             return;
         }
         const target = parseInt(element.getAttribute('data-target'));
@@ -751,10 +767,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Enhanced image interaction effects
 document.addEventListener('DOMContentLoaded', function() {
     const imageContainer = document.querySelector('.image-container');
-    const aboutImage = document.querySelector('.about-image');
     const floatingBadge = document.querySelector('.floating-badge');
     
-    if (imageContainer && aboutImage) {
+    if (imageContainer) {
         // Add 3D tilt effect on mouse move
         imageContainer.addEventListener('mousemove', function(e) {
             const rect = imageContainer.getBoundingClientRect();
@@ -942,7 +957,6 @@ window.hideMapLoading = hideMapLoading;
 function initDiscountPopup() {
     const popup = document.getElementById('discountPopup');
     const closeBtn = popup.querySelector('.popup-close');
-    const offerImage = popup.querySelector('.offer-image');
     const ctaBtn = popup.querySelector('.popup-cta-btn');
     
     // Check if popup has been shown this session
@@ -1019,8 +1033,11 @@ function initDiscountPopup() {
 }
 
 function startCountdown() {
-    // Set end date to August 25th, 2025 at 23:59:59
-    const endDate = new Date('2025-08-25T23:59:59').getTime();
+    // Set end date to 30 days from now at 23:59:59
+    const now = new Date();
+    const endDate = new Date(now.getTime() + (30 * 24 * 60 * 60 * 1000));
+    endDate.setHours(23, 59, 59, 999); // Set to end of day
+    const endDateTime = endDate.getTime();
     
     const daysElement = document.getElementById('days');
     const hoursElement = document.getElementById('hours');
@@ -1029,7 +1046,7 @@ function startCountdown() {
     
     function updateCountdown() {
         const now = new Date().getTime();
-        const distance = endDate - now;
+        const distance = endDateTime - now;
         
         if (distance < 0) {
             // Timer expired - hide popup

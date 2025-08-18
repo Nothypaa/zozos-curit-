@@ -5,7 +5,7 @@
     <title>Installation Vidéosurveillance Entrepôt – Solutions Professionnelles ZOZO Sécurité</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.zozosecurite.fr/services/videosurveillance-entrepot.html">
+    <link rel="canonical" href="https://www.zozosecurite.fr/services/installateur-videosurveillance-entrepots-montpellier.html">
     <link rel="stylesheet" href="../css/styles.css?v=2.1">
     <link rel="stylesheet" href="../css/navigation.css?v=2.0">
     <link rel="stylesheet" href="../css/videosurveillance.css">
@@ -50,7 +50,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.zozosecurite.fr/services/videosurveillance-entrepot.html",
+      "@id": "https://www.zozosecurite.fr/services/installateur-videosurveillance-entrepots-montpellier.html",
       "name": "Installation Vidéosurveillance Entrepôt",
       "description": "Installation complète de systèmes de vidéosurveillance pour entrepôts : caméras IP 4K, détection intelligente, surveillance 24/7 pour sécuriser vos espaces logistiques et de stockage.",
       "provider": {
@@ -264,7 +264,7 @@
           "@type": "ListItem",
           "position": 4,
           "name": "Entrepôt",
-          "item": "https://www.zozosecurite.fr/services/videosurveillance-entrepot.html"
+          "item": "https://www.zozosecurite.fr/services/installateur-videosurveillance-entrepots-montpellier.html"
         }
       ]
     }
@@ -314,6 +314,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
@@ -393,7 +402,13 @@
                             éliminant les zones d'ombre typiques des entrepôts.
                         </p>
                         <div class="camera-highlight">
-                            <span class="highlight-feature">Vision couleur nocturne</span>
+                            <span class="highlight-feature">Vision couleur nocturne
+                                <span class="tooltip-icon" data-tooltip="vision-nocturne">?</span>
+                                <div class="tooltip-content" id="tooltip-vision-nocturne">
+                                    <strong>Vision couleur nocturne :</strong><br>
+                                    Technologie permettant aux caméras de capturer des images en couleur même dans l'obscurité totale, sans éclairage infrarouge visible. Idéal pour identifier précisément les personnes et objets de nuit.
+                                </div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -411,7 +426,13 @@
                             parfaite pour sécuriser les accès et zones de chargement.
                         </p>
                         <div class="camera-highlight">
-                            <span class="highlight-feature">Détection périmétrique active</span>
+                            <span class="highlight-feature">Détection périmétrique active
+                                <span class="tooltip-icon" data-tooltip="detection-perimetrique">?</span>
+                                <div class="tooltip-content" id="tooltip-detection-perimetrique">
+                                    <strong>Détection périmétrique active :</strong><br>
+                                    Système intelligent qui détecte et analyse les mouvements aux frontières de votre propriété. Déclenche des alertes sonores et visuelles en temps réel pour dissuader les intrus avant qu'ils n'entrent.
+                                </div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -598,6 +619,45 @@
                 });
                 
                 observer.observe(section);
+            }
+        });
+    </script>
+
+    <!-- Tooltip functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipIcons = document.querySelectorAll('.tooltip-icon');
+            
+            // Mobile click functionality
+            if (window.innerWidth <= 768) {
+                tooltipIcons.forEach(icon => {
+                    icon.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const tooltipContent = this.nextElementSibling;
+                        const isVisible = tooltipContent.classList.contains('show');
+                        
+                        // Hide all other tooltips
+                        document.querySelectorAll('.tooltip-content').forEach(tooltip => {
+                            tooltip.classList.remove('show');
+                        });
+                        
+                        // Toggle current tooltip
+                        if (!isVisible) {
+                            tooltipContent.classList.add('show');
+                        }
+                    });
+                });
+                
+                // Click outside to close tooltips
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.highlight-feature')) {
+                        document.querySelectorAll('.tooltip-content').forEach(tooltip => {
+                            tooltip.classList.remove('show');
+                        });
+                    }
+                });
             }
         });
     </script>

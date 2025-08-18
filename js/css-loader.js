@@ -12,7 +12,6 @@
     function checkCSSLoaded() {
         const aboutSection = document.querySelector('.about-section');
         if (!aboutSection) {
-            console.warn('CSS Loader: About section not found, retrying...');
             setTimeout(checkCSSLoaded, 100);
             return;
         }
@@ -26,7 +25,6 @@
         const hasPadding = padding && padding !== '0px' && padding !== 'initial';
         
         if (!hasBackground || !hasPadding) {
-            console.warn('CSS Loader: CSS not loaded properly, attempting to fix...');
             forceReloadCSS();
         }
     }
@@ -95,7 +93,6 @@
      * Fallback CSS injection for critical styles
      */
     function fallbackCSS() {
-        console.log('CSS Loader: Applying fallback CSS');
         
         const fallbackStyles = `
             <style id="css-loader-fallback">
@@ -151,9 +148,9 @@
     function checkFontLoading() {
         if ('fonts' in document) {
             document.fonts.ready.then(function() {
-                console.log('CSS Loader: Fonts loaded successfully');
+                // Fonts loaded successfully
             }).catch(function() {
-                console.warn('CSS Loader: Font loading failed, using fallback');
+                // Font loading failed, using fallback
             });
         }
     }
@@ -162,7 +159,6 @@
      * Initialize CSS loader
      */
     function init() {
-        console.log('CSS Loader: Initializing...');
         
         // Check fonts
         checkFontLoading();
