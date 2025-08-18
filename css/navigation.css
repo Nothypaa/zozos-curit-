@@ -314,6 +314,27 @@
     position: relative;
 }
 
+/* Button-specific styles for mobile dropdown toggle */
+.mobile-dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+/* Ensure mobile dropdown button is centered with higher specificity */
+.mobile-nav .mobile-dropdown-toggle {
+    text-align: center !important;
+}
+
+/* Remove underline animations from mobile navigation */
+.mobile-nav .nav-link::after {
+    display: none;
+}
+
 .mobile-dropdown-toggle::before {
     content: '▶';
     font-size: 0.9rem;

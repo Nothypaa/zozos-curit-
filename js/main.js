@@ -414,11 +414,14 @@
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close menu when clicking a link
+    // Close menu when clicking a link (but not dropdown toggle)
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
+        link.addEventListener('click', (e) => {
+            // Don't close menu if it's the dropdown toggle button
+            if (!link.classList.contains('mobile-dropdown-toggle')) {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     });
     // Close menu when clicking outside
