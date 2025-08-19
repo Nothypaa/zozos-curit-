@@ -1196,3 +1196,167 @@
     margin-bottom: 1.2rem !important;
     visibility: visible !important;
 }
+
+/* Simple Contact Map Section */
+.contact-map-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.contact-map-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-map-section h3 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.map-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.simple-map-container {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.simple-map-container:hover {
+    border-color: rgba(255, 51, 51, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.simple-map-container iframe {
+    border-radius: 10px;
+}
+
+.map-info {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.map-info strong {
+    color: white;
+    font-weight: 600;
+}
+
+/* SEO-enhanced styling for installation vidéosurveillance */
+.highlight-location {
+    color: #FF3333;
+    font-weight: 700;
+}
+
+.map-info h4 {
+    color: #FF3333;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.map-info h5 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.service-area {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 3px solid #FF3333;
+}
+
+.service-area ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-area li {
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-area li::before {
+    content: '📍';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+}
+
+.service-area li strong {
+    color: #FF3333;
+}
+
+.phone-cta {
+    background: rgba(255, 51, 51, 0.1);
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.phone-cta a {
+    color: #FF3333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.phone-cta a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-map-section {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-map-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .simple-map-container {
+        padding: 15px;
+    }
+    
+    .simple-map-container iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-map-section {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-map-section h3 {
+        font-size: 1.6rem;
+    }
+    
+    .simple-map-container {
+        padding: 12px;
+    }
+    
+    .simple-map-container iframe {
+        height: 250px;
+    }
+}
