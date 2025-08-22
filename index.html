@@ -15,7 +15,7 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     
     <!-- Critical CSS Inlined -->
-    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}@font-face{font-family:'Inter-fallback';size-adjust:107%;ascent-override:90%;src:local('Arial')}body{background:#000;color:#fff;overflow-x:hidden}.hero{min-height:100vh;height:100vh;width:100%;position:relative;display:flex;align-items:center;padding:0 10%;padding-bottom:0;overflow:hidden;contain:layout style}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:0;will-change:auto}.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;aspect-ratio:16/9}.hero-content{max-width:900px;position:relative}.hero-title{font-size:4rem;font-weight:700;line-height:1.1;margin-bottom:2rem;opacity:0;transform:translateY(50px);animation:fadeInUp 1.2s ease-out 0.3s forwards}.hero-subtitle{font-size:1.5rem;color:rgba(255,255,255,0.7);margin-bottom:3rem;opacity:0;transform:translateY(30px);animation:fadeInUp 1.2s ease-out 0.6s forwards}.desktop-nav{position:fixed;top:0;right:0;padding:1.5rem 2rem;z-index:100;display:flex;justify-content:flex-end;width:100%;transition:all 0.3s ease}.nav-container{display:flex;align-items:center;gap:2rem}.nav-links{display:flex;gap:2rem;align-items:center}.nav-link{color:white;text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;position:relative;padding:0.5rem 0;transition:all 0.3s ease}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#FF3333;transition:width 0.3s ease}.nav-link:hover::after{width:100%}@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}@media (max-width:767px){.hero{padding:0 5%;min-height:50vh;padding-top:2.5rem}.hero-title{font-size:2.5rem;margin-top:3rem;letter-spacing:-0.3px}.hero-subtitle{font-size:1rem;margin-bottom:1rem}}</style>
+    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}@font-face{font-family:'Inter-fallback';size-adjust:107%;ascent-override:90%;src:local('Arial')}body{background:#000;color:#fff;overflow-x:hidden}.hero{min-height:100vh;height:100vh;width:100%;position:relative;display:flex;align-items:center;padding:0 10%;padding-bottom:0;overflow:hidden;contain:layout style}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:0;will-change:auto}.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;aspect-ratio:16/9}.hero-content{max-width:900px;position:relative}.hero-title{font-size:4rem;font-weight:700;line-height:1.1;margin-bottom:2rem;opacity:0;transform:translate3d(0,50px,0);animation:fadeInUp 0.8s ease-out 0.1s forwards;will-change:transform,opacity}.hero-subtitle{font-size:1.5rem;color:rgba(255,255,255,0.7);margin-bottom:3rem;opacity:0;transform:translate3d(0,30px,0);animation:fadeInUp 0.8s ease-out 0.2s forwards;will-change:transform,opacity}.desktop-nav{position:fixed;top:0;right:0;padding:1.5rem 2rem;z-index:100;display:flex;justify-content:flex-end;width:100%;transition:all 0.3s ease;contain:layout style;height:80px}.nav-container{display:flex;align-items:center;gap:2rem;height:48px;contain:layout}.nav-links{display:flex;gap:2rem;align-items:center;height:48px;contain:layout}.nav-link{color:white;text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;position:relative;padding:0.5rem 0;transition:all 0.3s ease}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#FF3333;transition:width 0.3s ease}.nav-link:hover::after{width:100%}@keyframes fadeInUp{to{opacity:1;transform:translate3d(0,0,0)}}@media (max-width:767px){.hero{padding:0 5%;min-height:50vh;padding-top:2.5rem}.hero-title{font-size:2.5rem;margin-top:3rem;letter-spacing:-0.3px}.hero-subtitle{font-size:1rem;margin-bottom:1rem}}</style>
     
     <!-- Defer non-critical CSS -->
     <link rel="preload" href="css/styles.css?v=2.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -33,9 +33,8 @@
     <link rel="preload" href="css/google-reviews.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/google-reviews.css?v=1.0"></noscript>
 
-    <!-- Font Awesome Icons - Deferred -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Custom Icon Styles - Replaces Font Awesome (167 KiB savings) -->
+    <style>.icon-arrow-right,.icon-video{display:inline-block;width:1em;height:1em;vertical-align:middle}</style>
     <!-- Favicon -->
     <link rel="icon" href="images/zozosécuritélogo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/zozosécuritélogo.ico" type="image/x-icon">
@@ -65,14 +64,25 @@
     <meta name="twitter:description" content="Expert vidéosurveillance Montpellier. Caméras IP, DVR/NVR, câblage réseau. +500 installations">
     <meta name="twitter:image" content="https://www.zozosecurite.fr/images/zozosécuritélogo.jpg">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DERWVMJ868"></script>
+    <!-- Google Analytics - Deferred for performance -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-DERWVMJ868');
+      
+      // Defer GA loading until after critical content
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DERWVMJ868';
+          document.head.appendChild(script);
+          
+          script.onload = function() {
+            gtag('js', new Date());
+            gtag('config', 'G-DERWVMJ868');
+          };
+        }, 2000);
+      });
     </script>
     
 
@@ -352,14 +362,14 @@
                                 <p>Découvrez nos installations professionnelles</p>
                                 <a href="#realisations" class="slick-button">
                                     <span>Voir nos réalisations</span>
-                                    <i class="fas fa-arrow-right"></i>
+                                    <svg class="icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
                                 </a>
                             </div>
                         </div>
-                        <img src="images/realisations/image13.webp" alt="Installation vidéosurveillance ZOZO Sécurité - Exemple de nos réalisations professionnelles" class="about-image" loading="lazy">
+                        <img src="images/realisations/image13.webp" alt="Installation vidéosurveillance ZOZO Sécurité - Exemple de nos réalisations professionnelles" class="about-image" loading="lazy" width="280" height="297">
                         <div class="image-frame"></div>
                         <div class="floating-badge">
-                            <i class="fas fa-video"></i>
+                            <svg class="icon-video" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
                             <span>HD 4K</span>
                         </div>
                     </div>
@@ -522,7 +532,7 @@
                 <h3>Nos Partenaires</h3>
                 <div class="brands-grid">
                     <div class="brand-card">
-                        <img src="images/Hikvision.png" alt="Logo Hikvision" class="brand-logo" loading="lazy" width="90" height="60">
+                        <img src="images/Hikvision.webp" alt="Logo Hikvision" class="brand-logo" loading="lazy" width="90" height="60">
                         <span>Hikvision</span>
                     </div>
                     <div class="brand-card">
@@ -625,7 +635,7 @@
                     <!-- Slides with enhanced content -->
                     <div class="enhanced-slide" data-category="videosurveillance">
                         <div class="slide-image-container">
-                            <img src="images/realisations/image1.webp" alt="Installation vidéosurveillance commerce Montpellier" loading="lazy">
+                            <img src="images/realisations/image1.webp" alt="Installation vidéosurveillance commerce Montpellier" loading="lazy" width="507" height="380">
                             <button class="zoom-btn" aria-label="Agrandir l'image">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="11" cy="11" r="8"/>
@@ -656,7 +666,7 @@
 
                     <div class="enhanced-slide" data-category="network">
                         <div class="slide-image-container">
-                            <img src="images/realisations/image2.webp" alt="Baie de brassage – Câblage RJ45 structuré Cat.6" loading="lazy">
+                            <img src="images/realisations/image2.webp" alt="Baie de brassage – Câblage RJ45 structuré Cat.6" loading="lazy" width="378" height="473">
                             <button class="zoom-btn" aria-label="Agrandir l'image">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="11" cy="11" r="8"/>
@@ -998,11 +1008,11 @@
             <div class="thumbnail-navigation">
                 <div class="thumbnail-track">
                     <div class="thumbnail-item active" data-slide="0">
-                        <img src="images/realisations/image1.webp" alt="Thumbnail 1" loading="lazy">
+                        <img src="images/realisations/image1.webp" alt="Thumbnail 1" loading="lazy" width="60" height="45">
                         <div class="thumbnail-overlay"></div>
                     </div>
                     <div class="thumbnail-item" data-slide="1">
-                        <img src="images/realisations/image2.webp" alt="Thumbnail 2" loading="lazy">
+                        <img src="images/realisations/image2.webp" alt="Thumbnail 2" loading="lazy" width="60" height="75">
                         <div class="thumbnail-overlay"></div>
                     </div>
                     <div class="thumbnail-item" data-slide="3">
