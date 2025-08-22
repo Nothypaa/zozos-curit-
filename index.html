@@ -9,7 +9,6 @@
     <meta http-equiv="Accept-Encoding" content="gzip, deflate, br">
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <link rel="canonical" href="https://www.zozosecurite.fr/index.html">
     
     <!-- DNS Prefetch and Preconnect for faster first requests -->
@@ -23,18 +22,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
+    <!-- Optimized font loading with proper fallback -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'; this.onload=null;">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     
-    <!-- Preload actual font files to prevent layout shift -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Preload critical hero video for better LCP -->
-    <link rel="preload" href="images/videoheader.mp4" as="video" type="video/mp4" fetchpriority="high">
+    <link rel="preload" href="images/videoheader.mp4" as="fetch" type="video/mp4" fetchpriority="high">
     
     <!-- Critical CSS Inlined - Optimized for LCP & CLS -->
-    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Inter-fallback',-apple-system,BlinkMacSystemFont,sans-serif}@font-face{font-family:'Inter-fallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial')}@font-face{font-family:'Inter';font-display:swap;src:url('https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2')}body{background:#000;color:#fff;overflow-x:hidden;text-rendering:optimizeSpeed}html{scroll-behavior:smooth}.hero{min-height:100vh;width:100%;position:relative;display:flex;align-items:center;padding:0 10%;padding-bottom:0;overflow:hidden;contain:layout style paint}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:0;will-change:auto}.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;transform:translateZ(0)}.hero-content{max-width:900px;position:relative;transform:translateZ(0)}.hero-title{font-size:4rem;font-weight:700;line-height:1.1;margin-bottom:2rem;opacity:0;transform:translate3d(0,30px,0);animation:fadeInUp 0.6s ease-out 0.05s forwards;will-change:transform,opacity;backface-visibility:hidden}.hero-subtitle{font-size:1.5rem;color:rgba(255,255,255,0.7);margin-bottom:3rem;opacity:0;transform:translate3d(0,20px,0);animation:fadeInUp 0.6s ease-out 0.1s forwards;will-change:transform,opacity;backface-visibility:hidden}.desktop-nav{position:fixed;top:0;right:0;padding:1.5rem 2rem;z-index:100;display:flex;justify-content:flex-end;width:100%;transition:all 0.3s ease;contain:layout style;height:80px;transform:translateZ(0)}.nav-container{display:flex;align-items:center;gap:2rem;height:48px;contain:layout}.nav-links{display:flex;gap:2rem;align-items:center;height:48px;contain:layout}.nav-link{color:white;text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;position:relative;padding:0.5rem 0;transition:all 0.3s ease}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#FF3333;transition:width 0.3s ease}.nav-link:hover::after{width:100%}@keyframes fadeInUp{to{opacity:1;transform:translate3d(0,0,0)}}@media (max-width:767px){.hero{padding:0 5%;min-height:50vh;padding-top:2.5rem}.hero-title{font-size:2.5rem;margin-top:3rem;letter-spacing:-0.3px}.hero-subtitle{font-size:1rem;margin-bottom:1rem}}</style>
+    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Inter-fallback',-apple-system,BlinkMacSystemFont,sans-serif}@font-face{font-family:'Inter-fallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial')}body{background:#000;color:#fff;overflow-x:hidden;text-rendering:optimizeSpeed}html{scroll-behavior:smooth}.hero{min-height:100vh;width:100%;position:relative;display:flex;align-items:center;padding:0 10%;padding-bottom:0;overflow:hidden;contain:layout style paint}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:0;will-change:auto}.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;transform:translateZ(0)}.hero-content{max-width:900px;position:relative;transform:translateZ(0)}.hero-title{font-size:4rem;font-weight:700;line-height:1.1;margin-bottom:2rem;opacity:0;transform:translate3d(0,30px,0);animation:fadeInUp 0.6s ease-out 0.05s forwards;will-change:transform,opacity;backface-visibility:hidden}.hero-subtitle{font-size:1.5rem;color:rgba(255,255,255,0.7);margin-bottom:3rem;opacity:0;transform:translate3d(0,20px,0);animation:fadeInUp 0.6s ease-out 0.1s forwards;will-change:transform,opacity;backface-visibility:hidden}.desktop-nav{position:fixed;top:0;right:0;padding:1.5rem 2rem;z-index:100;display:flex;justify-content:flex-end;width:100%;transition:all 0.3s ease;contain:layout style;height:80px;transform:translateZ(0)}.nav-container{display:flex;align-items:center;gap:2rem;height:48px;contain:layout}.nav-links{display:flex;gap:2rem;align-items:center;height:48px;contain:layout}.nav-link{color:white;text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;position:relative;padding:0.5rem 0;transition:all 0.3s ease}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#FF3333;transition:width 0.3s ease}.nav-link:hover::after{width:100%}@keyframes fadeInUp{to{opacity:1;transform:translate3d(0,0,0)}}@media (max-width:767px){.hero{padding:0 5%;min-height:50vh;padding-top:2.5rem}.hero-title{font-size:2.5rem;margin-top:3rem;letter-spacing:-0.3px}.hero-subtitle{font-size:1rem;margin-bottom:1rem}}</style>
     
     <!-- Critical LCP optimization script -->
     <script>
@@ -304,7 +301,7 @@
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
-        <video autoplay loop muted playsinline class="hero-video" preload="auto" loading="eager" poster="images/video-poster.jpg">
+        <video autoplay loop muted playsinline class="hero-video" preload="auto" loading="eager">
             <source src="images/videoheader.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
