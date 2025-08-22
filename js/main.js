@@ -665,15 +665,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         item.setAttribute('open', '');
                         item.classList.add('active');
                         
-                        // Scroll to item if it's not fully visible
+                        // Scroll to item if it's not fully visible (optimized)
                         setTimeout(() => {
-                            const rect = item.getBoundingClientRect();
-                            if (rect.top < 100) {
-                                item.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }
+                            requestAnimationFrame(() => {
+                                // Use intersection observer instead of getBoundingClientRect to avoid forced reflow
+                                const observer = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (!entry.isIntersecting || entry.boundingClientRect.top < 100) {
+                                            item.scrollIntoView({
+                                                behavior: 'smooth',
+                                                block: 'start'
+                                            });
+                                        }
+                                    });
+                                    observer.disconnect();
+                                }, { rootMargin: '-100px 0px 0px 0px' });
+                                observer.observe(item);
+                            });
                         }, 300);
                     }
                 });
@@ -773,25 +781,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const floatingBadge = document.querySelector('.floating-badge');
     
     if (imageContainer) {
-        // Add 3D tilt effect on mouse move
+        // Add 3D tilt effect on mouse move (optimized to prevent forced reflows)
+        let cachedRect = null;
+        let rafId = null;
+        
+        // Cache rect dimensions on resize instead of mouse events
+        const updateCachedRect = () => {
+            cachedRect = {
+                left: imageContainer.offsetLeft,
+                top: imageContainer.offsetTop,
+                width: imageContainer.offsetWidth,
+                height: imageContainer.offsetHeight
+            };
+        };
+        
+        // Initialize cached rect
+        updateCachedRect();
+        window.addEventListener('resize', updateCachedRect, { passive: true });
+        
         imageContainer.addEventListener('mousemove', function(e) {
-            const rect = imageContainer.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+            if (rafId || !cachedRect) return;
             
-            const deltaX = (e.clientX - centerX) / (rect.width / 2);
-            const deltaY = (e.clientY - centerY) / (rect.height / 2);
-            
-            const rotateX = deltaY * -10; // Tilt up/down
-            const rotateY = deltaX * 10;  // Tilt left/right
-            
-            imageContainer.style.transform = `
-                translateY(-5px) 
-                scale(1.02) 
-                perspective(1000px) 
-                rotateX(${rotateX}deg) 
-                rotateY(${rotateY}deg)
-            `;
+            rafId = requestAnimationFrame(() => {
+                const centerX = cachedRect.left + cachedRect.width / 2;
+                const centerY = cachedRect.top + cachedRect.height / 2;
+                
+                const deltaX = (e.clientX - centerX) / (cachedRect.width / 2);
+                const deltaY = (e.clientY - centerY) / (cachedRect.height / 2);
+                
+                const rotateX = deltaY * -10;
+                const rotateY = deltaX * 10;
+                
+                imageContainer.style.transform = `
+                    translateY(-5px) 
+                    scale(1.02) 
+                    perspective(1000px) 
+                    rotateX(${rotateX}deg) 
+                    rotateY(${rotateY}deg)
+                `;
+                rafId = null;
+            });
         });
         
         // Reset transform on mouse leave
@@ -799,12 +828,13 @@ document.addEventListener('DOMContentLoaded', function() {
             imageContainer.style.transform = 'translateY(0) scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg)';
         });
         
-        // Add click ripple effect
+        // Add click ripple effect (optimized)
         imageContainer.addEventListener('click', function(e) {
             const ripple = document.createElement('div');
-            const rect = imageContainer.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            // Use cached rect to avoid getBoundingClientRect
+            if (!cachedRect) updateCachedRect();
+            const x = e.clientX - cachedRect.left;
+            const y = e.clientY - cachedRect.top;
             
             ripple.style.cssText = `
                 position: absolute;
@@ -827,17 +857,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 600);
         });
         
-        // Add parallax effect to floating badge
+        // Add parallax effect to floating badge (optimized)
         if (floatingBadge) {
+            let badgeRafId = null;
+            
             imageContainer.addEventListener('mousemove', function(e) {
-                const rect = imageContainer.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
+                if (badgeRafId || !cachedRect) return;
                 
-                const deltaX = (e.clientX - centerX) / (rect.width / 2);
-                const deltaY = (e.clientY - centerY) / (rect.height / 2);
-                
-                floatingBadge.style.transform = `translate(${deltaX * 5}px, ${deltaY * 5}px)`;
+                badgeRafId = requestAnimationFrame(() => {
+                    const centerX = cachedRect.left + cachedRect.width / 2;
+                    const centerY = cachedRect.top + cachedRect.height / 2;
+                    
+                    const deltaX = (e.clientX - centerX) / (cachedRect.width / 2);
+                    const deltaY = (e.clientY - centerY) / (cachedRect.height / 2);
+                    
+                    floatingBadge.style.transform = `translate(${deltaX * 5}px, ${deltaY * 5}px)`;
+                    badgeRafId = null;
+                });
             });
             
             imageContainer.addEventListener('mouseleave', function() {
