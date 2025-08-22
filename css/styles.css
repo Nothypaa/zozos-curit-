@@ -1,7 +1,6 @@
         /*styles.css, i want every css code to be stored here and not in the html or js*/
 
-        /* Font Import Fallback */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Font import removed - handled in HTML for better performance */
 
         * {
             margin: 0;

@@ -192,6 +192,12 @@
     }
 }
 
+/* Override highlight-text color for thank you page */
+.thank-you-content .highlight-text {
+    color: #ffffff !important; /* White color instead of red */
+    -webkit-text-fill-color: #ffffff !important; /* Override any parent styles */
+}
+
 /* Responsive Design for Thank You Page */
 @media (max-width: 768px) {
     .thank-you-content {
