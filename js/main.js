@@ -345,8 +345,12 @@
         modernSlider.addEventListener('mouseleave', startAutoPlay);
     }
 
-    // Initialize the gallery
-    initGallery();
+    // Initialize the gallery with delay to avoid long tasks
+    if (enhancedSlides.length > 0) {
+        setTimeout(() => {
+            initGallery();
+        }, 100);
+    }
 
     // Google Reviews - Toggle Read More/Less functionality
     window.toggleReviewText = function(button) {
@@ -387,13 +391,23 @@
     // Scroll to top functionality
     const scrollTopBtn = document.querySelector('.scroll-top');
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
+    // Use passive listener and throttle for better performance
+    let scrollTicking = false;
+    const handleScroll = () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
-    }, { passive: true });
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({
@@ -481,13 +495,23 @@
 const desktopNav = document.querySelector('.desktop-nav');
 
 if (desktopNav) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            desktopNav.classList.add('scrolled');
-        } else {
-            desktopNav.classList.remove('scrolled');
+    // Use the same throttled scroll handler for efficiency
+    let navScrollTicking = false;
+    const handleNavScroll = () => {
+        if (!navScrollTicking) {
+            requestAnimationFrame(() => {
+                if (window.scrollY > 100) {
+                    desktopNav.classList.add('scrolled');
+                } else {
+                    desktopNav.classList.remove('scrolled');
+                }
+                navScrollTicking = false;
+            });
+            navScrollTicking = true;
         }
-    }, { passive: true });
+    };
+    
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
 }
 
 // Prevent logo movement on click
@@ -667,21 +691,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         // Scroll to item if it's not fully visible (optimized)
                         setTimeout(() => {
-                            requestAnimationFrame(() => {
-                                // Use intersection observer instead of getBoundingClientRect to avoid forced reflow
-                                const observer = new IntersectionObserver((entries) => {
-                                    entries.forEach(entry => {
-                                        if (!entry.isIntersecting || entry.boundingClientRect.top < 100) {
-                                            item.scrollIntoView({
-                                                behavior: 'smooth',
-                                                block: 'start'
-                                            });
-                                        }
-                                    });
-                                    observer.disconnect();
-                                }, { rootMargin: '-100px 0px 0px 0px' });
-                                observer.observe(item);
-                            });
+                            const rect = item.getBoundingClientRect();
+                            if (rect.top < 100) {
+                                item.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
                         }, 300);
                     }
                 });
@@ -760,54 +776,51 @@ document.addEventListener('DOMContentLoaded', function() {
         faqObserver.observe(faqSection);
     }
     
-    // Add parallax effect to hero section (if on FAQ page)
+    // Add parallax effect to hero section (if on FAQ page) - optimized
     const heroSmall = document.querySelector('.hero-small');
     if (heroSmall) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
+        const heroTitle = heroSmall.querySelector('.hero-title');
+        if (heroTitle) {
+            let parallaxTicking = false;
+            const handleParallax = () => {
+                if (!parallaxTicking) {
+                    requestAnimationFrame(() => {
+                        const scrolled = window.pageYOffset;
+                        const rate = scrolled * -0.5;
+                        heroTitle.style.transform = `translateY(${rate}px)`;
+                        parallaxTicking = false;
+                    });
+                    parallaxTicking = true;
+                }
+            };
             
-            if (heroSmall.querySelector('.hero-title')) {
-                heroSmall.querySelector('.hero-title').style.transform = `translateY(${rate}px)`;
-            }
-        }, { passive: true });
+            window.addEventListener('scroll', handleParallax, { passive: true });
+        }
     }
 });
 // --- End FAQ Page Enhanced Interactions ---
 
-// Enhanced image interaction effects
+// Enhanced image interaction effects - defer to avoid long tasks
 document.addEventListener('DOMContentLoaded', function() {
-    const imageContainer = document.querySelector('.image-container');
-    const floatingBadge = document.querySelector('.floating-badge');
+    // Defer heavy interactions to avoid blocking main thread
+    setTimeout(() => {
+        const imageContainer = document.querySelector('.image-container');
+        const floatingBadge = document.querySelector('.floating-badge');
     
     if (imageContainer) {
-        // Add 3D tilt effect on mouse move (optimized to prevent forced reflows)
-        let cachedRect = null;
+        // Add 3D tilt effect on mouse move (simplified for performance)
         let rafId = null;
         
-        // Cache rect dimensions on resize instead of mouse events
-        const updateCachedRect = () => {
-            cachedRect = {
-                left: imageContainer.offsetLeft,
-                top: imageContainer.offsetTop,
-                width: imageContainer.offsetWidth,
-                height: imageContainer.offsetHeight
-            };
-        };
-        
-        // Initialize cached rect
-        updateCachedRect();
-        window.addEventListener('resize', updateCachedRect, { passive: true });
-        
         imageContainer.addEventListener('mousemove', function(e) {
-            if (rafId || !cachedRect) return;
+            if (rafId) return;
             
             rafId = requestAnimationFrame(() => {
-                const centerX = cachedRect.left + cachedRect.width / 2;
-                const centerY = cachedRect.top + cachedRect.height / 2;
+                const rect = imageContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
                 
-                const deltaX = (e.clientX - centerX) / (cachedRect.width / 2);
-                const deltaY = (e.clientY - centerY) / (cachedRect.height / 2);
+                const deltaX = (e.clientX - centerX) / (rect.width / 2);
+                const deltaY = (e.clientY - centerY) / (rect.height / 2);
                 
                 const rotateX = deltaY * -10;
                 const rotateY = deltaX * 10;
@@ -831,10 +844,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add click ripple effect (optimized)
         imageContainer.addEventListener('click', function(e) {
             const ripple = document.createElement('div');
-            // Use cached rect to avoid getBoundingClientRect
-            if (!cachedRect) updateCachedRect();
-            const x = e.clientX - cachedRect.left;
-            const y = e.clientY - cachedRect.top;
+            const rect = imageContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
             ripple.style.cssText = `
                 position: absolute;
@@ -862,14 +874,15 @@ document.addEventListener('DOMContentLoaded', function() {
             let badgeRafId = null;
             
             imageContainer.addEventListener('mousemove', function(e) {
-                if (badgeRafId || !cachedRect) return;
+                if (badgeRafId) return;
                 
                 badgeRafId = requestAnimationFrame(() => {
-                    const centerX = cachedRect.left + cachedRect.width / 2;
-                    const centerY = cachedRect.top + cachedRect.height / 2;
+                    const rect = imageContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
                     
-                    const deltaX = (e.clientX - centerX) / (cachedRect.width / 2);
-                    const deltaY = (e.clientY - centerY) / (cachedRect.height / 2);
+                    const deltaX = (e.clientX - centerX) / (rect.width / 2);
+                    const deltaY = (e.clientY - centerY) / (rect.height / 2);
                     
                     floatingBadge.style.transform = `translate(${deltaX * 5}px, ${deltaY * 5}px)`;
                     badgeRafId = null;
@@ -897,6 +910,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         imageObserver.observe(imageContainer);
     }
+    }, 200); // Defer image interactions
 });
 
 // Add CSS keyframes for ripple and slide animations via JavaScript
