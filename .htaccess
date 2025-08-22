@@ -1,7 +1,0 @@
-# SEO Redirect for index.html to optimized filename
-RewriteEngine On
-RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
-RewriteRule ^index\.html$ /videosurveillance-montpellier-cameras-securite.html [R=301,L]
-
-# Handle root directory requests
-DirectoryIndex videosurveillance-montpellier-cameras-securite.html
