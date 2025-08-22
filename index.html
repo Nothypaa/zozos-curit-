@@ -6,23 +6,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1a1a1a">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <link rel="canonical" href="https://www.zozosecurite.fr/index.html">
-    <!-- Google Fonts -->
+    
+    <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=2.2">
-    <link rel="stylesheet" href="css/navigation.css?v=2.0">
-    <link rel="stylesheet" href="css/realisations.css?v=1.0">
-    <link rel="stylesheet" href="css/partners.css?v=1.0">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Critical CSS Inlined -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            padding-bottom: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.2s ease-out 0.3s forwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out 0.6s forwards;
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            z-index: 100;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF3333;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .hero {
+                padding: 0 5%;
+                min-height: 50vh;
+                padding-top: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                margin-top: 3rem;
+                letter-spacing: -0.3px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="css/styles.css?v=2.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.css?v=2.2"></noscript>
+    
+    <link rel="preload" href="css/navigation.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/navigation.css?v=2.0"></noscript>
+    
+    <link rel="preload" href="css/realisations.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/realisations.css?v=1.0"></noscript>
+    
+    <link rel="preload" href="css/partners.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/partners.css?v=1.0"></noscript>
+    
+    <link rel="preload" href="css/google-reviews.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/google-reviews.css?v=1.0"></noscript>
 
-    <link rel="stylesheet" href="css/google-reviews.css?v=1.0">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome Icons - Deferred -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <!-- Favicon -->
     <link rel="icon" href="images/zozosécuritélogo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/zozosécuritélogo.ico" type="image/x-icon">
@@ -404,74 +563,74 @@
                 <!-- First set of logos -->
                 <div class="partner-logo">
                     <a href="https://www.lidl.fr" target="_blank" rel="noopener">
-                        <img src="images/Lidl.png" alt="Magasin Lidl – installation vidéosurveillance complète" loading="lazy">
+                        <img src="images/Lidl.webp" alt="Magasin Lidl – installation vidéosurveillance complète" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.but.fr" target="_blank" rel="noopener">
-                        <img src="images/BUT.png" alt="Magasin BUT – installation système de sécurité" loading="lazy">
+                        <img src="images/BUT.webp" alt="Magasin BUT – installation système de sécurité" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.bulgari.com" target="_blank" rel="noopener">
-                        <img src="images/bvlgari.png" alt="Boutique Bulgari – mise en place sécurité avancée" loading="lazy">
+                        <img src="images/bvlgari.webp" alt="Boutique Bulgari – mise en place sécurité avancée" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.sephora.fr" target="_blank" rel="noopener">
-                        <img src="images/sephora.png" alt="Magasin Sephora – solution de vidéosurveillance" loading="lazy">
+                        <img src="images/sephora.webp" alt="Magasin Sephora – solution de vidéosurveillance" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.aramisauto.com" target="_blank" rel="noopener">
-                        <img src="images/aramisauto.png" alt="Agence Aramisauto – installation caméras de surveillance" loading="lazy">
+                        <img src="images/aramisauto.webp" alt="Agence Aramisauto – installation caméras de surveillance" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.le-kiosque-a-pizzas.com" target="_blank" rel="noopener">
-                        <img src="images/kiosque.png" alt="Kiosque à Pizzas – système de sécurité compact" loading="lazy">
+                        <img src="images/kiosque.webp" alt="Kiosque à Pizzas – système de sécurité compact" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.aldi.fr" target="_blank" rel="noopener">
-                        <img src="images/aldi.png" alt="Magasin Aldi – installation caméras de surveillance" loading="lazy">
+                        <img src="images/Aldi.webp" alt="Magasin Aldi – installation caméras de surveillance" loading="lazy">
                     </a>
                 </div>
                 
                 <!-- Duplicate set for seamless carousel loop animation -->
                 <div class="partner-logo">
                     <a href="https://www.lidl.fr" target="_blank" rel="noopener">
-                        <img src="images/Lidl.png" alt="Magasin Lidl – installation vidéosurveillance complète" loading="lazy">
+                        <img src="images/Lidl.webp" alt="Magasin Lidl – installation vidéosurveillance complète" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.but.fr" target="_blank" rel="noopener">
-                        <img src="images/BUT.png" alt="Magasin BUT – installation système de sécurité" loading="lazy">
+                        <img src="images/BUT.webp" alt="Magasin BUT – installation système de sécurité" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.bulgari.com" target="_blank" rel="noopener">
-                        <img src="images/bvlgari.png" alt="Boutique Bulgari – mise en place sécurité avancée" loading="lazy">
+                        <img src="images/bvlgari.webp" alt="Boutique Bulgari – mise en place sécurité avancée" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.sephora.fr" target="_blank" rel="noopener">
-                        <img src="images/sephora.png" alt="Magasin Sephora – solution de vidéosurveillance" loading="lazy">
+                        <img src="images/sephora.webp" alt="Magasin Sephora – solution de vidéosurveillance" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.aramisauto.com" target="_blank" rel="noopener">
-                        <img src="images/aramisauto.png" alt="Agence Aramisauto – installation caméras de surveillance" loading="lazy">
+                        <img src="images/aramisauto.webp" alt="Agence Aramisauto – installation caméras de surveillance" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.le-kiosque-a-pizzas.com" target="_blank" rel="noopener">
-                        <img src="images/kiosque.png" alt="Kiosque à Pizzas – système de sécurité compact" loading="lazy">
+                        <img src="images/kiosque.webp" alt="Kiosque à Pizzas – système de sécurité compact" loading="lazy">
                     </a>
                 </div>
                 <div class="partner-logo">
                     <a href="https://www.aldi.fr" target="_blank" rel="noopener">
-                        <img src="images/aldi.png" alt="Magasin Aldi – installation caméras de surveillance" loading="lazy">
+                        <img src="images/Aldi.webp" alt="Magasin Aldi – installation caméras de surveillance" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -1424,8 +1583,7 @@
         </p>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/css-loader.js"></script>
+    <script async src="js/main.js"></script>
 
     <!-- Dropdown Navigation JavaScript -->
     <script>
