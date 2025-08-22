@@ -333,12 +333,12 @@
     if (modernSlider) {
         modernSlider.addEventListener('touchstart', e => {
             touchStartX = e.changedTouches[0].screenX;
-        });
+        }, { passive: true });
 
         modernSlider.addEventListener('touchend', e => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
-        });
+        }, { passive: true });
 
         // Pause auto-play on hover/interaction
         modernSlider.addEventListener('mouseenter', stopAutoPlay);
@@ -393,7 +393,7 @@
         } else {
             scrollTopBtn.classList.remove('visible');
         }
-    });
+    }, { passive: true });
 
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({
@@ -487,7 +487,7 @@ if (desktopNav) {
         } else {
             desktopNav.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 }
 
 // Prevent logo movement on click
@@ -762,7 +762,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (heroSmall.querySelector('.hero-title')) {
                 heroSmall.querySelector('.hero-title').style.transform = `translateY(${rate}px)`;
             }
-        });
+        }, { passive: true });
     }
 });
 // --- End FAQ Page Enhanced Interactions ---
