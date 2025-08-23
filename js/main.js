@@ -1,5 +1,73 @@
 // i want every js code to be stored here
 
+// Global rect caching system to prevent forced reflows
+const RectCache = {
+    cache: new Map(),
+    observers: new Map(),
+    
+    // Cache element dimensions
+    cacheElement(element, key) {
+        if (!element) return null;
+        
+        const rect = {
+            left: element.offsetLeft,
+            top: element.offsetTop,
+            width: element.offsetWidth,
+            height: element.offsetHeight,
+            right: element.offsetLeft + element.offsetWidth,
+            bottom: element.offsetTop + element.offsetHeight
+        };
+        
+        this.cache.set(key, rect);
+        return rect;
+    },
+    
+    // Get cached dimensions
+    get(key) {
+        return this.cache.get(key);
+    },
+    
+    // Update cache for specific element
+    updateCache(element, key) {
+        if (element && element.offsetParent) {
+            return this.cacheElement(element, key);
+        }
+        return null;
+    },
+    
+    // Clear cache
+    clear() {
+        this.cache.clear();
+    }
+};
+
+// Initialize cache on DOM ready and update on resize
+let resizeTimeout;
+const initRectCache = () => {
+    // Cache critical elements
+    const imageContainer = document.querySelector('.image-container');
+    if (imageContainer) {
+        RectCache.cacheElement(imageContainer, 'imageContainer');
+    }
+    
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item, index) => {
+        RectCache.cacheElement(item, `faqItem-${index}`);
+    });
+};
+
+// Throttled resize handler
+const handleResize = () => {
+    if (resizeTimeout) clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        initRectCache();
+    }, 250);
+};
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', initRectCache);
+window.addEventListener('resize', handleResize, { passive: true });
+
 
 
 
@@ -546,14 +614,16 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Prevent default action on touchstart (for mobile)
       logo.addEventListener('touchstart', function(e) {
+        // Add touched class for visual feedback
+        this.classList.add('touched');
         // Prevent any transform from happening
         this.style.transform = 'none';
       }, { passive: true });
       
       // Handle touch end event
       logo.addEventListener('touchend', function(e) {
-        // Prevent the default behavior which can cause movement
-        e.preventDefault();
+        // Remove touched class
+        this.classList.remove('touched');
         
         // Get the href attribute
         const href = this.getAttribute('href');
@@ -569,7 +639,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
         }
-      });
+      }, { passive: true });
     }
   });
 
@@ -689,15 +759,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         item.setAttribute('open', '');
                         item.classList.add('active');
                         
-                        // Scroll to item if it's not fully visible (optimized)
+                        // Scroll to item if it's not fully visible (using Intersection Observer)
                         setTimeout(() => {
-                            const rect = item.getBoundingClientRect();
-                            if (rect.top < 100) {
-                                item.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
+                            const observer = new IntersectionObserver((entries) => {
+                                entries.forEach(entry => {
+                                    // If item is not visible or partially visible at top
+                                    if (!entry.isIntersecting || entry.boundingClientRect.top < 100) {
+                                        item.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
+                                    }
                                 });
-                            }
+                                observer.disconnect();
+                            }, { 
+                                rootMargin: '-100px 0px 0px 0px',
+                                threshold: [0, 1]
+                            });
+                            
+                            observer.observe(item);
                         }, 300);
                     }
                 });
@@ -815,7 +895,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rafId) return;
             
             rafId = requestAnimationFrame(() => {
-                const rect = imageContainer.getBoundingClientRect();
+                // Use cached rect to avoid forced reflow
+                const rect = RectCache.get('imageContainer');
+                if (!rect) {
+                    rafId = null;
+                    return;
+                }
+                
                 const centerX = rect.left + rect.width / 2;
                 const centerY = rect.top + rect.height / 2;
                 
@@ -844,7 +930,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add click ripple effect (optimized)
         imageContainer.addEventListener('click', function(e) {
             const ripple = document.createElement('div');
-            const rect = imageContainer.getBoundingClientRect();
+            // Use cached rect to avoid forced reflow
+            const rect = RectCache.get('imageContainer');
+            if (!rect) return;
+            
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
@@ -877,7 +966,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (badgeRafId) return;
                 
                 badgeRafId = requestAnimationFrame(() => {
-                    const rect = imageContainer.getBoundingClientRect();
+                    // Use cached rect to avoid forced reflow
+                    const rect = RectCache.get('imageContainer');
+                    if (!rect) {
+                        badgeRafId = null;
+                        return;
+                    }
+                    
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
                     
