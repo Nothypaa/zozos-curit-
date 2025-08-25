@@ -22,6 +22,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    
     <!-- Optimized font loading with proper fallback -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'; this.onload=null;">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
@@ -448,38 +452,47 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="services-container">
-            <h2 class="section-title"><span class="highlight-text">Nos</span> Services</h2>
+            <h2 class="section-title"><span class="highlight-text">nos services</span> de vidéosurveillance</h2>
             <div class="services-grid">
                 <!-- Vidéo Surveillance & DVR/NVR -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="3" />
-                            <path d="M20 12c0-4.42-3.58-8-8-8s-8 3.58-8 8 3.58 8 8 8 8-3.58 8-8z" />
-                        </svg>
+                    <h3>vidéosurveillance à <span class="highlight-text">montpellier</span></h3>
+                    <div class="service-image">
+                        <img src="images/realisations/Vidéo-sécurité-télésurveillance-montpellier.webp" alt="Installation vidéosurveillance Montpellier">
                     </div>
-                    <h3>Vidéosurveillance & DVR/NVR</h3>
-                    <p>Installation de caméras IP/TVI et enregistreurs DVR ou NVR avec accès distant.</p>
-                    <a href="services/videosurveillance.html" class="card-button">En savoir plus</a>
+                    <p>ZOZO sécurité installe vos systèmes de vidéosurveillance à Montpellier et sa métropole.</p>
+                    <div class="service-filters">
+                        <button class="filter-btn urgent"><i class="fas fa-exclamation-triangle"></i> Dépannage en urgence</button>
+                        <button class="filter-btn install"><i class="fas fa-video"></i> Installation caméra sécurité</button>
+                        <button class="filter-btn repair"><i class="fas fa-wrench"></i> Réparation caméra sécurité</button>
+                    </div>
                 </div>
-
-                <!-- Câblage & Baies réseau -->
+                <!-- Accès à distance & Installation -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="3" y1="9" x2="21" y2="9"></line>
-                            <line x1="3" y1="15" x2="21" y2="15"></line>
-                            <line x1="9" y1="3" x2="9" y2="21"></line>
-                            <line x1="15" y1="3" x2="15" y2="21"></line>
-                        </svg>
+                    <h3>Accès à <span class="highlight-text">distance</span> & Installation</h3>
+                    <div class="service-image">
+                        <img src="images/realisations/vidéosurveillance-montpellier.webp" alt="Installation DVR NVR XVR HVR Montpellier">
                     </div>
-                    <h3>Câblage & Baies réseau</h3>
-                    <p>Conception et montage de baies, switchs et câblage Cat.6 pour systèmes de sécurité.</p>
-                    <a href="contact.html" class="card-button">En savoir plus</a>
+                    <p>Surveillez vos caméras depuis n'importe où à Montpellier. Installation complète de votre matériel déjà acheté.</p>
+                    <div class="service-filters">
+                        <button class="filter-btn monitor"><i class="fas fa-desktop"></i> Surveillance par ordinateur</button>
+                        <button class="filter-btn mobile"><i class="fas fa-mobile-alt"></i> Accès à distance téléphone</button>
+                        <button class="filter-btn cable"><i class="fas fa-network-wired"></i> Installation câblage réseau</button>
+                    </div>
                 </div>
+            </div>
+            <!-- CTA Section -->
+            <div class="services-cta">
+                <div class="cta-content">
+                    <h3 class="cta-title">Votre <span class="highlight-text">sécurité</span> sur mesure</h3>
+                    <p class="cta-description">Chaque propriété à Montpellier est unique. Nos experts analysent vos besoins spécifiques pour vous proposer la solution de caméra de surveillance parfaitement adaptée à votre situation.</p>
+                    <div class="cta-features">
+                        <span class="feature-item">✓ Étude personnalisée gratuite</span>
+                        <span class="feature-item">✓ Installation professionnelle</span>
+                        <span class="feature-item">✓ Support technique inclus</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="cta-button">Demander un devis gratuit</a>
             </div>
         </div>
     </section>
@@ -1159,7 +1172,7 @@
         <div class="reviews-container">
             <div class="reviews-header">
                 <h2 class="reviews-title">Ce que disent nos <span class="highlight-text">clients</span></h2>
-                <p class="reviews-subtitle">Découvrez les témoignages de nos clients satisfaits qui nous font confiance pour leur sécurité</p>
+                <p class="reviews-subtitle">Avis sur notre service d'installation de caméras de surveillance à <span class="highlight-text">Montpellier</span></p>
                 
                 <!-- Google Rating Summary -->
                 <div class="google-rating-summary">
@@ -1198,15 +1211,138 @@
 
             <!-- Reviews Grid -->
             <div class="reviews-grid">
-                <!-- Review 1: Clara Brajon -->
+                <!-- NEW Review 1: Installation caméra surveillance Montpellier -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar reviewer-avatar-purple">F</div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">FRXSH</div>
+                            <div class="review-date">Il y a 1 semaine</div>
+                        </div>
+                        <span class="new-badge">NOUVEAU</span>
+                    </div>
+                    <div class="review-rating">
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="review-text" data-full-text="J'avais déjà fait installer une caméra de surveillance par une autre société à Montpellier, et franchement, c'était raté. On voyait tous les câbles derrière la caméra, sur les murs et même au plafond du hall. Pas du tout esthétique, ça donnait une impression de travail bâclé. Avec Zozo Sécurité, c'était le jour et la nuit. L'installation vidéo surveillance a été faite super proprement, et je n'ai aucune idée d'où les câbles passent. On a l'impression que la caméra surveillance est sans câble tellement c'est discret. Et en plus, les techniciens étaient adorables. Très gentils, souriants et pro. C'était vraiment agréable. Franchement, si vous cherchez un bon installateur caméra surveillance à Montpellier, je recommande Zozo Sécurité les yeux fermés.">
+                        J'avais déjà fait installer une caméra de surveillance par une autre société à Montpellier, et franchement, c'était raté. On voyait tous les câbles derrière la caméra, sur les murs et même au plafond du hall...
+                        <button class="read-more-btn" onclick="toggleReviewText(this)">Lire plus</button>
+                    </div>
+                    <div class="google-badge">
+                        <svg class="google-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Publié sur Google
+                    </div>
+                </div>
+
+                <!-- NEW Review 2: Installation entrepôt -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar reviewer-avatar-orange">ZJ</div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Zacharie Julien</div>
+                            <div class="review-date">Il y a 1 semaine</div>
+                        </div>
+                        <span class="new-badge">NOUVEAU</span>
+                    </div>
+                    <div class="review-rating">
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="review-text">
+                        Nous avons fait appel à ZOZO sécurité montpellier pour l'installation d'une caméra surveillance dans notre entrepôt. Bien qu'il se trouvait à plus de 40 minutes de route, il n'a facturé aucun frais de déplacement. Très sympathique, merci pour l'installation des caméra sécurité
+                    </div>
+                    <div class="google-badge">
+                        <svg class="google-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Publié sur Google
+                    </div>
+                </div>
+
+                <!-- NEW Review 3: Installation maison accès distant -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar reviewer-avatar-teal">MS</div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">masoud salemi</div>
+                            <div class="review-date">Il y a 1 semaine</div>
+                        </div>
+                        <span class="new-badge">NOUVEAU</span>
+                    </div>
+                    <div class="review-rating">
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="review-text">
+                        Très satisfait du travail réalisé par Zozo Sécurité. Installation de caméras à la maison propre et soignée, tout a été bien expliqué et configuré pour un accès à distance. Sérieux, ponctuel et professionnel. Je recommande sans hésiter.
+                    </div>
+                    <div class="google-badge">
+                        <svg class="google-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Publié sur Google
+                    </div>
+                </div>
+
+                <!-- Review 4: Clara Brajon -->
                 <div class="review-card">
                     <div class="review-header">
                         <div class="reviewer-avatar reviewer-avatar-red">CB</div>
                         <div class="reviewer-info">
                             <div class="reviewer-name">Clara Brajon</div>
-                            <div class="review-date">Il y a 1 semaine</div>
+                            <div class="review-date">Il y a 2 semaines</div>
                         </div>
-                        <span class="new-badge">NOUVEAU</span>
                     </div>
                     <div class="review-rating">
                         <svg class="star" viewBox="0 0 24 24">
@@ -1239,8 +1375,8 @@
                     </div>
                 </div>
 
-                <!-- Review 2: LAKMA.AKATSUKI -->
-                <div class="review-card">
+                <!-- Hidden Reviews (Initially hidden, shown after "Voir plus") -->
+                <div class="review-card review-hidden" style="display: none;">
                     <div class="review-header">
                         <div class="reviewer-avatar reviewer-avatar-blue">LA</div>
                         <div class="reviewer-info">
@@ -1279,8 +1415,7 @@
                     </div>
                 </div>
 
-                <!-- Review 3: Sarah Pereira -->
-                <div class="review-card">
+                <div class="review-card review-hidden" style="display: none;">
                     <div class="review-header">
                         <div class="reviewer-avatar reviewer-avatar-green">SP</div>
                         <div class="reviewer-info">
@@ -1323,8 +1458,7 @@
                     </div>
                 </div>
 
-                <!-- Review 4: sarAy -->
-                <div class="review-card">
+                <div class="review-card review-hidden" style="display: none;">
                     <div class="review-header">
                         <div class="reviewer-avatar reviewer-avatar-yellow">S</div>
                         <div class="reviewer-info">
@@ -1362,6 +1496,16 @@
                         Publié sur Google
                     </div>
                 </div>
+            </div>
+
+            <!-- Show More Reviews Button -->
+            <div class="show-more-container" style="text-align: center; margin: 30px 0;">
+                <button id="showMoreReviewsBtn" class="show-more-btn" onclick="toggleMoreReviews()">
+                    <span>Voir plus d'avis</span>
+                    <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
             </div>
 
             <!-- View More Reviews Button -->

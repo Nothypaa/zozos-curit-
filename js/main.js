@@ -454,7 +454,44 @@ window.addEventListener('resize', handleResize, { passive: true });
         }
     };
 
-
+    // Toggle More Reviews functionality
+    window.toggleMoreReviews = function() {
+        const hiddenReviews = document.querySelectorAll('.review-hidden');
+        const button = document.getElementById('showMoreReviewsBtn');
+        const buttonText = button.querySelector('span');
+        const chevronIcon = button.querySelector('.chevron-icon');
+        
+        const isShowingMore = button.classList.contains('expanded');
+        
+        if (isShowingMore) {
+            // Hide additional reviews
+            hiddenReviews.forEach(review => {
+                review.style.display = 'none';
+            });
+            buttonText.textContent = 'Voir plus d\'avis';
+            chevronIcon.style.transform = 'rotate(0deg)';
+            button.classList.remove('expanded');
+        } else {
+            // Show additional reviews with smooth animation
+            hiddenReviews.forEach((review, index) => {
+                setTimeout(() => {
+                    review.style.display = 'block';
+                    review.style.opacity = '0';
+                    review.style.transform = 'translateY(20px)';
+                    
+                    // Trigger animation
+                    requestAnimationFrame(() => {
+                        review.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        review.style.opacity = '1';
+                        review.style.transform = 'translateY(0)';
+                    });
+                }, index * 100); // Stagger the animations
+            });
+            buttonText.textContent = 'Voir moins';
+            chevronIcon.style.transform = 'rotate(180deg)';
+            button.classList.add('expanded');
+        }
+    };
 
     // Scroll to top functionality
     const scrollTopBtn = document.querySelector('.scroll-top');
