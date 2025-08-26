@@ -31,4 +31,4 @@ User-agent: DotBot
 Disallow: /
 
 # Sitemaps
-Sitemap: https://www.zozosecurite.fr/sitemap.xml
+Sitemap: https://zozosecurite.fr/sitemap.xml
