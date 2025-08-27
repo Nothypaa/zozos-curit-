@@ -5,8 +5,10 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
 Disallow: /instruction.json
-Disallow: /js/
-Disallow: /css/
+
+# Allow CSS and JS for proper page rendering by Google
+Allow: /css/
+Allow: /js/
 
 # Blocage des URLs de test et placeholder
 Disallow: /hello-world/
