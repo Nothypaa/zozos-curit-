@@ -8,6 +8,16 @@ Disallow: /instruction.json
 Disallow: /js/
 Disallow: /css/
 
+# Blocage des URLs de test et placeholder
+Disallow: /hello-world/
+Disallow: /*lorem*
+Disallow: /*ipsum*
+Disallow: /*reprehenderit*
+Disallow: /*perfrendis*
+Disallow: /*velit-tenetur*
+Disallow: /test/
+Disallow: /demo/
+
 # Optimisations spécifiques moteurs de recherche
 User-agent: Googlebot
 Allow: /

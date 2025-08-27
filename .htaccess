@@ -1,0 +1,67 @@
+# Redirections 301 pour corriger les erreurs 404 dans Google Search Console
+# ZOZO Sécurité - Optimisation SEO
+
+# Configuration de base
+RewriteEngine On
+DirectoryIndex index.html
+
+# Redirections de domaine pour corriger les problèmes d'indexation GSC
+# Si le domaine accent est configuré dans le futur, rediriger vers le domaine sans accent
+RewriteCond %{HTTP_HOST} ^zozosécurités\.fr$ [NC]
+RewriteRule ^(.*)$ https://zozosecurite.fr/$1 [R=301,L]
+
+# Redirection www vers non-www - FIX COMPLET pour SSL et 404s
+RewriteCond %{HTTP_HOST} ^www\.zozosecurite\.fr$ [NC]
+RewriteRule ^(.*)$ https://zozosecurite.fr/$1 [R=301,L]
+
+# Redirection pour toute variation www (sécurité supplémentaire)
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} !^www\.zozosecurite\.fr$ [NC]
+RewriteRule ^(.*)$ https://zozosecurite.fr/$1 [R=301,L]
+
+# Redirection des URLs de test/placeholder vers des pages pertinentes
+RedirectMatch 301 ^/hello-world/?$ /index.html
+RedirectMatch 301 ^/reprehenderit-repellat-ipsum-et-est-id-aut/?$ /services/videosurveillance.html
+RedirectMatch 301 ^/perfrendis-omnis-impedit-delenti-quae-numquam-quasi/?$ /services/videosurveillance.html
+RedirectMatch 301 ^/velit-tenetur-rerum-at/?$ /contact.html
+
+# Redirections des anciennes URLs de services vers les pages existantes
+RedirectMatch 301 ^/services/cablage-et-installation-de-reseau/?$ /services/installateur-videosurveillance-entrepots-montpellier.html
+RedirectMatch 301 ^/services/reparation-de-cameras-et-alarmes/?$ /contact.html
+RedirectMatch 301 ^/services/installation-de-camera-surveillance/?$ /services/videosurveillance.html
+
+# Redirection de l'ancienne URL du sitemap vers la page Montpellier existante
+RedirectMatch 301 ^/services-videosurveillance-montpellier.html$ /montpellier/installation-camera-securite-montpellier.html
+
+# Redirections pour les URLs manquantes trouvées dans GSC
+RedirectMatch 301 ^/reglementation\.html /mentions-legales.html
+RedirectMatch 301 ^/montpellier/?$ /montpellier/installation-camera-securite-montpellier.html
+RedirectMatch 301 ^/200/?$ /index.html
+
+# Redirections pour les erreurs de statut HTTP communes
+RedirectMatch 301 ^/404/?$ /index.html
+RedirectMatch 301 ^/500/?$ /index.html
+
+# Optimisations générales
+# Forcer HTTPS (si supporté par votre hébergeur)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript application/x-javascript application/xml+rss
+</IfModule>
+
+# Cache des ressources statiques
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
