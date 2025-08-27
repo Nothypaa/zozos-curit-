@@ -23,9 +23,10 @@ RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteCond %{HTTP_HOST} !^www\.zozosecurite\.fr$ [NC]
 RewriteRule ^(.*)$ https://zozosecurite.fr/$1 [R=301,L]
 
-# ÉTAPE 3: Canonicalisation index.html vers /
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.html[\s?] [NC]
-RewriteRule ^index\.html$ / [R=301,L]
+# ÉTAPE 3: Canonicalisation / vers index.html (préserver SEO)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+\s [NC]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /index.html [R=301,L]
 
 # Redirection des URLs de test/placeholder vers des pages pertinentes
 RedirectMatch 301 ^/hello-world/?$ /index.html
