@@ -917,48 +917,15 @@
     cursor: pointer;
     transition: color 0.3s ease, border-color 0.3s ease;
     position: relative;
-    overflow: hidden;
     letter-spacing: 0.01em;
 }
 
-.show-more-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 51, 51, 0.1), rgba(255, 85, 85, 0.1));
-    transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: -1;
-}
-
-.show-more-btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-    border-radius: 50px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-}
 
 .show-more-btn:hover {
     color: #ff5555;
     border-color: rgba(255, 51, 51, 0.2);
 }
 
-.show-more-btn:hover::before {
-    width: 100%;
-}
-
-.show-more-btn:hover::after {
-    opacity: 1;
-}
 
 .chevron-icon {
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -979,7 +946,7 @@
 /* Mobile styles for show more button */
 @media (max-width: 768px) {
     .show-more-container {
-        margin: 30px 0;
+        display: none;
     }
     
     .show-more-btn {
@@ -991,8 +958,7 @@
 
 @media (max-width: 480px) {
     .show-more-container {
-        padding: 0 20px;
-        margin: 40px 0;
+        display: none;
     }
     
     .show-more-btn {

@@ -23,8 +23,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <!-- Optimized inline SVG icons (replaces Font Awesome for better performance) -->
+    <style>
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            fill: currentColor;
+        }
+    </style>
     
     <!-- Optimized font loading with proper fallback -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'; this.onload=null;">
@@ -37,10 +45,10 @@
     <link rel="preload" href="images/kiosque.webp" as="image" fetchpriority="high" media="(max-width: 768px)">
     
     <!-- Preload critical LCP image for desktop -->
-    <link rel="preload" href="images/realisations/image13.webp" as="image" fetchpriority="high" media="(min-width: 769px)">
+    <link rel="preload" href="images/realisations/installation-caméra-sécurité-garage.jpg" as="image" fetchpriority="high" media="(min-width: 769px)">
     
     <!-- Critical CSS Inlined - Optimized for LCP & CLS -->
-    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Inter-fallback',-apple-system,BlinkMacSystemFont,sans-serif}@font-face{font-family:'Inter-fallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial');font-display:swap}body{background:#000;color:#fff;overflow-x:hidden;text-rendering:optimizeSpeed}html{scroll-behavior:smooth}.hero{min-height:100vh;width:100%;position:relative;display:flex;align-items:center;padding:0 10%;padding-bottom:0;overflow:hidden;contain:layout style paint}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:0;will-change:auto;contain:layout style paint}.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;transform:translateZ(0)}.hero-content{max-width:900px;position:relative;transform:translateZ(0)}.hero-title{font-size:4rem;font-weight:700;line-height:1.1;margin-bottom:2rem;opacity:0;transform:translate3d(0,0,0);animation:fadeInUp 0.6s ease-out 0.05s forwards;will-change:opacity;backface-visibility:hidden;min-height:4.4rem}.hero-subtitle{font-size:1.5rem;color:rgba(255,255,255,0.7);margin-bottom:3rem;opacity:0;transform:translate3d(0,0,0);animation:fadeInUp 0.6s ease-out 0.1s forwards;will-change:opacity;backface-visibility:hidden;min-height:1.5rem}.desktop-nav{position:fixed;top:0;right:0;padding:1.5rem 2rem;z-index:100;display:flex;justify-content:flex-end;width:100%;transition:all 0.3s ease;contain:layout style;height:80px;transform:translateZ(0)}.nav-container{display:flex;align-items:center;gap:2rem;height:48px;contain:layout}.nav-links{display:flex;gap:2rem;align-items:center;height:48px;contain:layout}.nav-link{color:white;text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;position:relative;padding:0.5rem 0;transition:all 0.3s ease}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#FF3333;transition:width 0.3s ease}.nav-link:hover::after{width:100%}@keyframes fadeInUp{to{opacity:1;transform:translate3d(0,0,0)}}@media (max-width:767px){.hero{padding:0 5%;min-height:50vh;padding-top:2.5rem}.hero-title{font-size:2.5rem;margin-top:3rem;letter-spacing:-0.3px;min-height:2.75rem}.hero-subtitle{font-size:1rem;margin-bottom:1rem;min-height:1rem}.hero-content{min-height:200px}}img{height:auto;max-width:100%}.about-image{aspect-ratio:280/297}.partner-logo{contain:layout style}.service-card{contain:layout}.logo-track{contain:layout style}.hero-content{contain:layout style}*::before,*::after{contain:layout style;will-change:auto}.cta-buttons{min-height:60px}.nav-container{min-height:48px}.floating-cta-btn{contain:layout style paint;transform:translateZ(0)}</style>
+    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Inter-fallback',-apple-system,BlinkMacSystemFont,sans-serif}@font-face{font-family:'Inter-fallback';size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%;src:local('Arial');font-display:swap}body{background:#000;color:#fff;overflow-x:hidden;text-rendering:optimizeSpeed}html{scroll-behavior:smooth}.hero{min-height:100vh;width:100%;position:relative;display:flex;align-items:center;padding:0 10%;padding-bottom:0;overflow:hidden;contain:layout style paint}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:0;will-change:auto;contain:layout style paint}.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;transform:translateZ(0)}.hero-content{max-width:900px;position:relative;transform:translateZ(0)}.hero-title{font-size:4rem;font-weight:700;line-height:1.1;margin-bottom:2rem;opacity:0;transform:translate3d(0,0,0);animation:fadeInUp 0.6s ease-out 0.05s forwards;will-change:opacity;backface-visibility:hidden;min-height:4.4rem}.hero-subtitle{font-size:1.5rem;color:rgba(255,255,255,0.7);margin-bottom:3rem;opacity:0;transform:translate3d(0,0,0);animation:fadeInUp 0.6s ease-out 0.1s forwards;will-change:opacity;backface-visibility:hidden;min-height:1.5rem}.desktop-nav{position:fixed;top:0;right:0;padding:1.5rem 2rem;z-index:100;display:flex;justify-content:flex-end;width:100%;transition:all 0.3s ease;contain:layout style;height:80px;transform:translateZ(0)}.nav-container{display:flex;align-items:center;gap:2rem;height:48px;contain:layout}.nav-links{display:flex;gap:2rem;align-items:center;height:48px;contain:layout}.nav-link{color:white;text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;position:relative;padding:0.5rem 0;transition:all 0.3s ease}.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#FF3333;transition:width 0.3s ease}.nav-link:hover::after{width:100%}@keyframes fadeInUp{to{opacity:1;transform:translate3d(0,0,0)}}@media (max-width:767px){.hero{padding:0 5%;min-height:50vh;padding-top:2.5rem}.hero-title{font-size:2.5rem;margin-top:3rem;letter-spacing:-0.3px;min-height:2.75rem}.hero-subtitle{font-size:1rem;margin-bottom:1rem;min-height:1rem}.hero-content{min-height:200px}}img{height:auto;max-width:100%}.about-image{aspect-ratio:280/297;object-fit:cover}.partner-logo{contain:layout style}.service-card{contain:layout}.logo-track{contain:layout style}.hero-content{contain:layout style}*::before,*::after{contain:layout style;will-change:auto}.cta-buttons{min-height:60px}.nav-container{min-height:48px}.floating-cta-btn{contain:layout style paint;transform:translateZ(0)}</style>
     
     <!-- Critical LCP optimization script -->
     <script>
@@ -437,12 +445,8 @@
                                 </a>
                             </div>
                         </div>
-                        <img src="images/realisations/image13.webp" alt="Installation vidéosurveillance ZOZO Sécurité - Exemple de nos réalisations professionnelles" class="about-image" fetchpriority="high" width="280" height="297">
+                        <img src="images/realisations/installation-caméra-sécurité-garage.jpg" alt="Installation vidéosurveillance ZOZO Sécurité - Exemple de nos réalisations professionnelles" class="about-image" fetchpriority="high" width="280" height="297">
                         <div class="image-frame"></div>
-                        <div class="floating-badge">
-                            <svg class="icon-video" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
-                            <span>HD 4K</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -462,9 +466,9 @@
                     </div>
                     <p>ZOZO sécurité installe vos systèmes de vidéosurveillance à Montpellier et sa métropole.</p>
                     <div class="service-filters">
-                        <button class="filter-btn urgent"><i class="fas fa-exclamation-triangle"></i> Dépannage en urgence</button>
-                        <button class="filter-btn install"><i class="fas fa-video"></i> Installation caméra sécurité</button>
-                        <button class="filter-btn repair"><i class="fas fa-wrench"></i> Réparation caméra sécurité</button>
+                        <button class="filter-btn urgent"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21L12 2L23 21H1ZM13 18V16H11V18H13ZM13 14V10H11V14H13Z"/></svg> Dépannage en urgence</button>
+                        <button class="filter-btn install"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z"/></svg> Installation caméra sécurité</button>
+                        <button class="filter-btn repair"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.7,19L13.6,9.9C14.5,7.6 14,4.9 12.1,3C10.1,1 7.1,0.6 4.7,1.7L9,6L6,9L1.6,4.7C0.4,7.1 0.9,10.1 2.9,12.1C4.8,14 7.5,14.5 9.8,13.6L18.9,22.7C19.3,23.1 19.9,23.1 20.3,22.7L22.6,20.4C23.1,20 23.1,19.3 22.7,19Z"/></svg> Réparation caméra sécurité</button>
                     </div>
                 </div>
                 <!-- Accès à distance & Installation -->
@@ -475,9 +479,9 @@
                     </div>
                     <p>Surveillez vos caméras depuis n'importe où à Montpellier. Installation complète de votre matériel déjà acheté.</p>
                     <div class="service-filters">
-                        <button class="filter-btn monitor"><i class="fas fa-desktop"></i> Surveillance par ordinateur</button>
-                        <button class="filter-btn mobile"><i class="fas fa-mobile-alt"></i> Accès à distance téléphone</button>
-                        <button class="filter-btn cable"><i class="fas fa-network-wired"></i> Installation câblage réseau</button>
+                        <button class="filter-btn monitor"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z"/></svg> Surveillance par ordinateur</button>
+                        <button class="filter-btn mobile"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z"/></svg> Accès à distance téléphone</button>
+                        <button class="filter-btn cable"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4,4H8V8H4V4M10,4H14V8H10V4M16,4H20V8H16V4M4,10H8V14H4V10M10,10H14V14H10V10M16,10H20V14H16V10M4,16H8V20H4V16M10,16H14V20H10V16M16,16H20V20H16V16Z"/></svg> Installation câblage réseau</button>
                     </div>
                 </div>
             </div>
@@ -811,7 +815,7 @@
 
                     <div class="enhanced-slide" data-category="videosurveillance">
                         <div class="slide-image-container">
-                            <img src="images/realisations/image7.webp" alt="Caméras Bullet – Vidéosurveillance pour Syndic" loading="lazy">
+                            <img src="images/realisations/image7.webp" alt="Caméras Bullet – Vidéosurveillance pour Syndic Montpellier" loading="lazy">
                             
                             <button class="zoom-btn" aria-label="Agrandir l'image">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -830,7 +834,7 @@
                                 </svg>
                                 Vidéosurveillance
                             </div>
-                            <h3>Caméras Bullet – Vidéosurveillance pour Syndic</h3>
+                            <h3>Caméras Bullet – Vidéosurveillance pour Syndic Montpellier</h3>
                             <p>Installation de deux caméras bullet orientées en angle sur la façade d'une résidence pour couvrir les accès extérieurs. Pose discrète en hauteur, gaines de protection rigides pour assurer la longévité du câblage, et position stratégique pour un champ de vision élargi. Solution idéale pour les syndics cherchant à renforcer la sécurité des parties communes.</p>
                             <div class="slide-tags">
                                 <span class="tag">Résidence</span>
@@ -863,8 +867,8 @@
                                 </svg>
                                 Vidéosurveillance
                             </div>
-                            <h3>Speed Dome Dahua - Aldi</h3>
-                            <p>Caméra haute vitesse avec suivi automatique et reconnaissance de plaques d'immatriculation</p>
+                            <h3>Speed Dome Dahua - Aldi Montpellier</h3>
+                            <p>Vidéoprotection de grande distribution avec suivi automatique et reconnaissance de plaques d'immatriculation</p>
                             <div class="slide-tags">
                                 <span class="tag">Speed Dome</span>
                                 <span class="tag">Auto-tracking</span>
@@ -1717,6 +1721,42 @@
                     }
                 });
             });
+        });
+    </script>
+
+    <!-- About section auto-overlay script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSection = document.getElementById('qui-sommes-nous');
+            const imageContainer = document.querySelector('.image-container');
+            let overlayTimer = null;
+
+            if (aboutSection && imageContainer) {
+                // Create intersection observer
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // User entered the section, start timer
+                            overlayTimer = setTimeout(() => {
+                                imageContainer.classList.add('show-overlay');
+                            }, 3000); // 3 seconds delay
+                        } else {
+                            // User left the section, clear timer and hide overlay
+                            if (overlayTimer) {
+                                clearTimeout(overlayTimer);
+                                overlayTimer = null;
+                            }
+                            imageContainer.classList.remove('show-overlay');
+                        }
+                    });
+                }, {
+                    threshold: 0.3, // Trigger when 30% of section is visible
+                    rootMargin: '-50px 0px' // Add some margin for better UX
+                });
+
+                // Start observing
+                observer.observe(aboutSection);
+            }
         });
     </script>
 

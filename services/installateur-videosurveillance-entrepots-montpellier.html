@@ -12,8 +12,16 @@
     <link rel="stylesheet" href="../css/entrepot.css">
     <link rel="stylesheet" href="../css/faq.css">
     <link rel="stylesheet" href="../css/contact.css">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <!-- Optimized inline SVG icons (replaces Font Awesome for better performance) -->
+    <style>
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            fill: currentColor;
+        }
+    </style> 
     <!-- Favicon -->
     <link rel="icon" href="../images/zozosécuritélogo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../images/zozosécuritélogo.ico" type="image/x-icon">
@@ -458,7 +466,7 @@
             <div class="entrepot-grid">
                 <div class="entrepot-card">
                     <div class="entrepot-icon">
-                        <i class="fas fa-warehouse"></i>
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12,3L2,12H5V20H19V12H22L12,3M12,5.7L17,10.4V18H15V12H9V18H7V10.4L12,5.7M11,13H13V18H11V13Z"/></svg>
                     </div>
                     <h3>Surveillance Zones de Stockage</h3>
                     <p>Monitoring 24/7 des allées de stockage avec <strong>détection de mouvement intelligente</strong> et alertes en temps réel pour protéger vos marchandises.</p>
@@ -466,7 +474,7 @@
                 
                 <div class="entrepot-card">
                     <div class="entrepot-icon">
-                        <i class="fas fa-truck-loading"></i>
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3,4A2,2 0 0,0 1,6V17H3A3,3 0 0,0 6,20A3,3 0 0,0 9,17H15A3,3 0 0,0 18,20A3,3 0 0,0 21,17H23V12L20,8H17V4H3M3,6H15V15H3V6M17,9.5H19.5L21.5,12H17V9.5M6,15.5A1.5,1.5 0 0,1 7.5,17A1.5,1.5 0 0,1 6,18.5A1.5,1.5 0 0,1 4.5,17A1.5,1.5 0 0,1 6,15.5M18,15.5A1.5,1.5 0 0,1 19.5,17A1.5,1.5 0 0,1 18,18.5A1.5,1.5 0 0,1 16.5,17A1.5,1.5 0 0,1 18,15.5Z"/></svg>
                     </div>
                     <h3>Contrôle Quais de Chargement</h3>
                     <p>Surveillance des zones de réception et expédition avec <strong>caméras haute résolution</strong> pour sécuriser les opérations logistiques.</p>
@@ -474,7 +482,7 @@
                 
                 <div class="entrepot-card">
                     <div class="entrepot-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/></svg>
                     </div>
                     <h3>Sécurité Périmétrique</h3>
                     <p>Protection complète des accès et périmètres avec <strong>détection d'intrusion avancée</strong> et surveillance périmétrique intelligente.</p>
@@ -482,7 +490,7 @@
                 
                 <div class="entrepot-card">
                     <div class="entrepot-icon">
-                        <i class="fas fa-eye"></i>
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/></svg>
                     </div>
                     <h3>Vision Nocturne Industrielle</h3>
                     <p>Caméras infrarouges <strong>haute performance</strong> pour une surveillance continue même dans l'obscurité totale des entrepôts.</p>
@@ -516,15 +524,15 @@
                     </p>
                     <div class="explanation-features">
                         <div class="feature-item">
-                            <i class="fas fa-tools"></i>
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16,5L13,8L14,9L17,6L16,5M20,2A2,2 0 0,1 22,4A2,2 0 0,1 20,6C19.5,6 19,5.9 18.7,5.7L14,10.3V21H12V10.3L7.3,5.7C7,5.9 6.5,6 6,6A2,2 0 0,1 4,4A2,2 0 0,1 6,2C6.5,2 7,2.1 7.3,2.3L12,7L16.7,2.3C17,2.1 17.5,2 18,2H20M3,17V19H11V21H1V15H3V17Z"/></svg>
                             <span>Installation sans interruption d'activité</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-shield-alt"></i>
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/></svg>
                             <span>Câblage sécurisé et discret</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-clock"></i>
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
                             <span>Intervention rapide et planifiée</span>
                         </div>
                     </div>

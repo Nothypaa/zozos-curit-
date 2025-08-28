@@ -2219,16 +2219,17 @@
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             z-index: 2;
+            object-fit: cover;
         }
 
-        .image-container:hover {
+        .image-container.show-overlay {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 
                 0 30px 60px rgba(0, 0, 0, 0.4),
                 0 0 50px rgba(255, 51, 51, 0.4);
         }
 
-        .image-container:hover .about-image {
+        .image-container.show-overlay .about-image {
             transform: scale(1.05);
         }
 
@@ -2253,7 +2254,7 @@
             justify-content: center;
         }
 
-        .image-container:hover .image-overlay {
+        .image-container.show-overlay .image-overlay {
             opacity: 1;
         }
 
@@ -2266,7 +2267,7 @@
             max-width: 280px;
         }
 
-        .image-container:hover .overlay-content {
+        .image-container.show-overlay .overlay-content {
             transform: translateY(0);
         }
 
@@ -2305,7 +2306,7 @@
             transition: all 0.4s ease 0.2s;
         }
 
-        .image-container:hover .slick-button {
+        .image-container.show-overlay .slick-button {
             transform: translateY(0);
             opacity: 1;
         }
