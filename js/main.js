@@ -494,32 +494,41 @@ window.addEventListener('resize', handleResize, { passive: true });
     };
 
     // Scroll to top functionality
+    // IMPORTANT: Always check if scrollTopBtn exists before using it!
+    // Some pages (like montpellier/installation-camera-securite-montpellier.html) 
+    // don't have a .scroll-top button element.
+    // WITHOUT this null check, JavaScript execution stops with:
+    // "TypeError: Cannot read properties of null (reading 'classList')"
+    // This prevents ALL subsequent JavaScript from running, including 
+    // the sticky navigation code below. ALWAYS wrap in if() check!
     const scrollTopBtn = document.querySelector('.scroll-top');
 
-    // Use passive listener and throttle for better performance
-    let scrollTicking = false;
-    const handleScroll = () => {
-        if (!scrollTicking) {
-            requestAnimationFrame(() => {
-                if (window.pageYOffset > 300) {
-                    scrollTopBtn.classList.add('visible');
-                } else {
-                    scrollTopBtn.classList.remove('visible');
-                }
-                scrollTicking = false;
-            });
-            scrollTicking = true;
-        }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (scrollTopBtn) {
+        // Use passive listener and throttle for better performance
+        let scrollTicking = false;
+        const handleScroll = () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    if (window.pageYOffset > 300) {
+                        scrollTopBtn.classList.add('visible');
+                    } else {
+                        scrollTopBtn.classList.remove('visible');
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        };
+        
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
 
     // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -597,6 +606,9 @@ window.addEventListener('resize', handleResize, { passive: true });
 
 
     // Desktop navigation scroll effect
+// CRITICAL: This code must run AFTER all other JavaScript that might crash!
+// If ANY JavaScript above this crashes (null references, missing elements),
+// the sticky navigation will NOT work. Always add null checks above!
 const desktopNav = document.querySelector('.desktop-nav');
 
 if (desktopNav) {
@@ -1168,3 +1180,245 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Legacy budget field functionality removed - now handled by progressive disclosure above
+
+// New SEO-Optimized Grabels Project Slider
+document.addEventListener('DOMContentLoaded', function() {
+    const projectSlider = document.querySelector('[data-slider="grabels-projects"]');
+    if (!projectSlider) return;
+    
+    const cards = projectSlider.querySelectorAll('.project-card');
+    const prevBtn = projectSlider.querySelector('.slider-prev');
+    const nextBtn = projectSlider.querySelector('.slider-next');
+    const dots = projectSlider.querySelectorAll('.dot');
+    
+    if (cards.length === 0) return;
+    
+    let currentIndex = 0;
+    let autoplayInterval;
+    let isAnimating = false;
+    
+    const AUTOPLAY_DELAY = 5000; // 5 seconds
+    
+    // Initialize slider
+    function init() {
+        setActiveSlide(0);
+        startAutoplay();
+        addEventListeners();
+        
+        // Start intersection observer
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startAutoplay();
+                    } else {
+                        stopAutoplay();
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(projectSlider);
+        }
+    }
+    
+    // Set active slide
+    function setActiveSlide(index) {
+        if (isAnimating) return;
+        
+        isAnimating = true;
+        currentIndex = index;
+        
+        // Update cards
+        cards.forEach((card, i) => {
+            card.classList.remove('active', 'prev');
+            if (i === index) {
+                card.classList.add('active');
+            }
+        });
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        // Reset animation flag
+        setTimeout(() => {
+            isAnimating = false;
+        }, 600);
+    }
+    
+    // Navigate to slide
+    function goToSlide(direction) {
+        if (isAnimating) return;
+        
+        let newIndex = currentIndex;
+        
+        if (direction === 'next') {
+            newIndex = (currentIndex + 1) % cards.length;
+        } else if (direction === 'prev') {
+            newIndex = currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
+        } else if (typeof direction === 'number') {
+            newIndex = direction;
+        }
+        
+        setActiveSlide(newIndex);
+        resetAutoplay();
+    }
+    
+    // Autoplay functions
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(() => {
+            goToSlide('next');
+        }, AUTOPLAY_DELAY);
+    }
+    
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+    
+    function resetAutoplay() {
+        if (autoplayInterval) {
+            startAutoplay();
+        }
+    }
+    
+    // Event listeners
+    function addEventListeners() {
+        // Navigation buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => goToSlide('prev'));
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => goToSlide('next'));
+        }
+        
+        // Dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Pause on hover
+        projectSlider.addEventListener('mouseenter', stopAutoplay);
+        projectSlider.addEventListener('mouseleave', startAutoplay);
+        
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        projectSlider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        
+        projectSlider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    goToSlide('next');
+                } else {
+                    goToSlide('prev');
+                }
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!projectSlider.matches(':hover')) return;
+            
+            switch(e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    goToSlide('prev');
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    goToSlide('next');
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    autoplayInterval ? stopAutoplay() : startAutoplay();
+                    break;
+            }
+        });
+        
+        // Pause when page not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoplay();
+            } else {
+                startAutoplay();
+            }
+        });
+    }
+    
+    // Initialize when ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+});
+
+// Grabels Hero Image Overlay Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const imageContainer = document.getElementById('grabels-image-container');
+    if (!imageContainer) return; // Only run on Grabels page
+    
+    let overlayTimer = null;
+    
+    // Create intersection observer to detect when hero section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // User can see the image, start timer
+                overlayTimer = setTimeout(() => {
+                    imageContainer.classList.add('show-overlay');
+                }, 3000); // 3 seconds delay
+            } else {
+                // User can't see the image, clear timer and hide overlay
+                if (overlayTimer) {
+                    clearTimeout(overlayTimer);
+                    overlayTimer = null;
+                }
+                imageContainer.classList.remove('show-overlay');
+            }
+        });
+    }, {
+        threshold: 0.3, // Trigger when 30% of image is visible
+        rootMargin: '-50px 0px' // Add some margin for better UX
+    });
+    
+    // Start observing the image container
+    observer.observe(imageContainer);
+    
+    // Keep overlay visible when hovering over the container
+    imageContainer.addEventListener('mouseenter', () => {
+        if (overlayTimer) {
+            clearTimeout(overlayTimer);
+            overlayTimer = null;
+        }
+    });
+    
+    // Hide overlay when clicking anywhere outside the image
+    document.addEventListener('click', (e) => {
+        if (imageContainer.classList.contains('show-overlay') && !imageContainer.contains(e.target)) {
+            imageContainer.classList.remove('show-overlay');
+        }
+    });
+    
+    // Prevent overlay from hiding when clicking on the image or button
+    imageContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});

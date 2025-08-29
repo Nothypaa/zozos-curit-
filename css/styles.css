@@ -1484,43 +1484,214 @@
             box-shadow: 0 6px 20px -5px rgba(255, 51, 51, 0.3);
         }
 
-        /* Footer Styles */
+        /* SEO Optimized Footer Styles */
         .site-footer {
-            padding: 2rem 1rem;
-            text-align: center;
-            margin-top: 4rem; /* Add some space above the footer */
-            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
-            background: rgba(10, 10, 10, 0.5); /* Slightly different background */
+            margin-top: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        .site-footer p {
-            color: rgba(255, 255, 255, 0.6); 
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .footer-section {
+            min-width: 0; /* Prevents grid overflow */
+        }
+
+        .footer-title {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #FF3333;
+            border-radius: 1px;
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
-        /* General style for links within footer paragraphs */
+        .footer-contact {
+            space-y: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .contact-item svg {
+            color: #FF3333;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #FF3333;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-nav li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-nav a:hover {
+            color: #FF3333;
+            padding-left: 5px;
+        }
+
+        .footer-services .footer-nav a:hover::before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            color: #FF3333;
+        }
+
+        /* Service areas styling */
+        .footer-areas ul li {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-areas ul li::before {
+            content: '•';
+            color: #FF3333;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0 1.5rem 0;
+            text-align: center;
+            background: rgba(5, 5, 5, 0.8);
+        }
+
+        .footer-bottom .footer-container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .footer-bottom .footer-description {
+            max-width: 600px;
+            margin: 0.5rem auto 0 auto !important;
+            text-align: center !important;
+            display: block;
+            padding: 0 1rem;
+        }
+
+        .footer-description strong {
+            color: #FF3333;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+            
+            .footer-title {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .contact-item {
+                font-size: 0.85rem;
+            }
+            
+            .footer-nav a {
+                font-size: 0.85rem;
+            }
+            
+            .footer-areas ul li {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-footer {
+                margin-top: 2rem;
+            }
+            
+            .footer-container {
+                padding: 1.5rem 1rem;
+                gap: 1.5rem;
+            }
+            
+            .footer-bottom {
+                padding: 1.5rem 0 1rem 0;
+            }
+        }
+
+        /* Legacy footer link styles for compatibility */
         .site-footer p a {
-            color: inherit; /* Inherits color from parent p tag */
-            text-decoration: underline; /* Ensures all footer links are underlined */
+            color: inherit;
+            text-decoration: underline;
         }
 
         .site-footer p a:hover {
-            color: #fff; /* Standard hover effect for footer links */
-        }
-
-        .footer-links {
-            margin-top: 0.5rem;
-            font-size: 0.9em;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: underline;
-            margin: 0 0.5rem;
-        }
-
-        .footer-links a:hover {
             color: #fff;
         }
 
