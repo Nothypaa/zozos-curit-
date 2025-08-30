@@ -1370,6 +1370,200 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Mobile-Specific Slideshow for Grabels
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileSlider = document.querySelector('[data-slider="grabels-mobile-projects"]');
+    if (!mobileSlider) return;
+    
+    const mobileCards = mobileSlider.querySelectorAll('.mobile-project-card');
+    const mobileDots = mobileSlider.querySelectorAll('.mobile-dot');
+    const mobileContainer = mobileSlider.querySelector('.mobile-slider-container');
+    const swipeIndicator = mobileSlider.querySelector('.mobile-swipe-indicator');
+    
+    if (mobileCards.length === 0) return;
+    
+    let currentMobileIndex = 0;
+    let mobileAutoplayInterval;
+    let mobileIsAnimating = false;
+    let hasInteracted = false;
+    
+    const MOBILE_AUTOPLAY_DELAY = 5000; // 5 seconds
+    
+    // Initialize mobile slider
+    function initMobile() {
+        setActiveMobileSlide(0);
+        startMobileAutoplay();
+        addMobileEventListeners();
+        
+        // Start intersection observer for mobile
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startMobileAutoplay();
+                    } else {
+                        stopMobileAutoplay();
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(mobileSlider);
+        }
+    }
+    
+    // Set active mobile slide
+    function setActiveMobileSlide(index) {
+        if (mobileIsAnimating) return;
+        
+        mobileIsAnimating = true;
+        currentMobileIndex = index;
+        
+        // Update cards with slide transitions
+        mobileCards.forEach((card, i) => {
+            card.classList.remove('active', 'prev');
+            if (i === index) {
+                card.classList.add('active');
+            } else if (i < index) {
+                card.classList.add('prev');
+            }
+        });
+        
+        // Update dots
+        mobileDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        // Mark as interacted and hide swipe indicator
+        if (!hasInteracted) {
+            hasInteracted = true;
+            mobileSlider.classList.add('interacted');
+        }
+        
+        // Reset animation flag
+        setTimeout(() => {
+            mobileIsAnimating = false;
+        }, 600);
+    }
+    
+    // Navigate mobile slide
+    function goToMobileSlide(direction) {
+        if (mobileIsAnimating) return;
+        
+        let newIndex = currentMobileIndex;
+        
+        if (direction === 'next') {
+            newIndex = (currentMobileIndex + 1) % mobileCards.length;
+        } else if (direction === 'prev') {
+            newIndex = currentMobileIndex === 0 ? mobileCards.length - 1 : currentMobileIndex - 1;
+        } else if (typeof direction === 'number') {
+            newIndex = direction;
+        }
+        
+        setActiveMobileSlide(newIndex);
+        resetMobileAutoplay();
+    }
+    
+    // Mobile autoplay functions
+    function startMobileAutoplay() {
+        stopMobileAutoplay();
+        mobileAutoplayInterval = setInterval(() => {
+            goToMobileSlide('next');
+        }, MOBILE_AUTOPLAY_DELAY);
+    }
+    
+    function stopMobileAutoplay() {
+        if (mobileAutoplayInterval) {
+            clearInterval(mobileAutoplayInterval);
+            mobileAutoplayInterval = null;
+        }
+    }
+    
+    function resetMobileAutoplay() {
+        if (mobileAutoplayInterval) {
+            startMobileAutoplay();
+        }
+    }
+    
+    // Mobile event listeners
+    function addMobileEventListeners() {
+        // Dots navigation
+        mobileDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToMobileSlide(index));
+        });
+        
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+        
+        mobileContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+            touchStartY = e.changedTouches[0].clientY;
+        }, { passive: true });
+        
+        mobileContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            touchEndY = e.changedTouches[0].clientY;
+            handleMobileSwipe();
+        }, { passive: true });
+        
+        function handleMobileSwipe() {
+            const swipeThreshold = 50;
+            const diffX = touchStartX - touchEndX;
+            const diffY = Math.abs(touchStartY - touchEndY);
+            
+            // Only handle horizontal swipes (ignore vertical scrolling)
+            if (Math.abs(diffX) > swipeThreshold && diffY < 100) {
+                if (diffX > 0) {
+                    goToMobileSlide('next');
+                } else {
+                    goToMobileSlide('prev');
+                }
+            }
+        }
+        
+        // Pause on interaction
+        mobileContainer.addEventListener('touchstart', stopMobileAutoplay);
+        mobileContainer.addEventListener('touchend', () => {
+            setTimeout(startMobileAutoplay, 3000); // Resume after 3s
+        });
+        
+        // Keyboard navigation (when focused)
+        mobileSlider.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    goToMobileSlide('prev');
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    goToMobileSlide('next');
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    mobileAutoplayInterval ? stopMobileAutoplay() : startMobileAutoplay();
+                    break;
+            }
+        });
+        
+        // Make slider focusable for keyboard navigation
+        mobileSlider.setAttribute('tabindex', '0');
+        
+        // Pause when page not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopMobileAutoplay();
+            } else {
+                startMobileAutoplay();
+            }
+        });
+    }
+    
+    // Initialize mobile slider
+    initMobile();
+});
+
 // Grabels Hero Image Overlay Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const imageContainer = document.getElementById('grabels-image-container');
