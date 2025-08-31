@@ -1459,30 +1459,6 @@
             box-shadow: 0 0 15px rgba(255, 51, 51, 0.7); /* Enhance glow on hover */
         }
 
-        /* Schedule button (Réserver un rendez-vous) */
-        .schedule-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            text-align: center;
-            justify-content: center;
-            width: fit-content;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px -5px rgba(255, 51, 51, 0.2);
-        }
-
-        .schedule-button:hover {
-            background: rgba(40, 40, 40, 0.95);
-            border-color: #FF3333;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px -5px rgba(255, 51, 51, 0.3);
-        }
 
         /* SEO Optimized Footer Styles */
         .site-footer {
@@ -1999,16 +1975,11 @@
                 margin-top: 0.5rem; /* Move buttons closer to subtitle */
             }
 
-            .main-cta,
-            .schedule-button {
+            .main-cta {
                 width: auto; /* Ensure buttons are not full width */
                 text-align: center;
-                padding: 0.6rem 1rem; /* Further reduced padding */
-                font-size: 0.8rem; /* Further reduced font size */
-            }
-
-            .schedule-button {
-                margin-top: -0.5rem; /* Pull the second button up */
+                padding: 0.6rem 1rem; /* Original padding */
+                font-size: 0.8rem; /* Original font size */
             }
         }
 

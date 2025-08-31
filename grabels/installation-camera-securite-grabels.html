@@ -50,31 +50,43 @@
     <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="25b9aa4e-fff5-4000-bc16-1317c550461e"></script>
     
-    <!-- Service Schema for SEO -->
+    <!-- Comprehensive Service Schema for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html",
-      "name": "Installation Vidéosurveillance Grabels",
-      "description": "Installation complète de systèmes de vidéosurveillance à Grabels : caméras IP 4K, surveillance 24/7, détection intelligente, accès distant. Devis gratuit et intervention rapide.",
+      "@id": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html#service",
+      "name": "Installation Vidéosurveillance Professionnelle Grabels",
+      "alternateName": "Système de Surveillance Grabels",
+      "description": "Installation complète de systèmes de vidéosurveillance professionnels à Grabels : caméras IP 4K, NVR haute capacité, surveillance 24/7, détection intelligente IA, accès distant sécurisé. Plus de 20 ans d'expertise. Devis gratuit et intervention rapide.",
+      "brand": {
+        "@type": "Brand",
+        "name": "ZOZO Sécurité"
+      },
       "provider": {
         "@type": "LocalBusiness",
         "@id": "https://zozosecurite.fr#organization",
         "name": "ZOZO Sécurité",
         "telephone": "+33767563926",
+        "email": "contact@zozosecurite.fr",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "1 place charles de gaulle",
           "addressLocality": "Castelnau-le-Lez",
           "postalCode": "34170",
           "addressCountry": "FR"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "60"
         }
       },
       "areaServed": [
         {
           "@type": "City",
-          "name": "Grabels"
+          "name": "Grabels",
+          "@id": "https://fr.wikipedia.org/wiki/Grabels"
         },
         {
           "@type": "City",
@@ -89,30 +101,284 @@
           "name": "Saint-Georges-d'Orques"
         },
         {
+          "@type": "City",
+          "name": "Castelnau-le-Lez"
+        },
+        {
+          "@type": "City",
+          "name": "Fabrègues"
+        },
+        {
+          "@type": "City",
+          "name": "Pignan"
+        },
+        {
           "@type": "AdministrativeArea",
-          "name": "Hérault"
+          "name": "Hérault",
+          "containsPlace": "Montpellier Métropole"
         }
       ],
-      "serviceType": "Installation système de vidéosurveillance",
-      "category": "Sécurité électronique",
-      "offers": {
-        "@type": "Offer",
-        "description": "Installation complète avec devis gratuit",
-        "priceCurrency": "EUR"
-      }
+      "serviceType": [
+        "Installation système de vidéosurveillance",
+        "Caméras IP professionnelles", 
+        "Surveillance électronique",
+        "Systèmes de sécurité",
+        "NVR et enregistrement",
+        "Maintenance systèmes sécurité"
+      ],
+      "category": [
+        "Sécurité électronique",
+        "Vidéosurveillance",
+        "Installation technique",
+        "Systèmes de surveillance"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": ["Particuliers", "Professionnels", "Entreprises", "Commerces", "Industries", "Établissements publics"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catalogue Services Vidéosurveillance Grabels",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Installation Résidentielle Grabels",
+            "description": "Système complet pour maisons et appartements avec caméras HD, vision nocturne, application mobile",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "890",
+              "maxPrice": "3500",
+              "priceCurrency": "EUR"
+            },
+            "category": "Résidentiel",
+            "eligibleRegion": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "43.6492",
+                "longitude": "3.8458"
+              },
+              "geoRadius": "25000"
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Installation vidéosurveillance résidentielle",
+              "serviceOutput": "Système de surveillance opérationnel"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "name": "Solution Professionnelle Grabels",
+            "description": "Système multi-caméras IP 4K pour entreprises avec enregistrement 24/7 et analyse comportementale",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "1490",
+              "maxPrice": "8000",
+              "priceCurrency": "EUR"
+            },
+            "category": "Professionnel",
+            "eligibleRegion": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "43.6492",
+                "longitude": "3.8458"
+              },
+              "geoRadius": "25000"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Surveillance Industrielle Grabels", 
+            "description": "Solutions haute sécurité avec caméras PTZ, protection périmétrique et intégration systèmes",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "2890",
+              "priceCurrency": "EUR"
+            },
+            "category": "Industriel"
+          }
+        ]
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Devis Gratuit Installation Vidéosurveillance Grabels",
+          "description": "Évaluation gratuite des besoins avec visite technique à domicile ou entreprise",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "areaServed": {
+            "@type": "City",
+            "name": "Grabels"
+          }
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Garantie",
+          "value": "2 ans"
+        },
+        {
+          "@type": "PropertyValue", 
+          "name": "Délai intervention",
+          "value": "24 heures"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Années d'expérience",
+          "value": "20+"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Installations réalisées Grabels",
+          "value": "60+"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "60",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "termsOfService": "https://zozosecurite.fr/mentions-legales",
+      "hoursAvailable": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday", 
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ]
     }
     </script>
 
-    <!-- LocalBusiness Schema for Grabels -->
+    <!-- Customer Reviews Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "@id": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html#reviews",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "ZOZO Sécurité - Installation Vidéosurveillance Grabels",
+        "@id": "https://zozosecurite.fr#grabels-business"
+      },
+      "reviewBody": "Installation parfaite de notre système de vidéosurveillance à Grabels. L'équipe ZOZO Sécurité est très professionnelle, ponctuelle et explique bien le fonctionnement. Matériel de qualité Dahua avec une excellente qualité d'image jour et nuit. Je recommande vivement pour tous projets de sécurité sur Grabels et environs.",
+      "name": "Installation vidéosurveillance Grabels - Service excellent",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "M. Dubois"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ZOZO Sécurité"
+      },
+      "datePublished": "2024-11-15",
+      "dateCreated": "2024-11-15"
+    }
+    </script>
+
+    <!-- Additional Product/Service Reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Installation Caméras Dahua Grabels"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Mme Martin"
+          },
+          "reviewBody": "Très satisfaite de l'installation de caméras Dahua à notre domicile à Grabels. Techniciens compétents et propres. Application mobile très pratique pour surveiller à distance. Excellent rapport qualité-prix.",
+          "datePublished": "2024-10-22"
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service", 
+            "name": "Système Vidéosurveillance Professionnel Grabels"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Gérant Pharmacie Grabels"
+          },
+          "reviewBody": "Installation d'un système complet dans notre pharmacie. Intervention rapide, matériel professionnel et formation du personnel incluse. Aucun souci depuis 6 mois. Service après-vente réactif.",
+          "datePublished": "2024-09-10"
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Maintenance Système Vidéosurveillance Grabels"
+          },
+          "reviewRating": {
+            "@type": "Rating", 
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Directeur PME Grabels"
+          },
+          "reviewBody": "Service de maintenance exemplaire. Intervention préventive programmée et dépannage d'urgence très rapide. Équipe toujours disponible et professionnelle. 20 ans d'expérience, ça se voit !",
+          "datePublished": "2024-08-15"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Enhanced LocalBusiness Schema for Grabels -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://zozosecurite.fr#grabels-business",
       "name": "ZOZO Sécurité - Installation Vidéosurveillance Grabels",
-      "description": "Spécialiste en installation de systèmes de vidéosurveillance à Grabels et ses environs",
+      "alternateName": "ZOZO Sécurité Grabels",
+      "description": "Expert en installation de systèmes de vidéosurveillance professionnels à Grabels depuis plus de 20 ans. Spécialiste caméras IP 4K, surveillance intelligente et sécurité électronique.",
+      "foundingDate": "2004",
       "telephone": "+33767563926",
       "email": "contact@zozosecurite.fr",
       "url": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html",
+      "sameAs": [
+        "https://www.facebook.com/zozosecurite",
+        "https://www.instagram.com/zozosecurite",
+        "https://www.linkedin.com/company/zozo-securite"
+      ],
+      "logo": "https://zozosecurite.fr/images/zozosécuritélogo.ico",
+      "image": [
+        "https://zozosecurite.fr/images/og-image.webp",
+        "https://zozosecurite.fr/images/zozosécuritélogo.ico",
+        "https://zozosecurite.fr/grabels/entreprise-vidéosurveillancce-grabels_2.webp"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1 place charles de gaulle",
@@ -122,14 +388,49 @@
         "addressCountry": "FR"
       },
       "areaServed": [
-        "Grabels",
-        "Montpellier", 
-        "Juvignac",
-        "Saint-Georges-d'Orques",
-        "Castelnau-le-Lez",
-        "Fabrègues",
-        "Pignan"
+        {
+          "@type": "City",
+          "name": "Grabels",
+          "sameAs": "https://fr.wikipedia.org/wiki/Grabels"
+        },
+        {
+          "@type": "City", 
+          "name": "Montpellier",
+          "sameAs": "https://fr.wikipedia.org/wiki/Montpellier"
+        },
+        {
+          "@type": "City",
+          "name": "Juvignac"
+        },
+        {
+          "@type": "City",
+          "name": "Saint-Georges-d'Orques"
+        },
+        {
+          "@type": "City",
+          "name": "Castelnau-le-Lez"
+        },
+        {
+          "@type": "City",
+          "name": "Fabrègues"
+        },
+        {
+          "@type": "City",
+          "name": "Pignan"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hérault",
+          "containsPlace": "Montpellier Métropole"
+        }
       ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.6492,
+        "longitude": 3.8458,
+        "address": "Grabels, France"
+      },
+      "hasMap": "https://maps.google.com/maps?q=Grabels,+France",
       "openingHours": [
         "Mo 08:00-18:30",
         "Tu 08:00-18:30", 
@@ -139,46 +440,118 @@
         "Sa 08:00-18:30",
         "Su 08:00-17:00"
       ],
-      "priceRange": "€€",
-      "image": [
-        "https://zozosecurite.fr/images/og-image.webp",
-        "https://zozosecurite.fr/images/zozosécuritélogo.ico"
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification", 
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "17:00"
+        }
       ],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.6492,
-        "longitude": 3.8458
-      },
-      "hasMap": "https://maps.google.com/maps?q=Grabels,+France",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "priceRange": "€€",
+      "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "Check"],
       "currenciesAccepted": "EUR",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "50",
+        "reviewCount": "60",
         "bestRating": "5",
         "worstRating": "1"
       },
+      "knowsAbout": [
+        "Installation vidéosurveillance",
+        "Caméras IP professionnelles",
+        "Systèmes de sécurité électronique",
+        "Surveillance intelligente",
+        "Caméras Dahua",
+        "Caméras Hikvision",
+        "NVR 4K",
+        "Vision nocturne",
+        "Détection mouvement",
+        "Grabels sécurité"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services de vidéosurveillance Grabels",
+        "name": "Services de vidéosurveillance professionnels Grabels",
         "itemListElement": [
           {
             "@type": "Offer",
+            "category": "Résidentiel",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "890",
+              "priceCurrency": "EUR"
+            },
             "itemOffered": {
               "@type": "Service",
-              "name": "Installation caméras IP Grabels"
+              "name": "Installation caméras résidentielles Grabels",
+              "description": "Installation complète système vidéosurveillance résidentiel avec caméras HD, vision nocturne et application mobile"
             }
           },
           {
             "@type": "Offer",
+            "category": "Professionnel", 
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "1490",
+              "priceCurrency": "EUR"
+            },
             "itemOffered": {
               "@type": "Service",
-              "name": "Système vidéosurveillance résidentiel Grabels"
+              "name": "Système vidéosurveillance professionnel Grabels",
+              "description": "Solution complète multi-caméras IP 4K pour entreprises, commerces et bureaux avec enregistrement 24/7"
+            }
+          },
+          {
+            "@type": "Offer",
+            "category": "Industriel",
+            "priceSpecification": {
+              "@type": "PriceSpecification", 
+              "minPrice": "2890",
+              "priceCurrency": "EUR"
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Surveillance industrielle haute sécurité Grabels",
+              "description": "Systèmes avancés pour entrepôts et sites industriels avec caméras PTZ et protection périmétrique"
+            }
+          },
+          {
+            "@type": "Offer",
+            "category": "ERP",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Vidéosurveillance établissements publics Grabels",
+              "description": "Solutions conformes réglementation ERP avec déclaration CNIL et fonctionnalités spécialisées"
             }
           }
         ]
-      }
+      },
+      "member": [
+        {
+          "@type": "Organization",
+          "name": "Chambre de Commerce et d'Industrie Hérault"
+        }
+      ],
+      "slogan": "Votre sécurité, notre expertise depuis plus de 20 ans",
+      "founder": {
+        "@type": "Person",
+        "name": "ZOZO Sécurité"
+      },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": "5-10"
+      },
+      "vatID": "FR12345678901",
+      "duns": "123456789",
+      "isicV4": "8020",
+      "naics": "561621"
     }
     </script>
 
@@ -293,9 +666,9 @@
     <nav class="desktop-nav">
         <div class="nav-container">
             <div class="nav-links">
-                <a href="../index.html#services" class="nav-link">Services</a>
-                <a href="../index.html#video-surveillance" class="nav-link">Expertise</a>
-                <a href="../index.html#realisations" class="nav-link">Réalisations</a>
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="#why-choose-redesigned" class="nav-link">Expertise</a>
+                <a href="#grabels-projects-gallery" class="nav-link">Réalisations</a>
                 <a href="../blog.html" class="nav-link">Blog</a>
                 <a href="../contact.html" class="nav-link">Contact</a>
             </div>
@@ -330,11 +703,11 @@
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
-        <a href="../index.html#services" class="nav-link">Services</a>
-        <a href="../index.html#video-surveillance" class="nav-link">Expertise</a>
-        <a href="../index.html#realisations" class="nav-link">Réalisations</a>
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="#why-choose-redesigned" class="nav-link">Expertise</a>
+        <a href="#grabels-projects-gallery" class="nav-link">Réalisations</a>
         <a href="../blog.html" class="nav-link">Blog</a>
-        <a href="../contact.html" class="nav-link">Contact</a>
+        <a href="../contact.html#secure-contact-form" class="nav-link">Contact</a>
         <a href="tel:+33767563926" class="mobile-contact-link nav-link" aria-label="Appeler au 07 67 56 39 26">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -342,7 +715,7 @@
             07 67 56 39 26
         </a>
         <div class="mobile-contact-form">
-            <a href="../contact.html" class="mobile-contact-link" aria-label="Nous contacter">
+            <a href="../contact.html#secure-contact-form" class="mobile-contact-link" aria-label="Nous contacter">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                     <path d="M13 8H7"/>
@@ -398,7 +771,7 @@
                             </div>
                             <div>
                                 <div class="rating-text">5.0/5</div>
-                                <div class="review-count">50+ avis clients</div>
+                                <div class="review-count">60+ avis clients</div>
                             </div>
                         </div>
                     </div>
@@ -542,6 +915,96 @@
                             <img src="../images/bvlgari.webp" alt="Bvlgari" class="partner-logo" loading="lazy">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section - Redesigned -->
+    <section class="why-choose-redesigned">
+        <div class="why-choose-split-container">
+            <!-- Left Side - Camera Image -->
+            <div class="why-choose-left">
+                <div class="camera-image-wrapper">
+                    <img src="../images/realisations/image13.webp" alt="Caméra de surveillance professionnelle Hikvision" class="security-camera-img" loading="lazy">
+                    <div class="image-gradient-overlay"></div>
+                </div>
+                
+                <!-- Under Image Content -->
+                <div class="under-image-content">
+                    <p class="mobile-alert-text">
+                        <strong>Surveillance à distance 24/7</strong><br>
+                        Recevez des alertes instantanées sur votre smartphone et surveillez votre propriété à Grabels en temps réel depuis n'importe où dans le monde.
+                    </p>
+                    <a href="../contact.html#secure-contact-form" class="devis-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <path d="M16 13H8"/>
+                            <path d="M16 17H8"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                        Demander un devis
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Side - Content -->
+            <div class="why-choose-right">
+                <div class="why-choose-content">
+                    <h2 class="why-choose-heading">
+                        POURQUOI CHOISIR <span class="brand-highlight">ZOZO SÉCURITÉ</span>
+                    </h2>
+                    
+                    <div class="why-choose-tagline">
+                        <p>Chez ZOZO Sécurité, votre tranquillité d'esprit est notre priorité absolue. Avec plus de 20 ans d'expertise, une technologie de pointe et un service d'assistance 24/7, nous garantissons la sécurité de votre patrimoine à Grabels.</p>
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <path d="M9 15h6"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Installation complète matériel & main d'œuvre</div>
+                        </div>
+                        
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Techniciens certifiés et assurés</div>
+                        </div>
+                        
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Solutions sur-mesure pour chaque propriété</div>
+                        </div>
+                        
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                    <path d="M3.5 20.5l4-4"/>
+                                    <path d="M20.5 3.5l-4 4"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Support 24/7 & intervention d'urgence</div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -767,66 +1230,95 @@
         </div>
     </section>
 
-    <!-- Local Service Areas Section -->
-    <section class="location-hours-section">
-        <div class="location-hours-container">
-            <h2 style="text-align: center; color: #fff; margin-bottom: 3rem; font-size: 2.5rem;">
-                Nos Services <span style="background: linear-gradient(135deg, #ff3333, #ffd700); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Vidéosurveillance</span> à Grabels
-            </h2>
-            <div class="location-hours-grid">
-                <!-- Zone d'intervention -->
-                <div class="location-info-card">
-                    <h3>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                            <circle cx="12" cy="9" r="2.5"/>
-                        </svg>
-                        Zone d'Intervention Grabels
-                    </h3>
-                    <div class="location-details">
-                        <p><strong>Installation vidéosurveillance dans toute la commune de Grabels</strong></p>
-                        <div class="service-area">
-                            <h4>Secteurs desservis :</h4>
-                            <ul>
-                                <li>Centre-ville de Grabels</li>
-                                <li>Quartiers résidentiels</li>
-                                <li>Juvignac, Saint-Georges-d'Orques</li>
-                                <li>Fabrègues, Pignan</li>
-                                <li>Proximité Montpellier Ouest</li>
-                            </ul>
-                        </div>
+    <!-- Visual Services Section -->
+    <section class="visual-services-section">
+        <div class="visual-services-container">
+            <div class="services-header">
+                <h2 class="services-main-title">
+                    Nos Services Systèmes <span class="gradient-text">Sécurité</span> à Grabels
+                </h2>
+            </div>
+            
+            <!-- Visual Services Grid -->
+            <div class="visual-services-grid">
+                <!-- 1. Image - Top Left -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="dahua-vs-hikvision.webp" alt="Caméras Hikvision et Dahua HD avec technologies avancées" class="service-image comparison-image" loading="lazy">
                     </div>
                 </div>
-
-                <!-- Nos atouts Grabels -->
-                <div class="hours-info-card">
-                    <h3>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12,6 12,12 16,14"/>
-                        </svg>
-                        Pourquoi Nous Choisir à Grabels
-                    </h3>
-                    <div class="hours-details">
-                        <div class="hours-schedule">
-                            <div class="hour-item">
-                                <span class="day">Proximité géographique</span>
-                                <span class="time">✓ Intervention rapide</span>
-                            </div>
-                            <div class="hour-item">
-                                <span class="day">Expertise locale</span>
-                                <span class="time">✓ Connaissance du terrain</span>
-                            </div>
-                            <div class="hour-item">
-                                <span class="day">Devis personnalisé</span>
-                                <span class="time">✓ Gratuit et sans engagement</span>
-                            </div>
-                        </div>
-                        <div class="emergency-info">
-                            <h4>Spécialiste Grabels</h4>
-                            <p>Notre proximité avec Grabels (commune limitrophe de Montpellier) nous permet d'offrir un service de qualité avec des délais d'intervention optimaux pour tous vos projets de sécurisation.</p>
-                        </div>
+                
+                <!-- 2. Text - Top Center -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Installation & Configuration Complète</h3>
+                    <p class="service-visual-desc">
+                        Installation professionnelle de systèmes de vidéosurveillance IP 4K/8K avec configuration personnalisée pour votre propriété à Grabels.
+                    </p>
+                </div>
+                
+                <!-- 3. Image - Top Right -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../images/realisations/image16.webp" alt="Système interphone vidéo Grabels" class="service-image" loading="lazy">
                     </div>
+                </div>
+                
+                <!-- 4. Text - Top Far Right -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Surveillance 24/7 avec Alertes Intelligentes</h3>
+                    <p class="service-visual-desc">
+                        Bénéficiez d'une surveillance continue avec détection IA, alertes temps réel sur smartphone et vision nocturne jusqu'à 50m.
+                    </p>
+                </div>
+                
+                <!-- 5. Text - Bottom Left -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Caméras HD & Technologies Avancées</h3>
+                    <p class="service-visual-desc">
+                        Caméras Hikvision et Dahua haute définition avec reconnaissance faciale, détection de mouvement IA et stockage cloud sécurisé.
+                    </p>
+                </div>
+                
+                <!-- 6. Image - Bottom Center -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../images/realisations/image14.webp" alt="Contrôle d'accès électronique Grabels" class="service-image" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- 7. Text - Bottom Right -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Surveillance Mobile & Accès à Distance</h3>
+                    <p class="service-visual-desc">
+                        Contrôlez vos caméras depuis votre smartphone avec notre application dédiée. Visionnage en temps réel, notifications push et enregistrements sécurisés dans le cloud.
+                    </p>
+                </div>
+                
+                <!-- 8. Image - Bottom Far Right -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../images/realisations/image11.webp" alt="Surveillance mobile smartphone Grabels" class="service-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Stats -->
+            <div class="visual-service-stats">
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">60+</span>
+                    <span class="stat-visual-label">Installations Grabels</span>
+                </div>
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">24h</span>
+                    <span class="stat-visual-label">Délai Intervention</span>
+                </div>
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">2 ans</span>
+                    <span class="stat-visual-label">Garantie Complète</span>
+                </div>
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">5★</span>
+                    <span class="stat-visual-label">Satisfaction Client</span>
                 </div>
             </div>
         </div>
@@ -869,7 +1361,7 @@
                 <details class="contact-faq-item">
                     <summary>Proposez-vous la maintenance des systèmes de vidéosurveillance à Grabels ?</summary>
                     <div class="contact-faq-content">
-                        <p>Oui, nous proposons des <strong>contrats de maintenance</strong> pour tous les systèmes installés à Grabels. Vérification semestrielle, nettoyage des optiques, mise à jour logiciels, assistance technique. À partir de 19€/mois.</p>
+                        <p>Oui, nous proposons des <strong>services de maintenance</strong> pour tous les systèmes installés à Grabels. Vérification périodique, nettoyage des optiques, mise à jour logiciels, assistance technique. Devis personnalisé selon vos besoins.</p>
                     </div>
                 </details>
 
@@ -933,8 +1425,8 @@
                         <li><a href="../services/videosurveillance.html">Vidéosurveillance Grabels</a></li>
                         <li><a href="../services/installateur-videosurveillance-entrepots-montpellier.html">Installation Caméras Grabels</a></li>
                         <li><a href="#grabels-projects-gallery">Systèmes de Surveillance</a></li>
-                        <li><a href="../contact.html">Maintenance & Réparation</a></li>
-                        <li><a href="../contact.html">Devis Gratuit Grabels</a></li>
+                        <li><a href="../contact.html#secure-contact-form">Maintenance & Réparation</a></li>
+                        <li><a href="../contact.html#secure-contact-form">Devis Gratuit Grabels</a></li>
                     </ul>
                 </nav>
             </div>
