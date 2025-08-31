@@ -386,13 +386,15 @@
             z-index: -1;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            border-color: #FF3333;
-        }
+        @media (hover: hover) and (pointer: fine) {
+            .cta-button:hover {
+                transform: translateY(-2px);
+                border-color: #FF3333;
+            }
 
-        .cta-button:hover::before {
-            width: 100%;
+            .cta-button:hover::before {
+                width: 100%;
+            }
         }
 
         .menu-container {
@@ -530,13 +532,15 @@
             z-index: -1;
         }
 
-        .submit-button:hover {
-            transform: translateY(-2px);
-            border-color: #FF3333;
-        }
+        @media (hover: hover) and (pointer: fine) {
+            .submit-button:hover {
+                transform: translateY(-2px);
+                border-color: #FF3333;
+            }
 
-        .submit-button:hover::before {
-            width: 100%;
+            .submit-button:hover::before {
+                width: 100%;
+            }
         }
 
         .fade-in {
@@ -1452,11 +1456,13 @@
             text-shadow: 0 0 8px rgba(255, 51, 51, 0.5); /* Add a subtle glow */
         }
 
-        .main-cta:hover {
-            background: #FF3333;
-            transform: translateY(-2px);
-            border-color: #FF3333;
-            box-shadow: 0 0 15px rgba(255, 51, 51, 0.7); /* Enhance glow on hover */
+        @media (hover: hover) and (pointer: fine) {
+            .main-cta:hover {
+                background: #FF3333;
+                transform: translateY(-2px);
+                border-color: #FF3333;
+                box-shadow: 0 0 15px rgba(255, 51, 51, 0.7); /* Enhance glow on hover */
+            }
         }
 
 
@@ -1558,16 +1564,19 @@
             position: relative;
         }
 
-        .footer-nav a:hover {
-            color: #FF3333;
-            padding-left: 5px;
-        }
+        /* Hover effects only for devices with precise pointers (desktop/laptop) */
+        @media (hover: hover) and (pointer: fine) {
+            .footer-nav a:hover {
+                color: #FF3333;
+                padding-left: 5px;
+            }
 
-        .footer-services .footer-nav a:hover::before {
-            content: '→';
-            position: absolute;
-            left: -15px;
-            color: #FF3333;
+            .footer-services .footer-nav a:hover::before {
+                content: '→';
+                position: absolute;
+                left: -15px;
+                color: #FF3333;
+            }
         }
 
         /* Service areas styling */
@@ -1667,8 +1676,10 @@
             text-decoration: underline;
         }
 
-        .site-footer p a:hover {
-            color: #fff;
+        @media (hover: hover) and (pointer: fine) {
+            .site-footer p a:hover {
+                color: #fff;
+            }
         }
 
         /* Simple Scroll Arrow */
