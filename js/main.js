@@ -1181,213 +1181,228 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Legacy budget field functionality removed - now handled by progressive disclosure above
 
-// New SEO-Optimized Grabels Project Slider
+// Universal Project Slider for All Cities
 document.addEventListener('DOMContentLoaded', function() {
-    const projectSlider = document.querySelector('[data-slider="grabels-projects"]');
-    if (!projectSlider) return;
+    // Find all desktop project sliders (grabels, nimes, etc.)
+    const allProjectSliders = document.querySelectorAll('[data-slider*="-projects"]:not([data-slider*="mobile"])');
     
-    const cards = projectSlider.querySelectorAll('.project-card');
-    const prevBtn = projectSlider.querySelector('.slider-prev');
-    const nextBtn = projectSlider.querySelector('.slider-next');
-    const dots = projectSlider.querySelectorAll('.dot');
+    allProjectSliders.forEach(projectSlider => {
+        initProjectSlider(projectSlider);
+    });
     
-    if (cards.length === 0) return;
+    function initProjectSlider(projectSlider) {
+        if (!projectSlider) return;
     
-    let currentIndex = 0;
-    let autoplayInterval;
-    let isAnimating = false;
-    
-    const AUTOPLAY_DELAY = 5000; // 5 seconds
-    
-    // Initialize slider
-    function init() {
-        setActiveSlide(0);
-        startAutoplay();
-        addEventListeners();
+        const cards = projectSlider.querySelectorAll('.project-card');
+        const prevBtn = projectSlider.querySelector('.slider-prev');
+        const nextBtn = projectSlider.querySelector('.slider-next');
+        const dots = projectSlider.querySelectorAll('.dot');
         
-        // Start intersection observer
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startAutoplay();
-                    } else {
-                        stopAutoplay();
-                    }
-                });
-            }, { threshold: 0.3 });
-            
-            observer.observe(projectSlider);
-        }
-    }
+        if (cards.length === 0) return;
+        
+        let currentIndex = 0;
+        let autoplayInterval;
+        let isAnimating = false;
+        
+        const AUTOPLAY_DELAY = 5000; // 5 seconds
     
-    // Set active slide
-    function setActiveSlide(index) {
-        if (isAnimating) return;
-        
-        isAnimating = true;
-        currentIndex = index;
-        
-        // Update cards
-        cards.forEach((card, i) => {
-            card.classList.remove('active', 'prev');
-            if (i === index) {
-                card.classList.add('active');
-            }
-        });
-        
-        // Update dots
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-        
-        // Reset animation flag
-        setTimeout(() => {
-            isAnimating = false;
-        }, 600);
-    }
-    
-    // Navigate to slide
-    function goToSlide(direction) {
-        if (isAnimating) return;
-        
-        let newIndex = currentIndex;
-        
-        if (direction === 'next') {
-            newIndex = (currentIndex + 1) % cards.length;
-        } else if (direction === 'prev') {
-            newIndex = currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
-        } else if (typeof direction === 'number') {
-            newIndex = direction;
-        }
-        
-        setActiveSlide(newIndex);
-        resetAutoplay();
-    }
-    
-    // Autoplay functions
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayInterval = setInterval(() => {
-            goToSlide('next');
-        }, AUTOPLAY_DELAY);
-    }
-    
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-    }
-    
-    function resetAutoplay() {
-        if (autoplayInterval) {
+        // Initialize slider
+        function init() {
+            setActiveSlide(0);
             startAutoplay();
+            addEventListeners();
+            
+            // Start intersection observer
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startAutoplay();
+                        } else {
+                            stopAutoplay();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                
+                observer.observe(projectSlider);
+            }
         }
-    }
     
-    // Event listeners
-    function addEventListeners() {
-        // Navigation buttons
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => goToSlide('prev'));
-        }
-        
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => goToSlide('next'));
-        }
-        
-        // Dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToSlide(index));
-        });
-        
-        // Pause on hover
-        projectSlider.addEventListener('mouseenter', stopAutoplay);
-        projectSlider.addEventListener('mouseleave', startAutoplay);
-        
-        // Touch/swipe support
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        projectSlider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].clientX;
-        }, { passive: true });
-        
-        projectSlider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].clientX;
-            handleSwipe();
-        }, { passive: true });
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
+        // Set active slide
+        function setActiveSlide(index) {
+            if (isAnimating) return;
             
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    goToSlide('next');
-                } else {
-                    goToSlide('prev');
+            isAnimating = true;
+            currentIndex = index;
+            
+            // Update cards
+            cards.forEach((card, i) => {
+                card.classList.remove('active', 'prev');
+                if (i === index) {
+                    card.classList.add('active');
                 }
+            });
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            // Reset animation flag
+            setTimeout(() => {
+                isAnimating = false;
+            }, 600);
+        }
+    
+        // Navigate to slide
+        function goToSlide(direction) {
+            if (isAnimating) return;
+            
+            let newIndex = currentIndex;
+            
+            if (direction === 'next') {
+                newIndex = (currentIndex + 1) % cards.length;
+            } else if (direction === 'prev') {
+                newIndex = currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
+            } else if (typeof direction === 'number') {
+                newIndex = direction;
+            }
+            
+            setActiveSlide(newIndex);
+            resetAutoplay();
+        }
+        
+        // Autoplay functions
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayInterval = setInterval(() => {
+                goToSlide('next');
+            }, AUTOPLAY_DELAY);
+        }
+        
+        function stopAutoplay() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
             }
         }
         
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!projectSlider.matches(':hover')) return;
-            
-            switch(e.key) {
-                case 'ArrowLeft':
-                    e.preventDefault();
-                    goToSlide('prev');
-                    break;
-                case 'ArrowRight':
-                    e.preventDefault();
-                    goToSlide('next');
-                    break;
-                case ' ':
-                    e.preventDefault();
-                    autoplayInterval ? stopAutoplay() : startAutoplay();
-                    break;
-            }
-        });
-        
-        // Pause when page not visible
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                stopAutoplay();
-            } else {
+        function resetAutoplay() {
+            if (autoplayInterval) {
                 startAutoplay();
             }
-        });
-    }
+        }
     
-    // Initialize when ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
+        // Event listeners
+        function addEventListeners() {
+            // Navigation buttons
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => goToSlide('prev'));
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => goToSlide('next'));
+            }
+            
+            // Dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Pause on hover
+            projectSlider.addEventListener('mouseenter', stopAutoplay);
+            projectSlider.addEventListener('mouseleave', startAutoplay);
+        
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            projectSlider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+            
+            projectSlider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        goToSlide('next');
+                    } else {
+                        goToSlide('prev');
+                    }
+                }
+            }
+        
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!projectSlider.matches(':hover')) return;
+                
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        goToSlide('prev');
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        goToSlide('next');
+                        break;
+                    case ' ':
+                        e.preventDefault();
+                        autoplayInterval ? stopAutoplay() : startAutoplay();
+                        break;
+                }
+            });
+            
+            // Pause when page not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopAutoplay();
+                } else {
+                    startAutoplay();
+                }
+            });
+        }
+        
+        // Initialize when ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     }
 });
 
-// Mobile-Specific Slideshow for Grabels
+// Universal Mobile Slideshow for All Cities
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileSlider = document.querySelector('[data-slider="grabels-mobile-projects"]');
-    if (!mobileSlider) return;
+    // Find all mobile project sliders (grabels, nimes, etc.)
+    const allMobileSliders = document.querySelectorAll('[data-slider*="-mobile-projects"]');
     
-    const mobileCards = mobileSlider.querySelectorAll('.mobile-project-card');
-    const mobileDots = mobileSlider.querySelectorAll('.mobile-dot');
-    const mobileContainer = mobileSlider.querySelector('.mobile-slider-container');
-    const swipeIndicator = mobileSlider.querySelector('.mobile-swipe-indicator');
+    allMobileSliders.forEach(mobileSlider => {
+        initMobileSlider(mobileSlider);
+    });
     
-    if (mobileCards.length === 0) return;
-    
-    let currentMobileIndex = 0;
-    let mobileAutoplayInterval;
-    let mobileIsAnimating = false;
-    let hasInteracted = false;
-    
-    const MOBILE_AUTOPLAY_DELAY = 5000; // 5 seconds
+    function initMobileSlider(mobileSlider) {
+        if (!mobileSlider) return;
+        
+        const mobileCards = mobileSlider.querySelectorAll('.mobile-project-card');
+        const mobileDots = mobileSlider.querySelectorAll('.mobile-dot');
+        const mobileContainer = mobileSlider.querySelector('.mobile-slider-container');
+        const swipeIndicator = mobileSlider.querySelector('.mobile-swipe-indicator');
+        
+        if (mobileCards.length === 0) return;
+        
+        let currentMobileIndex = 0;
+        let mobileAutoplayInterval;
+        let mobileIsAnimating = false;
+        let hasInteracted = false;
+        
+        const MOBILE_AUTOPLAY_DELAY = 5000; // 5 seconds
     
     // Initialize mobile slider
     function initMobile() {
@@ -1560,8 +1575,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize mobile slider
-    initMobile();
+        // Initialize mobile slider
+        initMobile();
+    }
 });
 
 // Grabels Hero Image Overlay Functionality
