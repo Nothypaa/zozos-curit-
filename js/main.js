@@ -537,9 +537,13 @@ window.addEventListener('resize', handleResize, { passive: true });
 
     if (mobileMenuBtn && mobileNav) {
     // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling to document click handler
         mobileNav.classList.toggle('active');
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        
+        // Add active class to button for visual feedback
+        mobileMenuBtn.classList.toggle('active', mobileNav.classList.contains('active'));
     });
 
     // Close menu when clicking a link (but not dropdown toggle)
@@ -548,18 +552,24 @@ window.addEventListener('resize', handleResize, { passive: true });
             // Don't close menu if it's the dropdown toggle button
             if (!link.classList.contains('mobile-dropdown-toggle')) {
                 mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
     });
-    // Close menu when clicking outside
+    
+    // Close menu when clicking outside - with a small delay to prevent conflicts
     document.addEventListener('click', (e) => {
-        if (mobileNav.classList.contains('active') && 
-            !mobileNav.contains(e.target) && 
-            !mobileMenuBtn.contains(e.target)) {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        // Use setTimeout to allow the button click event to complete first
+        setTimeout(() => {
+            if (mobileNav.classList.contains('active') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }, 10);
     });
 }
 
