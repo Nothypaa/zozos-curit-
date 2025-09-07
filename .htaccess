@@ -14,7 +14,18 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^zozosécurités\.fr$ [NC]
 RewriteRule ^(.*)$ https://zozosecurite.fr/$1 [R=301,L]
 
-# Redirection www vers non-www - FIX COMPLET pour SSL et 404s
+# Redirections directes pour éliminer les chaînes de redirection GSC
+# www city directories vers pages finales (évite www → non-www → page finale)
+RewriteCond %{HTTP_HOST} ^www\.zozosecurite\.fr$ [NC]
+RewriteRule ^montpellier/?$ https://zozosecurite.fr/montpellier/installation-camera-securite-montpellier.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.zozosecurite\.fr$ [NC]
+RewriteRule ^nimes/?$ https://zozosecurite.fr/nimes/installation-camera-securite-nimes.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.zozosecurite\.fr$ [NC]
+RewriteRule ^grabels/?$ https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html [R=301,L]
+
+# Redirection www vers non-www - FIX COMPLET pour SSL et 404s (général)
 RewriteCond %{HTTP_HOST} ^www\.zozosecurite\.fr$ [NC]
 RewriteRule ^(.*)$ https://zozosecurite.fr/$1 [R=301,L]
 
@@ -44,7 +55,6 @@ RedirectMatch 301 ^/services-videosurveillance-montpellier.html$ /montpellier/in
 
 # Redirections pour les URLs manquantes trouvées dans GSC
 RedirectMatch 301 ^/reglementation\.html /mentions-legales.html
-RedirectMatch 301 ^/montpellier/?$ /montpellier/installation-camera-securite-montpellier.html
 RedirectMatch 301 ^/200/?$ /index.html
 
 # Redirections pour les erreurs de statut HTTP communes

@@ -99,7 +99,231 @@
         "@type": "Offer",
         "description": "Installation complète avec devis gratuit",
         "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "60",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "termsOfService": "https://zozosecurite.fr/mentions-legales",
+      "hoursAvailable": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday", 
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Customer Reviews Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "@id": "https://zozosecurite.fr/montpellier/installation-camera-securite-montpellier.html#reviews",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "ZOZO Sécurité - Installation Vidéosurveillance Montpellier",
+        "@id": "https://zozosecurite.fr#montpellier-business"
+      },
+      "reviewBody": "Installation parfaite de notre système de vidéosurveillance à Montpellier. L'équipe ZOZO Sécurité est très professionnelle, ponctuelle et explique bien le fonctionnement. Matériel de qualité Dahua avec une excellente qualité d'image jour et nuit. Je recommande vivement pour tous projets de sécurité sur Montpellier et sa métropole.",
+      "name": "Installation vidéosurveillance Montpellier - Service excellent",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "M. Laurent"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ZOZO Sécurité"
+      },
+      "datePublished": "2024-11-15",
+      "dateCreated": "2024-11-15"
+    }
+    </script>
+
+    <!-- Additional Product/Service Reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Installation Caméras Dahua Montpellier"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Mme Rousseau"
+          },
+          "reviewBody": "Très satisfaite de l'installation de caméras Dahua à notre domicile à Montpellier. Techniciens compétents et propres. Application mobile très pratique pour surveiller à distance. Excellent rapport qualité-prix.",
+          "datePublished": "2024-10-22"
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Système Sécurité Entreprise Montpellier"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "M. Bertrand"
+          },
+          "reviewBody": "Installation d'un système complet dans notre entreprise à Montpellier. Intervention rapide, matériel professionnel et formation du personnel incluse. Aucun souci depuis 6 mois. Service après-vente réactif.",
+          "datePublished": "2024-09-18"
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Maintenance Vidéosurveillance Montpellier"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Mme Garnier"
+          },
+          "reviewBody": "Service de maintenance exemplaire à Montpellier. Intervention préventive programmée et dépannage d'urgence très rapide. Équipe toujours disponible et professionnelle. 20 ans d'expérience, ça se voit !",
+          "datePublished": "2024-08-25"
+        }
+      ]
+    }
+    </script>
+
+    <!-- LocalBusiness Schema with Enhanced Details -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://zozosecurite.fr#montpellier-local-business",
+      "name": "ZOZO Sécurité - Installation Vidéosurveillance Montpellier", 
+      "image": "https://zozosecurite.fr/images/zozosécuritélogo.jpg",
+      "url": "https://zozosecurite.fr/montpellier/installation-camera-securite-montpellier.html",
+      "telephone": "+33767563926",
+      "email": "contact@zozosecurite.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 place charles de gaulle",
+        "addressLocality": "Castelnau-le-Lez",
+        "postalCode": "34170",
+        "addressCountry": "FR",
+        "addressRegion": "Occitanie"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "43.6047",
+        "longitude": "3.8767"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:30"
+        }
+      ],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": ["Cash", "Credit Card", "Bank transfer"],
+      "areaServed": {
+        "@type": "City",
+        "name": "Montpellier",
+        "sameAs": "https://fr.wikipedia.org/wiki/Montpellier"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "60",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasMap": "https://maps.google.com/maps?q=Montpellier,+France",
+      "foundingDate": "2003",
+      "slogan": "Votre sécurité, notre expertise depuis 20 ans",
+      "knowsAbout": ["Vidéosurveillance", "Caméras IP", "Sécurité électronique", "Systèmes d'alarme", "Détection intrusion", "Télésurveillance"],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.6047",
+          "longitude": "3.8767"
+        },
+        "geoRadius": "50000"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Installation vidéosurveillance résidentielle",
+            "description": "Installation complète de systèmes de vidéosurveillance pour particuliers"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Installation vidéosurveillance professionnelle",
+            "description": "Solutions de sécurité vidéo pour entreprises et commerces"
+          }
+        }
+      ],
+      "member": {
+        "@type": "Organization",
+        "name": "Fédération Française de la Sécurité Privée"
+      },
+      "award": "Certification professionnelle sécurité électronique",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "60"
       }
+    }
+    </script>
+
+    <!-- FAQ Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel est le prix d'installation vidéosurveillance à Montpellier ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le prix d'installation vidéosurveillance à Montpellier varie entre 800€ et 5000€ selon le nombre de caméras, la qualité (HD, 4K), et les fonctionnalités (vision nocturne, détection de mouvement). Nous proposons un devis gratuit personnalisé après visite à votre domicile ou entreprise."
+          }
+        }
+      ]
     }
     </script>
 
@@ -285,9 +509,9 @@
     <nav class="desktop-nav">
         <div class="nav-container">
             <div class="nav-links">
-                <a href="../index.html#services" class="nav-link">Services</a>
-                <a href="../index.html#video-surveillance" class="nav-link">Expertise</a>
-                <a href="../index.html#realisations" class="nav-link">Réalisations</a>
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="#why-choose-redesigned" class="nav-link">Expertise</a>
+                <a href="#montpellier-projects-gallery" class="nav-link">Réalisations</a>
                 <a href="../blog.html" class="nav-link">Blog</a>
                 <a href="../contact.html" class="nav-link">Contact</a>
             </div>
@@ -322,9 +546,9 @@
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
-        <a href="../index.html#services" class="nav-link">Services</a>
-        <a href="../index.html#video-surveillance" class="nav-link">Expertise</a>
-        <a href="../index.html#realisations" class="nav-link">Réalisations</a>
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="#why-choose-redesigned" class="nav-link">Expertise</a>
+        <a href="#montpellier-projects-gallery" class="nav-link">Réalisations</a>
         <a href="../blog.html" class="nav-link">Blog</a>
         <a href="../contact.html#secure-contact-form" class="nav-link">Contact</a>
         <a href="tel:+33767563926" class="mobile-contact-link nav-link" aria-label="Appeler au 07 67 56 39 26">
@@ -529,6 +753,321 @@
                             <img src="../images/bvlgari.webp" alt="Bvlgari" class="partner-logo" loading="lazy">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seo-keywords-section" style="padding: 3rem 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+            <h2 style="color: #fff; margin-bottom: 2rem; font-size: 2rem;">Votre Installateur Vidéosurveillance à Montpellier</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+                <strong>ZOZO Sécurité</strong>, expert en <strong>installation vidéosurveillance</strong> à Montpellier, vous accompagne dans tous vos projets de sécurité. 
+                Notre équipe d'<strong>installateur vidéosurveillance Montpellier</strong> certifiée propose des solutions complètes de <strong>vidéosurveillance Montpellier</strong> 
+                adaptées à vos besoins spécifiques. Découvrez notre expertise en <strong>surveillance Montpellier</strong> et nos <strong>caméras sécurité Montpellier</strong> haute performance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section - Redesigned -->
+    <section class="why-choose-redesigned">
+        <div class="why-choose-split-container">
+            <!-- Left Side - Camera Image -->
+            <div class="why-choose-left">
+                <div class="camera-image-wrapper">
+                    <img src="../images/realisations/image13.webp" alt="Caméra de surveillance professionnelle Hikvision" class="security-camera-img" loading="lazy">
+                    <div class="image-gradient-overlay"></div>
+                </div>
+                
+                <!-- Under Image Content -->
+                <div class="under-image-content">
+                    <p class="mobile-alert-text">
+                        <strong>Surveillance à distance 24/7</strong><br>
+                        Recevez des alertes instantanées sur votre smartphone et surveillez votre propriété à Montpellier en temps réel depuis n'importe où dans le monde.
+                    </p>
+                    <a href="../contact.html#secure-contact-form" class="devis-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <path d="M16 13H8"/>
+                            <path d="M16 17H8"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                        Demander un devis
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Side - Why Choose Content -->
+            <div class="why-choose-right">
+                <div class="why-choose-content">
+                    <h2 class="why-choose-heading">
+                        POURQUOI CHOISIR <span class="brand-highlight">ZOZO SÉCURITÉ</span>
+                    </h2>
+                    
+                    <div class="why-choose-tagline">
+                        <p>Chez ZOZO Sécurité, votre tranquillité d'esprit est notre priorité absolue. Avec plus de 20 ans d'expertise, une technologie de pointe et un service d'assistance 24/7, nous garantissons la sécurité de votre patrimoine à Montpellier.</p>
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <path d="M9 15h6"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Installation complète matériel & main d'œuvre</div>
+                        </div>
+                        
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Techniciens certifiés et assurés</div>
+                        </div>
+                        
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Solutions sur-mesure pour chaque propriété</div>
+                        </div>
+                        
+                        <div class="benefit-box">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                    <path d="M3.5 20.5l4-4"/>
+                                    <path d="M20.5 3.5l-4 4"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">Support 24/7 & intervention d'urgence</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New SEO-Optimized Gallery Section -->
+    <section class="projects-showcase" id="montpellier-projects-gallery">
+        <div class="showcase-container">
+            <h2 class="showcase-title">
+                Nos Réalisations à <span class="highlight">Montpellier</span>
+            </h2>
+            <p class="showcase-subtitle">Découvrez nos installations de vidéosurveillance réalisées à Montpellier et sa métropole</p>
+            
+            <!-- New Fixed-Height Slider -->
+            <div class="project-slider" data-slider="montpellier-projects">
+                <div class="slider-viewport">
+                    <div class="slider-track" id="montpellier-slider-track">
+                        
+                        <!-- Project 1 -->
+                        <article class="project-card active" data-slide="0">
+                            <div class="project-image">
+                                <img src="../grabels/entreprise-vidéosurveillancce-grabels_2.webp" 
+                                     alt="Installation vidéosurveillance Montpellier - Entreprise avec caméras Dahua HD" 
+                                     width="400" height="300" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">ENTREPRISE MONTPELLIER</span>
+                                <h3 class="project-title">Installation Professionnelle - Sécurité Entreprise</h3>
+                                <p class="project-description">Installation de caméras Dahua pour une entreprise à Montpellier. Surveillance des accès, protection du matériel et des données avec vision nocturne HD et détection intelligente.</p>
+                                <div class="project-specs">
+                                    <span class="spec">Dahua</span>
+                                    <span class="spec">HD</span>
+                                    <span class="spec">Entreprise</span>
+                                    <span class="spec">Montpellier</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Project 2 -->
+                        <article class="project-card" data-slide="1">
+                            <div class="project-image">
+                                <img src="../grabels/installation-vidéosurveillance-Grabels_3.webp" 
+                                     alt="Installation caméras Hikvision résidentiel Montpellier" 
+                                     width="400" height="300" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">RÉSIDENTIEL MONTPELLIER</span>
+                                <h3 class="project-title">Maison Individuelle - Sécurité Résidentielle</h3>
+                                <p class="project-description">Installation complète de vidéosurveillance pour une résidence à Montpellier. Caméras Hikvision 4K avec vision nocturne avancée et application mobile pour contrôle à distance.</p>
+                                <div class="project-specs">
+                                    <span class="spec">Hikvision</span>
+                                    <span class="spec">4K</span>
+                                    <span class="spec">Résidentiel</span>
+                                    <span class="spec">Montpellier</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Project 3 -->
+                        <article class="project-card" data-slide="2">
+                            <div class="project-image">
+                                <img src="../grabels/systèmes-sécurité-grabels_4.webp" 
+                                     alt="Système sécurité complet commerce Montpellier" 
+                                     width="400" height="300" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">COMMERCE MONTPELLIER</span>
+                                <h3 class="project-title">Boutique Centre-ville - Protection Commerce</h3>
+                                <p class="project-description">Système de sécurité complet pour boutique à Montpellier centre. Caméras anti-vol avec détection intelligente, enregistrement cloud et alertes temps réel sur smartphone.</p>
+                                <div class="project-specs">
+                                    <span class="spec">Anti-vol</span>
+                                    <span class="spec">Cloud</span>
+                                    <span class="spec">Commerce</span>
+                                    <span class="spec">Centre-ville</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Project 4 -->
+                        <article class="project-card" data-slide="3">
+                            <div class="project-image">
+                                <img src="../grabels/vidéoprotection-grabels_5.webp" 
+                                     alt="Vidéoprotection parking sécurisé Montpellier" 
+                                     width="400" height="300" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">PARKING MONTPELLIER</span>
+                                <h3 class="project-title">Parking Sécurisé - Vidéoprotection Avancée</h3>
+                                <p class="project-description">Vidéoprotection complète d'un parking à Montpellier avec caméras panoramiques 360°, éclairage automatique et système d'alerte intrusion connecté à la télésurveillance.</p>
+                                <div class="project-specs">
+                                    <span class="spec">360°</span>
+                                    <span class="spec">Télésurveillance</span>
+                                    <span class="spec">Parking</span>
+                                    <span class="spec">Montpellier</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" data-slider="montpellier-projects" data-direction="prev">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="slider-btn next-btn" data-slider="montpellier-projects" data-direction="next">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Slider Dots -->
+                <div class="slider-dots" data-slider="montpellier-projects">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                    <button class="dot" data-slide="2"></button>
+                    <button class="dot" data-slide="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Services Section -->
+    <section class="visual-services-section">
+        <div class="visual-services-container">
+            <div class="services-header">
+                <h2 class="services-main-title">
+                    Nos Services Systèmes <span class="gradient-text">Sécurité</span> à Montpellier
+                </h2>
+            </div>
+            
+            <!-- Visual Services Grid -->
+            <div class="visual-services-grid">
+                <!-- 1. Image - Top Left -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../grabels/Dahua-vs-Hikvision.webp" alt="Caméras Hikvision et Dahua HD avec technologies avancées" class="service-image comparison-image" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- 2. Text - Top Center -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Installation & Configuration Complète</h3>
+                    <p class="service-visual-desc">
+                        Installation professionnelle de systèmes de vidéosurveillance IP 4K/8K avec configuration personnalisée pour votre propriété à Montpellier.
+                    </p>
+                </div>
+                
+                <!-- 3. Image - Top Right -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../images/realisations/image16.webp" alt="Système interphone vidéo Montpellier" class="service-image" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- 4. Text - Top Far Right -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Surveillance 24/7 avec Alertes Intelligentes</h3>
+                    <p class="service-visual-desc">
+                        Bénéficiez d'une surveillance continue avec détection IA, alertes temps réel sur smartphone et vision nocturne jusqu'à 50m.
+                    </p>
+                </div>
+                
+                <!-- 5. Text - Bottom Left -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Caméras HD & Technologies Avancées</h3>
+                    <p class="service-visual-desc">
+                        Caméras Hikvision et Dahua haute définition avec reconnaissance faciale, détection de mouvement IA et stockage cloud sécurisé.
+                    </p>
+                </div>
+                
+                <!-- 6. Image - Bottom Center -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../images/realisations/image14.webp" alt="Contrôle d'accès électronique Montpellier" class="service-image" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- 7. Text - Bottom Right -->
+                <div class="visual-service-item text-item purple-bg">
+                    <h3 class="service-visual-title">Surveillance Mobile & Accès à Distance</h3>
+                    <p class="service-visual-desc">
+                        Contrôlez vos caméras depuis votre smartphone avec notre application dédiée. Visionnage en temps réel, notifications push et enregistrements sécurisés dans le cloud.
+                    </p>
+                </div>
+                
+                <!-- 8. Image - Bottom Far Right -->
+                <div class="visual-service-item image-item">
+                    <div class="service-image-wrapper">
+                        <img src="../images/realisations/image11.webp" alt="Surveillance mobile smartphone Montpellier" class="service-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Stats -->
+            <div class="visual-service-stats">
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">60+</span>
+                    <span class="stat-visual-label">Installations Montpellier</span>
+                </div>
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">24h</span>
+                    <span class="stat-visual-label">Délai Intervention</span>
+                </div>
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">2 ans</span>
+                    <span class="stat-visual-label">Garantie Complète</span>
+                </div>
+                <div class="stat-visual-item">
+                    <span class="stat-visual-number">5★</span>
+                    <span class="stat-visual-label">Satisfaction Client</span>
                 </div>
             </div>
         </div>
