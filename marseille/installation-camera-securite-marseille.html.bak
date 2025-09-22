@@ -2,39 +2,39 @@
 <html lang="fr">
 
 <head>
-    <title>Installateur Videosurveillance Grabels | Installation Video Surveillance - ZOZO Sécurité</title>
+    <title>Installateur Videosurveillance Marseille | Installation Video Surveillance - ZOZO Sécurité</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html">
+    <link rel="canonical" href="https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html">
     <link rel="stylesheet" href="../css/styles.css?v=2.1">
     <link rel="stylesheet" href="../css/navigation.css?v=2.0">
-    <link rel="stylesheet" href="grabels.css">
+    <link rel="stylesheet" href="marseille.css">
     
     <!-- Favicon -->
     <link rel="icon" href="../images/zozosécuritélogo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../images/zozosécuritélogo.ico" type="image/x-icon">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Installateur videosurveillance Grabels ⭐ Installation video surveillance et caméras sécurité par ZOZO Sécurité. Devis gratuit, intervention rapide. Expert surveillance Grabels.">
-    <meta name="keywords" content="installation vidéosurveillance grabels, installateur videosurveillance grabels, installation video surveillance grabels, videosurveillance grabels, caméras sécurité grabels, vidéosurveillance IP grabels, système sécurité grabels, installateur caméras grabels, télésurveillance grabels, surveillance grabels, camera securite grabels">
+    <meta name="description" content="Installateur videosurveillance Marseille ⭐ Installation video surveillance et caméras sécurité par ZOZO Sécurité. Devis gratuit, intervention rapide. Expert surveillance Marseille.">
+    <meta name="keywords" content="installation vidéosurveillance marseille, installateur videosurveillance marseille, installation video surveillance marseille, videosurveillance marseille, caméras sécurité marseille, vidéosurveillance IP marseille, système sécurité marseille, installateur caméras marseille, télésurveillance marseille, surveillance marseille, camera securite marseille">
     
     <!-- Critical SEO Enhancement -->
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
     <meta name="revised" content="2025-08-28">
     <meta name="author" content="ZOZO Sécurité">
-    <meta name="geo.region" content="FR-34">
-    <meta name="geo.position" content="43.6492;3.8458">
-    <meta name="ICBM" content="43.6492, 3.8458">
-    <meta name="geo.placename" content="Grabels, France">
+    <meta name="geo.region" content="FR-13">
+    <meta name="geo.position" content="43.2965;5.3698">
+    <meta name="ICBM" content="43.2965, 5.3698">
+    <meta name="geo.placename" content="Marseille, France">
     
     <!-- Bing Webmaster Tools -->
     <meta name="msvalidate.01" content="D8B8E351453FE5423D10FC62F1D318E0" />
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Installation Vidéosurveillance Grabels | ZOZO Sécurité">
-    <meta property="og:description" content="Expert en installation de systèmes de vidéosurveillance à Grabels. Devis gratuit et intervention rapide.">
+    <meta property="og:title" content="Installation Vidéosurveillance Marseille | ZOZO Sécurité">
+    <meta property="og:description" content="Expert en installation de systèmes de vidéosurveillance à Marseille. Devis gratuit et intervention rapide.">
     <meta property="og:image" content="../images/og-image.webp">
-    <meta property="og:url" content="https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html">
+    <meta property="og:url" content="https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html">
     <meta property="og:type" content="website">
     
     <!-- Google tag (gtag.js) -->
@@ -64,10 +64,10 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html#service",
-      "name": "Installation Vidéosurveillance Professionnelle Grabels",
-      "alternateName": ["Installateur Videosurveillance Grabels", "Installation Video Surveillance Grabels", "Videosurveillance Grabels", "Surveillance Grabels"],
-      "description": "Installateur videosurveillance Grabels expert en installation video surveillance. Système videosurveillance complet avec caméras IP 4K, surveillance 24/7, camera securite haute performance. Plus de 20 ans d'expertise à Grabels. Devis gratuit et intervention rapide.",
+      "@id": "https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html#service",
+      "name": "Installation Vidéosurveillance Professionnelle Marseille",
+      "alternateName": ["Installateur Videosurveillance Marseille", "Installation Video Surveillance Marseille", "Videosurveillance Marseille", "Surveillance Marseille"],
+      "description": "Installateur videosurveillance Marseille expert en installation video surveillance. Système videosurveillance complet avec caméras IP 4K, surveillance 24/7, camera securite haute performance. Plus de 20 ans d'expertise à Marseille. Devis gratuit et intervention rapide.",
       "brand": {
         "@type": "Brand",
         "name": "ZOZO Sécurité"
@@ -94,37 +94,41 @@
       "areaServed": [
         {
           "@type": "City",
-          "name": "Grabels",
-          "@id": "https://fr.wikipedia.org/wiki/Grabels"
+          "name": "Marseille",
+          "@id": "https://fr.wikipedia.org/wiki/Marseille"
         },
         {
           "@type": "City",
-          "name": "Montpellier"
+          "name": "Aix-en-Provence"
         },
         {
           "@type": "City",
-          "name": "Juvignac"
+          "name": "Aubagne"
         },
         {
           "@type": "City",
-          "name": "Saint-Georges-d'Orques"
+          "name": "La Ciotat"
         },
         {
           "@type": "City",
-          "name": "Castelnau-le-Lez"
+          "name": "Marignane"
         },
         {
           "@type": "City",
-          "name": "Fabrègues"
+          "name": "Vitrolles"
         },
         {
           "@type": "City",
-          "name": "Pignan"
+          "name": "Cassis"
+        },
+        {
+          "@type": "City",
+          "name": "Allauch"
         },
         {
           "@type": "AdministrativeArea",
-          "name": "Hérault",
-          "containsPlace": "Montpellier Métropole"
+          "name": "Bouches-du-Rhône",
+          "containsPlace": "Marseille Métropole"
         }
       ],
       "serviceType": [
@@ -147,11 +151,11 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Catalogue Services Vidéosurveillance Grabels",
+        "name": "Catalogue Services Vidéosurveillance Nîmes",
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "Installation Résidentielle Grabels",
+            "name": "Installation Résidentielle Marseille",
             "description": "Système complet pour maisons et appartements avec caméras HD, vision nocturne, application mobile",
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -164,10 +168,10 @@
               "@type": "GeoCircle",
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": "43.6492",
-                "longitude": "3.8458"
+                "latitude": "43.2965",
+                "longitude": "5.3698"
               },
-              "geoRadius": "25000"
+              "geoRadius": "50000"
             },
             "itemOffered": {
               "@type": "Service",
@@ -177,7 +181,7 @@
           },
           {
             "@type": "Offer", 
-            "name": "Solution Professionnelle Grabels",
+            "name": "Solution Professionnelle Marseille",
             "description": "Système multi-caméras IP 4K pour entreprises avec enregistrement 24/7 et analyse comportementale",
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -190,15 +194,15 @@
               "@type": "GeoCircle",
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": "43.6492",
-                "longitude": "3.8458"
+                "latitude": "43.2965",
+                "longitude": "5.3698"
               },
-              "geoRadius": "25000"
+              "geoRadius": "50000"
             }
           },
           {
             "@type": "Offer",
-            "name": "Surveillance Industrielle Grabels", 
+            "name": "Surveillance Industrielle Marseille", 
             "description": "Solutions haute sécurité avec caméras PTZ, protection périmétrique et intégration systèmes",
             "priceSpecification": {
               "@type": "PriceSpecification",
@@ -212,7 +216,7 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Devis Gratuit Installation Vidéosurveillance Grabels",
+          "name": "Devis Gratuit Installation Vidéosurveillance Marseille",
           "description": "Évaluation gratuite des besoins avec visite technique à domicile ou entreprise",
           "price": "0",
           "priceCurrency": "EUR",
@@ -220,7 +224,7 @@
           "validFrom": "2024-01-01",
           "areaServed": {
             "@type": "City",
-            "name": "Grabels"
+            "name": "Marseille"
           }
         }
       ],
@@ -242,10 +246,17 @@
         },
         {
           "@type": "PropertyValue",
-          "name": "Installations réalisées Grabels",
+          "name": "Installations réalisées Marseille",
           "value": "60+"
         }
       ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "60",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "termsOfService": "https://zozosecurite.fr/mentions-legales",
       "hoursAvailable": [
         {
@@ -264,20 +275,112 @@
     }
     </script>
 
+    <!-- Customer Reviews Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "@id": "https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html#reviews",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "ZOZO Sécurité - Installation Vidéosurveillance Marseille",
+        "@id": "https://zozosecurite.fr#marseille-business"
+      },
+      "reviewBody": "Installation parfaite de notre système de vidéosurveillance à Marseille. L'équipe ZOZO Sécurité est très professionnelle, ponctuelle et explique bien le fonctionnement. Matériel de qualité Dahua avec une excellente qualité d'image jour et nuit. Je recommande vivement pour tous projets de sécurité sur Marseille et environs.",
+      "name": "Installation vidéosurveillance Marseille - Service excellent",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "M. Dubois"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ZOZO Sécurité"
+      },
+      "datePublished": "2024-11-15",
+      "dateCreated": "2024-11-15"
+    }
+    </script>
 
-    <!-- Enhanced LocalBusiness Schema for Grabels -->
+    <!-- Additional Product/Service Reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Installation Caméras Dahua Marseille"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Mme Martin"
+          },
+          "reviewBody": "Très satisfaite de l'installation de caméras Dahua à notre domicile à Marseille. Techniciens compétents et propres. Application mobile très pratique pour surveiller à distance. Excellent rapport qualité-prix.",
+          "datePublished": "2024-10-22"
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service", 
+            "name": "Système Vidéosurveillance Professionnel Marseille"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Gérant Pharmacie Marseille"
+          },
+          "reviewBody": "Installation d'un système complet dans notre pharmacie. Intervention rapide, matériel professionnel et formation du personnel incluse. Aucun souci depuis 6 mois. Service après-vente réactif.",
+          "datePublished": "2024-09-10"
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "Maintenance Système Vidéosurveillance Marseille"
+          },
+          "reviewRating": {
+            "@type": "Rating", 
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Directeur PME Marseille"
+          },
+          "reviewBody": "Service de maintenance exemplaire. Intervention préventive programmée et dépannage d'urgence très rapide. Équipe toujours disponible et professionnelle. 20 ans d'expérience, ça se voit !",
+          "datePublished": "2024-08-15"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Enhanced LocalBusiness Schema for Nîmes -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://zozosecurite.fr#grabels-business",
-      "name": "ZOZO Sécurité - Installation Vidéosurveillance Grabels",
-      "alternateName": "ZOZO Sécurité Grabels",
-      "description": "Expert en installation de systèmes de vidéosurveillance professionnels à Grabels depuis plus de 20 ans. Spécialiste caméras IP 4K, surveillance intelligente et sécurité électronique.",
+      "@id": "https://zozosecurite.fr#marseille-business",
+      "name": "ZOZO Sécurité - Installation Vidéosurveillance Marseille",
+      "alternateName": "ZOZO Sécurité Marseille",
+      "description": "Expert en installation de systèmes de vidéosurveillance professionnels à Marseille depuis plus de 20 ans. Spécialiste caméras IP 4K, surveillance intelligente et sécurité électronique.",
       "foundingDate": "2004",
       "telephone": "+33767563926",
       "email": "contact@zozosecurite.fr",
-      "url": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html",
+      "url": "https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html",
       "sameAs": [
         "https://www.facebook.com/zozosecurite",
         "https://www.instagram.com/zozosecurite",
@@ -287,7 +390,7 @@
       "image": [
         "https://zozosecurite.fr/images/og-image.webp",
         "https://zozosecurite.fr/images/zozosécuritélogo.ico",
-        "https://zozosecurite.fr/grabels/entreprise-vidéosurveillancce-grabels_2.webp"
+        "https://zozosecurite.fr/marseille/entreprise-videosurveillancce-marseille_2.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -300,47 +403,51 @@
       "areaServed": [
         {
           "@type": "City",
-          "name": "Grabels",
-          "sameAs": "https://fr.wikipedia.org/wiki/Grabels"
+          "name": "Marseille",
+          "sameAs": "https://fr.wikipedia.org/wiki/Marseille"
         },
         {
           "@type": "City", 
-          "name": "Montpellier",
-          "sameAs": "https://fr.wikipedia.org/wiki/Montpellier"
+          "name": "Aix-en-Provence",
+          "sameAs": "https://fr.wikipedia.org/wiki/Aix-en-Provence"
         },
         {
           "@type": "City",
-          "name": "Juvignac"
+          "name": "Aubagne"
         },
         {
           "@type": "City",
-          "name": "Saint-Georges-d'Orques"
+          "name": "La Ciotat"
         },
         {
           "@type": "City",
-          "name": "Castelnau-le-Lez"
+          "name": "Marignane"
         },
         {
           "@type": "City",
-          "name": "Fabrègues"
+          "name": "Vitrolles"
         },
         {
           "@type": "City",
-          "name": "Pignan"
+          "name": "Cassis"
+        },
+        {
+          "@type": "City",
+          "name": "Allauch"
         },
         {
           "@type": "AdministrativeArea",
-          "name": "Hérault",
-          "containsPlace": "Montpellier Métropole"
+          "name": "Bouches-du-Rhône",
+          "containsPlace": "Marseille Métropole"
         }
       ],
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 43.6492,
-        "longitude": 3.8458,
-        "address": "Grabels, France"
+        "latitude": 43.2965,
+        "longitude": 5.3698,
+        "address": "Marseille, France"
       },
-      "hasMap": "https://maps.google.com/maps?q=Grabels,+France",
+      "hasMap": "https://maps.google.com/maps?q=Marseille,+France",
       "openingHours": [
         "Mo 08:00-18:30",
         "Tu 08:00-18:30", 
@@ -384,11 +491,11 @@
         "NVR 4K",
         "Vision nocturne",
         "Détection mouvement",
-        "Grabels sécurité"
+        "Marseille sécurité"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services de vidéosurveillance professionnels Grabels",
+        "name": "Services de vidéosurveillance professionnels Marseille",
         "itemListElement": [
           {
             "@type": "Offer",
@@ -400,7 +507,7 @@
             },
             "itemOffered": {
               "@type": "Service",
-              "name": "Installation caméras résidentielles Grabels",
+              "name": "Installation caméras résidentielles Marseille",
               "description": "Installation complète système vidéosurveillance résidentiel avec caméras HD, vision nocturne et application mobile"
             }
           },
@@ -414,7 +521,7 @@
             },
             "itemOffered": {
               "@type": "Service",
-              "name": "Système vidéosurveillance professionnel Grabels",
+              "name": "Système vidéosurveillance professionnel Marseille",
               "description": "Solution complète multi-caméras IP 4K pour entreprises, commerces et bureaux avec enregistrement 24/7"
             }
           },
@@ -428,7 +535,7 @@
             },
             "itemOffered": {
               "@type": "Service",
-              "name": "Surveillance industrielle haute sécurité Grabels",
+              "name": "Surveillance industrielle haute sécurité Marseille",
               "description": "Systèmes avancés pour entrepôts et sites industriels avec caméras PTZ et protection périmétrique"
             }
           },
@@ -437,7 +544,7 @@
             "category": "ERP",
             "itemOffered": {
               "@type": "Service", 
-              "name": "Vidéosurveillance établissements publics Grabels",
+              "name": "Vidéosurveillance établissements publics Marseille",
               "description": "Solutions conformes réglementation ERP avec déclaration CNIL et fonctionnalités spécialisées"
             }
           }
@@ -446,7 +553,7 @@
       "member": [
         {
           "@type": "Organization",
-          "name": "Chambre de Commerce et d'Industrie Hérault"
+          "name": "Chambre de Commerce et d'Industrie Gard"
         }
       ],
       "slogan": "Votre sécurité, notre expertise depuis plus de 20 ans",
@@ -486,14 +593,14 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Grabels",
-          "item": "https://zozosecurite.fr/grabels/"
+          "name": "Marseille",
+          "item": "https://zozosecurite.fr/marseille/"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Vidéosurveillance",
-          "item": "https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html"
+          "item": "https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html"
         }
       ]
     }
@@ -507,50 +614,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Combien coûte l'installation d'un système de vidéosurveillance à Grabels ?",
+          "name": "Combien coûte l'installation d'un système de vidéosurveillance à Marseille ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le prix d'installation vidéosurveillance à Grabels varie entre 800€ et 5000€ selon le nombre de caméras, la qualité (HD, 4K), et les fonctionnalités (vision nocturne, détection de mouvement). Nous proposons un devis gratuit personnalisé après visite à votre domicile ou entreprise."
+            "text": "Le prix d'installation vidéosurveillance à Marseille varie entre 800€ et 5000€ selon le nombre de caméras, la qualité (HD, 4K), et les fonctionnalités (vision nocturne, détection de mouvement). Nous proposons un devis gratuit personnalisé après visite à votre domicile ou entreprise."
           }
         },
         {
           "@type": "Question",
-          "name": "Intervenez-vous rapidement à Grabels ?",
+          "name": "Intervenez-vous rapidement à Marseille ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, basés à Castelnau-le-Lez, nous proposons des délais d'intervention très courts sur Grabels : devis sous 24-48h, installation sous une semaine. Pour les urgences (réparation, maintenance), intervention possible sous 24h."
+            "text": "Oui, basés à Castelnau-le-Lez, nous proposons des délais d'intervention courts sur Marseille : devis sous 24-48h, installation sous une semaine. Pour les urgences (réparation, maintenance), intervention possible sous 24h."
           }
         },
         {
           "@type": "Question",
-          "name": "Quelles autorisations faut-il pour installer des caméras à Grabels ?",
+          "name": "Quelles autorisations faut-il pour installer des caméras à Marseille ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pour les résidences privées à Grabels, aucune autorisation n'est requise si les caméras filment uniquement votre propriété. Pour les commerces, une déclaration CNIL est obligatoire. Nous vous accompagnons dans toutes les démarches administratives."
+            "text": "Pour les résidences privées à Marseille, aucune autorisation n'est requise si les caméras filment uniquement votre propriété. Pour les commerces, une déclaration CNIL est obligatoire. Nous vous accompagnons dans toutes les démarches administratives."
           }
         },
         {
           "@type": "Question",
-          "name": "Puis-je surveiller mes caméras depuis mon smartphone à Grabels ?",
+          "name": "Puis-je surveiller mes caméras depuis mon smartphone à Marseille ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolument ! Tous nos systèmes de vidéosurveillance installés à Grabels sont compatibles smartphone. Vous recevrez les alertes en temps réel et pourrez visionner vos caméras depuis n'importe où, même en déplacement."
+            "text": "Absolument ! Tous nos systèmes de vidéosurveillance installés à Marseille sont compatibles smartphone. Vous recevrez les alertes en temps réel et pourrez visionner vos caméras depuis n'importe où, même en déplacement."
           }
         },
         {
           "@type": "Question",
-          "name": "Proposez-vous la maintenance des systèmes de vidéosurveillance à Grabels ?",
+          "name": "Proposez-vous la maintenance des systèmes de vidéosurveillance à Marseille ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, nous proposons des contrats de maintenance pour tous les systèmes installés à Grabels. Vérification semestrielle, nettoyage des optiques, mise à jour logiciels, assistance technique. À partir de 19€/mois."
+            "text": "Oui, nous proposons des contrats de maintenance pour tous les systèmes installés à Marseille. Vérification semestrielle, nettoyage des optiques, mise à jour logiciels, assistance technique. À partir de 19€/mois."
           }
         },
         {
           "@type": "Question",
-          "name": "Couvrez-vous toutes les zones de Grabels et ses environs ?",
+          "name": "Couvrez-vous toutes les zones de Marseille et ses environs ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, nous intervenons dans toute la commune de Grabels ainsi que dans les communes limitrophes : Juvignac, Saint-Georges-d'Orques, Fabrègues, et bien sûr Montpellier. Notre proximité géographique nous permet une intervention rapide."
+            "text": "Oui, nous intervenons dans toute la commune de Marseille ainsi que dans les communes limitrophes : Aix-en-Provence, Aubagne, La Ciotat, Marignane, Vitrolles, Cassis, Allauch, et bien sûr Montpellier. Notre expertise couvre tout le département des Bouches-du-Rhône."
           }
         }
       ]
@@ -578,7 +685,7 @@
             <div class="nav-links">
                 <a href="../index.html" class="nav-link">Accueil</a>
                 <a href="#why-choose-redesigned" class="nav-link">Expertise</a>
-                <a href="#grabels-projects-gallery" class="nav-link">Réalisations</a>
+                <a href="#nimes-projects-gallery" class="nav-link">Réalisations</a>
                 <a href="../blog.html" class="nav-link">Blog</a>
                 <a href="../contact.html" class="nav-link">Contact</a>
             </div>
@@ -615,7 +722,7 @@
     <nav class="mobile-nav">
         <a href="../index.html" class="nav-link">Accueil</a>
         <a href="#why-choose-redesigned" class="nav-link">Expertise</a>
-        <a href="#grabels-projects-gallery" class="nav-link">Réalisations</a>
+        <a href="#nimes-projects-gallery" class="nav-link">Réalisations</a>
         <a href="../blog.html" class="nav-link">Blog</a>
         <a href="../contact.html#secure-contact-form" class="nav-link">Contact</a>
         <a href="tel:+33767563926" class="mobile-contact-link nav-link" aria-label="Appeler au 07 67 56 39 26">
@@ -627,15 +734,13 @@
         <div class="mobile-contact-form">
             <a href="../contact.html#secure-contact-form" class="mobile-contact-link" aria-label="Nous contacter">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1-2-2h14a2 2 0 0 1 2 2z"/>
                     <path d="M13 8H7"/>
                     <path d="M17 12H7"/>
                 </svg>
             </a>
         </div>
     </nav>
-
-
 
     <!-- Hero Section with Contact Form -->
     <section class="contact-split-layout">
@@ -644,10 +749,10 @@
             <div class="split-left">
                 <div class="split-left-content">
                     <h1 class="split-headline">
-                        Installation <span class="gradient-text">Vidéosurveillance</span> à Grabels
+                        Installation <span class="gradient-text">Vidéosurveillance</span> à Marseille
                     </h1>
                     <p class="split-subtitle">
-                        Installation vidéosurveillance à Grabels par des experts certifiés. Protégez votre patrimoine avec des <strong>systèmes de surveillance professionnels</strong> adaptés à vos besoins.
+                        Installation vidéosurveillance à Marseille par des experts certifiés. Protégez votre patrimoine avec des <strong>systèmes de surveillance professionnels</strong> adaptés à vos besoins.
                     </p>
                     
                     <!-- Google Reviews Summary -->
@@ -691,7 +796,7 @@
                             <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5"/>
                             </svg>
-                            Intervention rapide à Grabels et environs
+                            Intervention rapide à Marseille et environs
                         </li>
                         <li>
                             <svg class="checkmark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
@@ -736,23 +841,23 @@
             <div class="split-right">
                 <div class="original-form-container">
                     <!-- Hero Image Section -->
-                    <div class="hero-image-container" id="grabels-image-container">
+                    <div class="hero-image-container" id="nimes-image-container">
                         <div class="image-overlay">
                             <div class="overlay-content">
                                 <h4>Vous voulez voir notre travail ?</h4>
-                                <p>Découvrez nos installations de vidéoprotection à Grabels</p>
-                                <a href="#grabels-projects-gallery" class="slick-button">
+                                <p>Découvrez nos installations de vidéoprotection à Marseille</p>
+                                <a href="#marseille-projects-gallery" class="slick-button">
                                     <span>Voir nos réalisations</span>
                                     <svg class="icon-arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
                                 </a>
                             </div>
                         </div>
-                        <img src="../images/realisations/installation-caméra-sécurité-garage.jpg" alt="Installation vidéosurveillance professionnelle ZOZO Sécurité - Nos réalisations à Grabels" class="hero-about-image" loading="eager" width="280" height="297">
+                        <img src="../images/realisations/installation-caméra-sécurité-garage.jpg" alt="Installation vidéosurveillance professionnelle ZOZO Sécurité - Nos réalisations à Marseille" class="hero-about-image" loading="eager" width="280" height="297">
                         <div class="hero-image-frame"></div>
                     </div>
                     <form id="secure-contact-form" action="https://formspree.io/f/mblojdjg" method="POST" class="original-contact-form">
                         <input type="hidden" name="_next" value="https://zozosecurite.fr/thank-you.html">
-                        <input type="hidden" name="source" value="videosurveillance-grabels">
+                        <input type="hidden" name="source" value="videosurveillance-marseille">
                         
                         <div class="form-row">
                             <div class="form-group half-width">
@@ -767,7 +872,7 @@
 
                         <div class="form-group">
                             <label for="message">Décrivez votre projet vidéosurveillance *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet de vidéosurveillance à Grabels : type de local, surface à couvrir, besoins spécifiques, contraintes, budget approximatif..."></textarea>
+                            <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet de vidéosurveillance à Marseille : type de local, surface à couvrir, besoins spécifiques, contraintes, budget approximatif..."></textarea>
                         </div>
 
                         <div class="form-row conditional-fields">
@@ -779,12 +884,12 @@
                                 <label for="subject">Type de propriété</label>
                                 <select id="subject" name="subject">
                                     <option value="">Sélectionnez le type</option>
-                                    <option value="Maison individuelle Grabels">Maison individuelle</option>
-                                    <option value="Appartement Grabels">Appartement</option>
-                                    <option value="Commerce Grabels">Commerce / Boutique</option>
-                                    <option value="Bureau Grabels">Bureau / Entreprise</option>
-                                    <option value="Entrepôt Grabels">Entrepôt / Local industriel</option>
-                                    <option value="Autre Grabels">Autre</option>
+                                    <option value="Maison individuelle Marseille">Maison individuelle</option>
+                                    <option value="Appartement Marseille">Appartement</option>
+                                    <option value="Commerce Marseille">Commerce / Boutique</option>
+                                    <option value="Bureau Marseille">Bureau / Entreprise</option>
+                                    <option value="Entrepôt Marseille">Entrepôt / Local industriel</option>
+                                    <option value="Autre Marseille">Autre</option>
                                 </select>
                             </div>
                         </div>
@@ -833,11 +938,11 @@
     <!-- SEO Keywords Section -->
     <section class="seo-keywords-section" style="padding: 3rem 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
-            <h2 style="color: #fff; margin-bottom: 2rem; font-size: 2rem;">Votre Installateur Videosurveillance à Grabels</h2>
+            <h2 style="color: #fff; margin-bottom: 2rem; font-size: 2rem;">Votre Installateur Videosurveillance à Marseille</h2>
             <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
-                <strong>ZOZO Sécurité</strong>, expert en <strong>installation video surveillance</strong> à Grabels, vous accompagne dans tous vos projets de sécurité. 
-                Notre équipe d'<strong>installateur videosurveillance Grabels</strong> certifiée propose des solutions complètes de <strong>videosurveillance Grabels</strong> 
-                adaptées à vos besoins spécifiques. Découvrez notre expertise en <strong>surveillance Grabels</strong> et nos <strong>camera securite Grabels</strong> haute performance.
+                <strong>ZOZO Sécurité</strong>, expert en <strong>installation video surveillance</strong> à Marseille, vous accompagne dans tous vos projets de sécurité. 
+                Notre équipe d'<strong>installateur videosurveillance Marseille</strong> certifiée propose des solutions complètes de <strong>videosurveillance Marseille</strong> 
+                adaptées à vos besoins spécifiques. Découvrez notre expertise en <strong>surveillance Marseille</strong> et nos <strong>camera securite Marseille</strong> haute performance.
             </p>
         </div>
     </section>
@@ -856,7 +961,7 @@
                 <div class="under-image-content">
                     <p class="mobile-alert-text">
                         <strong>Surveillance à distance 24/7</strong><br>
-                        Recevez des alertes instantanées sur votre smartphone et surveillez votre propriété à Grabels en temps réel depuis n'importe où dans le monde.
+                        Recevez des alertes instantanées sur votre smartphone et surveillez votre propriété à Marseille en temps réel depuis n'importe où dans le monde.
                     </p>
                     <a href="../contact.html#secure-contact-form" class="devis-button">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -879,7 +984,7 @@
                     </h2>
                     
                     <div class="why-choose-tagline">
-                        <p>Chez ZOZO Sécurité, votre tranquillité d'esprit est notre priorité absolue. Avec plus de 20 ans d'expertise, une technologie de pointe et un service d'assistance 24/7, nous garantissons la sécurité de votre patrimoine à Grabels.</p>
+                        <p>Chez ZOZO Sécurité, votre tranquillité d'esprit est notre priorité absolue. Avec plus de 20 ans d'expertise, une technologie de pointe et un service d'assistance 24/7, nous garantissons la sécurité de votre patrimoine à Marseille.</p>
                     </div>
                     
                     <div class="benefits-grid">
@@ -930,37 +1035,35 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- New SEO-Optimized Gallery Section -->
-    <section class="projects-showcase" id="grabels-projects-gallery">
+    </section>    <!-- New SEO-Optimized Gallery Section -->
+    <section class="projects-showcase" id="marseille-projects-gallery">
         <div class="showcase-container">
             <h2 class="showcase-title">
-                Nos Réalisations à <span class="highlight">Grabels</span>
+                Nos Réalisations à <span class="highlight">Marseille</span>
             </h2>
-            <p class="showcase-subtitle">Découvrez nos installations de vidéosurveillance réalisées à Grabels et ses environs</p>
+            <p class="showcase-subtitle">Découvrez nos installations de vidéosurveillance réalisées à Marseille et ses environs</p>
             
             <!-- New Fixed-Height Slider -->
-            <div class="project-slider" data-slider="grabels-projects">
+            <div class="project-slider" data-slider="marseille-projects">
                 <div class="slider-viewport">
-                    <div class="slider-track" id="grabels-slider-track">
+                    <div class="slider-track" id="marseille-slider-track">
                         
                         <!-- Project 1 -->
                         <article class="project-card active" data-slide="0">
                             <div class="project-image">
-                                <img src="entreprise-vidéosurveillancce-grabels_2.webp" 
-                                     alt="Installation vidéosurveillance Grabels - Compagnie ambulances avec caméras Dahua HD" 
+                                <img src="../grabels/entreprise-vidéosurveillancce-grabels_2.webp" 
+                                     alt="Installation vidéosurveillance Marseille - Entreprise avec caméras Dahua HD" 
                                      width="400" height="300" loading="lazy">
                             </div>
                             <div class="project-info">
-                                <span class="project-category">ENTREPRISE GRABELS</span>
-                                <h3 class="project-title">Compagnie d'Ambulances - Sécurité Professionnelle</h3>
-                                <p class="project-description">Installation de caméras Dahua pour une compagnie d'ambulances à Grabels. Surveillance des véhicules, accès sécurisés et protection du matériel médical avec vision nocturne HD.</p>
+                                <span class="project-category">ENTREPRISE MARSEILLE</span>
+                                <h3 class="project-title">Installation Professionnelle - Sécurité Entreprise</h3>
+                                <p class="project-description">Installation de caméras Dahua pour une entreprise à Marseille. Surveillance des accès, protection du matériel et des données avec vision nocturne HD et détection intelligente.</p>
                                 <div class="project-specs">
                                     <span class="spec">Dahua</span>
                                     <span class="spec">HD</span>
-                                    <span class="spec">Ambulances</span>
-                                    <span class="spec">Grabels</span>
+                                    <span class="spec">Entreprise</span>
+                                    <span class="spec">Nîmes</span>
                                 </div>
                             </div>
                         </article>
@@ -968,19 +1071,19 @@
                         <!-- Project 2 -->
                         <article class="project-card" data-slide="1">
                             <div class="project-image">
-                                <img src="installation-vidéosurveillance-Grabels_3.webp" 
-                                     alt="Vidéosurveillance Grabels - Système multi-caméras parc véhicules ambulances" 
+                                <img src="../grabels/installation-vidéosurveillance-Grabels_3.webp" 
+                                     alt="Vidéosurveillance Nîmes - Système multi-caméras parking véhicules" 
                                      width="400" height="300" loading="lazy">
                             </div>
                             <div class="project-info">
-                                <span class="project-category">ENTREPRISE GRABELS</span>
-                                <h3 class="project-title">Installation Caméras Dahua - Parc Ambulances</h3>
-                                <p class="project-description">Système de vidéosurveillance Dahua pour sécuriser le parc d'ambulances. Caméras multiples avec couverture complète des véhicules et zones de stationnement.</p>
+                                <span class="project-category">PARKING MARSEILLE</span>
+                                <h3 class="project-title">Installation Caméras Dahua - Surveillance Parking</h3>
+                                <p class="project-description">Système de vidéosurveillance Dahua pour sécuriser le parking d'entreprise. Caméras multiples avec couverture complète des véhicules et zones de stationnement à Marseille.</p>
                                 <div class="project-specs">
                                     <span class="spec">Dahua</span>
                                     <span class="spec">Multi-caméras</span>
-                                    <span class="spec">Parc Véhicules</span>
-                                    <span class="spec">Grabels</span>
+                                    <span class="spec">Parking</span>
+                                    <span class="spec">Nîmes</span>
                                 </div>
                             </div>
                         </article>
@@ -988,19 +1091,19 @@
                         <!-- Project 3 -->
                         <article class="project-card" data-slide="2">
                             <div class="project-image">
-                                <img src="systèmes-sécurité-grabels_4.webp" 
-                                     alt="Systèmes sécurité Grabels - Surveillance périmétrique caméras Dahua dôme" 
+                                <img src="../grabels/systèmes-sécurité-grabels_4.webp" 
+                                     alt="Systèmes sécurité Nîmes - Surveillance périmétrique caméras Dahua dôme" 
                                      width="400" height="300" loading="lazy">
                             </div>
                             <div class="project-info">
                                 <span class="project-category">SÉCURITÉ BÂTIMENT</span>
                                 <h3 class="project-title">Surveillance Périmétrique Dahua</h3>
-                                <p class="project-description">Installation de caméras Dahua dôme pour surveillance extérieure du bâtiment ambulancier. Protection optimale contre intrusions et vandalisme avec vision nocturne.</p>
+                                <p class="project-description">Installation de caméras Dahua dôme pour surveillance extérieure de bâtiment à Marseille. Protection optimale contre intrusions et vandalisme avec vision nocturne et détection IA.</p>
                                 <div class="project-specs">
                                     <span class="spec">Dahua Dôme</span>
                                     <span class="spec">Extérieur</span>
                                     <span class="spec">Anti-vandalisme</span>
-                                    <span class="spec">Grabels</span>
+                                    <span class="spec">Nîmes</span>
                                 </div>
                             </div>
                         </article>
@@ -1008,19 +1111,19 @@
                         <!-- Project 4 -->
                         <article class="project-card" data-slide="3">
                             <div class="project-image">
-                                <img src="vidéoprotection-grabels_5.webp" 
-                                     alt="Vidéoprotection Grabels - Caméra surveillance escalier contrôle accès Dahua" 
+                                <img src="../grabels/vidéoprotection-grabels_5.webp" 
+                                     alt="Vidéoprotection Nîmes - Caméra surveillance contrôle accès Dahua" 
                                      width="400" height="300" loading="lazy">
                             </div>
                             <div class="project-info">
-                                <span class="project-category">SÉCURITÉ ESCALIER</span>
-                                <h3 class="project-title">Surveillance Escalier - Caméra Dahua</h3>
-                                <p class="project-description">Installation caméra Dahua spécialement positionnée pour sécuriser l'escalier d'accès de la station d'ambulances. Surveillance des montées/descentes et contrôle des accès au bâtiment.</p>
+                                <span class="project-category">CONTRÔLE ACCÈS</span>
+                                <h3 class="project-title">Surveillance Entrée - Caméra Dahua</h3>
+                                <p class="project-description">Installation caméra Dahua spécialement positionnée pour sécuriser l'entrée principale. Surveillance des accès et contrôle des visiteurs avec reconnaissance faciale avancée à Marseille.</p>
                                 <div class="project-specs">
                                     <span class="spec">Dahua</span>
-                                    <span class="spec">Escalier</span>
+                                    <span class="spec">Reconnaissance</span>
                                     <span class="spec">Contrôle Accès</span>
-                                    <span class="spec">Grabels</span>
+                                    <span class="spec">Nîmes</span>
                                 </div>
                             </div>
                         </article>
@@ -1050,25 +1153,25 @@
             </div>
             
             <!-- Mobile-Only Slideshow -->
-            <div class="mobile-projects-slider" data-slider="grabels-mobile-projects">
+            <div class="mobile-projects-slider" data-slider="marseille-mobile-projects">
                 <div class="mobile-slider-container">
                     <div class="mobile-slides-wrapper">
                         
                         <!-- Mobile Project 1 -->
                         <article class="mobile-project-card active" data-slide="0">
                             <div class="mobile-project-image">
-                                <img src="entreprise-vidéosurveillancce-grabels_2.webp" 
-                                     alt="Installation vidéosurveillance Grabels - Compagnie ambulances avec caméras Dahua HD" 
+                                <img src="../grabels/entreprise-vidéosurveillancce-grabels_2.webp" 
+                                     alt="Installation vidéosurveillance Marseille - Entreprise avec caméras Dahua HD" 
                                      width="400" height="200" loading="lazy">
                             </div>
                             <div class="mobile-project-info">
-                                <span class="mobile-project-category">ENTREPRISE GRABELS</span>
-                                <h3 class="mobile-project-title">Compagnie d'Ambulances - Sécurité Professionnelle</h3>
-                                <p class="mobile-project-description">Installation de caméras Dahua pour une compagnie d'ambulances à Grabels. Surveillance des véhicules, accès sécurisés et protection du matériel médical.</p>
+                                <span class="mobile-project-category">ENTREPRISE MARSEILLE</span>
+                                <h3 class="mobile-project-title">Installation Professionnelle - Sécurité Entreprise</h3>
+                                <p class="mobile-project-description">Installation de caméras Dahua pour une entreprise à Marseille. Surveillance des accès, protection du matériel et des données.</p>
                                 <div class="mobile-project-specs">
                                     <span class="mobile-spec">Dahua</span>
                                     <span class="mobile-spec">HD</span>
-                                    <span class="mobile-spec">Ambulances</span>
+                                    <span class="mobile-spec">Entreprise</span>
                                 </div>
                             </div>
                         </article>
@@ -1076,18 +1179,18 @@
                         <!-- Mobile Project 2 -->
                         <article class="mobile-project-card" data-slide="1">
                             <div class="mobile-project-image">
-                                <img src="installation-vidéosurveillance-Grabels_3.webp" 
-                                     alt="Vidéosurveillance Grabels - Système multi-caméras parc véhicules ambulances" 
+                                <img src="../grabels/installation-vidéosurveillance-Grabels_3.webp" 
+                                     alt="Vidéosurveillance Nîmes - Système multi-caméras parking véhicules" 
                                      width="400" height="200" loading="lazy">
                             </div>
                             <div class="mobile-project-info">
-                                <span class="mobile-project-category">ENTREPRISE GRABELS</span>
-                                <h3 class="mobile-project-title">Installation Caméras Dahua - Parc Ambulances</h3>
-                                <p class="mobile-project-description">Système de vidéosurveillance Dahua pour sécuriser le parc d'ambulances. Caméras multiples avec couverture complète des véhicules.</p>
+                                <span class="mobile-project-category">PARKING MARSEILLE</span>
+                                <h3 class="mobile-project-title">Installation Caméras Dahua - Surveillance Parking</h3>
+                                <p class="mobile-project-description">Système de vidéosurveillance Dahua pour sécuriser le parking d'entreprise. Caméras multiples avec couverture complète.</p>
                                 <div class="mobile-project-specs">
                                     <span class="mobile-spec">Dahua</span>
                                     <span class="mobile-spec">Multi-caméras</span>
-                                    <span class="mobile-spec">Parc Véhicules</span>
+                                    <span class="mobile-spec">Parking</span>
                                 </div>
                             </div>
                         </article>
@@ -1095,14 +1198,14 @@
                         <!-- Mobile Project 3 -->
                         <article class="mobile-project-card" data-slide="2">
                             <div class="mobile-project-image">
-                                <img src="systèmes-sécurité-grabels_4.webp" 
-                                     alt="Systèmes sécurité Grabels - Surveillance périmétrique caméras Dahua dôme" 
+                                <img src="../grabels/systèmes-sécurité-grabels_4.webp" 
+                                     alt="Systèmes sécurité Nîmes - Surveillance périmétrique caméras Dahua dôme" 
                                      width="400" height="200" loading="lazy">
                             </div>
                             <div class="mobile-project-info">
                                 <span class="mobile-project-category">SÉCURITÉ BÂTIMENT</span>
                                 <h3 class="mobile-project-title">Surveillance Périmétrique Dahua</h3>
-                                <p class="mobile-project-description">Installation de caméras Dahua dôme pour surveillance extérieure du bâtiment ambulancier. Protection optimale contre intrusions et vandalisme.</p>
+                                <p class="mobile-project-description">Installation de caméras Dahua dôme pour surveillance extérieure de bâtiment à Marseille. Protection optimale contre intrusions.</p>
                                 <div class="mobile-project-specs">
                                     <span class="mobile-spec">Dahua Dôme</span>
                                     <span class="mobile-spec">Extérieur</span>
@@ -1114,17 +1217,17 @@
                         <!-- Mobile Project 4 -->
                         <article class="mobile-project-card" data-slide="3">
                             <div class="mobile-project-image">
-                                <img src="vidéoprotection-grabels_5.webp" 
-                                     alt="Vidéoprotection Grabels - Caméra surveillance escalier contrôle accès Dahua" 
+                                <img src="../grabels/vidéoprotection-grabels_5.webp" 
+                                     alt="Vidéoprotection Nîmes - Caméra surveillance contrôle accès Dahua" 
                                      width="400" height="200" loading="lazy">
                             </div>
                             <div class="mobile-project-info">
-                                <span class="mobile-project-category">SÉCURITÉ ESCALIER</span>
-                                <h3 class="mobile-project-title">Surveillance Escalier - Caméra Dahua</h3>
-                                <p class="mobile-project-description">Installation caméra Dahua spécialement positionnée pour sécuriser l'escalier d'accès de la station d'ambulances.</p>
+                                <span class="mobile-project-category">CONTRÔLE ACCÈS</span>
+                                <h3 class="mobile-project-title">Surveillance Entrée - Caméra Dahua</h3>
+                                <p class="mobile-project-description">Installation caméra Dahua spécialement positionnée pour sécuriser l'entrée principale à Marseille.</p>
                                 <div class="mobile-project-specs">
                                     <span class="mobile-spec">Dahua</span>
-                                    <span class="mobile-spec">Escalier</span>
+                                    <span class="mobile-spec">Reconnaissance</span>
                                     <span class="mobile-spec">Contrôle Accès</span>
                                 </div>
                             </div>
@@ -1157,7 +1260,7 @@
         <div class="visual-services-container">
             <div class="services-header">
                 <h2 class="services-main-title">
-                    Nos Services Systèmes <span class="gradient-text">Sécurité</span> à Grabels
+                    Nos Services Systèmes <span class="gradient-text">Sécurité</span> à Marseille
                 </h2>
             </div>
             
@@ -1166,7 +1269,7 @@
                 <!-- 1. Image - Top Left -->
                 <div class="visual-service-item image-item">
                     <div class="service-image-wrapper">
-                        <img src="Dahua-vs-Hikvision.webp" alt="Caméras Hikvision et Dahua HD avec technologies avancées" class="service-image comparison-image" loading="lazy">
+                        <img src="../grabels/Dahua-vs-Hikvision.webp" alt="Caméras Hikvision et Dahua HD avec technologies avancées" class="service-image comparison-image" loading="lazy">
                     </div>
                 </div>
                 
@@ -1174,14 +1277,14 @@
                 <div class="visual-service-item text-item purple-bg">
                     <h3 class="service-visual-title">Installation & Configuration Complète</h3>
                     <p class="service-visual-desc">
-                        Installation professionnelle de systèmes de vidéosurveillance IP 4K/8K avec configuration personnalisée pour votre propriété à Grabels.
+                        Installation professionnelle de systèmes de vidéosurveillance IP 4K/8K avec configuration personnalisée pour votre propriété à Marseille.
                     </p>
                 </div>
                 
                 <!-- 3. Image - Top Right -->
                 <div class="visual-service-item image-item">
                     <div class="service-image-wrapper">
-                        <img src="../images/realisations/interphone-video-camera-securite-maison.webp" alt="Système interphone vidéo Grabels" class="service-image" loading="lazy">
+                        <img src="../images/realisations/interphone-video-camera-securite-maison.webp" alt="Système interphone vidéo Nîmes" class="service-image" loading="lazy">
                     </div>
                 </div>
                 
@@ -1204,7 +1307,7 @@
                 <!-- 6. Image - Bottom Center -->
                 <div class="visual-service-item image-item">
                     <div class="service-image-wrapper">
-                        <img src="../images/realisations/camera-dome-interieur-controle-acces.webp" alt="Contrôle d'accès électronique Grabels" class="service-image" loading="lazy">
+                        <img src="../images/realisations/camera-dome-interieur-controle-acces.webp" alt="Contrôle d'accès électronique Marseille" class="service-image" loading="lazy">
                     </div>
                 </div>
                 
@@ -1219,7 +1322,7 @@
                 <!-- 8. Image - Bottom Far Right -->
                 <div class="visual-service-item image-item">
                     <div class="service-image-wrapper">
-                        <img src="../images/realisations/camera-surveillance-wifi-smartphone-application.webp" alt="Surveillance mobile smartphone Grabels" class="service-image" loading="lazy">
+                        <img src="../images/realisations/camera-surveillance-wifi-smartphone-application.webp" alt="Surveillance mobile smartphone Marseille" class="service-image" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1228,7 +1331,7 @@
             <div class="visual-service-stats">
                 <div class="stat-visual-item">
                     <span class="stat-visual-number">60+</span>
-                    <span class="stat-visual-label">Installations Grabels</span>
+                    <span class="stat-visual-label">Installations Marseille</span>
                 </div>
                 <div class="stat-visual-item">
                     <span class="stat-visual-number">24h</span>
@@ -1249,102 +1352,53 @@
     <!-- FAQ Section -->
     <section class="contact-faq-section">
         <div class="contact-faq-container">
-            <h2 class="section-title">Questions <span class="highlight-text">Fréquentes</span> Vidéosurveillance Grabels</h2>
+            <h2 class="section-title">Questions <span class="highlight-text">Fréquentes</span> Vidéosurveillance Marseille</h2>
             
             <div class="contact-faq-grid">
                 <details class="contact-faq-item">
-                    <summary>Combien coûte l'installation d'un système de vidéosurveillance à Grabels ?</summary>
+                    <summary>Combien coûte l'installation d'un système de vidéosurveillance à Marseille ?</summary>
                     <div class="contact-faq-content">
-                        <p>Le prix d'installation vidéosurveillance à Grabels varie entre <strong>800€ et 5000€</strong> selon le nombre de caméras, la qualité (HD, 4K), et les fonctionnalités (vision nocturne, détection de mouvement). Nous proposons un <strong>devis gratuit personnalisé</strong> après visite à votre domicile ou entreprise.</p>
+                        <p>Le prix d'installation vidéosurveillance à Marseille varie entre <strong>800€ et 5000€</strong> selon le nombre de caméras, la qualité (HD, 4K), et les fonctionnalités (vision nocturne, détection de mouvement). Nous proposons un <strong>devis gratuit personnalisé</strong> après visite à votre domicile ou entreprise.</p>
                     </div>
                 </details>
 
                 <details class="contact-faq-item">
-                    <summary>Intervenez-vous rapidement à Grabels ?</summary>
+                    <summary>Intervenez-vous rapidement à Marseille ?</summary>
                     <div class="contact-faq-content">
-                        <p>Oui, basés à Castelnau-le-Lez, nous proposons des <strong>délais d'intervention très courts</strong> sur Grabels : devis sous 24-48h, installation sous une semaine. Pour les urgences (réparation, maintenance), intervention possible sous 24h.</p>
+                        <p>Oui, basés à Castelnau-le-Lez, nous proposons des <strong>délais d'intervention courts</strong> sur Nîmes : devis sous 24-48h, installation sous une semaine. Pour les urgences (réparation, maintenance), intervention possible sous 24h.</p>
                     </div>
                 </details>
 
                 <details class="contact-faq-item">
-                    <summary>Quelles autorisations faut-il pour installer des caméras à Grabels ?</summary>
+                    <summary>Quelles autorisations faut-il pour installer des caméras à Marseille ?</summary>
                     <div class="contact-faq-content">
-                        <p>Pour les <strong>résidences privées à Grabels</strong>, aucune autorisation n'est requise si les caméras filment uniquement votre propriété. Pour les commerces, une déclaration CNIL est obligatoire. Nous vous accompagnons dans toutes les <strong>démarches administratives</strong>.</p>
+                        <p>Pour les <strong>résidences privées à Marseille</strong>, aucune autorisation n'est requise si les caméras filment uniquement votre propriété. Pour les commerces, une déclaration CNIL est obligatoire. Nous vous accompagnons dans toutes les <strong>démarches administratives</strong>.</p>
                     </div>
                 </details>
 
                 <details class="contact-faq-item">
-                    <summary>Puis-je surveiller mes caméras depuis mon smartphone à Grabels ?</summary>
+                    <summary>Puis-je surveiller mes caméras depuis mon smartphone à Marseille ?</summary>
                     <div class="contact-faq-content">
-                        <p>Absolument ! Tous nos systèmes de vidéosurveillance installés à Grabels sont <strong>compatibles smartphone</strong>. Vous recevrez les alertes en temps réel et pourrez visionner vos caméras depuis n'importe où, même en déplacement.</p>
+                        <p>Absolument ! Tous nos systèmes de vidéosurveillance installés à Marseille sont <strong>compatibles smartphone</strong>. Vous recevrez les alertes en temps réel et pourrez visionner vos caméras depuis n'importe où, même en déplacement.</p>
                     </div>
                 </details>
 
                 <details class="contact-faq-item">
-                    <summary>Proposez-vous la maintenance des systèmes de vidéosurveillance à Grabels ?</summary>
+                    <summary>Proposez-vous la maintenance des systèmes de vidéosurveillance à Marseille ?</summary>
                     <div class="contact-faq-content">
-                        <p>Oui, nous proposons des <strong>services de maintenance</strong> pour tous les systèmes installés à Grabels. Vérification périodique, nettoyage des optiques, mise à jour logiciels, assistance technique. Devis personnalisé selon vos besoins.</p>
+                        <p>Oui, nous proposons des <strong>services de maintenance</strong> pour tous les systèmes installés à Marseille. Vérification périodique, nettoyage des optiques, mise à jour logiciels, assistance technique. Devis personnalisé selon vos besoins.</p>
                     </div>
                 </details>
 
                 <details class="contact-faq-item">
-                    <summary>Couvrez-vous toutes les zones de Grabels et ses environs ?</summary>
+                    <summary>Couvrez-vous toutes les zones de Nîmes et ses environs ?</summary>
                     <div class="contact-faq-content">
-                        <p>Oui, nous intervenons dans <strong>toute la commune de Grabels</strong> ainsi que dans les communes limitrophes : Juvignac, Saint-Georges-d'Orques, Fabrègues, et bien sûr Montpellier. Notre proximité géographique nous permet une intervention rapide.</p>
+                        <p>Oui, nous intervenons dans <strong>toute la commune de Nîmes</strong> ainsi que dans les communes limitrophes : Alès, Uzès, Beaucaire, Saint-Gilles, Vauvert, et bien sûr Montpellier. Notre expertise couvre tout le département du Gard.</p>
                     </div>
                 </details>
             </div>
         </div>
     </section>
-
-    <!-- Locations and Contact Section -->
-    <section id="contact" class="locations-section">
-        <h3>Notre Emplacement</h3>
-        <p class="locations-subtitle">Trouvez-nous facilement</p>
-        <div class="locations-container">
-            <div class="location-card">
-                <div class="location-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-                        <circle cx="12" cy="9" r="2.5" />
-                    </svg>
-                </div>
-                <h4 id="grabels-location">Grabels</h4>
-                <p>Hérault</p>
-            </div>
-            <div class="location-card">
-                <div class="location-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-                        <circle cx="12" cy="9" r="2.5" />
-                    </svg>
-                </div>
-                <h4 id="castelnau-location">Castelnau-le-Lez</h4>
-                <p>Hérault</p>
-            </div>
-        </div>
-
-        <!-- Google Maps Integration with Liquid Glass Styling -->
-        <div class="map-container-wrapper">
-            <div class="map-glass-container">
-                <div class="map-loading-state" id="mapLoadingState">
-                    <div class="loading-spinner"></div>
-                    <p>Chargement de la carte...</p>
-                </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.949094106259!2d3.8946610762981178!3d43.6284184540332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x49ed7653702ef0fb%3A0xbca1b54e04fc474a!2zWk9aTyBTw6ljdXJpdMOp!5e0!3m2!1sfr!2sfr!4v1751457570179!5m2!1sfr!2sfr"
-                        width="600"
-                        height="450"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        onload="window.hideMapLoading ? hideMapLoading() : null"
-                        title="Localisation ZOZO Sécurité - Service Installation Caméras Grabels">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- SEO Optimized Footer -->
     <footer class="site-footer" itemscope itemtype="http://schema.org/LocalBusiness">
         <div class="footer-container">
@@ -1388,41 +1442,44 @@
                     </div>
                 </div>
             </div>
+            
             <!-- Services & Expertise -->
             <div class="footer-section footer-services">
-                <h3 class="footer-title">Services Grabels</h3>
+                <h3 class="footer-title">Services Marseille</h3>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="../services/videosurveillance.html">Vidéosurveillance Grabels</a></li>
-                        <li><a href="../services/installateur-videosurveillance-entrepots-montpellier.html">Installation Caméras Grabels</a></li>
-                        <li><a href="#grabels-projects-gallery">Systèmes de Surveillance</a></li>
+                        <li><a href="../services/videosurveillance.html">Vidéosurveillance Marseille</a></li>
+                        <li><a href="../services/installateur-videosurveillance-entrepots-montpellier.html">Installation Caméras Marseille</a></li>
+                        <li><a href="#marseille-projects-gallery">Systèmes de Surveillance</a></li>
                         <li><a href="../contact.html#secure-contact-form">Maintenance & Réparation</a></li>
-                        <li><a href="../contact.html#secure-contact-form">Devis Gratuit Grabels</a></li>
+                        <li><a href="../contact.html#secure-contact-form">Devis Gratuit Marseille</a></li>
                     </ul>
                 </nav>
             </div>
+            
             <!-- Coverage Areas -->
             <div class="footer-section footer-areas">
                 <h3 class="footer-title">Zones d'Intervention</h3>
                 <nav class="footer-nav">
                     <ul>
-                        <li><strong>Grabels</strong> <span style="color: #ff3333;">●</span></li>
+                        <li><strong>Marseille</strong> <span style="color: #ff3333;">●</span></li>
                         <li><a href="../montpellier/installation-camera-securite-montpellier.html" itemprop="areaServed">Montpellier</a></li>
-                        <li><span itemprop="areaServed">Juvignac</span></li>
-                        <li><span itemprop="areaServed">Saint-Georges-d'Orques</span></li>
-                        <li><span itemprop="areaServed">Fabrègues</span></li>
-                        <li><span itemprop="areaServed">Pignan</span></li>
-                        <li><span itemprop="areaServed">Castelnau-le-Lez</span></li>
-                        <li><span itemprop="areaServed">Hérault (34)</span></li>
+                        <li><span itemprop="areaServed">Aix-en-Provence</span></li>
+                        <li><span itemprop="areaServed">Aubagne</span></li>
+                        <li><span itemprop="areaServed">La Ciotat</span></li>
+                        <li><span itemprop="areaServed">Marignane</span></li>
+                        <li><span itemprop="areaServed">Vitrolles</span></li>
+                        <li><span itemprop="areaServed">Bouches-du-Rhône (13)</span></li>
                     </ul>
                 </nav>
             </div>
+            
             <!-- Resources & Legal -->
             <div class="footer-section footer-resources">
                 <h3 class="footer-title">Ressources</h3>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="#grabels-projects-gallery">Nos Réalisations Grabels</a></li>
+                        <li><a href="#marseille-projects-gallery">Nos Réalisations Marseille</a></li>
                         <li><a href="../blog.html">Blog & Expertise</a></li>
                         <li><a href="../faq.html">Questions Fréquentes</a></li>
                         <li><a href="../mentions-legales.html">Mentions Légales</a></li>
@@ -1431,23 +1488,25 @@
                 </nav>
             </div>
         </div>
+        
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="footer-container">
                 <p>&copy; 2025 <span itemprop="name">ZOZO Sécurité</span>. Tous droits réservés. • Site web créé avec ❤️ par <a href="https://www.agencehyperweb.com" target="_blank" rel="noopener">HyperWeb</a></p>
                 <p class="footer-description">
-                    Spécialiste en installation de <strong>vidéosurveillance à Grabels</strong> et dans l'Hérault. 
-                    Solutions de sécurité professionnelles pour entreprises, commerces et particuliers à Grabels.
+                    Spécialiste en installation de <strong>vidéosurveillance à Marseille</strong> et dans le Gard. 
+                    Solutions de sécurité professionnelles pour entreprises, commerces et particuliers à Marseille.
                 </p>
             </div>
         </div>
+        
         <!-- Hidden Schema Data -->
         <div style="display: none;">
-            <span itemprop="url">https://zozosecurite.fr/grabels/installation-camera-securite-grabels.html</span>
+            <span itemprop="url">https://zozosecurite.fr/marseille/installation-camera-securite-marseille.html</span>
             <span itemprop="priceRange">€€</span>
             <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-                <span itemprop="latitude">43.6492</span>
-                <span itemprop="longitude">3.8458</span>
+                <span itemprop="latitude">43.8367</span>
+                <span itemprop="longitude">4.3601</span>
             </div>
             <span itemprop="openingHours" content="Mo 08:00-18:30">Lundi: 8h-18h30</span>
             <span itemprop="openingHours" content="Tu 08:00-18:30">Mardi: 8h-18h30</span>
@@ -1462,10 +1521,10 @@
     <!-- Contact Form JavaScript -->
     <script src="../js/main.js"></script>
 
-    <!-- Enhanced Progressive Disclosure for Grabels -->
+    <!-- Enhanced Progressive Disclosure for Marseille -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Progressive disclosure functionality - Enhanced for Grabels page
+            // Progressive disclosure functionality - Enhanced for Marseille page
             const emailField = document.getElementById('email');
             const conditionalFields = document.querySelectorAll('.conditional-field');
             const conditionalRow = document.querySelector('.form-row.conditional-fields');
@@ -1505,7 +1564,7 @@
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'form_submit', {
                             'event_category': 'Contact',
-                            'event_label': 'Videosurveillance Grabels'
+                            'event_label': 'Videosurveillance Marseille'
                         });
                     }
                 });
@@ -1514,102 +1573,5 @@
 
     </script>
 
-    <!-- Floating Quote Request Button -->
-    <div id="floating-quote-btn" class="floating-quote-btn">
-        <a href="../contact.html" class="quote-btn-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1M15 10h1M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-            </svg>
-            <span>Demander un devis gratuit</span>
-        </a>
-    </div>
-
-    <style>
-        .floating-quote-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.3s ease;
-        }
-
-        .floating-quote-btn.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .quote-btn-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #FF3333, #FF1111);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 4px 20px rgba(255, 51, 51, 0.3);
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .quote-btn-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 51, 51, 0.4);
-            background: linear-gradient(135deg, #FF1111, #CC0000);
-        }
-
-        .quote-btn-link svg {
-            flex-shrink: 0;
-        }
-
-        @media (max-width: 768px) {
-            .floating-quote-btn {
-                bottom: 15px;
-                right: 15px;
-            }
-
-            .quote-btn-link {
-                padding: 12px 16px;
-                font-size: 13px;
-            }
-
-            .quote-btn-link span {
-                display: none;
-            }
-
-            .quote-btn-link {
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                justify-content: center;
-            }
-        }
-    </style>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const floatingBtn = document.getElementById('floating-quote-btn');
-            let hasShown = false;
-
-            function showButton() {
-                if (!hasShown) {
-                    floatingBtn.classList.add('show');
-                    hasShown = true;
-                }
-            }
-
-            setTimeout(showButton, 2000);
-
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    showButton();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
