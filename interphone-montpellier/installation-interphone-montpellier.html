@@ -133,7 +133,7 @@
         <div class="nav-container">
             <div class="nav-links">
                 <div class="nav-dropdown">
-                    <a href="#services" class="nav-link dropdown-toggle">Services</a>
+                    <a href="../index.html#services" class="nav-link dropdown-toggle">Services</a>
                     <div class="dropdown-menu">
                         <a href="../services/installateur-videosurveillance-entrepots-montpellier.html" class="dropdown-item">Surveillance Entrepôts</a>
                     </div>
@@ -303,6 +303,29 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- EZVIZ HP5 Visiophone Connecté -->
+            <div class="product-showcase reverse-layout">
+                <div class="product-info">
+                    <div class="product-brand">EZVIZ</div>
+                    <h3 class="product-title">HP5 Visiophone Connecté</h3>
+                    <p class="product-description">Le HP5, nouvelle venue dans la gamme de visiophones connectés d'EZVIZ, combine caméra, sonnette et interphone en un seul dispositif. Il vous permet de voir, parler et contrôler l'accès de vos visiteurs facilement, même à distance. Avec son design plus fin que les modèles précédents, le HP5 est idéal pour les maisons spacieuses et s'adapte à différents types de résidences pour gérer porte et portail efficacement.</p>
+                    <ul class="product-features">
+                        <li>Écran tactile couleur 7 pouces</li>
+                        <li>Caméra HD 1080p avec vision nocturne</li>
+                        <li>Connexion Wi-Fi double bande (2.4/5 GHz)</li>
+                        <li>Ouverture portail automatique à distance</li>
+                        <li>Application mobile iOS/Android</li>
+                        <li>2 badges RFID inclus</li>
+                        <li>Installation 2-fils compatible</li>
+                        <li>Stockage jusqu'à 512 Go</li>
+                    </ul>
+                    <p class="installation-note">Installation complète avec connexion au portail automatique incluse</p>
+                </div>
+                <div class="product-image">
+                    <img src="Kit-installation-interphone.webp" alt="EZVIZ HP5 Kit installation interphone" class="floating-product">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -414,66 +437,12 @@
             });
         });
 
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileDropdown = document.querySelector('.mobile-dropdown');
-        const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
-
-        // Toggle mobile menu
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        // Toggle mobile dropdown
-        mobileDropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileDropdown.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking links
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav-link:not(.mobile-dropdown-toggle)');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                mobileDropdown.classList.remove('active');
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-                mobileDropdown.classList.remove('active');
-            }
-        });
-
-        // Scroll to top functionality
-        const scrollTopBtn = document.querySelector('.scroll-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.style.opacity = '1';
-                scrollTopBtn.style.visibility = 'visible';
-            } else {
-                scrollTopBtn.style.opacity = '0';
-                scrollTopBtn.style.visibility = 'hidden';
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
     </script>
 
     <!-- Umami Analytics -->
     <script async src="https://analytics.umami.is/script.js" data-website-id="your-website-id"></script>
 
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
 </body>
 </html>
