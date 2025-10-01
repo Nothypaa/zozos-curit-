@@ -538,6 +538,11 @@
         padding: 3rem 0;
     }
 
+    /* Fix order for reverse layout on mobile */
+    .product-showcase.reverse-layout .product-image {
+        order: -1;
+    }
+
     .solutions-title {
         font-size: 2.2rem;
     }
@@ -674,5 +679,288 @@
 
     .product-showcase + .product-showcase {
         margin-top: 4rem;
+    }
+}
+
+/* Benefits Section Styles */
+.benefits-section {
+    padding: 8rem 10% 6rem;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 30%, rgba(255, 51, 51, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.benefits-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.benefits-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.benefits-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.benefits-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.benefits-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+}
+
+.benefit-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.step-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.step-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.step-connector {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 51, 51, 0.3) 50%, transparent 100%);
+    margin-top: 2rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .benefits-section {
+        padding: 6rem 5% 4rem;
+    }
+
+    .benefits-header {
+        margin-bottom: 4rem;
+    }
+
+    .benefits-title {
+        font-size: 2.2rem;
+    }
+
+    .step-number {
+        font-size: 3rem;
+    }
+
+    .step-connector {
+        width: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .benefits-section {
+        padding: 4rem 5% 3rem;
+    }
+
+    .benefits-header {
+        margin-bottom: 3rem;
+    }
+
+    .benefits-title {
+        font-size: 1.9rem;
+    }
+
+    .benefits-description {
+        font-size: 1rem;
+    }
+
+    .benefits-steps {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .step-connector {
+        width: 2px;
+        height: 50px;
+        background: linear-gradient(180deg, transparent 0%, rgba(255, 51, 51, 0.3) 50%, transparent 100%);
+        margin: 0 auto;
+    }
+
+    .step-number {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .step-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-title {
+        font-size: 1.7rem;
+    }
+
+    .step-number {
+        font-size: 2rem;
+    }
+
+    .step-connector {
+        height: 30px;
+    }
+}
+
+/* ===== FLOATING CTA BUTTON ===== */
+.floating-cta-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #FF3333;
+    border: none;
+    border-radius: 50px;
+    padding: 0.7rem 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: none; /* Hidden by default */
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1005;
+    transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    box-shadow: 0 4px 20px rgba(255, 51, 51, 0.4);
+    animation: floatingPulse 3s ease-in-out infinite;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.floating-cta-btn:hover {
+    background: #E02D2D;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 51, 51, 0.6);
+}
+
+.floating-cta-btn:active {
+    transform: translateY(-1px);
+}
+
+@keyframes floatingPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(255, 51, 51, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 51, 51, 0.7);
+        transform: scale(1.05);
+    }
+}
+
+/* Hide floating-cta-btn completely since we have floating-quote-btn for all screens */
+.floating-cta-btn {
+    display: none !important;
+}
+
+/* ===== FLOATING QUOTE BUTTON (DESKTOP) ===== */
+.floating-quote-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+}
+
+.floating-quote-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quote-btn-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #FF3333;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 51, 51, 0.4);
+}
+
+.quote-btn-link:hover {
+    background: #E02D2D;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 51, 51, 0.6);
+}
+
+.quote-btn-link svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .floating-quote-btn {
+        bottom: 15px;
+        right: 15px;
+    }
+    .quote-btn-link {
+        padding: 12px 16px;
+        font-size: 13px;
     }
 }
