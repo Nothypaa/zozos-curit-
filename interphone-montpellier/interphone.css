@@ -964,3 +964,12 @@
         font-size: 13px;
     }
 }
+
+/* ===== FOOTER FIXES ===== */
+/* Make footer service spans match link styling */
+.footer-nav span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    display: inline-block;
+    line-height: 1.5;
+}
