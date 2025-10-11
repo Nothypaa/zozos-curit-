@@ -1465,6 +1465,29 @@
             }
         }
 
+        /* Small Review Badge - Shown on all devices */
+        .small-review-badge-hero {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.85);
+            color: #FFC107;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.4rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Desktop centering adjustment */
+        @media (min-width: 769px) {
+            .small-review-badge-hero {
+                margin-left: 0.8rem;
+            }
+        }
+
 
         /* SEO Optimized Footer Styles */
         .site-footer {
