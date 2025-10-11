@@ -231,16 +231,18 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.mobile-menu-btn:hover {
-    background: rgba(255, 51, 51, 0.2);
-    border-color: rgba(255, 51, 51, 0.8);
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4);
+/* Only apply hover effects on devices with hover capability (desktop) */
+@media (hover: hover) and (pointer: fine) {
+    .mobile-menu-btn:hover {
+        background: rgba(255, 51, 51, 0.2);
+        border-color: rgba(255, 51, 51, 0.8);
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4);
+    }
 }
 
-.mobile-menu-btn:active {
-    transform: scale(0.95);
-}
+/* Remove :active state completely - causes issues on mobile */
+/* .mobile-menu-btn:active removed */
 
 .mobile-menu-btn.active {
     background: rgba(255, 51, 51, 0.3);

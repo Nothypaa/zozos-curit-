@@ -1442,18 +1442,19 @@
         .main-cta {
             display: inline-flex;
             align-items: center;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 1.5rem 3rem;
+            font-size: 1.25rem;
             text-align: center;
             justify-content: center;
             width: fit-content;
-            background: rgba(255, 51, 51, 0.15); /* Slightly more opaque background */
+            background: rgba(255, 51, 51, 0.35); /* Less transparent for better text visibility */
             border: 1px solid rgba(255, 51, 51, 0.6); /* Brighter border */
             color: white;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
             text-shadow: 0 0 8px rgba(255, 51, 51, 0.5); /* Add a subtle glow */
+            font-weight: 600;
         }
 
         @media (hover: hover) and (pointer: fine) {
@@ -2012,8 +2013,8 @@
             .main-cta {
                 width: auto; /* Ensure buttons are not full width */
                 text-align: center;
-                padding: 0.6rem 1rem; /* Original padding */
-                font-size: 0.8rem; /* Original font size */
+                padding: 1rem 1.8rem; /* Bigger padding for mobile */
+                font-size: 1rem; /* Bigger font size for mobile */
             }
         }
 
