@@ -490,7 +490,7 @@
     }
 }
 
-/* Floating CTA Button - Visible on Mobile and Laptop */
+/* Floating CTA Button - Visible on All Screens */
 .floating-cta-btn {
     position: fixed;
     bottom: 2rem;
@@ -503,7 +503,7 @@
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
-    display: none; /* Hidden by default */
+    display: flex; /* Visible on all screens */
     align-items: center;
     gap: 0.5rem;
     z-index: 1005;
@@ -533,13 +533,6 @@
     50% {
         box-shadow: 0 8px 30px rgba(255, 51, 51, 0.7);
         transform: scale(1.05);
-    }
-}
-
-/* Show floating CTA on mobile and laptop screens */
-@media (max-width: 1024px) {
-    .floating-cta-btn {
-        display: flex;
     }
 }
 
