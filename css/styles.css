@@ -1482,10 +1482,12 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Desktop centering adjustment */
+        /* Desktop centering adjustment and size increase */
         @media (min-width: 769px) {
             .small-review-badge-hero {
                 margin-left: 0.8rem;
+                font-size: 0.85rem;
+                padding: 0.5rem 0.9rem;
             }
         }
 

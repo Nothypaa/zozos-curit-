@@ -132,7 +132,6 @@ window.addEventListener('resize', handleResize, { passive: true });
     const progressFill = document.querySelector('.progress-fill');
     const currentSlideSpan = document.querySelector('.current-slide');
     const totalSlidesSpan = document.querySelector('.total-slides');
-    const filterBtns = document.querySelectorAll('.filter-btn');
     const lightboxModal = document.getElementById('lightboxModal');
     const lightboxImage = document.querySelector('.lightbox-image');
     const lightboxTitle = document.querySelector('.lightbox-title');
@@ -147,7 +146,7 @@ window.addEventListener('resize', handleResize, { passive: true });
     let slideInterval;
     let touchStartX = 0;
     let touchEndX = 0;
-    let filteredSlides = Array.from(enhancedSlides);
+    let filteredSlides = Array.from(enhancedSlides); // All slides, no filtering
 
     // Initialize gallery
     function initGallery() {
@@ -240,34 +239,7 @@ window.addEventListener('resize', handleResize, { passive: true });
         if (slideInterval) clearInterval(slideInterval);
     }
 
-    // Filter functionality
-    function filterSlides(category) {
-        if (category === 'all') {
-            filteredSlides = Array.from(enhancedSlides);
-            enhancedSlides.forEach(slide => {
-                slide.classList.remove('filtered-out');
-                slide.style.display = 'flex';
-            });
-        } else {
-            filteredSlides = Array.from(enhancedSlides).filter(slide => 
-                slide.getAttribute('data-category') === category
-            );
-            enhancedSlides.forEach(slide => {
-                if (slide.getAttribute('data-category') === category) {
-                    slide.classList.remove('filtered-out');
-                    slide.style.display = 'flex';
-                } else {
-                    slide.classList.add('filtered-out');
-                    slide.style.display = 'none';
-                }
-            });
-        }
-
-        // Reset to first filtered slide
-        currentSlide = 0;
-        updateSlider();
-        updateSlideCounter();
-    }
+    // Filter functionality removed - all slides shown by default
 
     // Lightbox functionality
     function openLightbox(slideIndex) {
@@ -314,26 +286,7 @@ window.addEventListener('resize', handleResize, { passive: true });
     // Thumbnail navigation
     thumbnailItems.forEach((thumb, index) => {
         thumb.addEventListener('click', () => {
-            const originalIndex = Array.from(thumbnailItems).indexOf(thumb);
-            const filteredIndex = filteredSlides.findIndex(slide => 
-                Array.from(enhancedSlides).indexOf(slide) === originalIndex
-            );
-            if (filteredIndex !== -1) {
-                goToSlide(filteredIndex);
-            }
-        });
-    });
-
-    // Filter buttons
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active filter button
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // Filter slides
-            const category = btn.getAttribute('data-category');
-            filterSlides(category);
+            goToSlide(index);
         });
     });
 
