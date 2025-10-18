@@ -180,34 +180,30 @@
     }
     </script>
 
-    <!-- Product Schema for Featured Cameras -->
+    <!-- Equipment Schema for Featured Cameras -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Caméras Spécialisées Entrepôt",
-      "description": "Sélection de caméras professionnelles pour surveillance d'entrepôts",
+      "description": "Exemples de caméras professionnelles utilisées pour la surveillance d'entrepôts",
       "itemListElement": [
         {
-          "@type": "Product",
+          "@type": "Thing",
           "position": 1,
           "name": "Hikvision DS-2CD2387G2-LU ColorVu",
           "description": "Caméra parfaite pour la surveillance des zones de stockage à faible éclairage. Fournit des images couleur 24h/24 grâce à sa technologie ColorVu avancée.",
-          "category": "Caméra de surveillance",
-          "brand": {
-            "@type": "Brand",
-            "name": "Hikvision"
-          },
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock",
-            "priceCurrency": "EUR",
-            "seller": {
-              "@type": "Organization",
-              "name": "ZOZO Sécurité"
-            }
-          },
           "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Marque",
+              "value": "Hikvision"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Catégorie",
+              "value": "Caméra de surveillance"
+            },
             {
               "@type": "PropertyValue",
               "name": "Technologie",
@@ -221,25 +217,21 @@
           ]
         },
         {
-          "@type": "Product",
+          "@type": "Thing",
           "position": 2,
           "name": "Dahua IPC-HDW3849H-AS-PV Full-Color",
           "description": "Caméra idéale pour la protection périmétrique des entrepôts. Détection intelligente avec alerte active et dissuasion intégrée.",
-          "category": "Caméra de surveillance",
-          "brand": {
-            "@type": "Brand",
-            "name": "Dahua"
-          },
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock",
-            "priceCurrency": "EUR",
-            "seller": {
-              "@type": "Organization",
-              "name": "ZOZO Sécurité"
-            }
-          },
           "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Marque",
+              "value": "Dahua"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Catégorie",
+              "value": "Caméra de surveillance"
+            },
             {
               "@type": "PropertyValue",
               "name": "Technologie",
