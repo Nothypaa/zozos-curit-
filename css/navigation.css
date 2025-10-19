@@ -515,6 +515,17 @@
     white-space: nowrap;
 }
 
+/* Hide floating CTA on desktop for contact page only */
+.floating-cta-btn.hide-desktop {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .floating-cta-btn.hide-desktop {
+        display: flex;
+    }
+}
+
 .floating-cta-btn:hover {
     background: #E02D2D;
     transform: translateY(-3px);
