@@ -24,7 +24,7 @@
     <!-- Ahrefs Analytics -->
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="bgy7/Ehcegm/pKlFBFGOtA" async></script>
 
-    <link rel="canonical" href="https://zozosecurite.fr/5-signes-moderniser-securite-videosurveillance-montpellier.html">
+    <link rel="canonical" href="https://zozosecurite.fr/blog/5-signes-moderniser-securite-videosurveillance-montpellier.html">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +32,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/styles.css?v=2.2">
-    <link rel="stylesheet" href="css/navigation.css?v=2.1">
-    <link rel="stylesheet" href="css/blog.css?v=1.1">
+    <link rel="stylesheet" href="../css/styles.css?v=2.2">
+    <link rel="stylesheet" href="../css/navigation.css?v=2.1">
+    <link rel="stylesheet" href="../css/blog.css?v=1.1">
 
     <!-- Optimized inline SVG icons -->
     <style>
+        body {
+            background: #141414;
+            min-height: 100vh;
+        }
+
         .icon {
             display: inline-block;
             width: 1em;
@@ -48,13 +53,13 @@
 
         /* Blog Post Specific Styles */
         .blog-post-hero {
-            min-height: 50vh;
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            min-height: 40vh;
+            background: #141414;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 6rem 2rem 4rem 2rem;
+            padding: 3rem 2rem 2rem 2rem;
             position: relative;
             margin-top: 80px;
         }
@@ -106,8 +111,8 @@
         .blog-post-content-wrapper {
             max-width: 900px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            background: #000;
+            padding: 2rem 2rem 4rem 2rem;
+            background: #141414;
         }
 
         .blog-post-content {
@@ -150,18 +155,6 @@
             padding-left: 1rem;
         }
 
-        .blog-post-content h3::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 1.5rem;
-            background: #FF3333;
-            border-radius: 2px;
-        }
-
         .blog-post-content strong {
             color: #fff;
             font-weight: 600;
@@ -177,14 +170,6 @@
             position: relative;
             margin-bottom: 1rem;
             padding-left: 2rem;
-        }
-
-        .blog-post-content ul li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #FF3333;
-            font-size: 0.8rem;
         }
 
         .blog-post-highlight {
@@ -230,20 +215,38 @@
             font-size: 1.05rem;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #FF3333;
+            transition: width 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            z-index: -1;
         }
 
         .cta-button:hover {
-            background: #FF3333;
             transform: translateY(-2px);
+            border-color: #FF3333;
             box-shadow: 0 8px 20px rgba(255, 51, 51, 0.3);
         }
 
+        .cta-button:hover::before {
+            width: 100%;
+        }
+
         .related-posts {
-            background: #000;
+            background: #141414;
             padding: 4rem 2rem;
             border-top: 1px solid #222;
         }
@@ -365,11 +368,11 @@
     </style>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="logo-zozosécurité-favico/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo-zozosécurité-favico/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo-zozosécurité-favico/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logo-zozosécurité-favico/apple-touch-icon.png">
-    <link rel="manifest" href="logo-zozosécurité-favico/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="../logo-zozosécurité-favico/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logo-zozosécurité-favico/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../logo-zozosécurité-favico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../logo-zozosécurité-favico/apple-touch-icon.png">
+    <link rel="manifest" href="../logo-zozosécurité-favico/site.webmanifest">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Découvrez les 5 signes qui indiquent qu'il est temps de moderniser votre système de sécurité à Montpellier. Qualité d'image dégradée, pannes fréquentes, manque de fonctionnalités : nos experts vous guident.">
@@ -380,7 +383,7 @@
     <meta property="og:title" content="5 Signes qu'il est Temps de Moderniser votre Sécurité | Vidéosurveillance Montpellier">
     <meta property="og:description" content="Votre installation commence à montrer des signes de faiblesse ? Découvrez les indicateurs qui signalent qu'une mise à niveau s'impose pour une protection optimale.">
     <meta property="og:image" content="https://zozosecurite.fr/images/blog/blogpost2.webp">
-    <meta property="og:url" content="https://zozosecurite.fr/5-signes-moderniser-securite-videosurveillance-montpellier.html">
+    <meta property="og:url" content="https://zozosecurite.fr/blog/5-signes-moderniser-securite-videosurveillance-montpellier.html">
     <meta property="og:locale" content="fr_FR">
     <meta property="article:published_time" content="2025-05-01T00:00:00+01:00">
     <meta property="article:modified_time" content="2025-05-01T00:00:00+01:00">
@@ -460,7 +463,7 @@
           "@type": "ListItem",
           "position": 3,
           "name": "5 Signes qu'il est temps de moderniser votre sécurité",
-          "item": "https://zozosecurite.fr/5-signes-moderniser-securite-videosurveillance-montpellier.html"
+          "item": "https://zozosecurite.fr/blog/5-signes-moderniser-securite-videosurveillance-montpellier.html"
         }
       ]
     }
@@ -491,7 +494,7 @@
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://zozosecurite.fr/5-signes-moderniser-securite-videosurveillance-montpellier.html"
+        "@id": "https://zozosecurite.fr/blog/5-signes-moderniser-securite-videosurveillance-montpellier.html"
       },
       "articleSection": "Conseil",
       "keywords": ["modernisation sécurité", "mise à niveau", "systèmes obsolètes", "Montpellier"],
@@ -505,7 +508,7 @@
 <body>
 
     <!-- Logo -->
-    <a href="index.html" class="site-logo" ontouchstart="this.classList.add('touched')" ontouchend="this.classList.remove('touched')">
+    <a href="../index.html" class="site-logo" ontouchstart="this.classList.add('touched')" ontouchend="this.classList.remove('touched')">
         <div class="logo-text">
             <span class="logo-zozo">ZOZO</span>
             <span class="logo-securite">SÉCURITÉ</span>
@@ -516,10 +519,10 @@
     <nav class="desktop-nav">
         <div class="nav-container">
             <div class="nav-links">
-                <a href="index.html" class="nav-link">ACCUEIL</a>
-                <a href="index.html#realisations" class="nav-link">Réalisations</a>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="../index.html" class="nav-link">ACCUEIL</a>
+                <a href="../index.html#realisations" class="nav-link">Réalisations</a>
+                <a href="../blog.html" class="nav-link active">Blog</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
             </div>
             <div class="nav-contact-social">
                 <a href="tel:+33767563926" class="nav-contact" aria-label="Appeler au 07 67 56 39 26">
@@ -529,7 +532,7 @@
                     07 67 56 39 26
                 </a>
                 <div class="nav-contact-form">
-                    <a href="contact.html" class="contact-form-link" aria-label="Nous contacter">
+                    <a href="../contact.html" class="contact-form-link" aria-label="Nous contacter">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                             <path d="M13 8H7"/>
@@ -552,10 +555,10 @@
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
-        <a href="index.html" class="nav-link">ACCUEIL</a>
-        <a href="index.html#realisations" class="nav-link">Réalisations</a>
-        <a href="blog.html" class="nav-link active">Blog</a>
-        <a href="contact.html#secure-contact-form" class="nav-link">Contact</a>
+        <a href="../index.html" class="nav-link">ACCUEIL</a>
+        <a href="../index.html#realisations" class="nav-link">Réalisations</a>
+        <a href="../blog.html" class="nav-link active">Blog</a>
+        <a href="../contact.html#secure-contact-form" class="nav-link">Contact</a>
 
         <a href="tel:+33767563926" class="mobile-contact-link nav-link" aria-label="Appeler au 07 67 56 39 26">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
@@ -566,14 +569,14 @@
     </nav>
 
     <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="breadcrumb">
+    <nav class="breadcrumb" aria-label="breadcrumb" style="background: #141414;">
         <div class="breadcrumb-container">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
-                    <a href="index.html">Accueil</a>
+                    <a href="../index.html">Accueil</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="blog.html">Blog</a>
+                    <a href="../blog.html">Blog</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     5 Signes qu'il est temps de moderniser votre sécurité
@@ -620,6 +623,33 @@
         <div class="blog-post-content">
             <p>Un <strong>système de sécurité obsolète</strong> peut créer un faux sentiment de protection. Votre installation de vidéosurveillance à Montpellier commence à montrer des signes de faiblesse ? Il est peut-être temps d'envisager une mise à niveau. Découvrez les <strong>5 indicateurs clés</strong> qui signalent qu'une modernisation s'impose pour garantir une protection optimale de votre patrimoine.</p>
 
+            <!-- Article Summary Box -->
+            <div class="blog-post-highlight">
+                <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">
+                    Ce que vous allez apprendre
+                </h3>
+                <ul style="list-style: disc; padding-left: 1.5rem; margin: 0; color: rgba(255, 255, 255, 0.9);">
+                    <li style="padding: 0.5rem 0;">
+                        Comment identifier une <strong>qualité d'image dégradée</strong> et pourquoi cela compromet votre sécurité
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        Les signes de <strong>pannes récurrentes</strong> qui indiquent une fin de vie de votre système
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        Les <strong>fonctionnalités modernes essentielles</strong> que votre système devrait avoir (accès à distance, IA, alertes)
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        Quand les <strong>coûts de maintenance</strong> dépassent l'investissement dans un nouveau système
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        Les <strong>avantages d'une modernisation</strong> avec les technologies 4K et l'intelligence artificielle
+                    </li>
+                </ul>
+                <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); font-style: italic;">
+                    <strong>Temps de lecture :</strong> 3 minutes • <strong>Niveau :</strong> Accessible à tous
+                </p>
+            </div>
+
             <h2>1. Qualité d'image dégradée</h2>
 
             <p>La <strong>qualité d'image</strong> est l'élément le plus critique d'un système de vidéosurveillance. Si vos enregistrements sont flous, pixelisés ou présentent des zones sombres importantes, votre système ne remplit plus sa fonction première : l'identification.</p>
@@ -646,7 +676,7 @@
             <div class="blog-post-cta-box">
                 <h3>Votre système rencontre des problèmes fréquents ?</h3>
                 <p>Nos experts réalisent un diagnostic gratuit de votre installation et vous proposent des solutions adaptées à votre budget.</p>
-                <a href="contact.html" class="cta-button">
+                <a href="../contact.html" class="cta-button">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
                         <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
@@ -706,7 +736,7 @@
             <div class="blog-post-cta-box">
                 <h3>Prêt à moderniser votre installation ?</h3>
                 <p>ZOZO Sécurité vous accompagne dans votre projet de mise à niveau. Bénéficiez de 20 ans d'expérience et de notre expertise reconnue à Montpellier et dans l'Hérault.</p>
-                <a href="contact.html" class="cta-button">
+                <a href="../contact.html" class="cta-button">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                         <polyline points="14,2 14,8 20,8"/>
@@ -744,9 +774,9 @@
             <div class="related-posts-grid">
 
                 <!-- Related Post 1 -->
-                <a href="blog.html#post1" class="related-post-card">
+                <a href="../blog.html#post1" class="related-post-card">
                     <div class="related-post-image">
-                        <img src="images/blog/blogpost1.webp" alt="Comment choisir le bon système de vidéosurveillance" loading="lazy">
+                        <img src="../images/blog/blogpost1.webp" alt="Comment choisir le bon système de vidéosurveillance" loading="lazy">
                     </div>
                     <div class="related-post-content">
                         <h3 class="related-post-title">Comment choisir le bon système de vidéosurveillance ?</h3>
@@ -755,9 +785,9 @@
                 </a>
 
                 <!-- Related Post 2 -->
-                <a href="blog.html#post3" class="related-post-card">
+                <a href="../blog.html#post3" class="related-post-card">
                     <div class="related-post-image">
-                        <img src="images/blog/blogpost3.webp" alt="Guide Installation Vidéosurveillance Montpellier 2025" loading="lazy">
+                        <img src="../images/blog/blogpost3.webp" alt="Guide Installation Vidéosurveillance Montpellier 2025" loading="lazy">
                     </div>
                     <div class="related-post-content">
                         <h3 class="related-post-title">Guide Installation Vidéosurveillance Montpellier 2025</h3>
@@ -769,7 +799,7 @@
 
             <!-- CTA to Blog -->
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="blog.html" class="cta-button">
+                <a href="../blog.html" class="cta-button">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
@@ -780,7 +810,7 @@
     </section>
 
     <!-- Floating CTA Button for Mobile/Laptop -->
-    <a href="contact.html#secure-contact-form" class="floating-cta-btn" aria-label="Demander un devis gratuit">
+    <a href="../contact.html#secure-contact-form" class="floating-cta-btn" aria-label="Demander un devis gratuit">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
             <polyline points="14,2 14,8 20,8"/>
@@ -842,11 +872,11 @@
                 <h3 class="footer-title">Services</h3>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="services/videosurveillance.html">Vidéosurveillance Montpellier</a></li>
-                        <li><a href="services/installateur-videosurveillance-entrepots-montpellier.html">Installation Caméras Sécurité</a></li>
-                        <li><a href="index.html#services">Systèmes de Surveillance</a></li>
-                        <li><a href="index.html#realisations">Maintenance & Réparation</a></li>
-                        <li><a href="contact.html#secure-contact-form">Devis Gratuit</a></li>
+                        <li><a href="../services/videosurveillance.html">Vidéosurveillance Montpellier</a></li>
+                        <li><a href="../services/installateur-videosurveillance-entrepots-montpellier.html">Installation Caméras Sécurité</a></li>
+                        <li><a href="../index.html#services">Systèmes de Surveillance</a></li>
+                        <li><a href="../index.html#realisations">Maintenance & Réparation</a></li>
+                        <li><a href="../contact.html#secure-contact-form">Devis Gratuit</a></li>
                     </ul>
                 </nav>
             </div>
@@ -855,8 +885,8 @@
                 <h3 class="footer-title">Zones d'Intervention</h3>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="montpellier/installation-camera-securite-montpellier.html" itemprop="areaServed">Montpellier</a></li>
-                        <li><a href="grabels/installation-camera-securite-grabels.html" itemprop="areaServed">Grabels</a></li>
+                        <li><a href="../montpellier/installation-camera-securite-montpellier.html" itemprop="areaServed">Montpellier</a></li>
+                        <li><a href="../grabels/installation-camera-securite-grabels.html" itemprop="areaServed">Grabels</a></li>
                         <li><span itemprop="areaServed">Castelnau-le-Lez</span></li>
                         <li><span itemprop="areaServed">Lattes</span></li>
                         <li><span itemprop="areaServed">Pérols</span></li>
@@ -871,11 +901,11 @@
                 <h3 class="footer-title">Ressources</h3>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="index.html#realisations">Nos Réalisations</a></li>
-                        <li><a href="blog.html">Blog & Expertise</a></li>
-                        <li><a href="faq.html">Questions Fréquentes</a></li>
-                        <li><a href="mentions-legales.html">Mentions Légales</a></li>
-                        <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                        <li><a href="../index.html#realisations">Nos Réalisations</a></li>
+                        <li><a href="../blog.html">Blog & Expertise</a></li>
+                        <li><a href="../faq.html">Questions Fréquentes</a></li>
+                        <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+                        <li><a href="../politique-confidentialite.html">Confidentialité</a></li>
                     </ul>
                 </nav>
             </div>
@@ -901,8 +931,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/css-loader.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/css-loader.js"></script>
 
 </body>
 </html>
