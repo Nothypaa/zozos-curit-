@@ -69,4 +69,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Seamless infinite logo carousel animation
+    const logoCarousel = document.querySelector('.logo-carousel');
+    const logoTrack = document.querySelector('.logo-track');
+
+    if (logoCarousel && logoTrack) {
+        let currentPosition = 0;
+        let targetSpeed = 1;
+        let currentSpeed = 1;
+        let isRunning = true;
+
+        // Calculate the total width to scroll (7 logos + gaps)
+        const logoWidth = 120; // Width of each logo
+        const gap = 64; // 4rem = 64px (gap between logos)
+        const totalWidth = (logoWidth + gap) * 7; // 7 logos (first set)
+
+        // Check if mobile device
+        const isMobile = window.innerWidth <= 768;
+        const baseSpeed = isMobile ? 1.2 : 0.5; // Faster on mobile
+
+        function animate() {
+            if (!isRunning) return;
+
+            // Smooth speed interpolation
+            const speedDiff = targetSpeed - currentSpeed;
+            currentSpeed += speedDiff * 0.08; // Smooth transition
+
+            // Move the carousel
+            currentPosition -= baseSpeed * currentSpeed;
+
+            // Reset position when we've scrolled through the first set
+            if (Math.abs(currentPosition) >= totalWidth) {
+                currentPosition = 0;
+            }
+
+            // Apply transform
+            logoTrack.style.transform = `translateX(${currentPosition}px)`;
+
+            requestAnimationFrame(animate);
+        }
+
+        // Start the animation
+        animate();
+
+        // Hover controls (only on desktop with mouse)
+        if (!isMobile) {
+            logoCarousel.addEventListener('mouseenter', () => {
+                targetSpeed = 0.25; // Slow down to 25% speed
+            });
+
+            logoCarousel.addEventListener('mouseleave', () => {
+                targetSpeed = 1; // Return to normal speed
+            });
+        }
+    }
+
 });

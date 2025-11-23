@@ -123,6 +123,123 @@
 }
 
 /* ============================================
+   CARD SECTION WITH SPLIT TOP BORDER
+   ============================================ */
+
+.split-border-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 1rem 1rem 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 240px;
+    width: 240px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+/* Create the border with gap using pseudo-element */
+.split-border-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: 12px;
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 255, 255, 0.4),
+        0 0 32px rgba(255, 255, 255, 0.2),
+        inset 0 0 8px rgba(255, 255, 255, 0.5);
+    mask-image:
+        linear-gradient(to right,
+            transparent 0%,
+            transparent calc(50% - 35px),
+            black calc(50% - 35px),
+            black calc(50% + 35px),
+            transparent calc(50% + 35px),
+            transparent 100%
+        ),
+        linear-gradient(white, white);
+    mask-size: 100% 2px, 100% 100%;
+    mask-position: 0 0, 0 0;
+    mask-repeat: no-repeat, no-repeat;
+    mask-composite: exclude;
+    -webkit-mask-image:
+        linear-gradient(to right,
+            transparent 0%,
+            transparent calc(50% - 35px),
+            black calc(50% - 35px),
+            black calc(50% + 35px),
+            transparent calc(50% + 35px),
+            transparent 100%
+        ),
+        linear-gradient(black, black);
+    -webkit-mask-size: 100% 2px, 100% 100%;
+    -webkit-mask-position: 0 0, 0 0;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-composite: destination-out;
+    pointer-events: none;
+}
+
+.card-icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    color: white;
+    z-index: 2;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4))
+            drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .split-border-card {
+        padding: 1.25rem 0.875rem 0.875rem 0.875rem;
+        width: 192px;
+        max-width: 192px;
+        height: 136px;
+    }
+
+    .card-icon {
+        top: -24px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
    CLIENT TRUST SECTION STYLES
    ============================================ */
 
@@ -163,7 +280,7 @@
 .logo-track {
     display: flex;
     gap: 4rem;
-    animation: scroll 30s linear infinite;
+    will-change: transform;
     width: fit-content;
 }
 
@@ -189,14 +306,7 @@
     transform: scale(1.05);
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+/* Carousel animation now handled by JavaScript for seamless infinite scroll */
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
