@@ -2,6 +2,30 @@
    ALARM PAGE STYLES - Installation Alarme Montpellier
    ============================================ */
 
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b0b0b0;
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #d0d0d0 white;
+}
+
 /* White Banner Styles */
 .alarm-top-banner {
     position: fixed;
@@ -45,23 +69,26 @@
     display: flex;
     align-items: center;
     gap: 0;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    position: relative;
+    border: 2px solid #d0d0d0;
+    border-radius: 50px;
+    overflow: hidden;
+    background: white;
     transition: all 0.3s ease;
 }
 
 .banner-phone-form:focus-within {
-    border-color: #FF3333;
-    box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.1);
+    border-color: #999;
 }
 
 .banner-phone-input {
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1.5rem;
     border: none;
     font-size: 1rem;
-    width: 200px;
+    width: 240px;
     outline: none;
-    border-radius: 6px 0 0 6px;
+    background: transparent;
+    color: #666;
 }
 
 .banner-phone-input::placeholder {
@@ -69,25 +96,27 @@
 }
 
 .banner-phone-submit {
-    background: #FF3333;
+    background: #2d2d2d;
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 2rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.9rem;
-    border-radius: 0 6px 6px 0;
+    font-size: 0.875rem;
+    border-radius: 50px;
+    margin: -2px;
+    white-space: nowrap;
 }
 
 .banner-phone-submit:hover {
-    background: #E02020;
+    background: #1a1a1a;
 }
 
 .banner-phone-submit:active {
-    background: #CC0000;
+    background: #000000;
 }
 
 /* Spacer for fixed banner */
