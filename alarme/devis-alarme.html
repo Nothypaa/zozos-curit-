@@ -48,19 +48,19 @@
         </div>
     </div>
 
-    <!-- Question Section -->
-    <section class="question-section">
+    <!-- Question Section 1 -->
+    <section class="question-section" id="question-1">
         <h1 class="question-title">Que souhaitez-vous protéger ?</h1>
 
         <div class="choice-cards">
-            <div class="choice-card">
+            <div class="choice-card" data-choice="habitation">
                 <div class="card-icon-wrapper">
                     <img src="icon/installation-alarme-habitation.svg" alt="Habitation" class="card-icon-img">
                 </div>
                 <span class="card-text">Votre habitation</span>
             </div>
 
-            <div class="choice-card">
+            <div class="choice-card" data-choice="entreprise">
                 <div class="card-icon-wrapper">
                     <img src="icon/alarme-pour-entreprise.svg" alt="Entreprise" class="card-icon-img">
                 </div>
@@ -69,5 +69,94 @@
         </div>
     </section>
 
+    <!-- Question Section 2 (Hidden by default) -->
+    <section class="question-section" id="question-2" style="display: none;">
+        <h1 class="question-title">Quel est le type de votre habitation ?</h1>
+
+        <div class="choice-cards">
+            <div class="choice-card" data-choice="appartement">
+                <div class="card-icon-wrapper">
+                    <img src="icon/alarme-pour-apartment.svg" alt="Appartement" class="card-icon-img">
+                </div>
+                <span class="card-text">Appartement</span>
+            </div>
+
+            <div class="choice-card" data-choice="maison">
+                <div class="card-icon-wrapper">
+                    <img src="icon/Alarme-maison.svg" alt="Maison" class="card-icon-img">
+                </div>
+                <span class="card-text">Maison</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Question Section 3 (Hidden by default) -->
+    <section class="question-section" id="question-3" style="display: none;">
+        <h1 class="question-title">Souhaitez-vous protéger l'extérieur de votre maison ?</h1>
+
+        <div class="choice-cards">
+            <div class="choice-card" data-choice="oui">
+                <div class="card-icon-wrapper">
+                    <img src="icon/alarme-exterieur.svg" alt="Oui" class="card-icon-img">
+                </div>
+                <span class="card-text">Oui</span>
+            </div>
+
+            <div class="choice-card" data-choice="non">
+                <div class="card-icon-wrapper">
+                    <img src="icon/alarme-interieur.svg" alt="Non" class="card-icon-img">
+                </div>
+                <span class="card-text">Non</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Postal Code Section (TEMPORARILY REMOVED - WILL RE-ADD LATER) -->
+    <!--
+    <section class="postal-code-section" id="postal-code-section" style="display: none;">
+        <h1 class="postal-code-title">Veuillez saisir votre code postal :</h1>
+
+        <div class="postal-code-input-container">
+            <input
+                type="text"
+                class="postal-code-input"
+                placeholder="Votre code postal"
+                maxlength="5"
+                pattern="[0-9]{5}"
+                id="postal-code-input"
+            >
+            <button class="postal-code-button" id="postal-code-button">
+                Continuer
+                <svg class="button-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 12h8M12 8l4 4-4 4"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+    -->
+
+    <!-- Question Section 4 - Telesurveillance (Hidden by default) -->
+    <section class="question-section" id="question-4" style="display: none;">
+        <h1 class="question-title">Souhaitez-vous ajouter la télésurveillance ?</h1>
+
+        <div class="choice-cards">
+            <div class="choice-card" data-choice="oui">
+                <div class="card-icon-wrapper">
+                    <img src="icon/télésurveillance-montpellier.svg" alt="Oui" class="card-icon-img">
+                </div>
+                <span class="card-text">Oui</span>
+            </div>
+
+            <div class="choice-card" data-choice="non">
+                <div class="card-icon-wrapper">
+                    <img src="icon/no-télésurveillance-montpellier.svg" alt="Non" class="card-icon-img">
+                </div>
+                <span class="card-text">Non</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="devis-alarme.js"></script>
 </body>
 </html>
