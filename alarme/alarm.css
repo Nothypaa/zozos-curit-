@@ -581,6 +581,275 @@
     margin: 0;
 }
 
+/* ============================================
+   KIT COMPONENTS SECTION STYLES
+   ============================================ */
+
+.kit-components-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.kit-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+.kit-section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0 auto 3rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+.kit-image-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 4rem;
+}
+
+.kit-main-image {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Component Labels */
+.kit-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kit-label-right {
+    flex-direction: row-reverse;
+}
+
+.kit-label-down {
+    flex-direction: column;
+}
+
+.kit-label-down .label-line {
+    width: 2px;
+    height: 25px;
+}
+
+.kit-label-keypad {
+    position: absolute;
+}
+
+.keypad-line-vertical {
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: #FF3333;
+    left: 5px;
+    top: -38px;
+}
+
+.keypad-line-horizontal {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #FF3333;
+    left: 5px;
+    top: -18px;
+}
+
+.keypad-text {
+    position: absolute;
+    left: 45px;
+    top: -33px;
+}
+
+.label-dot {
+    width: 12px;
+    height: 12px;
+    background: #FF3333;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 51, 51, 0.2);
+    flex-shrink: 0;
+}
+
+.label-line {
+    width: 40px;
+    height: 2px;
+    background: #FF3333;
+    flex-shrink: 0;
+}
+
+.label-text {
+    background: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.label-text h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.3rem 0;
+    line-height: 1.2;
+}
+
+.label-text p {
+    font-size: 0.65rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION STYLES
+   ============================================ */
+
+.testimonials-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.testimonials-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.testimonials-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+.google-reviews-badge {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.google-reviews-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.google-reviews-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.google-reviews-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.google-rating-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.google-stars {
+    color: #FBBC05;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.google-reviews-count {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.google-logo {
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.reviews-verified-note {
+    text-align: center;
+    margin: 0 auto 2.5rem auto;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.testimonial-author strong {
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+.testimonial-author span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .banner-container {
@@ -680,5 +949,80 @@
         display: block;
         margin-left: 0;
         margin-top: 0.5rem;
+    }
+
+    /* Kit Components Section Mobile */
+    .kit-components-section {
+        display: none;
+    }
+
+    /* Testimonials Section Mobile */
+    .testimonials-section {
+        padding: 3rem 1rem;
+    }
+
+    .testimonials-title {
+        font-size: 1.8rem;
+    }
+
+    .testimonials-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .google-reviews-badge {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .google-reviews-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .google-rating-number {
+        font-size: 2rem;
+    }
+
+    .google-stars {
+        font-size: 1.25rem;
+    }
+
+    .google-logo {
+        width: 80px;
+    }
+
+    .testimonials-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-height: 500px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .testimonials-grid::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .testimonials-grid::-webkit-scrollbar-track {
+        background: #e0e0e0;
+        border-radius: 3px;
+    }
+
+    .testimonials-grid::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 3px;
+    }
+
+    .testimonials-grid::-webkit-scrollbar-thumb:hover {
+        background: #777;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+        flex-shrink: 0;
     }
 }
