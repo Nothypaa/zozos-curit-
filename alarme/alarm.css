@@ -64,8 +64,15 @@
 }
 
 /* Phone Form - Right Side */
-.banner-phone-form {
+.banner-phone-wrapper {
     margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.banner-phone-form {
     display: flex;
     align-items: center;
     gap: 0;
@@ -117,6 +124,14 @@
 
 .banner-phone-submit:active {
     background: #000000;
+}
+
+.banner-installation-note {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+    padding-right: 0.5rem;
 }
 
 /* Spacer for fixed banner */
@@ -850,8 +865,69 @@
     font-size: 0.9rem;
 }
 
+/* ============================================
+   STICKY CTA BAR STYLES (Desktop Only)
+   ============================================ */
+
+.sticky-cta-bar {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(150%);
+    background: #2d2d2d;
+    padding: 0.75rem 2rem;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    transition: transform 0.4s ease;
+    max-width: fit-content;
+}
+
+.sticky-cta-bar.visible {
+    transform: translateX(-50%) translateY(0);
+}
+
+.sticky-cta-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    white-space: nowrap;
+}
+
+.sticky-cta-text {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.sticky-cta-button {
+    background: #FF3333;
+    color: white;
+    padding: 0.65rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.sticky-cta-button:hover {
+    background: #e62e2e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 51, 51, 0.3);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    /* Hide sticky CTA on mobile */
+    .sticky-cta-bar {
+        display: none;
+    }
+
     .banner-container {
         padding: 0 1rem;
         flex-direction: column;
@@ -867,14 +943,24 @@
         height: 45px;
     }
 
-    .banner-phone-form {
+    .banner-phone-wrapper {
         margin-left: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .banner-phone-form {
         width: 100%;
     }
 
     .banner-phone-input {
         flex: 1;
         width: auto;
+    }
+
+    .banner-installation-note {
+        text-align: center;
+        padding-right: 0;
     }
 
     .alarm-top-banner {

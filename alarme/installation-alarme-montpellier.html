@@ -266,20 +266,23 @@
             </a>
 
             <!-- Phone Form on Right -->
-            <form class="banner-phone-form" action="https://formspree.io/f/mzzwonvk" method="POST">
-                <input
-                    type="tel"
-                    class="banner-phone-input"
-                    name="phone"
-                    placeholder="Être appelé"
-                    pattern="[0-9]{10}"
-                    required
-                    aria-label="Entrez votre numéro de téléphone"
-                >
-                <input type="hidden" name="_subject" value="Nouvelle demande alarme - Numéro de téléphone">
-                <input type="hidden" name="source" value="Alarme Page Banner">
-                <button type="submit" class="banner-phone-submit">OK</button>
-            </form>
+            <div class="banner-phone-wrapper">
+                <form class="banner-phone-form" action="https://formspree.io/f/mzzwonvk" method="POST">
+                    <input
+                        type="tel"
+                        class="banner-phone-input"
+                        name="phone"
+                        placeholder="Être appelé"
+                        pattern="[0-9]{10}"
+                        required
+                        aria-label="Entrez votre numéro de téléphone"
+                    >
+                    <input type="hidden" name="_subject" value="Nouvelle demande alarme - Numéro de téléphone">
+                    <input type="hidden" name="source" value="Alarme Page Banner">
+                    <button type="submit" class="banner-phone-submit">OK</button>
+                </form>
+                <p class="banner-installation-note">* Installation sous 24h</p>
+            </div>
         </div>
     </div>
 
@@ -452,6 +455,16 @@
                 </div>
             </div>
 
+            <!-- Left side: Application -->
+            <div class="kit-label kit-label-right" style="top: 50%; left: -9%;">
+                <div class="label-dot"></div>
+                <div class="label-line"></div>
+                <div class="label-text">
+                    <h4>Application mobile</h4>
+                    <p>Contrôlez votre alarme à distance. Recevez des notifications instantanées en cas d'alerte.</p>
+                </div>
+            </div>
+
             <!-- Motion Detector -->
             <div class="kit-label kit-label-down" style="top: 85%; right: 30%;">
                 <div class="label-dot"></div>
@@ -466,7 +479,7 @@
             <div class="kit-label kit-label-down" style="top: -3%; right: 63%;">
                 <div class="label-text">
                     <h4>Clavier sans fil</h4>
-                    <p>Permet d'armer et désarmer facilement votre système d'alarme avec un code PIN.</p>
+                    <p>Permet d'armer et de désarmer facilement votre système d'alarme avec un code PIN.</p>
                 </div>
                 <div class="label-line"></div>
                 <div class="label-dot"></div>
@@ -485,7 +498,7 @@
             <!-- Hub -->
             <div class="kit-label kit-label-down" style="top: -8%; right: 42%;">
                 <div class="label-text">
-                    <h4>Hub central Ajax</h4>
+                    <h4>Centrale d'alarme</h4>
                     <p>Cerveau du système, coordonne tous les équipements et assure la communication sécurisée.</p>
                 </div>
                 <div class="label-line"></div>
@@ -586,7 +599,33 @@
         </div>
     </section>
 
+    <!-- Sticky CTA Button (Desktop Only) -->
+    <div class="sticky-cta-bar" id="stickyCTA">
+        <div class="sticky-cta-content">
+            <span class="sticky-cta-text">Jusqu'au 31 décembre : -50€ sur votre devis • Installation sous 24h</span>
+            <a href="devis-alarme.html" class="sticky-cta-button">J'en profite</a>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="alarm.js"></script>
+    <script>
+        // Sticky CTA button functionality
+        const stickyCTA = document.getElementById('stickyCTA');
+        const heroSection = document.querySelector('.hero-section');
+
+        window.addEventListener('scroll', function() {
+            if (heroSection) {
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                const scrollPosition = window.scrollY + window.innerHeight;
+
+                if (window.scrollY > heroBottom) {
+                    stickyCTA.classList.add('visible');
+                } else {
+                    stickyCTA.classList.remove('visible');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
