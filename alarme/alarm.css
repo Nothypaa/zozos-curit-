@@ -814,12 +814,97 @@
     font-style: italic;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+/* ============================================
+   PROCESS SECTION
+   ============================================ */
+
+.process-section {
+    background-image: url('images/Installateur-alarme-maison.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.process-overlay {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 4rem 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.process-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.process-step {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 51, 51, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover .process-icon {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 51, 51, 0.3);
+}
+
+.process-step-title {
+    font-size: 1rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Carousel Wrapper */
+.testimonials-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* Carousel Container */
+.testimonials-carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track that holds all cards */
+.testimonials-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
 }
 
 .testimonial-card {
@@ -828,6 +913,8 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 calc(33.333% - 1.333rem);
+    min-width: 300px;
 }
 
 .testimonial-card:hover {
@@ -858,6 +945,80 @@
 .testimonial-author strong {
     color: #1a1a1a;
     font-size: 1rem;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 10;
+    color: #333;
+}
+
+.carousel-nav:hover {
+    background: #2d2d2d;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-nav:disabled:hover {
+    background: white;
+    color: #333;
+    transform: translateY(-50%);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: #FF3333;
+    width: 24px;
+    border-radius: 5px;
+}
+
+.carousel-dot:hover {
+    background: #bbb;
 }
 
 .testimonial-author span {
@@ -1078,37 +1239,37 @@
         width: 80px;
     }
 
-    .testimonials-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        max-height: 500px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-right: 0.5rem;
+    /* Mobile: Keep scrollable column layout */
+    .testimonials-carousel-wrapper {
+        padding: 0;
+    }
+
+    .testimonials-carousel {
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
-    .testimonials-grid::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .testimonials-grid::-webkit-scrollbar-track {
-        background: #e0e0e0;
-        border-radius: 3px;
-    }
-
-    .testimonials-grid::-webkit-scrollbar-thumb {
-        background: #999;
-        border-radius: 3px;
-    }
-
-    .testimonials-grid::-webkit-scrollbar-thumb:hover {
-        background: #777;
+    .testimonials-track {
+        gap: 1rem;
     }
 
     .testimonial-card {
         padding: 1.5rem;
-        flex-shrink: 0;
+        flex: 0 0 85%;
+        min-width: 280px;
+    }
+
+    /* Hide navigation on mobile */
+    .carousel-nav {
+        display: none;
+    }
+
+    .carousel-dots {
+        display: none;
+    }
+
+    /* Hide process section on mobile */
+    .process-section {
+        display: none;
     }
 }

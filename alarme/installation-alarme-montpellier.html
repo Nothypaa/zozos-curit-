@@ -536,13 +536,21 @@
             Tous ces avis sont vérifiables sur notre profil Google
         </p>
 
-        <div class="testimonials-grid">
+        <div class="testimonials-carousel-wrapper">
+            <button class="carousel-nav carousel-prev" id="prevBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
             <!-- Testimonial 1 - Real Review -->
             <div class="testimonial-card">
                 <div class="testimonial-stars">★★★★★</div>
                 <p class="testimonial-text">"Nous avons fait installer des caméras et une alarme chez nous par Zozo Sécurité. On voulait utiliser le moins de câbles possible, et le résultat est parfait : aucun câble apparent, tout est propre et discret. L'esthétique de la maison a été totalement respectée, et on se sent vraiment plus en sécurité maintenant. Merci aussi pour la formation à la fin, c'était clair et très utile. Super boulot, encore merci !"</p>
                 <div class="testimonial-author">
-                    <strong>Loan Mata</strong>
+                    <strong>Loan M.</strong>
                     <span>Installation alarme à Montpellier</span>
                 </div>
             </div>
@@ -552,7 +560,7 @@
                 <div class="testimonial-stars">★★★★★</div>
                 <p class="testimonial-text">"Je suis très satisfaite de la prestation de l'entreprise zozo sécurité pour l'installation des caméras à mon domicile, le service était rapide et efficace, je recommande, Merci pour votre professionnalisme !"</p>
                 <div class="testimonial-author">
-                    <strong>Aziza Galtier</strong>
+                    <strong>Aziza G.</strong>
                     <span>Installation caméra de surveillance Montpellier</span>
                 </div>
             </div>
@@ -562,7 +570,7 @@
                 <div class="testimonial-stars">★★★★★</div>
                 <p class="testimonial-text">"J'ai contacté ZOZO Sécurité pour sécuriser mon commerce à Montpellier. Dès le premier rendez-vous, j'ai été rassuré par leur sérieux : un devis clair, des explications simples et des solutions adaptées à mes besoins. L'installation a été rapide et professionnelle, avec du matériel moderne et fiable. L'équipe est réactive et très à l'écoute. Je recommande sans hésiter cette entreprise pour toute installation de vidéosurveillance à Montpellier."</p>
                 <div class="testimonial-author">
-                    <strong>Alireza Abootorab</strong>
+                    <strong>Alireza A.</strong>
                     <span>Alarme Montpellier - Commerce</span>
                 </div>
             </div>
@@ -572,7 +580,7 @@
                 <div class="testimonial-stars">★★★★★</div>
                 <p class="testimonial-text">"Je recommande fortement cette entreprise et je n'hésiterais pas à faire appel de nouveau à elle. Personne très professionnelle, sérieuse, disponible et réactive en plus de cela. Travail de qualité et vraiment sérieux ! Merci beaucoup encore."</p>
                 <div class="testimonial-author">
-                    <strong>Marie Petit</strong>
+                    <strong>Marie P.</strong>
                     <span>Sécurité Montpellier - Particulier</span>
                 </div>
             </div>
@@ -582,7 +590,7 @@
                 <div class="testimonial-stars">★★★★★</div>
                 <p class="testimonial-text">"Un professionnel de qualité, agréable et ponctuel. L'installation des équipements est impeccable et soignée. Je le recommande vivement. Encore merci !"</p>
                 <div class="testimonial-author">
-                    <strong>Oriane</strong>
+                    <strong>Oriane D.</strong>
                     <span>Installation sécurité Montpellier</span>
                 </div>
             </div>
@@ -596,7 +604,17 @@
                     <span>La Grande-Motte</span>
                 </div>
             </div>
+                </div>
+            </div>
+
+            <button class="carousel-nav carousel-next" id="nextBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
         </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
     <!-- Sticky CTA Button (Desktop Only) -->
@@ -610,6 +628,67 @@
     <!-- JavaScript -->
     <script src="alarm.js"></script>
     <script>
+        // Testimonials Carousel
+        const track = document.querySelector('.testimonials-track');
+        const cards = Array.from(track.children);
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        let currentIndex = 0;
+        const cardsPerView = 3;
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+
+        // Create dots
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToPage(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = Array.from(dotsContainer.children);
+
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 32; // 2rem gap
+            const offset = currentIndex * (cardWidth * cardsPerView + gap * cardsPerView);
+            track.style.transform = `translateX(-${offset}px)`;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+
+            // Update button states
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= totalPages - 1;
+        }
+
+        function goToPage(pageIndex) {
+            currentIndex = Math.max(0, Math.min(pageIndex, totalPages - 1));
+            updateCarousel();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalPages - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        // Update on resize
+        window.addEventListener('resize', updateCarousel);
+        updateCarousel();
+
         // Sticky CTA button functionality
         const stickyCTA = document.getElementById('stickyCTA');
         const heroSection = document.querySelector('.hero-section');
