@@ -261,7 +261,7 @@
     <div class="alarm-top-banner">
         <div class="banner-container">
             <!-- Centered Logo -->
-            <a href="../index.html" class="banner-logo">
+            <a href="#hero" class="banner-logo">
                 <img src="zozo16.9-no-background.webp" alt="Zozo Sécurité" class="banner-logo-img">
             </a>
 
@@ -287,7 +287,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="hero">
         <div class="hero-content">
             <h1 class="hero-main-title">
                 Un cambriolage toutes les <span class="highlight-number">90</span> secondes<br>
@@ -434,6 +434,20 @@
                 <p class="work-card-text">Vous pouvez ajouter la télésurveillance 24/7 pour une protection maximale. Notre centre de surveillance réagit en moins de 20 secondes et contacte les forces de l'ordre via des numéros réservés pour une intervention immédiate.</p>
             </div>
         </div>
+
+        <!-- CTA Banner After How It Works -->
+        <div class="mid-section-cta">
+            <div class="mid-cta-content">
+                <h3 class="mid-cta-title">Installation alarme à Montpellier en 24h</h3>
+                <p class="mid-cta-subtitle">Profitez d'une sécurité maximale sans mensualité ni engagement</p>
+                <a href="devis-alarme.html" class="mid-cta-button">
+                    Obtenir mon devis gratuit
+                    <svg class="mid-cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Kit Alarm Components Section -->
@@ -510,7 +524,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <h2 class="testimonials-title">Ce que disent nos clients</h2>
-        <p class="testimonials-subtitle">Plus de 1000 particuliers et professionnels nous font confiance à Montpellier et dans toute l'Occitanie</p>
+        <p class="testimonials-subtitle">Plus de 1000 particuliers et professionnels nous font confiance pour leur installation d'alarme à Montpellier et dans toute l'Occitanie</p>
 
         <!-- Google Reviews Badge -->
         <div class="google-reviews-badge">
@@ -581,7 +595,7 @@
                 <p class="testimonial-text">"Je recommande fortement cette entreprise et je n'hésiterais pas à faire appel de nouveau à elle. Personne très professionnelle, sérieuse, disponible et réactive en plus de cela. Travail de qualité et vraiment sérieux ! Merci beaucoup encore."</p>
                 <div class="testimonial-author">
                     <strong>Marie P.</strong>
-                    <span>Sécurité Montpellier - Particulier</span>
+                    <span>Installation alarme à Montpellier - Particulier</span>
                 </div>
             </div>
 
@@ -652,8 +666,8 @@
 
         function updateCarousel() {
             const cardWidth = cards[0].offsetWidth;
-            const gap = 32; // 2rem gap
-            const offset = currentIndex * (cardWidth * cardsPerView + gap * cardsPerView);
+            const gap = 24; // 1.5rem gap
+            const offset = currentIndex * cardsPerView * (cardWidth + gap);
             track.style.transform = `translateX(-${offset}px)`;
 
             // Update dots

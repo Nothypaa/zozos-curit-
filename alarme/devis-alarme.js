@@ -3,6 +3,7 @@
 // Get all choice cards from question 1
 const question1Cards = document.querySelectorAll('#question-1 .choice-card');
 const question2Section = document.getElementById('question-2');
+const question2bSection = document.getElementById('question-2b');
 const question3Section = document.getElementById('question-3');
 const progressFill = document.querySelector('.progress-fill');
 const progressCircle = document.querySelector('.progress-circle');
@@ -12,6 +13,8 @@ const progressLabels = document.querySelectorAll('.progress-label');
 let userSelections = {
     propertyType: null,
     habitationType: null,
+    businessType: null,
+    entryPoints: null,
     exteriorProtection: null,
     postalCode: null,
     telesurveillance: null
@@ -80,16 +83,22 @@ question1Cards.forEach(card => {
                 // Update progress labels
                 progressLabels[0].classList.remove('active');
                 progressLabels[1].classList.add('active');
-            } else {
-                // If "entreprise" is selected, skip to next section or handle differently
-                // For now, just update progress
+            } else if (choice === 'entreprise') {
+                // If "entreprise" is selected, show question 2b (business type)
+                // Hide question 2 (habitation type)
+                question2Section.style.display = 'none';
+
+                // Show question 2b with smooth transition
+                question2bSection.style.display = 'block';
+                setTimeout(() => {
+                    question2bSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+
+                // Update progress bar to 33%
                 progressFill.style.width = '33%';
                 progressCircle.textContent = '33%';
                 progressLabels[0].classList.remove('active');
                 progressLabels[1].classList.add('active');
-
-                // Hide question 2 if it was previously shown
-                question2Section.style.display = 'none';
 
                 // Clear question 2 selection
                 question2Cards.forEach(c => c.classList.remove('selected'));
@@ -101,11 +110,6 @@ question1Cards.forEach(card => {
                 // Clear question 3 selection
                 question3Cards.forEach(c => c.classList.remove('selected'));
                 userSelections.exteriorProtection = null;
-
-                // Hide postal code section
-                postalCodeSection.style.display = 'none';
-                postalCodeInput.value = '';
-                userSelections.postalCode = null;
             }
         }
     });
@@ -113,6 +117,17 @@ question1Cards.forEach(card => {
 
 // Get all choice cards from question 2
 const question2Cards = document.querySelectorAll('#question-2 .choice-card');
+
+// Get all choice cards from question 2b (business type)
+const question2bCards = document.querySelectorAll('#question-2b .choice-card');
+
+// Get question 2c elements (entry points for business)
+const question2cSection = document.getElementById('question-2c');
+const question2cCards = document.querySelectorAll('#question-2c .choice-card');
+
+// Get question 2d elements (entry points for habitation)
+const question2dSection = document.getElementById('question-2d');
+const question2dCards = document.querySelectorAll('#question-2d .choice-card');
 
 // Handle question 2 selections
 question2Cards.forEach(card => {
@@ -133,6 +148,11 @@ question2Cards.forEach(card => {
 
             // Reset endpoint to grey
             progressEndpoint.style.background = '#E0E0E0';
+
+            // Hide question 2d
+            question2dSection.style.display = 'none';
+            question2dCards.forEach(c => c.classList.remove('selected'));
+            userSelections.entryPoints = null;
 
             // Hide question 3
             question3Section.style.display = 'none';
@@ -160,9 +180,178 @@ question2Cards.forEach(card => {
             // Store selection
             userSelections.habitationType = choice;
 
-            // Only show question 3 if "maison" is selected
-            if (choice === 'maison') {
-                // Show question 3 with smooth transition
+            // Show question 2d (entry points) for both appartement and maison
+            question2dSection.style.display = 'block';
+            setTimeout(() => {
+                question2dSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+
+            // Update progress bar to 50%
+            progressFill.style.width = '50%';
+            progressCircle.textContent = '50%';
+
+            // Keep progress labels the same (still on PROTECTION)
+            progressLabels[1].classList.add('active');
+            progressLabels[2].classList.remove('active');
+        }
+
+        console.log('User selections:', userSelections);
+    });
+});
+
+// Handle question 2b selections (business type)
+question2bCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const choice = card.getAttribute('data-choice');
+        const isAlreadySelected = card.classList.contains('selected');
+
+        // If clicking the same card, deselect it
+        if (isAlreadySelected) {
+            card.classList.remove('selected');
+            userSelections.businessType = null;
+
+            // Reset progress to 33%
+            progressFill.style.width = '33%';
+            progressCircle.textContent = '33%';
+            progressLabels[1].classList.add('active');
+            progressLabels[2].classList.remove('active');
+
+            // Reset endpoint to grey
+            progressEndpoint.style.background = '#E0E0E0';
+
+            // Hide question 2c
+            question2cSection.style.display = 'none';
+            question2cCards.forEach(c => c.classList.remove('selected'));
+            userSelections.entryPoints = null;
+
+            // Hide question 4
+            question4Section.style.display = 'none';
+            question4Cards.forEach(c => c.classList.remove('selected'));
+            userSelections.telesurveillance = null;
+        } else {
+            // Remove selected class from all cards in question 2b
+            question2bCards.forEach(c => c.classList.remove('selected'));
+
+            // Add selected class to clicked card
+            card.classList.add('selected');
+
+            // Store selection
+            userSelections.businessType = choice;
+
+            // Show question 2c (entry points) for entreprise
+            question2cSection.style.display = 'block';
+            setTimeout(() => {
+                question2cSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+
+            // Update progress bar to 50%
+            progressFill.style.width = '50%';
+            progressCircle.textContent = '50%';
+
+            // Keep progress labels the same (still on PROTECTION)
+            progressLabels[1].classList.add('active');
+            progressLabels[2].classList.remove('active');
+        }
+
+        console.log('User selections:', userSelections);
+    });
+});
+
+// Handle question 2c selections (entry points for business)
+question2cCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const choice = card.getAttribute('data-choice');
+        const isAlreadySelected = card.classList.contains('selected');
+
+        // If clicking the same card, deselect it
+        if (isAlreadySelected) {
+            card.classList.remove('selected');
+            userSelections.entryPoints = null;
+
+            // Reset progress to 50%
+            progressFill.style.width = '50%';
+            progressCircle.textContent = '50%';
+            progressLabels[1].classList.add('active');
+            progressLabels[2].classList.remove('active');
+
+            // Reset endpoint to grey
+            progressEndpoint.style.background = '#E0E0E0';
+
+            // Hide question 4
+            question4Section.style.display = 'none';
+            question4Cards.forEach(c => c.classList.remove('selected'));
+            userSelections.telesurveillance = null;
+        } else {
+            // Remove selected class from all cards in question 2c
+            question2cCards.forEach(c => c.classList.remove('selected'));
+
+            // Add selected class to clicked card
+            card.classList.add('selected');
+
+            // Store selection
+            userSelections.entryPoints = choice;
+
+            // Show question 4 (telesurveillance)
+            question4Section.style.display = 'block';
+            setTimeout(() => {
+                question4Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+
+            // Update progress bar to 66%
+            progressFill.style.width = '66%';
+            progressCircle.textContent = '66%';
+
+            // Update progress labels
+            progressLabels[1].classList.remove('active');
+            progressLabels[2].classList.add('active');
+        }
+
+        console.log('User selections:', userSelections);
+    });
+});
+
+// Handle question 2d selections (entry points for habitation)
+question2dCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const choice = card.getAttribute('data-choice');
+        const isAlreadySelected = card.classList.contains('selected');
+
+        // If clicking the same card, deselect it
+        if (isAlreadySelected) {
+            card.classList.remove('selected');
+            userSelections.entryPoints = null;
+
+            // Reset progress to 50%
+            progressFill.style.width = '50%';
+            progressCircle.textContent = '50%';
+            progressLabels[1].classList.add('active');
+            progressLabels[2].classList.remove('active');
+
+            // Reset endpoint to grey
+            progressEndpoint.style.background = '#E0E0E0';
+
+            // Hide question 3
+            question3Section.style.display = 'none';
+            question3Cards.forEach(c => c.classList.remove('selected'));
+            userSelections.exteriorProtection = null;
+
+            // Hide question 4
+            question4Section.style.display = 'none';
+            question4Cards.forEach(c => c.classList.remove('selected'));
+            userSelections.telesurveillance = null;
+        } else {
+            // Remove selected class from all cards in question 2d
+            question2dCards.forEach(c => c.classList.remove('selected'));
+
+            // Add selected class to clicked card
+            card.classList.add('selected');
+
+            // Store selection
+            userSelections.entryPoints = choice;
+
+            // Check if user selected "maison" to show question 3, or "appartement" to skip to question 4
+            if (userSelections.habitationType === 'maison') {
+                // Show question 3 (exterior protection) for maison
                 question3Section.style.display = 'block';
                 setTimeout(() => {
                     question3Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -176,23 +365,16 @@ question2Cards.forEach(card => {
                 progressLabels[1].classList.remove('active');
                 progressLabels[2].classList.add('active');
             } else {
-                // If "appartement" is selected, skip question 3 and show question 4
+                // For appartement, skip question 3 and go directly to question 4
                 question3Section.style.display = 'none';
-
-                // Clear question 3 selection
                 question3Cards.forEach(c => c.classList.remove('selected'));
                 userSelections.exteriorProtection = null;
 
-                // Show question 4 (telesurveillance) directly
+                // Show question 4 (telesurveillance)
                 question4Section.style.display = 'block';
                 setTimeout(() => {
                     question4Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
-
-                // Hide postal code section
-                postalCodeSection.style.display = 'none';
-                postalCodeInput.value = '';
-                userSelections.postalCode = null;
 
                 // Update progress bar to 66%
                 progressFill.style.width = '66%';

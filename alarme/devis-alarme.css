@@ -180,6 +180,16 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
 }
 
+.question-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
+    margin-top: -2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
 /* Choice Cards */
 .choice-cards {
     display: flex;
@@ -187,6 +197,15 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+/* Business Cards Grid (3 columns for 6 items) */
+.business-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .choice-card {

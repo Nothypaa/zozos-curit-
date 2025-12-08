@@ -597,12 +597,110 @@
 }
 
 /* ============================================
+   MID-SECTION CTA (After How It Works)
+   ============================================ */
+
+.mid-section-cta {
+    background: linear-gradient(135deg, #FF3333 0%, #e62e2e 100%);
+    padding: 1.75rem 2rem;
+    margin: 4rem auto 0 auto;
+    border-radius: 16px;
+    max-width: 900px;
+    box-shadow: 0 8px 32px rgba(255, 51, 51, 0.25);
+}
+
+.mid-cta-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mid-cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mid-cta-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.mid-cta-button {
+    background: white;
+    color: #FF3333;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    margin-top: 0.25rem;
+}
+
+.mid-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    background: #f8f8f8;
+}
+
+.mid-cta-arrow {
+    width: 20px;
+    height: 20px;
+    color: #FF3333;
+    stroke-width: 3;
+    transition: transform 0.3s ease;
+}
+
+.mid-cta-button:hover .mid-cta-arrow {
+    transform: translateX(4px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .mid-section-cta {
+        padding: 2rem 1.5rem;
+        margin: 2rem 1rem 0 1rem;
+        border-radius: 12px;
+    }
+
+    .mid-cta-title {
+        font-size: 1.5rem;
+    }
+
+    .mid-cta-subtitle {
+        font-size: 1rem;
+    }
+
+    .mid-cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================
    KIT COMPONENTS SECTION STYLES
    ============================================ */
 
 .kit-components-section {
     background: #f8f9fa;
-    padding: 4rem 2rem;
+    padding: 2.5rem 2rem 4rem 2rem;
     text-align: center;
 }
 
@@ -815,6 +913,88 @@
 }
 
 /* ============================================
+   CTA SECTION AFTER KIT
+   ============================================ */
+
+.cta-section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, #E57373 0%, #EF5350 100%);
+    border-radius: 16px;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(239, 83, 80, 0.3);
+}
+
+.cta-banner-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+}
+
+.cta-banner-button {
+    background: white;
+    color: #EF5350;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-banner-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cta-step {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-step-icon {
+    width: 70px;
+    height: 70px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.cta-step-title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ============================================
    PROCESS SECTION
    ============================================ */
 
@@ -903,36 +1083,31 @@
 /* Track that holds all cards */
 .testimonials-track {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     transition: transform 0.5s ease;
 }
 
 .testimonial-card {
     background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 0 0 calc(33.333% - 1.333rem);
-    min-width: 300px;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    flex: 0 0 calc(33.333% - 1rem);
+    min-width: 280px;
 }
 
 .testimonial-stars {
     color: #FFD700;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
 }
 
 .testimonial-text {
-    font-size: 1rem;
-    color: #333;
+    font-size: 0.95rem;
+    color: #555;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     font-style: italic;
 }
 
@@ -944,7 +1119,13 @@
 
 .testimonial-author strong {
     color: #1a1a1a;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.testimonial-author span {
+    color: #888;
+    font-size: 0.85rem;
 }
 
 /* Carousel Navigation Buttons */
@@ -1019,11 +1200,6 @@
 
 .carousel-dot:hover {
     background: #bbb;
-}
-
-.testimonial-author span {
-    color: #666;
-    font-size: 0.9rem;
 }
 
 /* ============================================
@@ -1215,6 +1391,31 @@
     .testimonials-subtitle {
         font-size: 1rem;
         margin-bottom: 1.5rem;
+    }
+
+    /* CTA Section Mobile */
+    .cta-section {
+        padding: 2rem 1rem;
+    }
+
+    .cta-banner {
+        flex-direction: column;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .cta-banner-title {
+        font-size: 1.2rem;
+    }
+
+    .cta-banner-button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .cta-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .google-reviews-badge {
