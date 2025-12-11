@@ -59,12 +59,14 @@ body {
 
 .progress-section {
     padding: 3rem 2rem 2rem 2rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     position: sticky;
     top: 100px;
-    background: white;
     z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .progress-container {

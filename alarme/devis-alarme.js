@@ -166,10 +166,10 @@ question2Cards.forEach(card => {
             question4Cards.forEach(c => c.classList.remove('selected'));
             userSelections.telesurveillance = null;
 
-            // POSTAL CODE SECTION TEMPORARILY REMOVED
-            // postalCodeSection.style.display = 'none';
-            // postalCodeInput.value = '';
-            // userSelections.postalCode = null;
+            // Hide postal code section
+            postalCodeSection.style.display = 'none';
+            postalCodeInput.value = '';
+            userSelections.postalCode = null;
         } else {
             // Remove selected class from all cards in question 2
             question2Cards.forEach(c => c.classList.remove('selected'));
@@ -398,10 +398,10 @@ const progressEndpoint = document.querySelector('.progress-endpoint');
 const question4Section = document.getElementById('question-4');
 const question4Cards = document.querySelectorAll('#question-4 .choice-card');
 
-// POSTAL CODE SECTION TEMPORARILY REMOVED
-// const postalCodeSection = document.getElementById('postal-code-section');
-// const postalCodeInput = document.getElementById('postal-code-input');
-// const postalCodeButton = document.getElementById('postal-code-button');
+// Get postal code elements
+const postalCodeSection = document.getElementById('postal-code-section');
+const postalCodeInput = document.getElementById('postal-code-input');
+const postalCodeButton = document.getElementById('postal-code-button');
 
 // Handle question 3 selections
 question3Cards.forEach(card => {
@@ -426,10 +426,10 @@ question3Cards.forEach(card => {
             question4Cards.forEach(c => c.classList.remove('selected'));
             userSelections.telesurveillance = null;
 
-            // POSTAL CODE SECTION TEMPORARILY REMOVED
-            // postalCodeSection.style.display = 'none';
-            // postalCodeInput.value = '';
-            // userSelections.postalCode = null;
+            // Hide postal code section
+            postalCodeSection.style.display = 'none';
+            postalCodeInput.value = '';
+            userSelections.postalCode = null;
         } else {
             // Remove selected class from all cards in question 3
             question3Cards.forEach(c => c.classList.remove('selected'));
@@ -451,8 +451,6 @@ question3Cards.forEach(card => {
     });
 });
 
-// POSTAL CODE HANDLERS TEMPORARILY REMOVED - WILL RE-ADD LATER
-/*
 // Handle postal code submission
 postalCodeButton.addEventListener('click', () => {
     const postalCode = postalCodeInput.value.trim();
@@ -477,7 +475,6 @@ postalCodeInput.addEventListener('keypress', (e) => {
         postalCodeButton.click();
     }
 });
-*/
 
 // Handle question 4 selections (telesurveillance)
 question4Cards.forEach(card => {
@@ -490,10 +487,10 @@ question4Cards.forEach(card => {
             card.classList.remove('selected');
             userSelections.telesurveillance = null;
 
-            // POSTAL CODE SECTION TEMPORARILY REMOVED
-            // postalCodeSection.style.display = 'none';
-            // postalCodeInput.value = '';
-            // userSelections.postalCode = null;
+            // Hide postal code section
+            postalCodeSection.style.display = 'none';
+            postalCodeInput.value = '';
+            userSelections.postalCode = null;
 
             // Reset endpoint to grey
             progressEndpoint.style.background = '#E0E0E0';
@@ -513,17 +510,18 @@ question4Cards.forEach(card => {
 
             console.log('User selections:', userSelections);
 
+            // Show postal code section
+            postalCodeSection.style.display = 'block';
+            setTimeout(() => {
+                postalCodeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+
             // Update progress bar to 100%
             progressFill.style.width = '100%';
             progressCircle.textContent = '100%';
 
             // Turn endpoint circle red
             progressEndpoint.style.background = '#FF3333';
-
-            // FINAL QUESTION - Show completion message
-            setTimeout(() => {
-                alert('Merci ! Votre devis est prêt.');
-            }, 300);
         }
     });
 });
