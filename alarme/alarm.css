@@ -1551,7 +1551,7 @@
     }
 
     .mobile-selection-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: white;
         margin: 0 0 1rem 0;
@@ -1610,6 +1610,11 @@
         overflow-wrap: break-word;
     }
 
+    /* Keep "les 90 secondes" together on mobile */
+    .hero-main-title .no-break {
+        white-space: nowrap;
+    }
+
     .hero-main-title br {
         display: block;
     }
@@ -1645,6 +1650,10 @@
         }
         .side-note {
             font-size: 0.85rem;
+        }
+        /* Ensure "les 90 secondes" stays together on iPhone 14 Pro Max */
+        .hero-main-title .no-break {
+            white-space: nowrap;
         }
     }
 
