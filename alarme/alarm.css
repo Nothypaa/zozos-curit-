@@ -143,6 +143,12 @@
    HERO SECTION STYLES
    ============================================ */
 
+/* Hide mobile elements on desktop */
+.mobile-google-reviews,
+.mobile-property-selection {
+    display: none;
+}
+
 .hero-section {
     position: relative;
     min-height: 700px;
@@ -913,6 +919,11 @@
     line-height: 1.6;
 }
 
+/* Mobile Kit Image Container (Hidden on Desktop) */
+.kit-mobile-container {
+    display: none;
+}
+
 .kit-image-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1500,10 +1511,141 @@
         height: 100px;
     }
 
-    /* Hero Section Mobile */
+    /* Hero Section Mobile - New design with background image */
     .hero-section {
-        min-height: auto;
-        padding: 3rem 1rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 70vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('images/alarme-maison-montpellier.webp');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        padding: 2rem 1rem;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hide all hero content elements */
+    .hero-content > * {
+        display: none;
+    }
+
+    /* Show mobile elements */
+    .mobile-property-selection,
+    .hero-main-title {
+        display: block;
+    }
+
+    /* Mobile Property Selection */
+    .mobile-property-selection {
+        margin: 0 auto 1.5rem auto;
+        max-width: 300px;
+        position: relative;
+        bottom: 8rem;
+    }
+
+    .mobile-selection-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: white;
+        margin: 0 0 1rem 0;
+        text-align: center;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-property-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .mobile-property-btn {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+        box-shadow:
+            0 0 4px rgba(255, 255, 255, 0.6),
+            0 0 8px rgba(255, 255, 255, 0.4),
+            0 0 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-property-btn span {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-property-btn:active {
+        transform: scale(0.98);
+    }
+
+    /* Only show the h1 */
+    .hero-main-title {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+        padding: 0 1.5rem;
+        text-align: center;
+        line-height: 1.3;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-main-title br {
+        display: block;
+    }
+
+    .highlight-number {
+        color: white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        font-weight: 900;
+    }
+
+    .side-note {
+        display: inline;
+        font-size: 0.7rem;
+        font-weight: 400;
+        font-style: italic;
+        opacity: 0.95;
+        margin-left: 0.25rem;
+    }
+
+    /* Slightly larger on bigger phones */
+    @media (min-width: 390px) {
+        .hero-main-title {
+            font-size: 1.35rem;
+        }
+        .side-note {
+            font-size: 0.75rem;
+        }
+    }
+
+    @media (min-width: 428px) {
+        .hero-main-title {
+            font-size: 1.5rem;
+        }
+        .side-note {
+            font-size: 0.85rem;
+        }
     }
 
     /* Client Trust Section Mobile */
@@ -1568,7 +1710,43 @@
 
     /* Kit Components Section Mobile */
     .kit-components-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .kit-section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .kit-section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Hide desktop kit image on mobile */
+    .kit-image-container {
         display: none;
+    }
+
+    /* Hide comparison section on mobile */
+    .comparison-title,
+    .comparison-container {
+        display: none;
+    }
+
+    /* Show mobile kit image on mobile */
+    .kit-mobile-container {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .kit-mobile-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        object-fit: contain;
     }
 
     /* Testimonials Section Mobile */
