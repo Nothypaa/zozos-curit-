@@ -1452,6 +1452,15 @@
     display: inline;
 }
 
+/* Button text - desktop visible by default */
+.button-text-mobile {
+    display: none;
+}
+
+.button-text-desktop {
+    display: inline;
+}
+
 .sticky-cta-button {
     background: #FF3333;
     color: white;
@@ -1475,22 +1484,23 @@
     /* Show sticky CTA on mobile with responsive design */
     .sticky-cta-bar {
         bottom: 1rem;
-        padding: 1rem 1.25rem;
+        padding: 1.25rem 1.5rem;
         border-radius: 50px;
         max-width: calc(100% - 2rem);
     }
 
     .sticky-cta-content {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
         white-space: normal;
         text-align: center;
     }
 
     .sticky-cta-text {
-        font-size: 0.9rem;
-        line-height: 1.3;
+        font-size: 0.95rem;
+        line-height: 1.2;
         white-space: nowrap;
+        font-weight: 400;
     }
 
     /* Hide desktop text, show mobile text */
@@ -1503,11 +1513,23 @@
         white-space: nowrap;
     }
 
+    /* Hide desktop button text, show mobile button text */
+    .button-text-desktop {
+        display: none;
+    }
+
+    .button-text-mobile {
+        display: inline;
+    }
+
     .sticky-cta-button {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.85rem;
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
+        font-weight: 700;
         width: 100%;
         text-align: center;
+        border-radius: 50px;
+        white-space: normal;
     }
 
     .banner-container {
