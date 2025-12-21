@@ -1490,7 +1490,7 @@
     .sticky-cta-text {
         font-size: 0.9rem;
         line-height: 1.3;
-        white-space: normal;
+        white-space: nowrap;
     }
 
     /* Hide desktop text, show mobile text */
@@ -1500,6 +1500,7 @@
 
     .sticky-text-mobile {
         display: inline;
+        white-space: nowrap;
     }
 
     .sticky-cta-button {
