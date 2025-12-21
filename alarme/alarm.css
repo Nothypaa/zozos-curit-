@@ -377,6 +377,9 @@
     position: static;
     overflow: visible;
     transition: all 0.3s ease;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .cta-button::before {
