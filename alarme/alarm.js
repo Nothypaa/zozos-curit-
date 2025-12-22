@@ -124,4 +124,151 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Testimonials Carousel
+    const track = document.querySelector('.testimonials-track');
+    const cards = Array.from(track.children);
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    let currentIndex = 0;
+    const cardsPerView = 3;
+    const totalPages = Math.ceil(cards.length / cardsPerView);
+
+    // Create dots
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToPage(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    const dots = Array.from(dotsContainer.children);
+
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 24; // 1.5rem gap
+        const offset = currentIndex * cardsPerView * (cardWidth + gap);
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= totalPages - 1;
+    }
+
+    function goToPage(pageIndex) {
+        currentIndex = Math.max(0, Math.min(pageIndex, totalPages - 1));
+        updateCarousel();
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalPages - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Update on resize
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+
+    // Sticky CTA button functionality
+    const stickyCTA = document.getElementById('stickyCTA');
+    const heroSection = document.querySelector('.hero-section');
+    const footer = document.querySelector('.alarm-footer');
+
+    window.addEventListener('scroll', function() {
+        if (heroSection && footer) {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const footerTop = footer.offsetTop;
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            // Show CTA after hero, but hide when reaching footer
+            if (window.scrollY > heroBottom && scrollPosition < footerTop + 100) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        }
+    });
+
+    // FAQ Accordion functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // Statistics Counter Animation
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const suffix = element.getAttribute('data-suffix');
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target + suffix;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current) + suffix;
+            }
+        }, duration / steps);
+    }
+
+    // Intersection Observer for triggering animation when stats come into view
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(statNumber => {
+                    animateCounter(statNumber);
+                });
+                statsObserver.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the section is visible
+    });
+
+    // Observe the stats section
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
 });
