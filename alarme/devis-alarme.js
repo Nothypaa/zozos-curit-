@@ -17,6 +17,7 @@ let userSelections = {
     entryPoints: null,
     exteriorProtection: null,
     postalCode: null,
+    phoneNumber: null,
     telesurveillance: null
 };
 
@@ -451,6 +452,11 @@ question3Cards.forEach(card => {
     });
 });
 
+// Get phone section elements
+const phoneSection = document.getElementById('phone-section');
+const phoneInput = document.getElementById('phone-input');
+const phoneButton = document.getElementById('phone-button');
+
 // Handle postal code submission
 postalCodeButton.addEventListener('click', () => {
     const postalCode = postalCodeInput.value.trim();
@@ -458,12 +464,13 @@ postalCodeButton.addEventListener('click', () => {
     // Validate postal code (5 digits)
     if (postalCode.length === 5 && /^[0-9]{5}$/.test(postalCode)) {
         userSelections.postalCode = postalCode;
-        console.log('Final selections:', userSelections);
+        console.log('User selections:', userSelections);
 
-        // Here you can add logic to submit the form or redirect to next page
+        // Show phone section
+        phoneSection.style.display = 'block';
         setTimeout(() => {
-            alert('Merci ! Votre devis est prêt.');
-        }, 300);
+            phoneSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
     } else {
         alert('Veuillez entrer un code postal valide (5 chiffres)');
     }
@@ -524,4 +531,111 @@ question4Cards.forEach(card => {
             progressEndpoint.style.background = '#FF3333';
         }
     });
+});
+
+// Format phone number as user types
+phoneInput.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+
+    // Limit to 10 digits
+    if (value.length > 10) {
+        value = value.slice(0, 10);
+    }
+
+    // Format as XX XX XX XX XX
+    let formatted = '';
+    for (let i = 0; i < value.length; i++) {
+        if (i > 0 && i % 2 === 0) {
+            formatted += ' ';
+        }
+        formatted += value[i];
+    }
+
+    e.target.value = formatted;
+});
+
+// Handle phone number submission
+phoneButton.addEventListener('click', async () => {
+    const phoneNumber = phoneInput.value.replace(/\s/g, ''); // Remove spaces
+
+    // Validate phone number (10 digits, starting with 0)
+    if (phoneNumber.length === 10 && /^0[1-9][0-9]{8}$/.test(phoneNumber)) {
+        userSelections.phoneNumber = phoneNumber;
+        console.log('Final selections:', userSelections);
+
+        // Disable button to prevent double submission
+        phoneButton.disabled = true;
+        phoneButton.textContent = 'Envoi en cours...';
+
+        try {
+            // Prepare form data for Formspree
+            const formData = new FormData();
+            formData.append('Type de propriété', userSelections.propertyType === 'habitation' ? 'Habitation' : 'Entreprise');
+
+            if (userSelections.habitationType) {
+                formData.append('Type d\'habitation', userSelections.habitationType === 'appartement' ? 'Appartement' : 'Maison');
+            }
+
+            if (userSelections.businessType) {
+                const businessTypes = {
+                    'commerce': 'Commerce',
+                    'bar-restaurant': 'Bar ou restaurant',
+                    'cabinet-medical': 'Bureau ou cabinet médical',
+                    'atelier-entrepot': 'Atelier ou entrepôt',
+                    'local-administratif': 'Local administratif, sportif ou éducatif',
+                    'autre': 'Autre'
+                };
+                formData.append('Type d\'entreprise', businessTypes[userSelections.businessType] || userSelections.businessType);
+            }
+
+            if (userSelections.entryPoints) {
+                formData.append('Points d\'accès', userSelections.entryPoints);
+            }
+
+            if (userSelections.exteriorProtection) {
+                formData.append('Protection extérieure', userSelections.exteriorProtection === 'oui' ? 'Oui' : 'Non');
+            }
+
+            if (userSelections.telesurveillance) {
+                formData.append('Télésurveillance', userSelections.telesurveillance === 'oui' ? 'Oui' : 'Non');
+            }
+
+            formData.append('Code postal', userSelections.postalCode);
+            formData.append('Téléphone', phoneInput.value);
+            formData.append('source', 'devis-alarme');
+
+            // Submit to Formspree
+            const response = await fetch('https://formspree.io/f/mzzwonvk', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert('Merci ! Votre demande de devis a été envoyée. Nous vous contacterons bientôt au ' + phoneInput.value);
+                // Optionally redirect to thank you page
+                // window.location.href = '/thank-you.html';
+            } else {
+                throw new Error('Erreur lors de l\'envoi');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Une erreur s\'est produite. Veuillez réessayer ou nous contacter directement.');
+
+            // Re-enable button
+            phoneButton.disabled = false;
+            phoneButton.innerHTML = 'Obtenir mon devis <svg class="button-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>';
+        }
+    } else {
+        alert('Veuillez entrer un numéro de téléphone valide (10 chiffres)');
+    }
+});
+
+// Allow Enter key to submit phone number
+phoneInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        phoneButton.click();
+    }
 });

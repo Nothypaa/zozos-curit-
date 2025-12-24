@@ -351,14 +351,145 @@ body {
     height: 24px;
 }
 
+/* Phone Section Styles */
+.phone-section {
+    padding: 4rem 2rem;
+    background: white;
+    text-align: center;
+}
+
+.phone-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.phone-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #999;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.phone-input-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.phone-input {
+    width: 400px;
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 50px;
+    background: #F8F8F8;
+    font-family: 'Roboto', Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.phone-input:focus {
+    outline: none;
+    border-color: #FF3333;
+    background: white;
+}
+
+.phone-input::placeholder {
+    color: #999;
+}
+
+.phone-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    background: #FF3333;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Roboto', Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.phone-button:hover {
+    background: #E02B2B;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .question-title {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    .choice-cards {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .business-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    .choice-card {
+        flex-direction: row;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+
+    .card-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+
+    .card-icon-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+
     .postal-code-input {
         width: 100%;
         max-width: 350px;
     }
 
     .postal-code-button {
+        width: 100%;
+        max-width: 350px;
+        justify-content: center;
+    }
+
+    .phone-title {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .phone-input {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .phone-button {
         width: 100%;
         max-width: 350px;
         justify-content: center;
