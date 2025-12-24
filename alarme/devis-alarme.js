@@ -77,9 +77,9 @@ question1Cards.forEach(card => {
                     question2Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
 
-                // Update progress bar to 33%
-                progressFill.style.width = '33%';
-                progressCircle.textContent = '33%';
+                // Update progress bar to 14% (1/7 steps for habitation)
+                progressFill.style.width = '14%';
+                progressCircle.textContent = '14%';
 
                 // Update progress labels
                 progressLabels[0].classList.remove('active');
@@ -95,9 +95,9 @@ question1Cards.forEach(card => {
                     question2bSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
 
-                // Update progress bar to 33%
-                progressFill.style.width = '33%';
-                progressCircle.textContent = '33%';
+                // Update progress bar to 17% (1/6 steps for entreprise)
+                progressFill.style.width = '17%';
+                progressCircle.textContent = '17%';
                 progressLabels[0].classList.remove('active');
                 progressLabels[1].classList.add('active');
 
@@ -141,9 +141,9 @@ question2Cards.forEach(card => {
             card.classList.remove('selected');
             userSelections.habitationType = null;
 
-            // Reset progress to 33%
-            progressFill.style.width = '33%';
-            progressCircle.textContent = '33%';
+            // Reset progress to 14% (back to step 1/7 for habitation)
+            progressFill.style.width = '14%';
+            progressCircle.textContent = '14%';
             progressLabels[1].classList.add('active');
             progressLabels[2].classList.remove('active');
 
@@ -187,9 +187,9 @@ question2Cards.forEach(card => {
                 question2dSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
 
-            // Update progress bar to 50%
-            progressFill.style.width = '50%';
-            progressCircle.textContent = '50%';
+            // Update progress bar to 29% (2/7 steps for habitation)
+            progressFill.style.width = '29%';
+            progressCircle.textContent = '29%';
 
             // Keep progress labels the same (still on PROTECTION)
             progressLabels[1].classList.add('active');
@@ -211,9 +211,9 @@ question2bCards.forEach(card => {
             card.classList.remove('selected');
             userSelections.businessType = null;
 
-            // Reset progress to 33%
-            progressFill.style.width = '33%';
-            progressCircle.textContent = '33%';
+            // Reset progress to 17% (back to step 1/6 for entreprise)
+            progressFill.style.width = '17%';
+            progressCircle.textContent = '17%';
             progressLabels[1].classList.add('active');
             progressLabels[2].classList.remove('active');
 
@@ -245,9 +245,9 @@ question2bCards.forEach(card => {
                 question2cSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
 
-            // Update progress bar to 50%
-            progressFill.style.width = '50%';
-            progressCircle.textContent = '50%';
+            // Update progress bar to 33% (2/6 steps for entreprise)
+            progressFill.style.width = '33%';
+            progressCircle.textContent = '33%';
 
             // Keep progress labels the same (still on PROTECTION)
             progressLabels[1].classList.add('active');
@@ -269,9 +269,9 @@ question2cCards.forEach(card => {
             card.classList.remove('selected');
             userSelections.entryPoints = null;
 
-            // Reset progress to 50%
-            progressFill.style.width = '50%';
-            progressCircle.textContent = '50%';
+            // Reset progress to 33% (back to step 2/6 for entreprise)
+            progressFill.style.width = '33%';
+            progressCircle.textContent = '33%';
             progressLabels[1].classList.add('active');
             progressLabels[2].classList.remove('active');
 
@@ -298,9 +298,9 @@ question2cCards.forEach(card => {
                 question4Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
 
-            // Update progress bar to 66%
-            progressFill.style.width = '66%';
-            progressCircle.textContent = '66%';
+            // Update progress bar to 50% (3/6 steps for entreprise)
+            progressFill.style.width = '50%';
+            progressCircle.textContent = '50%';
 
             // Update progress labels
             progressLabels[1].classList.remove('active');
@@ -322,9 +322,9 @@ question2dCards.forEach(card => {
             card.classList.remove('selected');
             userSelections.entryPoints = null;
 
-            // Reset progress to 50%
-            progressFill.style.width = '50%';
-            progressCircle.textContent = '50%';
+            // Reset progress to 29% (back to step 2 for habitation)
+            progressFill.style.width = '29%';
+            progressCircle.textContent = '29%';
             progressLabels[1].classList.add('active');
             progressLabels[2].classList.remove('active');
 
@@ -358,9 +358,9 @@ question2dCards.forEach(card => {
                     question3Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
 
-                // Update progress bar to 66%
-                progressFill.style.width = '66%';
-                progressCircle.textContent = '66%';
+                // Update progress bar to 43% (3/7 steps for maison)
+                progressFill.style.width = '43%';
+                progressCircle.textContent = '43%';
 
                 // Update progress labels
                 progressLabels[1].classList.remove('active');
@@ -377,9 +377,9 @@ question2dCards.forEach(card => {
                     question4Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
 
-                // Update progress bar to 66%
-                progressFill.style.width = '66%';
-                progressCircle.textContent = '66%';
+                // Update progress bar to 50% (3/6 steps for appartement)
+                progressFill.style.width = '50%';
+                progressCircle.textContent = '50%';
 
                 // Update progress labels
                 progressLabels[1].classList.remove('active');
@@ -415,9 +415,9 @@ question3Cards.forEach(card => {
             card.classList.remove('selected');
             userSelections.exteriorProtection = null;
 
-            // Reset progress to 66%
-            progressFill.style.width = '66%';
-            progressCircle.textContent = '66%';
+            // Reset progress to 43% (back to step 3/7 for maison)
+            progressFill.style.width = '43%';
+            progressCircle.textContent = '43%';
 
             // Reset endpoint to grey
             progressEndpoint.style.background = '#E0E0E0';
@@ -446,6 +446,10 @@ question3Cards.forEach(card => {
             setTimeout(() => {
                 question4Section.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
+
+            // Update progress bar to 57% (4/7 steps for maison)
+            progressFill.style.width = '57%';
+            progressCircle.textContent = '57%';
         }
 
         console.log('User selections:', userSelections);
@@ -471,6 +475,18 @@ postalCodeButton.addEventListener('click', () => {
         setTimeout(() => {
             phoneSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
+
+        // Update progress based on path
+        if (userSelections.habitationType === 'maison') {
+            progressFill.style.width = '86%'; // 6/7 steps for maison
+            progressCircle.textContent = '86%';
+        } else if (userSelections.habitationType === 'appartement') {
+            progressFill.style.width = '83%'; // 5/6 steps for appartement
+            progressCircle.textContent = '83%';
+        } else {
+            progressFill.style.width = '83%'; // 5/6 steps for entreprise
+            progressCircle.textContent = '83%';
+        }
     } else {
         alert('Veuillez entrer un code postal valide (5 chiffres)');
     }
@@ -499,12 +515,25 @@ question4Cards.forEach(card => {
             postalCodeInput.value = '';
             userSelections.postalCode = null;
 
+            // Hide phone section
+            phoneSection.style.display = 'none';
+            phoneInput.value = '';
+            userSelections.phoneNumber = null;
+
             // Reset endpoint to grey
             progressEndpoint.style.background = '#E0E0E0';
 
-            // Reset progress to 66%
-            progressFill.style.width = '66%';
-            progressCircle.textContent = '66%';
+            // Reset progress based on path
+            if (userSelections.habitationType === 'maison') {
+                progressFill.style.width = '57%'; // Back to step 4/7
+                progressCircle.textContent = '57%';
+            } else if (userSelections.habitationType === 'appartement') {
+                progressFill.style.width = '50%'; // Back to step 3/6
+                progressCircle.textContent = '50%';
+            } else {
+                progressFill.style.width = '50%'; // Back to step 3/6 for entreprise
+                progressCircle.textContent = '50%';
+            }
         } else {
             // Remove selected class from all cards in question 4
             question4Cards.forEach(c => c.classList.remove('selected'));
@@ -523,9 +552,17 @@ question4Cards.forEach(card => {
                 postalCodeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
 
-            // Update progress bar to 100%
-            progressFill.style.width = '100%';
-            progressCircle.textContent = '100%';
+            // Update progress based on path
+            if (userSelections.habitationType === 'maison') {
+                progressFill.style.width = '71%'; // 5/7 steps for maison
+                progressCircle.textContent = '71%';
+            } else if (userSelections.habitationType === 'appartement') {
+                progressFill.style.width = '67%'; // 4/6 steps for appartement
+                progressCircle.textContent = '67%';
+            } else {
+                progressFill.style.width = '67%'; // 4/6 steps for entreprise
+                progressCircle.textContent = '67%';
+            }
 
             // Turn endpoint circle red
             progressEndpoint.style.background = '#FF3333';
@@ -614,6 +651,10 @@ phoneButton.addEventListener('click', async () => {
             });
 
             if (response.ok) {
+                // Update progress to 100% on successful submission
+                progressFill.style.width = '100%';
+                progressCircle.textContent = '100%';
+
                 alert('Merci ! Votre demande de devis a été envoyée. Nous vous contacterons bientôt au ' + phoneInput.value);
                 // Optionally redirect to thank you page
                 // window.location.href = '/thank-you.html';
