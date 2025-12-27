@@ -476,17 +476,12 @@ postalCodeButton.addEventListener('click', () => {
             phoneSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
 
-        // Update progress based on path
-        if (userSelections.habitationType === 'maison') {
-            progressFill.style.width = '86%'; // 6/7 steps for maison
-            progressCircle.textContent = '86%';
-        } else if (userSelections.habitationType === 'appartement') {
-            progressFill.style.width = '83%'; // 5/6 steps for appartement
-            progressCircle.textContent = '83%';
-        } else {
-            progressFill.style.width = '83%'; // 5/6 steps for entreprise
-            progressCircle.textContent = '83%';
-        }
+        // Update progress to 100% when postal code is entered (final step)
+        progressFill.style.width = '100%';
+        progressCircle.textContent = '100%';
+
+        // Turn endpoint circle red when postal code is entered
+        progressEndpoint.style.background = '#FF3333';
     } else {
         alert('Veuillez entrer un code postal valide (5 chiffres)');
     }
@@ -564,8 +559,8 @@ question4Cards.forEach(card => {
                 progressCircle.textContent = '67%';
             }
 
-            // Turn endpoint circle red
-            progressEndpoint.style.background = '#FF3333';
+            // Don't turn endpoint red yet - wait until postal code is entered
+            // progressEndpoint.style.background = '#FF3333';
         }
     });
 });
@@ -651,10 +646,7 @@ phoneButton.addEventListener('click', async () => {
             });
 
             if (response.ok) {
-                // Update progress to 100% on successful submission
-                progressFill.style.width = '100%';
-                progressCircle.textContent = '100%';
-
+                // Progress is already at 100% from postal code entry
                 alert('Merci ! Votre demande de devis a été envoyée. Nous vous contacterons bientôt au ' + phoneInput.value);
                 // Optionally redirect to thank you page
                 // window.location.href = '/thank-you.html';

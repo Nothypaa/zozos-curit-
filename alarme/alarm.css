@@ -205,6 +205,15 @@
     line-height: 1.2;
 }
 
+/* Desktop: show desktop text, hide mobile text */
+.mobile-first-line {
+    display: none;
+}
+
+.desktop-first-line {
+    display: inline;
+}
+
 /* Highlighted Number - LED Effect */
 .highlight-number {
     color: #FF3333;
@@ -1730,6 +1739,15 @@
         max-width: 100%;
         word-wrap: break-word;
         overflow-wrap: break-word;
+    }
+
+    /* Mobile: hide desktop text, show mobile text */
+    .desktop-first-line {
+        display: none;
+    }
+
+    .mobile-first-line {
+        display: inline;
     }
 
     /* Keep "les 90 secondes" together on mobile */
