@@ -497,6 +497,9 @@
                 <img src="zozo16.9-no-background.webp" alt="Zozo Sécurité - Installateur Alarme Montpellier" class="banner-logo-img">
             </a>
 
+            <!-- Mobile Phone Number (only visible on mobile) -->
+            <a href="tel:+33767563926" class="mobile-banner-phone">07 67 56 39 26</a>
+
             <!-- Phone Form on Right -->
             <div class="banner-phone-wrapper">
                 <form class="banner-phone-form" action="https://formspree.io/f/mzzwonvk" method="POST">
@@ -990,6 +993,27 @@
         </div>
 
         <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- Phone Reminder Section -->
+    <section class="phone-reminder-section">
+        <div class="phone-reminder-container">
+            <form class="reminder-phone-form" action="https://formspree.io/f/mzzwonvk" method="POST">
+                <input
+                    type="tel"
+                    class="reminder-phone-input"
+                    name="phone"
+                    placeholder="Être appelé"
+                    pattern="[0-9]{10}"
+                    required
+                    aria-label="Entrez votre numéro de téléphone"
+                >
+                <input type="hidden" name="_subject" value="Nouvelle demande alarme - After Testimonials">
+                <input type="hidden" name="source" value="Alarme Page After Testimonials">
+                <button type="submit" class="reminder-phone-submit">OK</button>
+            </form>
+            <p class="reminder-installation-note">* Installation d'alarme sous 24h</p>
+        </div>
     </section>
 
     <!-- Statistics Section -->
