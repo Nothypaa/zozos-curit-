@@ -163,10 +163,7 @@
 
     <!-- Logo -->
     <a href="index.html#accueil" class="site-logo" ontouchstart="this.classList.add('touched')" ontouchend="this.classList.remove('touched')">
-        <div class="logo-text">
-            <span class="logo-zozo">ZOZO</span>
-            <span class="logo-securite">SÉCURITÉ</span>
-        </div>
+        <img src="images/zozo16.9-white-text (no-bg).png" alt="ZOZO Sécurité - Vidéosurveillance Montpellier" class="logo-img">
     </a>
 
     <!-- Desktop Navigation -->
@@ -229,20 +226,6 @@
                     <path d="M17 12H7"/>
                 </svg>
             </a>
-        </div>
-    </nav>
-
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="breadcrumb">
-        <div class="breadcrumb-container">
-            <ol class="breadcrumb-list">
-                <li class="breadcrumb-item">
-                    <a href="index.html">Accueil</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    Contact
-                </li>
-            </ol>
         </div>
     </nav>
 
@@ -337,17 +320,17 @@
 
                          <div class="form-row conditional-fields">
                              <div class="form-group half-width conditional-field phone-field">
-                                 <label for="phone">Téléphone</label>
-                                 <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+                                 <label for="phone">Téléphone *</label>
+                                 <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
                              </div>
                              <div class="form-group half-width conditional-field project-type-field">
                                  <label for="subject">Type de projet</label>
                                  <select id="subject" name="subject">
                                      <option value="">Sélectionnez un type de projet</option>
                                      <option value="Vidéosurveillance">Installation vidéosurveillance</option>
+                                     <option value="Alarme">Installation alarme</option>
                                      <option value="Interphone">Installation interphone</option>
                                      <option value="Câblage réseau">Câblage réseau</option>
-                                     <option value="Baie de brassage">Installation baie de brassage</option>
                                      <option value="Réparation">Réparation / Maintenance</option>
                                      <option value="Conseil">Conseil et étude</option>
                                      <option value="Autre">Autre projet</option>
@@ -355,17 +338,9 @@
                              </div>
                          </div>
 
-                         <div class="form-group conditional-field budget-field">
-                             <label for="budget">Budget approximatif</label>
-                             <select id="budget" name="budget">
-                                 <option value="">Sélectionnez une fourchette</option>
-                                 <option value="Moins de 1000€">Moins de 1 000€</option>
-                                 <option value="1000€ - 3000€">1 000€ - 3 000€</option>
-                                 <option value="3000€ - 5000€">3 000€ - 5 000€</option>
-                                 <option value="5000€ - 10000€">5 000€ - 10 000€</option>
-                                 <option value="Plus de 10000€">Plus de 10 000€</option>
-                                 <option value="À définir">À définir ensemble</option>
-                             </select>
+                         <div class="form-group conditional-field postal-code-field">
+                             <label for="postal-code">Code postal *</label>
+                             <input type="text" id="postal-code" name="postal-code" placeholder="Ex: 34000 (Montpellier)" pattern="[0-9]{5}" required>
                          </div>
 
                          <div class="form-group submit-group">

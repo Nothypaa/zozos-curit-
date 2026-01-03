@@ -1,5 +1,17 @@
 /* Contact Page Specific Styles */
 
+/* Body background for contact page */
+body {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+/* Logo Image */
+.site-logo .logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 /* Active Navigation Link */
 .nav-link.active {
     color: #FF3333 !important;
@@ -13,10 +25,10 @@
 
 /* Breadcrumb Navigation */
 .breadcrumb {
-    background: #000;
+    background: transparent;
     padding: 1rem 0;
     margin-top: 80px;
-    border-bottom: 1px solid #222;
+    border-bottom: none;
 }
 
 .breadcrumb-container {
@@ -118,6 +130,7 @@
 .contact-form-section {
     padding: 4rem 2rem;
     background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    margin-top: 0;
 }
 
 .contact-form-container {
@@ -657,8 +670,9 @@
     width: 100%;
     display: flex;
     align-items: stretch;
-    background: #000;
-    padding-top: 0; /* Remove black spacing */
+    background: transparent;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .split-container {
