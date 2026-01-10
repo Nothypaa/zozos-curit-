@@ -165,7 +165,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: 4rem 2rem 4rem 2rem;
+    padding: 8rem 2rem 4rem 2rem;
 }
 
 .hero-content {
@@ -198,13 +198,16 @@
 
 /* Hero Main Title */
 .hero-main-title {
-    width: 100%;
+    position: absolute;
+    top: -14.5rem;
+    left: 1rem;
+    width: calc(100% - 4rem);
     font-size: 2.5rem;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0;
     color: white;
-    margin: 0 0 4rem 0;
+    margin: 0;
     padding-left: 2.5rem;
     text-align: left;
     line-height: 1.2;
@@ -236,6 +239,8 @@
     font-style: italic;
     opacity: 0.9;
     margin-left: 0.5rem;
+    position: relative;
+    top: -0.8rem;
 }
 
 /* ============================================
