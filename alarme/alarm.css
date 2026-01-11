@@ -198,19 +198,27 @@
 
 /* Hero Main Title */
 .hero-main-title {
-    position: absolute;
-    top: -14.5rem;
-    left: 1rem;
-    width: calc(100% - 4rem);
+    width: 100%;
     font-size: 2.5rem;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0;
     color: white;
-    margin: 0;
+    margin: 0 0 4rem 0;
     padding-left: 2.5rem;
     text-align: left;
     line-height: 1.2;
+}
+
+/* Desktop only - absolute positioning */
+@media (min-width: 769px) {
+    .hero-main-title {
+        position: absolute;
+        top: -14.5rem;
+        left: 1rem;
+        width: calc(100% - 4rem);
+        margin: 0;
+    }
 }
 
 /* Desktop: show desktop text, hide mobile text */
@@ -219,6 +227,10 @@
 }
 
 .desktop-first-line {
+    display: inline;
+}
+
+.desktop-only-lines {
     display: inline;
 }
 
@@ -1850,7 +1862,7 @@
     /* Only show the h1 */
     .hero-main-title {
         display: block;
-        font-size: 1.25rem;
+        font-size: 0.95rem;
         font-weight: 700;
         color: white;
         margin: 0;
@@ -1865,6 +1877,10 @@
 
     /* Mobile: hide desktop text, show mobile text */
     .desktop-first-line {
+        display: none;
+    }
+
+    .desktop-only-lines {
         display: none;
     }
 
